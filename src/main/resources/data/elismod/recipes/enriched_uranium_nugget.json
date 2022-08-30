@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "elismod:enriched_uranium_ingot"
+    }
+  ],
+  "result": {
+    "item": "elismod:enriched_uranium_nugget",
+    "count": 9
+  }
+}

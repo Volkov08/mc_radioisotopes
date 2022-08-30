@@ -1,0 +1,5 @@
+{
+  "variants": {
+    "": { "model": "elismod:block/enriched_uranium_block" }
+  }
+}
