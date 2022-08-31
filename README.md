@@ -1,9 +1,13 @@
-# Fabric Example Mod
+# Minecraft Radioisotopes Mod
 
-## Setup
+This mod adds radioctive materials to the game and a few fun things to do with them.
+Only Uranium is currently implemented, but we have plans for Plutonium, Deuterium/Tritium and maybe some more. 
 
-For setup instructions please see the [fabric wiki page](https://fabricmc.net/wiki/tutorial:setup) that relates to the IDE that you are using.
+## Curseforge and Downloads
+
+Curseforge: 
+Downloads coming soon!
 
 ## License
 
-This template is available under the CC0 license. Feel free to learn from it and incorporate it in your own projects.
+This mod is available under the MIT license.
