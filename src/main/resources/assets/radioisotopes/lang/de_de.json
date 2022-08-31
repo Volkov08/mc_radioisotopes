@@ -1,6 +1,6 @@
 {
   "item.radioisotopes.enriched_uranium_ingot": "Hochangereicherter Uranbarren",
-  "item.radioisotopes.enriched_uranium_ingot": "Hochangereichertes Urannugget",
+  "item.radioisotopes.enriched_uranium_nugget": "Hochangereichertes Urannugget",
 
   "block.radioisotopes.enriched_uranium_block": "Hochangereicherter Uranblock"
 }
