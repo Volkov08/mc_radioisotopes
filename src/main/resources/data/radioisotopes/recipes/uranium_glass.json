@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "#": {
+      "item": "minecraft:glass"
+    },
+    "N": {
+      "item": "radioisotopes:uranium_nugget"
+    }
+  },
+  "pattern": [
+    "###",
+    "#N#",
+    "###"
+  ],
+  "result": {
+    "item": "radioisotopes:uranium_block"
+  }
+}

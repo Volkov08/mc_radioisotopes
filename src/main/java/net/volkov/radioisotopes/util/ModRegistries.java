@@ -15,5 +15,4 @@ public class ModRegistries {
 
         registry.add(ModItems.NUCLEAR_FUEL_ROD, 36000);
     }
-
 }

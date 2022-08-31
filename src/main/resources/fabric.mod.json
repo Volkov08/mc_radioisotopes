@@ -21,6 +21,9 @@
   "entrypoints": {
     "main": [
       "net.volkov.radioisotopes.ClientMain"
+    ],
+    "client": [
+      "net.volkov.radioisotopes.ClientOnly"
     ]
   },
   "mixins": [

@@ -8,15 +8,16 @@
   "item.radioisotopes.uranium_nugget": "Urannugget",
   "item.radioisotopes.nuclear_fuel_rod": "Nuklearer Brennstab",
 
-  "item.radioisotopes.uranium_pickaxe": "Uran[PICKAXE]",
+  "item.radioisotopes.uranium_pickaxe": "Uranspitzhacke",
   "item.radioisotopes.uranium_sword": "Uranschwert",
   "item.radioisotopes.uranium_axe": "Uranaxt",
   "item.radioisotopes.uranium_hoe": "Uranharke",
   "item.radioisotopes.uranium_shovel": "Uranschaufel",
 
   "block.radioisotopes.uranium_ore": "Uranerz",
-  "block.radioisotopes.deepslate_uranium_ore": "[DEEPSLATE] Uranerz",
+  "block.radioisotopes.deepslate_uranium_ore": "Tiefenschiefer-Uranerz",
   "block.radioisotopes.uranium_block": "Uranblock",
+  "block.radioisotopes.uranium_glass": "Uranglass",
 
   "itemGroup.radioisotopes.uranium": "Uran"
 }
