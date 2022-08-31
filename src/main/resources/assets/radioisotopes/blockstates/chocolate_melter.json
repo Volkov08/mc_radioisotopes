@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=north": { "model": "radioisotopes:block/chocolate_melter" },
+    "facing=east": { "model": "radioisotopes:block/chocolate_melter", "y": 90 },
+    "facing=south": { "model": "radioisotopes:block/chocolate_melter", "y": 180 },
+    "facing=west": { "model": "radioisotopes:block/chocolate_melter", "y": 270 }
+  }
+}

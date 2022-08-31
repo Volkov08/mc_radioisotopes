@@ -2,5 +2,21 @@
   "item.radioisotopes.enriched_uranium_ingot": "Hochangereicherter Uranbarren",
   "item.radioisotopes.enriched_uranium_nugget": "Hochangereichertes Urannugget",
 
-  "block.radioisotopes.enriched_uranium_block": "Hochangereicherter Uranblock"
+  "block.radioisotopes.enriched_uranium_block": "Hochangereicherter Uranblock",
+
+  "item.radioisotopes.uranium_ingot": "Uranbarren",
+  "item.radioisotopes.uranium_nugget": "Urannugget",
+  "item.radioisotopes.nuclear_fuel_rod": "Nuklearer Brennstab",
+
+  "item.radioisotopes.uranium_pickaxe": "Uran[PICKAXE]",
+  "item.radioisotopes.uranium_sword": "Uranschwert",
+  "item.radioisotopes.uranium_axe": "Uranaxt",
+  "item.radioisotopes.uranium_hoe": "Uranharke",
+  "item.radioisotopes.uranium_shovel": "Uranschaufel",
+
+  "block.radioisotopes.uranium_ore": "Uranerz",
+  "block.radioisotopes.deepslate_uranium_ore": "[DEEPSLATE] Uranerz",
+  "block.radioisotopes.uranium_block": "Uranblock",
+
+  "itemGroup.radioisotopes.uranium": "Uran"
 }

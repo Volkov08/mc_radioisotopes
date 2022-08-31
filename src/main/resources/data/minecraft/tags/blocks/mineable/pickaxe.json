@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "radioisotopes:uranium_ore",
+    "radioisotopes:deepslate_uranium_ore",
+    "radioisotopes:uranium_block"
+  ]
+}

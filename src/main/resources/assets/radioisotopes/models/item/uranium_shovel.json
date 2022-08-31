@@ -1,0 +1,6 @@
+{
+  "parent": "item/handheld",
+  "textures": {
+    "layer0": "radioisotopes:item/uranium_shovel"
+  }
+}

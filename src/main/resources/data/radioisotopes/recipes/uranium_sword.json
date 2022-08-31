@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "S": {
+      "item": "minecraft:stick"
+    },
+    "U": {
+      "item": "radioisotopes:uranium_ingot"
+    }
+  },
+  "pattern": [
+    " U ",
+    " U ",
+    " S "
+  ],
+  "result": {
+    "item": "radioisotopes:uranium_sword"
+  }
+}

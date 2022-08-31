@@ -1,0 +1,27 @@
+{
+  "display": {
+    "icon": {
+      "item": "radioisotopes:nuclear_fuel_rod"
+    },
+    "title": "Nuclear Fuel",
+    "description": "Obtain a Glowstick on Steroids",
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true
+  },
+  "parent": "radioisotopes:radioisotopes",
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "radioisotopes:nuclear_fuel_rod"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

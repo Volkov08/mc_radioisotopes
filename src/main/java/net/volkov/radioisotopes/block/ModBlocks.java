@@ -4,18 +4,34 @@ import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.Block;
 import net.minecraft.block.Material;
+import net.minecraft.block.OreBlock;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.Rarity;
+import net.minecraft.util.math.intprovider.UniformIntProvider;
 import net.minecraft.util.registry.Registry;
+
+import net.volkov.radioisotopes.item.ModItemGroup;
 
 
 public class ModBlocks {
 
+    public static final Block URANIUM_ORE = registerBlock("uranium_ore",
+            new OreBlock(FabricBlockSettings.of(Material.STONE).strength(4.5f).requiresTool().luminance(3),
+                    UniformIntProvider.create(2, 6)), ModItemGroup.URANIUM);
+
+    public static final Block DEEPSLATE_URANIUM_ORE = registerBlock("deepslate_uranium_ore",
+            new OreBlock(FabricBlockSettings.of(Material.STONE).strength(4.0f).requiresTool().luminance(3),
+                    UniformIntProvider.create(2, 6)), ModItemGroup.URANIUM);
+
+    public static final Block URANIUM_BLOCK = registerBlock("uranium_block",
+            new Block(FabricBlockSettings.of(Material.METAL).strength(6f).requiresTool().luminance(6)), ModItemGroup.URANIUM);
+
     public static final Block ENRICHED_URANIUM_BLOCK = registerBlock("enriched_uranium_block",
-            new Block(FabricBlockSettings.of(Material.METAL).strength(8f).requiresTool().luminance(12)), ItemGroup.BUILDING_BLOCKS);
+            new Block(FabricBlockSettings.of(Material.METAL).strength(8f).requiresTool().luminance(12)), ModItemGroup.URANIUM);
+
 
 
     private static Block registerBlockRarity(String name, Block block, ItemGroup group, Rarity rarity){

@@ -1,0 +1,27 @@
+{
+  "display": {
+    "icon": {
+      "item": "radioisotopes:uranium_ingot"
+    },
+    "title": "Uranium",
+    "description": "Obtain an Piece of this extraordinary Material",
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "background": "radioisotopes:textures/block/uranium_block.png"
+  },
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "radioisotopes:uranium_ingot"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}
