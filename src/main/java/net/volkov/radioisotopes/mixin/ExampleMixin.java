@@ -1,7 +1,7 @@
-package net.volkov.elismod.mixin;
+package net.volkov.radioisotopes.mixin;
 
 import net.minecraft.client.gui.screen.TitleScreen;
-import net.volkov.elismod.ClientMain;
+import net.volkov.radioisotopes.ClientMain;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;

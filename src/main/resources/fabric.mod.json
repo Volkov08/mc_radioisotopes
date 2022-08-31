@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "id": "elismod",
+  "id": "radioisotopes",
   "version": "${version}",
 
   "name": "Uranium Mod",
@@ -15,16 +15,16 @@
   },
 
   "license": "MIT",
-  "icon": "assets/elismod/icon.png",
+  "icon": "assets/radioisotopes/icon.png",
 
   "environment": "*",
   "entrypoints": {
     "main": [
-      "net.volkov.elismod.ClientMain"
+      "net.volkov.radioisotopes.ClientMain"
     ]
   },
   "mixins": [
-    "elismod.mixins.json"
+    "radioisotopes.mixins.json"
   ],
 
   "depends": {

@@ -1,7 +1,7 @@
 {
   "required": true,
   "minVersion": "0.8",
-  "package": "net.volkov.elismod.mixin",
+  "package": "net.volkov.radioisotopes.mixin",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
   ],
