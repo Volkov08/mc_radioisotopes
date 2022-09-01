@@ -8,7 +8,6 @@ import net.volkov.radioisotopes.block.ModBlocks;
 public class ClientOnly implements ClientModInitializer {
     @Override
     public void onInitializeClient()  {
-        //TODO: remove shadows
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.URANIUM_GLASS, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.URANIUM_GLASS, RenderLayer.getTranslucent());
     }
 }

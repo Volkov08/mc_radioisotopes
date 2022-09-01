@@ -5,14 +5,17 @@ import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.Block;
 import net.minecraft.block.Material;
 import net.minecraft.block.OreBlock;
+import net.minecraft.client.sound.Sound;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
+import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.Rarity;
 import net.minecraft.util.math.intprovider.UniformIntProvider;
 import net.minecraft.util.registry.Registry;
 
+import net.volkov.radioisotopes.block.custom.ModUraniumGlassBlock;
 import net.volkov.radioisotopes.item.ModItemGroup;
 
 
@@ -33,7 +36,7 @@ public class ModBlocks {
             new Block(FabricBlockSettings.of(Material.METAL).strength(8f).requiresTool().luminance(12)), ModItemGroup.URANIUM);
 
     public static final Block URANIUM_GLASS = registerBlock("uranium_glass",
-            new Block(FabricBlockSettings.of(Material.GLASS).strength(0.3f).luminance(6).nonOpaque()), ModItemGroup.URANIUM);
+            new ModUraniumGlassBlock(FabricBlockSettings.of(Material.GLASS).strength(0.3f).luminance(6).nonOpaque().sounds(BlockSoundGroup.GLASS)), ModItemGroup.URANIUM);
 
 
 
