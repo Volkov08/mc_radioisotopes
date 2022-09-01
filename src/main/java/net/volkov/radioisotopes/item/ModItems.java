@@ -49,6 +49,9 @@ public class ModItems {
     public static final Item ENRICHED_URANIUM_NUGGET = registerItem("enriched_uranium_nugget",
             new Item(new FabricItemSettings().group(ModItemGroup.URANIUM)));
 
+    public static final Item HEAVY_WATER_BUCKET = registerItem("heavy_water_bucket",
+            new Item(new FabricItemSettings().group(ModItemGroup.URANIUM)));
+
     private static Item registerItem(String name, Item item) {
         return Registry.register(Registry.ITEM, new Identifier(ClientMain.MOD_ID, name), item);
     }
