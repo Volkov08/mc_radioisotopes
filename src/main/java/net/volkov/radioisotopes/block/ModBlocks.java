@@ -2,6 +2,7 @@ package net.volkov.radioisotopes.block;
 
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.minecraft.block.AbstractGlassBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.Material;
 import net.minecraft.block.OreBlock;
@@ -36,7 +37,8 @@ public class ModBlocks {
             new Block(FabricBlockSettings.of(Material.METAL).strength(8f).requiresTool().luminance(12)), ModItemGroup.URANIUM);
 
     public static final Block URANIUM_GLASS = registerBlock("uranium_glass",
-            new ModUraniumGlassBlock(FabricBlockSettings.of(Material.GLASS).strength(0.3f).luminance(6).nonOpaque().sounds(BlockSoundGroup.GLASS)), ModItemGroup.URANIUM);
+            new ModUraniumGlassBlock(FabricBlockSettings.of(Material.GLASS).strength(0.3f).luminance(6).nonOpaque().sounds(BlockSoundGroup.GLASS)) {
+            }, ModItemGroup.URANIUM);
 
 
 
