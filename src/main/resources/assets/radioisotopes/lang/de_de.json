@@ -19,6 +19,8 @@
 
   "block.radioisotopes.uranium_ore": "Uranerz",
   "block.radioisotopes.deepslate_uranium_ore": "Tiefenschiefer-Uranerz",
+  "block.radioisotopes.lead_ore": "Bleierz",
+  "block.radioisotopes.deepslate_lead_ore": "Tiefenschiefer-Bleierz",
   "block.radioisotopes.uranium_block": "Uranblock",
   "block.radioisotopes.uranium_glass": "Uranglass",
   "block.radioisotopes.uranium_centrifuge": "Uranzentrifuge",

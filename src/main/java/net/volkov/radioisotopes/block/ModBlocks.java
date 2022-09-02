@@ -43,6 +43,12 @@ public class ModBlocks {
             new ModUraniumCentrifugeBlock(FabricBlockSettings.of(Material.METAL).requiresTool().strength(4f).nonOpaque()), ModItemGroup.URANIUM);
 
 
+    public static final Block LEAD_ORE = registerBlock("lead_ore",
+            new Block(FabricBlockSettings.of(Material.STONE).strength(4.0f).requiresTool()), ModItemGroup.URANIUM);
+
+    public static final Block DEEPSLATE_LEAD_ORE = registerBlock("deepslate_lead_ore",
+            new Block(FabricBlockSettings.of(Material.STONE).strength(4.5f).requiresTool()), ModItemGroup.URANIUM);
+
 
     private static Block registerBlockRarity(String name, Block block, ItemGroup group, Rarity rarity){
         registerBlockItemRarity(name, block, group, rarity);
