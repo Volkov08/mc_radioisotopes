@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=north": { "model": "radioisotopes:block/uranium_centrifuge" },
+    "facing=east": { "model": "radioisotopes:block/uranium_centrifuge", "y":  90},
+    "facing=south": { "model": "radioisotopes:block/uranium_centrifuge", "y":  180 },
+    "facing=west": { "model": "radioisotopes:block/uranium_centrifuge", "y":  270 }
+  }
+}

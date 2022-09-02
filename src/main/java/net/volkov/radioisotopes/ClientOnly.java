@@ -9,5 +9,6 @@ public class ClientOnly implements ClientModInitializer {
     @Override
     public void onInitializeClient()  {
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.URANIUM_GLASS, RenderLayer.getTranslucent());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.URANIUM_CENTRIFUGE, RenderLayer.getCutout());
     }
 }
