@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=north": { "model": "radioisotopes:block/deuterium_generator" },
+    "facing=east": { "model": "radioisotopes:block/deuterium_generator", "y": 90 },
+    "facing=south": { "model": "radioisotopes:block/deuterium_generator", "y": 180 },
+    "facing=west": { "model": "radioisotopes:block/deuterium_generator", "y": 270 }
+  }
+}

@@ -47,7 +47,7 @@
                   "function": "minecraft:explosion_decay"
                 }
               ],
-              "name": "radioisotopes:uranium_nugget"
+              "name": "radioisotopes:raw_uranium"
             }
           ]
         }

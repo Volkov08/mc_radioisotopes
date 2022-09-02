@@ -4,6 +4,7 @@
 
   "block.radioisotopes.enriched_uranium_block": "Block of Enriched Uranium",
 
+  "item.radioisotopes.raw_uranium": "Raw Uranium",
   "item.radioisotopes.uranium_ingot": "Uranium Ingot",
   "item.radioisotopes.uranium_nugget": "Uranium Nugget",
   "item.radioisotopes.nuclear_fuel_rod": "Nuclear Fuel Rod",
@@ -19,6 +20,7 @@
   "block.radioisotopes.deepslate_uranium_ore": "Deepslate Uranium Ore",
   "block.radioisotopes.uranium_block": "Uranium Block",
   "block.radioisotopes.uranium_glass": "Uranium Glass",
+  "block.radioisotopes.deuterium_generator": "Deuterium Generator",
 
   "itemGroup.radioisotopes.uranium": "Uranium Items"
 }

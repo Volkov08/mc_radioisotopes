@@ -21,6 +21,9 @@ public class ModItems {
     public static final Item URANIUM_NUGGET = registerItem("uranium_nugget",
             new Item(new FabricItemSettings().group(ModItemGroup.URANIUM)));
 
+    public static final Item RAW_URANIUM = registerItem("raw_uranium",
+            new Item(new FabricItemSettings().group(ModItemGroup.URANIUM)));
+
     public static final Item NUCLEAR_FUEL_ROD = registerItem("nuclear_fuel_rod",
             new Item(new FabricItemSettings().group(ModItemGroup.URANIUM)));
 

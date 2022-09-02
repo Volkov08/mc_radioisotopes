@@ -8,6 +8,6 @@ import net.minecraft.world.gen.placementmodifier.HeightRangePlacementModifier;
 
 public class ModPlacedFeatures {
     public static final RegistryEntry<PlacedFeature> URANIUM_ORE_PLACED = PlacedFeatures.register("uranium_ore_placed",
-            ModConfiguredFeatures.URANIUM_ORE, ModOreFeatures.modifiersWithCount(4,
+            ModConfiguredFeatures.URANIUM_ORE, ModOreFeatures.modifiersWithCount(6,
                     HeightRangePlacementModifier.trapezoid(YOffset.aboveBottom(-75), YOffset.aboveBottom(85))));
 }

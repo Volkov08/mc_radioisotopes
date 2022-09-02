@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:blasting",
+  "group": "uranium",
+  "ingredient": {
+    "item": "radioisotopes:raw_uranium"
+  },
+  "result": "radioisotopes:uranium_ingot",
+  "experience": 2,
+  "cookingtime": 450
+}
