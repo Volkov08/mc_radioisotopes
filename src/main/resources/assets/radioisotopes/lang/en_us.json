@@ -14,6 +14,8 @@
   "item.radioisotopes.uranium_hoe": "Uranium Hoe",
   "item.radioisotopes.uranium_shovel": "Uranium Shovel",
   "item.radioisotopes.heavy_water_bucket": "Heavy Water Bucket",
+  "item.radioisotopes.raw_lead": "Raw Lead",
+  "item.radioisotopes.lead_plate": "Lead Plate",
 
   "block.radioisotopes.uranium_ore": "Uranium Ore",
   "block.radioisotopes.deepslate_uranium_ore": "Deepslate Uranium Ore",
