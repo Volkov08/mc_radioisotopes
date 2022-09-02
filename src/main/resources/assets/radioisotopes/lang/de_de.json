@@ -19,6 +19,7 @@
   "block.radioisotopes.deepslate_uranium_ore": "Tiefenschiefer-Uranerz",
   "block.radioisotopes.uranium_block": "Uranblock",
   "block.radioisotopes.uranium_glass": "Uranglass",
+  "block.radioisotopes.uranium_centrifuge": "Uranzentrifuge",
 
   "itemGroup.radioisotopes.uranium": "Uran"
 }

@@ -19,6 +19,7 @@
   "block.radioisotopes.deepslate_uranium_ore": "Deepslate Uranium Ore",
   "block.radioisotopes.uranium_block": "Uranium Block",
   "block.radioisotopes.uranium_glass": "Uranium Glass",
+  "block.radioisotopes.uranium_centrifuge": "Uranium Zentrifuge",
 
   "itemGroup.radioisotopes.uranium": "Uranium Items"
 }
