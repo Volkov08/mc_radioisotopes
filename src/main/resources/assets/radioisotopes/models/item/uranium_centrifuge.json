@@ -1,3 +1,6 @@
 {
-  "parent": "radioisotopes:block/uranium_centrifuge"
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "radioisotopes:item/uranium_centrifuge"
+  }
 }
