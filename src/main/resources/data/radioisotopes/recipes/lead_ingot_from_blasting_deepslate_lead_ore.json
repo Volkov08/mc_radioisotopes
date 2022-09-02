@@ -1,9 +1,9 @@
 {
   "type": "minecraft:blasting",
   "ingredient": {
-    "item": "radioisotopes:lead_ore"
+    "item": "radioisotopes:deepslate_lead_ore"
   },
-  "result": "radioisotopes:lead_plate",
+  "result": "radioisotopes:lead_ingot",
   "experience": 0.5,
   "cookingtime": 100
 }

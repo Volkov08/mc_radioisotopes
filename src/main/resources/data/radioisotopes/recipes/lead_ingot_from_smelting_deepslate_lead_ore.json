@@ -1,9 +1,9 @@
 {
   "type": "minecraft:smelting",
   "ingredient": {
-    "item": "radioisotopes:raw_lead"
+    "item": "radioisotopes:deepslate_lead_ore"
   },
-  "result": "radioisotopes:lead_plate",
+  "result": "radioisotopes:lead_ingot",
   "experience": 0.5,
   "cookingtime": 200
 }
