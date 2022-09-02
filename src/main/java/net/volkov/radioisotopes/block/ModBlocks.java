@@ -49,6 +49,9 @@ public class ModBlocks {
     public static final Block DEEPSLATE_LEAD_ORE = registerBlock("deepslate_lead_ore",
             new Block(FabricBlockSettings.of(Material.STONE).strength(4.5f).requiresTool()), ModItemGroup.URANIUM);
 
+    public static final Block LEAD_BLOCK = registerBlock("lead_block",
+            new Block(FabricBlockSettings.of(Material.METAL).strength(8f).requiresTool()), ModItemGroup.URANIUM);
+
 
     private static Block registerBlockRarity(String name, Block block, ItemGroup group, Rarity rarity){
         registerBlockItemRarity(name, block, group, rarity);
