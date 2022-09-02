@@ -50,7 +50,7 @@ public class ModItems {
             new Item(new FabricItemSettings().group(ModItemGroup.URANIUM)));
 
     public static final Item HEAVY_WATER_BUCKET = registerItem("heavy_water_bucket",
-            new Item(new FabricItemSettings().group(ModItemGroup.URANIUM)));
+            new Item(new FabricItemSettings().group(ModItemGroup.URANIUM).maxCount(1)));
 
     private static Item registerItem(String name, Item item) {
         return Registry.register(Registry.ITEM, new Identifier(ClientMain.MOD_ID, name), item);
