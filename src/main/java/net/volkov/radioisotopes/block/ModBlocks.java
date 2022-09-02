@@ -2,11 +2,9 @@ package net.volkov.radioisotopes.block;
 
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
-import net.minecraft.block.AbstractGlassBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.Material;
 import net.minecraft.block.OreBlock;
-import net.minecraft.client.sound.Sound;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
@@ -16,6 +14,7 @@ import net.minecraft.util.Rarity;
 import net.minecraft.util.math.intprovider.UniformIntProvider;
 import net.minecraft.util.registry.Registry;
 
+import net.volkov.radioisotopes.block.custom.ModUraniumCentrifugeBlock;
 import net.volkov.radioisotopes.block.custom.ModUraniumGlassBlock;
 import net.volkov.radioisotopes.item.ModItemGroup;
 
@@ -39,6 +38,9 @@ public class ModBlocks {
     public static final Block URANIUM_GLASS = registerBlock("uranium_glass",
             new ModUraniumGlassBlock(FabricBlockSettings.of(Material.GLASS).strength(0.3f).luminance(6).nonOpaque().sounds(BlockSoundGroup.GLASS)) {
             }, ModItemGroup.URANIUM);
+
+    public static final Block URANIUM_CENTRIFUGE = registerBlock("uranium_centrifuge",
+            new ModUraniumCentrifugeBlock(FabricBlockSettings.of(Material.METAL).requiresTool().strength(4f).nonOpaque()), ModItemGroup.URANIUM);
 
 
 

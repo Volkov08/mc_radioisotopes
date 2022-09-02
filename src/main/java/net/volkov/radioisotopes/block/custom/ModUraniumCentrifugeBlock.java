@@ -10,10 +10,10 @@ import net.minecraft.util.BlockMirror;
 import net.minecraft.util.BlockRotation;
 import org.jetbrains.annotations.Nullable;
 
-public class ModUraniumCentrifuge extends Block {
+public class ModUraniumCentrifugeBlock extends Block {
     public static final DirectionProperty FACING = Properties.HORIZONTAL_FACING;
 
-    public ModUraniumCentrifuge(Settings settings) {
+    public ModUraniumCentrifugeBlock(Settings settings) {
         super(settings);
     }
 
