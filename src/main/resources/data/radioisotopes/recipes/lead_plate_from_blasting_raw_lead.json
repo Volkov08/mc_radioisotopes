@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:blasting",
+  "ingredient": {
+    "item": "radioisotopes:raw_lead"
+  },
+  "result": "radioisotopes:lead_plate",
+  "experience": 0.5,
+  "cookingtime": 100
+}
