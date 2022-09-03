@@ -2,7 +2,7 @@
 	"texture_size": [128, 128],
 	"textures": {
 		"1": "radioisotopes:machines/uranium_centrifuge_bottom",
-		"particle": "radioisotopes:particles/uranium_centrifuge"
+		"particle": "minecraft:block/cobblestone"
 	},
 	"elements": [
 		{
