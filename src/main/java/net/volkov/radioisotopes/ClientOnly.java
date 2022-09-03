@@ -12,12 +12,11 @@ public class ClientOnly implements ClientModInitializer {
     @Override
     public void onInitializeClient()  {
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.URANIUM_GLASS, RenderLayer.getTranslucent());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.URANIUM_CENTRIFUGE, RenderLayer.getCutout());
 
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.DEUTERIUM_GENERATOR, RenderLayer.getCutout());
 
 
         ScreenRegistry.register(ModScreenHandlers.DEUTERIUM_GENERATOR_SCREEN_HANDLER, DeuteriumGeneratorScreen::new);
-
-
     }
 }

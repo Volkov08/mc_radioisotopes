@@ -53,6 +53,15 @@ public class ModItems {
             new Item(new FabricItemSettings().group(ModItemGroup.URANIUM)));
 
     public static final Item HEAVY_WATER_BUCKET = registerItem("heavy_water_bucket",
+            new Item(new FabricItemSettings().group(ModItemGroup.URANIUM).maxCount(1)));
+
+    public static final Item RAW_LEAD = registerItem("raw_lead",
+            new Item(new FabricItemSettings().group(ModItemGroup.URANIUM)));
+
+    public static final Item LEAD_INGOT = registerItem("lead_ingot",
+            new Item(new FabricItemSettings().group(ModItemGroup.URANIUM)));
+
+    public static final Item LEAD_PLATE = registerItem("lead_plate",
             new Item(new FabricItemSettings().group(ModItemGroup.URANIUM)));
 
     private static Item registerItem(String name, Item item) {

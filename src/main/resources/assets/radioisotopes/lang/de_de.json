@@ -4,7 +4,6 @@
 
   "block.radioisotopes.enriched_uranium_block": "Hochangereicherter Uranblock",
 
-  "item.radioisotopes.raw_uranium": "Rohes Uran",
   "item.radioisotopes.uranium_ingot": "Uranbarren",
   "item.radioisotopes.uranium_nugget": "Urannugget",
   "item.radioisotopes.nuclear_fuel_rod": "Nuklearer Brennstab",
@@ -21,6 +20,7 @@
   "block.radioisotopes.uranium_block": "Uranblock",
   "block.radioisotopes.uranium_glass": "Uranglass",
   "block.radioisotopes.deuterium_generator": "Deuterium Generator",
+  "block.radioisotopes.uranium_centrifuge": "Uranzentrifuge",
 
   "itemGroup.radioisotopes.uranium": "Uran"
 }
