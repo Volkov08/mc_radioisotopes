@@ -1,17 +1,15 @@
 package net.volkov.radioisotopes.item;
 
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
+import net.minecraft.entity.EquipmentSlot;
+import net.minecraft.item.ArmorItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import net.volkov.radioisotopes.ClientMain;
 
-import net.volkov.radioisotopes.item.custom.ModAxeItem;
-import net.volkov.radioisotopes.item.custom.ModDangerousSwordItem;
-import net.volkov.radioisotopes.item.custom.ModHoeItem;
-import net.volkov.radioisotopes.item.custom.ModPickaxeItem;
-import net.volkov.radioisotopes.item.custom.ModShovelItem;
+import net.volkov.radioisotopes.item.custom.*;
 
 
 public class ModItems {
@@ -63,6 +61,21 @@ public class ModItems {
 
     public static final Item LEAD_PLATE = registerItem("lead_plate",
             new Item(new FabricItemSettings().group(ModItemGroup.URANIUM)));
+
+    public static final Item LEAD_HELMET = registerItem("lead_helmet",
+            new ArmorItem(ModArmorMaterials.LEAD, EquipmentSlot.HEAD,
+                    new FabricItemSettings().group(ModItemGroup.URANIUM)));
+    public static final Item LEAD_CHESTPLATE = registerItem("lead_chestplate",
+            new ArmorItem(ModArmorMaterials.LEAD, EquipmentSlot.CHEST,
+                    new FabricItemSettings().group(ModItemGroup.URANIUM)));
+    public static final Item LEAD_LEGGINGS = registerItem("lead_leggings",
+            new ArmorItem(ModArmorMaterials.LEAD, EquipmentSlot.LEGS,
+                    new FabricItemSettings().group(ModItemGroup.URANIUM)));
+    public static final Item LEAD_BOOTS = registerItem("lead_boots",
+            new ArmorItem(ModArmorMaterials.LEAD, EquipmentSlot.FEET,
+                    new FabricItemSettings().group(ModItemGroup.URANIUM)));
+
+
 
     private static Item registerItem(String name, Item item) {
         return Registry.register(Registry.ITEM, new Identifier(ClientMain.MOD_ID, name), item);

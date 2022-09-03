@@ -17,6 +17,10 @@
   "item.radioisotopes.raw_lead": "Raw Lead",
   "item.radioisotopes.lead_plate": "Lead Plate",
   "item.radioisotopes.lead_ingot": "Lead Ingot",
+  "item.radioisotopes.lead_helmet": "Lead Helmet",
+  "item.radioisotopes.lead_chestplate": "Lead Chestplate",
+  "item.radioisotopes.lead_leggings": "Lead Leggings",
+  "item.radioisotopes.lead_boots": "Lead Boots",
   "item.radioisotopes.raw_uranium": "Raw Uranium",
 
   "block.radioisotopes.uranium_ore": "Uranium Ore",
