@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "radioisotopes:lead_block"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "item": "radioisotopes:lead_ingot"
+  }
+}
