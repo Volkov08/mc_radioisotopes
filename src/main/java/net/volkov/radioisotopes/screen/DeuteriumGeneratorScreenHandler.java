@@ -5,6 +5,8 @@ import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.Inventory;
 import net.minecraft.inventory.SimpleInventory;
 import net.minecraft.item.ItemStack;
+import net.minecraft.screen.ArrayPropertyDelegate;
+import net.minecraft.screen.PropertyDelegate;
 import net.minecraft.screen.ScreenHandler;
 import net.minecraft.screen.slot.Slot;
 import net.volkov.radioisotopes.screen.slot.ModFuelSlot;
@@ -12,16 +14,19 @@ import net.volkov.radioisotopes.screen.slot.ModResultSlot;
 
 public class DeuteriumGeneratorScreenHandler extends ScreenHandler {
     private final Inventory inventory;
+    private final PropertyDelegate propertyDelegate;
 
     public DeuteriumGeneratorScreenHandler(int syncId, PlayerInventory playerInventory) {
-        this(syncId, playerInventory, new SimpleInventory(3));
+        this(syncId, playerInventory, new SimpleInventory(3), new ArrayPropertyDelegate(3));
     }
 
-    public DeuteriumGeneratorScreenHandler(int syncId, PlayerInventory playerInventory, Inventory inventory) {
+    public DeuteriumGeneratorScreenHandler(int syncId, PlayerInventory playerInventory,
+                                           Inventory inventory, PropertyDelegate delegate) {
         super(ModScreenHandlers.DEUTERIUM_GENERATOR_SCREEN_HANDLER, syncId);
         checkSize(inventory, 3);
         this.inventory = inventory;
         inventory.onOpen(playerInventory.player);
+        this.propertyDelegate = delegate;
 
         this.addSlot(new ModFuelSlot(inventory, 0, 56, 53));
         this.addSlot(new Slot(inventory, 1, 56, 17));
@@ -29,6 +34,32 @@ public class DeuteriumGeneratorScreenHandler extends ScreenHandler {
 
         addPlayerInventory(playerInventory);
         addPlayerHotbar(playerInventory);
+
+        addProperties(delegate);
+    }
+
+    public boolean isCrafting() {
+        return propertyDelegate.get(0) > 0;
+    }
+
+    public boolean hasFuel() {
+        return propertyDelegate.get(2) > 0;
+    }
+
+    public int getScaledProgress() {
+        int progress = this.propertyDelegate.get(0);
+        int maxProgress = this.propertyDelegate.get(1);  // Max Progress
+        int progressArrowSize = 23; // This is the width in pixels of your arrow
+
+        return maxProgress != 0 && progress != 0 ? progress * progressArrowSize / maxProgress : 0;
+    }
+
+    public int getScaledFuelProgress() {
+        int fuelProgress = this.propertyDelegate.get(2);
+        int maxFuelProgress = this.propertyDelegate.get(3);
+        int fuelProgressSize = 13;
+
+        return maxFuelProgress != 0 ? (int)(((float)fuelProgress / (float)maxFuelProgress) * fuelProgressSize) : 0;
     }
 
     @Override
