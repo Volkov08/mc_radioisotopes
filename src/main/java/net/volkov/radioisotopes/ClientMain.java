@@ -2,6 +2,7 @@ package net.volkov.radioisotopes;
 
 import net.fabricmc.api.ModInitializer;
 import net.volkov.radioisotopes.block.ModBlocks;
+import net.volkov.radioisotopes.block.entity.ModBlockEntities;
 import net.volkov.radioisotopes.item.ModItems;
 import net.volkov.radioisotopes.util.ModRegistries;
 import net.volkov.radioisotopes.world.gen.ModWorldGen;
@@ -17,9 +18,14 @@ public class ClientMain implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
+
 		ModItems.registerModItems();
 		ModBlocks.registerModBlocks();
+
 		ModRegistries.registerModStuffs();
+
 		ModWorldGen.generateModWorldGen();
+
+		ModBlockEntities.registerAllBlockEntities();
 	}
 }
