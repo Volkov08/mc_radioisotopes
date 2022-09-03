@@ -1,0 +1,11 @@
+{
+  "type": "radioisotopes:deuterium_generator",
+  "ingredients": [
+    {
+      "item": "minecraft:water_bucket"
+    }
+  ],
+  "output": {
+    "item": "radioisotopes:heavy_water_bucket"
+  }
+}

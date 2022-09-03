@@ -11,6 +11,7 @@ public class ModFuelSlot extends Slot {
         super(inventory, index, x, y);
     }
 
+
     @Override
     public boolean canInsert(ItemStack stack) {
         return ModFuelSlot.isPotato(stack);
@@ -24,4 +25,5 @@ public class ModFuelSlot extends Slot {
     public static boolean isPotato(ItemStack stack) {
         return stack.isOf(Items.POTATO);
     }
+
 }

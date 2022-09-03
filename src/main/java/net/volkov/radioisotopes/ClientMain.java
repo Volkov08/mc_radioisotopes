@@ -4,6 +4,8 @@ import net.fabricmc.api.ModInitializer;
 import net.volkov.radioisotopes.block.ModBlocks;
 import net.volkov.radioisotopes.block.entity.ModBlockEntities;
 import net.volkov.radioisotopes.item.ModItems;
+import net.volkov.radioisotopes.recipe.ModRecipes;
+import net.volkov.radioisotopes.screen.ModScreenHandlers;
 import net.volkov.radioisotopes.util.ModRegistries;
 import net.volkov.radioisotopes.world.gen.ModWorldGen;
 import org.slf4j.Logger;
@@ -27,5 +29,8 @@ public class ClientMain implements ModInitializer {
 		ModWorldGen.generateModWorldGen();
 
 		ModBlockEntities.registerAllBlockEntities();
+		ModRecipes.registerRecipes();
+
+		ModScreenHandlers.registerAllScreenHandler();
 	}
 }
