@@ -41,7 +41,7 @@ public class ModBlocks {
             }, ModItemGroup.URANIUM);
 
     public static final Block DEUTERIUM_GENERATOR = registerBlock("deuterium_generator",
-            new DeuteriumGeneratorBlock(FabricBlockSettings.of(Material.METAL).nonOpaque()), ModItemGroup.URANIUM);
+            new DeuteriumGeneratorBlock(FabricBlockSettings.of(Material.METAL).requiresTool().strength(4f).nonOpaque()), ModItemGroup.URANIUM);
 
     public static final Block URANIUM_CENTRIFUGE = registerBlock("uranium_centrifuge",
             new ModUraniumCentrifugeBlock(FabricBlockSettings.of(Material.METAL).requiresTool().strength(4f).nonOpaque()), ModItemGroup.URANIUM);
@@ -54,7 +54,7 @@ public class ModBlocks {
             new Block(FabricBlockSettings.of(Material.STONE).strength(4.5f).requiresTool()), ModItemGroup.URANIUM);
 
     public static final Block LEAD_BLOCK = registerBlock("lead_block",
-            new Block(FabricBlockSettings.of(Material.METAL).strength(8f).requiresTool()), ModItemGroup.URANIUM);
+            new Block(FabricBlockSettings.of(Material.METAL).strength(4.5f).requiresTool()), ModItemGroup.URANIUM);
 
 
     private static Block registerBlockRarity(String name, Block block, ItemGroup group, Rarity rarity){
