@@ -2,9 +2,7 @@ package net.volkov.radioisotopes.block;
 
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
-import net.minecraft.block.Block;
-import net.minecraft.block.Material;
-import net.minecraft.block.OreBlock;
+import net.minecraft.block.*;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
@@ -55,6 +53,9 @@ public class ModBlocks {
 
     public static final Block LEAD_BLOCK = registerBlock("lead_block",
             new Block(FabricBlockSettings.of(Material.METAL).strength(4.5f).requiresTool()), ModItemGroup.URANIUM);
+
+    public static final Block LEAD_WALL = registerBlock("lead_wall",
+            new WallBlock(FabricBlockSettings.of(Material.METAL).strength(7f).requiresTool()), ModItemGroup.URANIUM);
 
 
     private static Block registerBlockRarity(String name, Block block, ItemGroup group, Rarity rarity){
