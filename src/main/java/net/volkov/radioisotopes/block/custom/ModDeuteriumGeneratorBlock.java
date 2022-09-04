@@ -24,10 +24,10 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.stream.Stream;
 
-public class DeuteriumGeneratorBlock extends BlockWithEntity implements BlockEntityProvider {
+public class ModDeuteriumGeneratorBlock extends BlockWithEntity implements BlockEntityProvider {
     public static final DirectionProperty FACING = Properties.HORIZONTAL_FACING;
 
-    public DeuteriumGeneratorBlock(Settings settings) {
+    public ModDeuteriumGeneratorBlock(Settings settings) {
         super(settings);
     }
 

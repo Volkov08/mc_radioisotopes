@@ -85,6 +85,9 @@ public class ModUraniumCentrifugeBlock extends ModTallBlock implements BlockEnti
     @Override
     public ActionResult onUse(BlockState state, World world, BlockPos pos,
                               PlayerEntity player, Hand hand, BlockHitResult hit) {
+        if (state.get(HALF) == DoubleBlockHalf.UPPER){
+            return ActionResult.PASS;
+        }
         if (!world.isClient) {
             NamedScreenHandlerFactory screenHandlerFactory = state.createScreenHandlerFactory(world, pos);
 
