@@ -55,7 +55,7 @@ public class ModBlocks {
             new Block(FabricBlockSettings.of(Material.METAL).strength(4.5f).requiresTool()), ModItemGroup.URANIUM);
 
     public static final Block LEAD_WALL = registerBlock("lead_wall",
-            new WallBlock(FabricBlockSettings.of(Material.METAL).strength(7f).requiresTool()), ModItemGroup.URANIUM);
+            new WallBlock(FabricBlockSettings.of(Material.METAL).strength(4.5f).requiresTool()), ModItemGroup.URANIUM);
 
 
     private static Block registerBlockRarity(String name, Block block, ItemGroup group, Rarity rarity){
