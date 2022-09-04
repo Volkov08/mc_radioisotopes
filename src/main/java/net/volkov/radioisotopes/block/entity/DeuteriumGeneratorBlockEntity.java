@@ -35,7 +35,7 @@ public class DeuteriumGeneratorBlockEntity extends BlockEntity implements NamedS
 
     protected final PropertyDelegate propertyDelegate;
     private int progress = 0;
-    private int maxProgress = 72;
+    private int maxProgress = 3000;
     private int fuelTime = 0;
     private int maxFuelTime = 0;
 

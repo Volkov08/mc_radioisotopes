@@ -57,7 +57,7 @@ public class DeuteriumGeneratorScreenHandler extends ScreenHandler {
     public int getScaledFuelProgress() {
         int fuelProgress = this.propertyDelegate.get(2);
         int maxFuelProgress = this.propertyDelegate.get(3);
-        int fuelProgressSize = 24;
+        int fuelProgressSize = 14;
 
         return maxFuelProgress != 0 ? (int)(((float)fuelProgress / (float)maxFuelProgress) * fuelProgressSize) : 0;
     }

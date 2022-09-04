@@ -33,7 +33,7 @@ public class DeuteriumGeneratorScreen extends HandledScreen<DeuteriumGeneratorSc
         drawTexture(matrices, x, y, 0, 0, backgroundWidth, backgroundHeight);
 
         if(handler.isCrafting()) {
-            drawTexture(matrices, x + 80, y + 34, 176, 14, handler.getScaledProgress(), 17);
+            drawTexture(matrices, x + 80, y + 34, 177, 14, handler.getScaledProgress(), 17);
         }
 
         if(handler.hasFuel()) {
