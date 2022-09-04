@@ -32,7 +32,7 @@
   "block.radioisotopes.uranium_block": "Uranium Block",
   "block.radioisotopes.uranium_glass": "Uranium Glass",
   "block.radioisotopes.deuterium_generator": "Deuterium Generator",
-  "block.radioisotopes.uranium_centrifuge": "Uranium Zentrifuge",
+  "block.radioisotopes.uranium_centrifuge": "Uranium Centrifuge",
 
   "itemGroup.radioisotopes.uranium": "Uranium Items"
 }
