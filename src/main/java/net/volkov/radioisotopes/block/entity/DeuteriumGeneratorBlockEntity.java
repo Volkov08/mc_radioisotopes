@@ -7,6 +7,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.Inventories;
 import net.minecraft.inventory.SimpleInventory;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.nbt.NbtCompound;
@@ -23,6 +24,7 @@ import net.volkov.radioisotopes.item.ModItems;
 import net.volkov.radioisotopes.item.inventory.ImplementedInventory;
 import net.volkov.radioisotopes.recipe.DeuteriumGeneratorRecipe;
 import net.volkov.radioisotopes.screen.DeuteriumGeneratorScreenHandler;
+import net.volkov.radioisotopes.util.ModRegistries;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.Optional;
@@ -101,7 +103,9 @@ public class DeuteriumGeneratorBlockEntity extends BlockEntity implements NamedS
 
     private void consumeFuel() {
         if(!getStack(0).isEmpty()) {
-            this.fuelTime = FuelRegistry.INSTANCE.get(this.removeStack(0, 1).getItem());
+
+            this.fuelTime = 100;
+            removeStack(0, 1);
             this.maxFuelTime = this.fuelTime;
         }
     }

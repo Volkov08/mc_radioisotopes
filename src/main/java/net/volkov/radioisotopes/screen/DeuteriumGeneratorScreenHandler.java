@@ -17,7 +17,7 @@ public class DeuteriumGeneratorScreenHandler extends ScreenHandler {
     private final PropertyDelegate propertyDelegate;
 
     public DeuteriumGeneratorScreenHandler(int syncId, PlayerInventory playerInventory) {
-        this(syncId, playerInventory, new SimpleInventory(3), new ArrayPropertyDelegate(3));
+        this(syncId, playerInventory, new SimpleInventory(3), new ArrayPropertyDelegate(4));
     }
 
     public DeuteriumGeneratorScreenHandler(int syncId, PlayerInventory playerInventory,
@@ -49,7 +49,7 @@ public class DeuteriumGeneratorScreenHandler extends ScreenHandler {
     public int getScaledProgress() {
         int progress = this.propertyDelegate.get(0);
         int maxProgress = this.propertyDelegate.get(1);  // Max Progress
-        int progressArrowSize = 23; // This is the width in pixels of your arrow
+        int progressArrowSize = 24; // This is the width in pixels of your arrow
 
         return maxProgress != 0 && progress != 0 ? progress * progressArrowSize / maxProgress : 0;
     }
@@ -57,7 +57,7 @@ public class DeuteriumGeneratorScreenHandler extends ScreenHandler {
     public int getScaledFuelProgress() {
         int fuelProgress = this.propertyDelegate.get(2);
         int maxFuelProgress = this.propertyDelegate.get(3);
-        int fuelProgressSize = 13;
+        int fuelProgressSize = 24;
 
         return maxFuelProgress != 0 ? (int)(((float)fuelProgress / (float)maxFuelProgress) * fuelProgressSize) : 0;
     }
