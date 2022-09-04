@@ -35,5 +35,7 @@
   "block.radioisotopes.deuterium_generator": "Deuterium Generator",
   "block.radioisotopes.uranium_centrifuge": "Uranium Centrifuge",
 
+  "effect.radioisotopes.radiation_poisoning": "Radiation",
+
   "itemGroup.radioisotopes.uranium": "Uranium Items"
 }
