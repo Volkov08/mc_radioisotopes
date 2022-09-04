@@ -1,8 +1,12 @@
 {
   "variants": {
-    "facing=north": { "model": "radioisotopes:block/uranium_centrifuge" },
-    "facing=east": { "model": "radioisotopes:block/uranium_centrifuge", "y":  90},
-    "facing=south": { "model": "radioisotopes:block/uranium_centrifuge", "y":  180 },
-    "facing=west": { "model": "radioisotopes:block/uranium_centrifuge", "y":  270 }
+    "half=upper,facing=north": { "model": "radioisotopes:block/uranium_centrifuge_top" },
+    "half=upper,facing=east": { "model": "radioisotopes:block/uranium_centrifuge_top", "y":  90},
+    "half=upper,facing=south": { "model": "radioisotopes:block/uranium_centrifuge_top", "y":  180 },
+    "half=upper,facing=west": { "model": "radioisotopes:block/uranium_centrifuge_top", "y":  270 },
+    "half=lower,facing=north": { "model": "radioisotopes:block/uranium_centrifuge_bottom" },
+    "half=lower,facing=east": { "model": "radioisotopes:block/uranium_centrifuge_bottom", "y":  90},
+    "half=lower,facing=south": { "model": "radioisotopes:block/uranium_centrifuge_bottom", "y":  180 },
+    "half=lower,facing=west": { "model": "radioisotopes:block/uranium_centrifuge_bottom", "y":  270 }
   }
 }

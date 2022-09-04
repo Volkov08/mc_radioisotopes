@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "radioisotopes:lead_block"
+  },
+  "result": "radioisotopes:lead_wall",
+  "count": 1
+}

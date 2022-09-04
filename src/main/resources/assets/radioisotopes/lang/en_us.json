@@ -15,13 +15,25 @@
   "item.radioisotopes.uranium_hoe": "Uranium Hoe",
   "item.radioisotopes.uranium_shovel": "Uranium Shovel",
   "item.radioisotopes.heavy_water_bucket": "Heavy Water Bucket",
+  "item.radioisotopes.raw_lead": "Raw Lead",
+  "item.radioisotopes.lead_plate": "Lead Plate",
+  "item.radioisotopes.lead_ingot": "Lead Ingot",
+  "item.radioisotopes.lead_helmet": "Lead Helmet",
+  "item.radioisotopes.lead_chestplate": "Lead Chestplate",
+  "item.radioisotopes.lead_leggings": "Lead Leggings",
+  "item.radioisotopes.lead_boots": "Lead Boots",
+  "item.radioisotopes.raw_uranium": "Raw Uranium",
 
   "block.radioisotopes.uranium_ore": "Uranium Ore",
   "block.radioisotopes.deepslate_uranium_ore": "Deepslate Uranium Ore",
+  "block.radioisotopes.lead_ore": "Lead Ore",
+  "block.radioisotopes.lead_block": "Lead Block",
+  "block.radioisotopes.lead_wall": "Lead Wall",
+  "block.radioisotopes.deepslate_lead_ore": "Deepslate Lead Ore",
   "block.radioisotopes.uranium_block": "Uranium Block",
   "block.radioisotopes.uranium_glass": "Uranium Glass",
   "block.radioisotopes.deuterium_generator": "Deuterium Generator",
-  "block.radioisotopes.uranium_centrifuge": "Uranium Zentrifuge",
+  "block.radioisotopes.uranium_centrifuge": "Uranium Centrifuge",
 
   "itemGroup.radioisotopes.uranium": "Uranium Items"
 }

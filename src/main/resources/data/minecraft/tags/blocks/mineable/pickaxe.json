@@ -7,6 +7,10 @@
     "radioisotopes:deepslate_lead_ore",
     "radioisotopes:uranium_block",
     "radioisotopes:enriched_uranium_block",
-    "radioisotopes:uranium_glass"
+    "radioisotopes:uranium_glass",
+    "radioisotopes:lead_block",
+    "radioisotopes:lead_wall",
+    "radioisotopes:deuterium_generator",
+    "radioisotopes:uranium_centrifuge"
   ]
 }
