@@ -12,7 +12,7 @@ import net.minecraft.util.Rarity;
 import net.minecraft.util.math.intprovider.UniformIntProvider;
 import net.minecraft.util.registry.Registry;
 
-import net.volkov.radioisotopes.block.custom.DeuteriumGeneratorBlock;
+import net.volkov.radioisotopes.block.custom.ModDeuteriumGeneratorBlock;
 import net.volkov.radioisotopes.block.custom.ModUraniumCentrifugeBlock;
 import net.volkov.radioisotopes.block.custom.ModUraniumGlassBlock;
 import net.volkov.radioisotopes.item.ModItemGroup;
@@ -39,7 +39,7 @@ public class ModBlocks {
             }, ModItemGroup.URANIUM);
 
     public static final Block DEUTERIUM_GENERATOR = registerBlock("deuterium_generator",
-            new DeuteriumGeneratorBlock(FabricBlockSettings.of(Material.METAL).requiresTool().strength(4f).nonOpaque()), ModItemGroup.URANIUM);
+            new ModDeuteriumGeneratorBlock(FabricBlockSettings.of(Material.METAL).requiresTool().strength(4f).nonOpaque()), ModItemGroup.URANIUM);
 
     public static final Block URANIUM_CENTRIFUGE = registerBlock("uranium_centrifuge",
             new ModUraniumCentrifugeBlock(FabricBlockSettings.of(Material.METAL).requiresTool().strength(4f).nonOpaque()), ModItemGroup.URANIUM);
@@ -55,7 +55,7 @@ public class ModBlocks {
             new Block(FabricBlockSettings.of(Material.METAL).strength(4.5f).requiresTool()), ModItemGroup.URANIUM);
 
     public static final Block LEAD_WALL = registerBlock("lead_wall",
-            new WallBlock(FabricBlockSettings.of(Material.METAL).strength(7f).requiresTool()), ModItemGroup.URANIUM);
+            new WallBlock(FabricBlockSettings.of(Material.METAL).strength(4.5f).requiresTool()), ModItemGroup.URANIUM);
 
 
     private static Block registerBlockRarity(String name, Block block, ItemGroup group, Rarity rarity){

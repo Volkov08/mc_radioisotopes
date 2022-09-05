@@ -6,6 +6,7 @@
 
   "item.radioisotopes.uranium_ingot": "Uranbarren",
   "item.radioisotopes.uranium_nugget": "Urannugget",
+  "item.radioisotopes.raw_uranium": "Rohes Uran",
   "item.radioisotopes.nuclear_fuel_rod": "Nuklearer Brennstab",
 
   "item.radioisotopes.uranium_pickaxe": "Uranspitzhacke",
@@ -33,6 +34,8 @@
   "block.radioisotopes.uranium_glass": "Uranglass",
   "block.radioisotopes.deuterium_generator": "Deuterium Generator",
   "block.radioisotopes.uranium_centrifuge": "Uranzentrifuge",
+
+  "effect.radioisotopes.radiation_poisoning": "Strahlung",
 
   "itemGroup.radioisotopes.uranium": "Uran"
 }
