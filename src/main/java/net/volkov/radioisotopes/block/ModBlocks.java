@@ -14,7 +14,6 @@ import net.minecraft.util.registry.Registry;
 
 import net.volkov.radioisotopes.block.custom.ModDeuteriumGeneratorBlock;
 import net.volkov.radioisotopes.block.custom.ModUraniumCentrifugeBlock;
-import net.volkov.radioisotopes.block.custom.ModUraniumGlassBlock;
 import net.volkov.radioisotopes.item.ModItemGroup;
 
 
@@ -35,8 +34,13 @@ public class ModBlocks {
             new Block(FabricBlockSettings.of(Material.METAL).strength(8f).requiresTool().luminance(12)), ModItemGroup.URANIUM);
 
     public static final Block URANIUM_GLASS = registerBlock("uranium_glass",
-            new ModUraniumGlassBlock(FabricBlockSettings.of(Material.GLASS).strength(0.3f).luminance(6).nonOpaque().sounds(BlockSoundGroup.GLASS)) {
+            new GlassBlock(FabricBlockSettings.of(Material.GLASS).strength(0.3f).luminance(6).nonOpaque().sounds(BlockSoundGroup.GLASS)) {
             }, ModItemGroup.URANIUM);
+
+    public static final Block URANIUM_GLASS_PANE = registerBlock("uranium_glass_pane",
+            new PaneBlock(FabricBlockSettings.of(Material.GLASS).strength(0.3f).luminance(6).nonOpaque().sounds(BlockSoundGroup.GLASS)) {
+            }, ModItemGroup.URANIUM);
+
 
     public static final Block DEUTERIUM_GENERATOR = registerBlock("deuterium_generator",
             new ModDeuteriumGeneratorBlock(FabricBlockSettings.of(Material.METAL).requiresTool().strength(4f).nonOpaque()), ModItemGroup.URANIUM);
