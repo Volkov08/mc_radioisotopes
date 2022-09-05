@@ -17,21 +17,20 @@ public class ModConfiguredFeatures {
            OreFeatureConfig.createTarget(OreConfiguredFeatures.DEEPSLATE_ORE_REPLACEABLES,
                    ModBlocks.DEEPSLATE_URANIUM_ORE.getDefaultState()));
 
-
-   public static final RegistryEntry<ConfiguredFeature<OreFeatureConfig, ?>> URANIUM_ORE =
-           ConfiguredFeatures.register("uranium_ore", Feature.ORE,
-                   new OreFeatureConfig(OVERWORLD_URANIUM_ORES, 9));
-
-/*    public static final List<OreFeatureConfig.Target> OVERWORLD_LEAD_ORES = List.of(
+    public static final List<OreFeatureConfig.Target> OVERWORLD_LEAD_ORES = List.of(
             OreFeatureConfig.createTarget(OreConfiguredFeatures.STONE_ORE_REPLACEABLES,
                     ModBlocks.LEAD_ORE.getDefaultState()),
             OreFeatureConfig.createTarget(OreConfiguredFeatures.DEEPSLATE_ORE_REPLACEABLES,
                     ModBlocks.DEEPSLATE_LEAD_ORE.getDefaultState()));
 
-    public static final RegistryEntry<ConfiguredFeature<OreFeatureConfig, ?>> LEAD_ORE =
-            ConfiguredFeatures.register("lead_ore", Feature.ORE,
-                    new OreFeatureConfig(OVERWORLD_LEAD_ORES, 9));
-*/
+   public static final RegistryEntry<ConfiguredFeature<OreFeatureConfig, ?>> URANIUM_ORE =
+           ConfiguredFeatures.register("uranium_ore", Feature.ORE,
+                   new OreFeatureConfig(OVERWORLD_URANIUM_ORES, 9, 0.6f));
+
+   public static final RegistryEntry<ConfiguredFeature<OreFeatureConfig, ?>> LEAD_ORE =
+           ConfiguredFeatures.register("lead_ore", Feature.ORE,
+                   new OreFeatureConfig(OVERWORLD_LEAD_ORES, 12));
+
    public static void registerConfiguredFeatures() {
        System.out.println("Registriert ModConfiguredFeatures für " + ClientMain.MOD_ID);
    }

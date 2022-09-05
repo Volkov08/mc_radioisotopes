@@ -11,16 +11,19 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public class RadiationPoisoningEffect extends StatusEffect {
+    private float dose = 0.0f;
     public RadiationPoisoningEffect(StatusEffectCategory statusEffectCategory, int color){
         super(statusEffectCategory,color);
     }
+    //public static final Logger LOGGER = LoggerFactory.getLogger(ClientMain.MOD_ID);
     @Override
     public void applyUpdateEffect(LivingEntity pLivingEntity, int pAmplifier){
         if(!pLivingEntity.world.isClient){
-            pLivingEntity.damage(DamageSource.MAGIC,0.05f*(int)Math.pow(1+pAmplifier,2));
+            //LOGGER.info(Float.toString(dose));
+            pLivingEntity.damage(DamageSource.MAGIC,0.05f*dose);
             StatusEffectInstance nauseaEffect = pLivingEntity.getStatusEffect(StatusEffect.byRawId(9));
-            if (pAmplifier>0 && (nauseaEffect == null || nauseaEffect.getDuration()<=260)){
-                pLivingEntity.addStatusEffect(new StatusEffectInstance(StatusEffects.NAUSEA,400,pAmplifier-1));
+            if (dose>5 && (nauseaEffect == null || nauseaEffect.getDuration()<=260)){
+                pLivingEntity.addStatusEffect(new StatusEffectInstance(StatusEffects.NAUSEA,400,0));
             }
         }
         super.applyUpdateEffect(pLivingEntity, pAmplifier);
@@ -28,6 +31,7 @@ public class RadiationPoisoningEffect extends StatusEffect {
 
     @Override
     public boolean canApplyUpdateEffect(int pDuration, int pAmplifier){
-        return pDuration%30 == 0;
+        dose = (float)(Math.pow(2,(float)(pDuration)/6000));
+        return pDuration%20 == 0;
     }
 }
