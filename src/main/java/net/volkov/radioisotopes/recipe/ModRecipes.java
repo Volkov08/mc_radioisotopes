@@ -10,5 +10,10 @@ public class ModRecipes {
                 DeuteriumGeneratorRecipe.Serializer.INSTANCE);
         Registry.register(Registry.RECIPE_TYPE, new Identifier(ClientMain.MOD_ID, DeuteriumGeneratorRecipe.Type.ID),
                 DeuteriumGeneratorRecipe.Type.INSTANCE);
+
+        Registry.register(Registry.RECIPE_SERIALIZER, new Identifier(ClientMain.MOD_ID, UraniumCentrifugeRecipe.Serializer.ID),
+                UraniumCentrifugeRecipe.Serializer.INSTANCE);
+        Registry.register(Registry.RECIPE_TYPE, new Identifier(ClientMain.MOD_ID, UraniumCentrifugeRecipe.Type.ID),
+                UraniumCentrifugeRecipe.Type.INSTANCE);
     }
 }

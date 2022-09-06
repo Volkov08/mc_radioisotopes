@@ -17,12 +17,12 @@ import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.volkov.radioisotopes.item.inventory.ImplementedInventory;
-import net.volkov.radioisotopes.screen.DeuteriumGeneratorScreenHandler;
+import net.volkov.radioisotopes.screen.UraniumCentrifugeScreenHandler;
 import org.jetbrains.annotations.Nullable;
 
 public class UraniumCentrifugeBlockEntity extends BlockEntity implements NamedScreenHandlerFactory, ImplementedInventory {
     private final DefaultedList<ItemStack> inventory =
-            DefaultedList.ofSize(3, ItemStack.EMPTY);
+            DefaultedList.ofSize(4, ItemStack.EMPTY);
     protected final PropertyDelegate propertyDelegate;
     public UraniumCentrifugeBlockEntity(BlockPos pos, BlockState state) {
         super(ModBlockEntities.URANIUM_CENTRIFUGE, pos, state);
@@ -53,7 +53,7 @@ public class UraniumCentrifugeBlockEntity extends BlockEntity implements NamedSc
     @Nullable
     @Override
     public ScreenHandler createMenu(int syncId, PlayerInventory inv, PlayerEntity player) {
-        return new DeuteriumGeneratorScreenHandler(syncId, inv, this, this.propertyDelegate);
+        return new UraniumCentrifugeScreenHandler(syncId, inv, this, this.propertyDelegate);
     }
 
     @Override
@@ -72,7 +72,7 @@ public class UraniumCentrifugeBlockEntity extends BlockEntity implements NamedSc
     }
 
     private static boolean hasNotReachedStackLimit(UraniumCentrifugeBlockEntity entity) {
-        return entity.getStack(2).getCount() < entity.getStack(2).getMaxCount();
+        return entity.getStack(3).getCount() < entity.getStack(3).getMaxCount();
     }
 
 }
