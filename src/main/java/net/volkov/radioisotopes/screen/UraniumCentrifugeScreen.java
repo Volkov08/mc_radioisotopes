@@ -33,11 +33,29 @@ public class UraniumCentrifugeScreen extends HandledScreen<UraniumCentrifugeScre
         drawTexture(matrices, x, y, 0, 0, backgroundWidth, backgroundHeight);
 
         if(handler.isCrafting()) {
-            drawTexture(matrices, x + 66, y + 25, 177, 14, handler.getScaledProgress(), 47);
+            int progress = handler.getScaledProgress();
+            if (progress<=12){
+                drawTexture(matrices, x + 65, y + 24, 177, 62, progress, 4);
+            } else if (progress<=55) {
+                if (progress==55){
+                    drawTexture(matrices, x + 65, y + 24, 177, 14, 12, progress-8);
+                }
+                drawTexture(matrices, x + 65, y + 24, 177, 14, 12, progress-9);
+            } else {
+                drawTexture(matrices, x + 65, y + 24, 177, 14, 12, 47);
+                if (progress<=61){
+                    drawTexture(matrices, x + 77, y + 67, 189, 57, progress-55, 4);
+                } else if (progress<=87){
+                    drawTexture(matrices, x + 77, y + 67-(progress-61), 189, 57-(progress-61), 6, 4+progress-61);
+                } else if (progress<=106){
+                    drawTexture(matrices, x + 77, y + 35, 189, 25, 6+progress-87, 36);
+                }
+            }
+            //drawTexture(matrices, x + 65, y + 24, 177, 14, progress, 47);
         }
 
         if(handler.hasFuel()) {
-            drawTexture(matrices, x + 35, y + 37 + 14 - handler.getScaledFuelProgress(), 176,
+            drawTexture(matrices, x + 34, y + 36 + 14 - handler.getScaledFuelProgress(), 176,
                     14 - handler.getScaledFuelProgress(), 14, handler.getScaledFuelProgress());
         }
     }

@@ -29,10 +29,10 @@ public class UraniumCentrifugeScreenHandler extends ScreenHandler {
         inventory.onOpen(playerInventory.player);
         this.propertyDelegate = delegate;
 
-        this.addSlot(new ModFuelSlot(inventory, 0, 33, 53));
+        this.addSlot(new ModBRFuelSlot(inventory, 0, 33, 53));
         this.addSlot(new Slot(inventory, 1, 21, 17));
         this.addSlot(new Slot(inventory, 2, 45, 17));
-        this.addSlot(new ModResultSlot(inventory, 3, 107, 35));
+        this.addSlot(new ModResultSlot(inventory, 3, 115, 34));
 
         addPlayerInventory(playerInventory);
         addPlayerHotbar(playerInventory);
@@ -51,7 +51,7 @@ public class UraniumCentrifugeScreenHandler extends ScreenHandler {
     public int getScaledProgress() {
         int progress = this.propertyDelegate.get(0);
         int maxProgress = this.propertyDelegate.get(1);  // Max Progress
-        int progressArrowSize = 37; // This is the width in pixels of your arrow
+        int progressArrowSize = 106; // This is the width in pixels of your arrow
 
         return maxProgress != 0 && progress != 0 ? progress * progressArrowSize / maxProgress : 0;
     }
