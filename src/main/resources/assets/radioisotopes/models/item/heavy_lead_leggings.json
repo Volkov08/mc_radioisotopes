@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "radioisotopes:item/heavy_lead_leggings"
+  }
+}

@@ -75,6 +75,22 @@ public class ModItems {
             new ArmorItem(ModArmorMaterials.LEAD, EquipmentSlot.FEET,
                     new FabricItemSettings().group(ModItemGroup.URANIUM)));
 
+    public static final Item HEAVY_LEAD_PLATE = registerItem("heavy_lead_plate",
+            new Item(new FabricItemSettings().group(ModItemGroup.URANIUM)));
+
+    public static final Item HEAVY_LEAD_HELMET = registerItem("heavy_lead_helmet",
+            new ArmorItem(ModArmorMaterials.LEAD, EquipmentSlot.HEAD,
+                    new FabricItemSettings().group(ModItemGroup.URANIUM)));
+    public static final Item HEAVY_LEAD_CHESTPLATE = registerItem("heavy_lead_chestplate",
+            new ArmorItem(ModArmorMaterials.LEAD, EquipmentSlot.CHEST,
+                    new FabricItemSettings().group(ModItemGroup.URANIUM)));
+    public static final Item HEAVY_LEAD_LEGGINGS = registerItem("heavy_lead_leggings",
+            new ArmorItem(ModArmorMaterials.LEAD, EquipmentSlot.LEGS,
+                    new FabricItemSettings().group(ModItemGroup.URANIUM)));
+    public static final Item HEAVY_LEAD_BOOTS = registerItem("heavy_lead_boots",
+            new ArmorItem(ModArmorMaterials.HEAVY_LEAD, EquipmentSlot.FEET,
+                    new FabricItemSettings().group(ModItemGroup.URANIUM)));
+
 
 
     private static Item registerItem(String name, Item item) {
