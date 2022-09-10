@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "#": {
+      "item": "radioisotopes:lead_ingot"
+    },
+    "H": {
+      "item": "radioisotopes:heavy_lead_plate"
+    }
+  },
+  "pattern": [
+    "H#H",
+    "H H"
+  ],
+  "result": {
+    "item": "radioisotopes:heavy_lead_helmet"
+  }
+}

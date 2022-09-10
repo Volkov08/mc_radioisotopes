@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "PPP",
+    "###",
+    "PPP"
+  ],
+  "key": {
+    "#": {
+      "item": "radioisotopes:lead_ingot"
+    },
+
+    "P": {
+      "item": "radioisotopes:lead_plate"
+    }
+
+  },
+  "result": {
+    "item": "radioisotopes:heavy_lead_plate",
+    "count": 2
+  }
+}

@@ -13,8 +13,11 @@ import net.volkov.radioisotopes.item.ModItems;
 import java.util.function.Supplier;
 
 public enum ModArmorMaterials implements ArmorMaterial {
-    LEAD("lead", 10, new int[]{1, 4, 5, 2}, 6, SoundEvents.ITEM_ARMOR_EQUIP_IRON, 0.0F, 0.0F, () -> {
+    LEAD("lead", 10, new int[]{1, 3, 4, 2}, 8, SoundEvents.ITEM_ARMOR_EQUIP_IRON, 0.0F, 0.0F, () -> {
         return Ingredient.ofItems(ModItems.LEAD_PLATE);
+    }),
+    HEAVY_LEAD("heavy_lead", 15, new int[]{2, 5, 6, 2}, 5, SoundEvents.ITEM_ARMOR_EQUIP_IRON, 0.0F, 0.05F, () -> {
+        return Ingredient.ofItems(ModItems.HEAVY_LEAD_PLATE);
     });
 
     private static final int[] BASE_DURABILITY = new int[]{13, 15, 16, 11};
