@@ -35,7 +35,8 @@
   "block.radioisotopes.lead_wall": "Bleimauer",
   "block.radioisotopes.deepslate_lead_ore": "Tiefenschiefer-Bleierz",
   "block.radioisotopes.uranium_block": "Uranblock",
-  "block.radioisotopes.uranium_glass": "Uranglass",
+  "block.radioisotopes.uranium_glass": "Uranglas",
+  "block.radioisotopes.uranium_glass_pane": "Uranglasscheibe",
   "block.radioisotopes.deuterium_generator": "Deuterium Generator",
   "block.radioisotopes.uranium_centrifuge": "Uranzentrifuge",
 
