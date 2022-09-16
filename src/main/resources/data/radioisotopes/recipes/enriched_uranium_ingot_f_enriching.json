@@ -1,0 +1,13 @@
+{
+  "type": "radioisotopes:uranium_centrifuge",
+  "ingredients": [
+    {
+      "item": "radioisotopes:heavy_water_bucket"
+    },{
+      "item": "radioisotopes:uranium_block"
+    }
+  ],
+  "output": {
+    "item": "radioisotopes:enriched_uranium_ingot"
+  }
+}

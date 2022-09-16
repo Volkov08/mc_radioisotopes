@@ -11,24 +11,25 @@ import net.minecraft.util.JsonHelper;
 import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.world.World;
 
-public class DeuteriumGeneratorRecipe implements Recipe<SimpleInventory> {
+public class UraniumCentrifugeRecipe implements Recipe<SimpleInventory> {
     private final Identifier id;
     private final ItemStack output;
     private final DefaultedList<Ingredient> recipeItems;
 
-    public DeuteriumGeneratorRecipe(Identifier id, ItemStack output, DefaultedList<Ingredient> recipeItems) {
+    public UraniumCentrifugeRecipe(Identifier id, ItemStack output, DefaultedList<Ingredient> recipeItems) {
         this.id = id;
         this.output = output;
         this.recipeItems = recipeItems;
     }
 
+
     @Override
     public boolean matches(SimpleInventory inventory, World world) {
-            if(world.isClient()) { return false; }
-            if(recipeItems.get(0).test(inventory.getStack(1))) {
-                return true;
-            }
-            return false;
+        if(world.isClient()) { return false; }
+        if(recipeItems.get(0).test(inventory.getStack(1))) {
+            return recipeItems.get(1).test(inventory.getStack(2));
+        }
+        return false;
     }
 
     @Override
@@ -38,7 +39,7 @@ public class DeuteriumGeneratorRecipe implements Recipe<SimpleInventory> {
 
     @Override
     public boolean fits(int width, int height) {
-        return true;
+        return false;
     }
 
     @Override
@@ -61,33 +62,33 @@ public class DeuteriumGeneratorRecipe implements Recipe<SimpleInventory> {
         return Type.INSTANCE;
     }
 
-    public static class Type implements RecipeType<DeuteriumGeneratorRecipe> {
+    public static class Type implements RecipeType<UraniumCentrifugeRecipe> {
         private Type() { }
-        public static final Type INSTANCE = new Type();
-        public static final String ID = "deuterium_generator";
+        public static final UraniumCentrifugeRecipe.Type INSTANCE = new UraniumCentrifugeRecipe.Type();
+        public static final String ID = "uranium_centrifuge";
     }
 
-    public static class Serializer implements RecipeSerializer<DeuteriumGeneratorRecipe> {
-        public static final Serializer INSTANCE = new Serializer();
-        public static final String ID = "deuterium_generator";
+    public static class Serializer implements RecipeSerializer<UraniumCentrifugeRecipe> {
+        public static final UraniumCentrifugeRecipe.Serializer INSTANCE = new UraniumCentrifugeRecipe.Serializer();
+        public static final String ID = "uranium_centrifuge";
         // this is the name given in the json file
 
         @Override
-        public DeuteriumGeneratorRecipe read(Identifier id, JsonObject json) {
+        public UraniumCentrifugeRecipe read(Identifier id, JsonObject json) {
             ItemStack output = ShapedRecipe.outputFromJson(JsonHelper.getObject(json, "output"));
 
             JsonArray ingredients = JsonHelper.getArray(json, "ingredients");
-            DefaultedList<Ingredient> inputs = DefaultedList.ofSize(1, Ingredient.EMPTY);
+            DefaultedList<Ingredient> inputs = DefaultedList.ofSize(2, Ingredient.EMPTY);
 
             for (int i = 0; i < inputs.size(); i++) {
                 inputs.set(i, Ingredient.fromJson(ingredients.get(i)));
             }
 
-            return new DeuteriumGeneratorRecipe(id, output, inputs);
+            return new UraniumCentrifugeRecipe(id, output, inputs);
         }
 
         @Override
-        public DeuteriumGeneratorRecipe read(Identifier id, PacketByteBuf buf) {
+        public UraniumCentrifugeRecipe read(Identifier id, PacketByteBuf buf) {
             DefaultedList<Ingredient> inputs = DefaultedList.ofSize(buf.readInt(), Ingredient.EMPTY);
 
             for (int i = 0; i < inputs.size(); i++) {
@@ -95,11 +96,11 @@ public class DeuteriumGeneratorRecipe implements Recipe<SimpleInventory> {
             }
 
             ItemStack output = buf.readItemStack();
-            return new DeuteriumGeneratorRecipe(id, output, inputs);
+            return new UraniumCentrifugeRecipe(id, output, inputs);
         }
 
         @Override
-        public void write(PacketByteBuf buf, DeuteriumGeneratorRecipe recipe) {
+        public void write(PacketByteBuf buf, UraniumCentrifugeRecipe recipe) {
             buf.writeInt(recipe.getIngredients().size());
             for (Ingredient ing : recipe.getIngredients()) {
                 ing.write(buf);

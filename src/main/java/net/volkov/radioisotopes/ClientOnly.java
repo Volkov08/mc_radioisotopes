@@ -7,6 +7,7 @@ import net.minecraft.client.render.RenderLayer;
 import net.volkov.radioisotopes.block.ModBlocks;
 import net.volkov.radioisotopes.screen.DeuteriumGeneratorScreen;
 import net.volkov.radioisotopes.screen.ModScreenHandlers;
+import net.volkov.radioisotopes.screen.UraniumCentrifugeScreen;
 
 public class ClientOnly implements ClientModInitializer {
     @Override
@@ -18,5 +19,6 @@ public class ClientOnly implements ClientModInitializer {
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.DEUTERIUM_GENERATOR, RenderLayer.getCutout());
 
         ScreenRegistry.register(ModScreenHandlers.DEUTERIUM_GENERATOR_SCREEN_HANDLER, DeuteriumGeneratorScreen::new);
+        ScreenRegistry.register(ModScreenHandlers.URANIUM_CENTRIFUGE_SCREEN_HANDLER, UraniumCentrifugeScreen::new);
     }
 }

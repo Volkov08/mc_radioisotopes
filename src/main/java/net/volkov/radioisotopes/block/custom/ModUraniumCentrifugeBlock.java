@@ -108,6 +108,9 @@ public class ModUraniumCentrifugeBlock extends ModTallBlock implements BlockEnti
     @Nullable
     @Override
     public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
+        if (state.get(HALF) == DoubleBlockHalf.UPPER){
+            return null;
+        }
         return checkType(type, ModBlockEntities.URANIUM_CENTRIFUGE, UraniumCentrifugeBlockEntity::tick);
     }
 }
