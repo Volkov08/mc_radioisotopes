@@ -4,7 +4,6 @@ import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.item.ArmorItem;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemGroup;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import net.volkov.radioisotopes.ClientMain;
@@ -79,13 +78,13 @@ public class ModItems {
             new Item(new FabricItemSettings().group(ModItemGroup.URANIUM)));
 
     public static final Item HEAVY_LEAD_HELMET = registerItem("heavy_lead_helmet",
-            new ArmorItem(ModArmorMaterials.LEAD, EquipmentSlot.HEAD,
+            new ModArmorItem(ModArmorMaterials.HEAVY_LEAD, EquipmentSlot.HEAD,
                     new FabricItemSettings().group(ModItemGroup.URANIUM)));
     public static final Item HEAVY_LEAD_CHESTPLATE = registerItem("heavy_lead_chestplate",
-            new ArmorItem(ModArmorMaterials.LEAD, EquipmentSlot.CHEST,
+            new ArmorItem(ModArmorMaterials.HEAVY_LEAD, EquipmentSlot.CHEST,
                     new FabricItemSettings().group(ModItemGroup.URANIUM)));
     public static final Item HEAVY_LEAD_LEGGINGS = registerItem("heavy_lead_leggings",
-            new ArmorItem(ModArmorMaterials.LEAD, EquipmentSlot.LEGS,
+            new ArmorItem(ModArmorMaterials.HEAVY_LEAD, EquipmentSlot.LEGS,
                     new FabricItemSettings().group(ModItemGroup.URANIUM)));
     public static final Item HEAVY_LEAD_BOOTS = registerItem("heavy_lead_boots",
             new ArmorItem(ModArmorMaterials.HEAVY_LEAD, EquipmentSlot.FEET,

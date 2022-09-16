@@ -1,4 +1,4 @@
-package net.volkov.radioisotopes.item.custom;
+package net.volkov.radioisotopes.item;
 
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.item.ArmorMaterial;

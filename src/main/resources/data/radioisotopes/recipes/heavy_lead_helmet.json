@@ -6,6 +6,9 @@
     },
     "H": {
       "item": "radioisotopes:heavy_lead_plate"
+    },
+    "G": {
+      "item": "minecraft:glass"
     }
   },
   "pattern": [

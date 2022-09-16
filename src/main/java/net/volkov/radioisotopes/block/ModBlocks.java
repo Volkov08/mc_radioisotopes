@@ -61,6 +61,9 @@ public class ModBlocks {
     public static final Block LEAD_WALL = registerBlock("lead_wall",
             new WallBlock(FabricBlockSettings.of(Material.METAL).strength(4.5f).requiresTool()), ModItemGroup.URANIUM);
 
+    public static final Block TENEBRIUM_ORE = registerBlock("tenebrium_ore",
+            new Block(FabricBlockSettings.of(Material.STONE).strength(12.0f).requiresTool()), ModItemGroup.URANIUM);
+
 
     private static Block registerBlockRarity(String name, Block block, ItemGroup group, Rarity rarity){
         registerBlockItemRarity(name, block, group, rarity);
