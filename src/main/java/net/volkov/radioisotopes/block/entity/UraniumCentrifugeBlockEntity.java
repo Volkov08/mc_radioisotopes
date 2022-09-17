@@ -16,7 +16,10 @@ import net.minecraft.text.LiteralText;
 import net.minecraft.text.Text;
 import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.Direction;
 import net.minecraft.world.World;
+import net.volkov.radioisotopes.block.custom.ModDeuteriumGeneratorBlock;
+import net.volkov.radioisotopes.block.custom.ModUraniumCentrifugeBlock;
 import net.volkov.radioisotopes.item.inventory.ImplementedInventory;
 import net.volkov.radioisotopes.recipe.UraniumCentrifugeRecipe;
 import net.volkov.radioisotopes.screen.UraniumCentrifugeScreenHandler;
@@ -97,6 +100,68 @@ public class UraniumCentrifugeBlockEntity extends BlockEntity implements NamedSc
         fuelTime = nbt.getInt("centrifuge.fuelTime");
         maxFuelTime = nbt.getInt("centrifuge.maxFuelTime");
     }
+
+    @Override
+    public boolean canInsert(int slot, ItemStack stack, @Nullable Direction side) {
+        Direction localDir = this.getWorld().getBlockState(this.pos).get(ModUraniumCentrifugeBlock.FACING);
+
+        if(side == Direction.UP || side == Direction.DOWN) {
+            return false;
+        }
+
+        // Top insert 1
+        // Right insert 2
+        // Left insert 0 (fuel)
+
+        return switch (localDir) {
+            default ->
+                    side.getOpposite() == Direction.NORTH && slot == 1 ||
+                            side.getOpposite() == Direction.EAST && slot == 2 ||
+                            side.getOpposite() == Direction.WEST && slot == 0;
+            case EAST ->
+                    side.rotateYClockwise() == Direction.NORTH && slot == 1 ||
+                            side.rotateYClockwise() == Direction.EAST && slot == 2 ||
+                            side.rotateYClockwise() == Direction.WEST && slot == 0;
+            case SOUTH ->
+                    side == Direction.NORTH && slot == 1 ||
+                            side == Direction.EAST && slot == 2 ||
+                            side == Direction.WEST && slot == 0;
+            case WEST ->
+                    side.rotateYCounterclockwise() == Direction.NORTH && slot == 1 ||
+                            side.rotateYCounterclockwise() == Direction.EAST && slot == 2 ||
+                            side.rotateYCounterclockwise() == Direction.WEST && slot == 0;
+        };
+    }
+
+    @Override
+    public boolean canExtract(int slot, ItemStack stack, Direction side) {
+        Direction localDir = this.getWorld().getBlockState(this.pos).get(ModUraniumCentrifugeBlock.FACING);
+
+        if(side == Direction.UP) {
+            return false;
+        }
+
+        // Down extract 2
+        if(side == Direction.DOWN) {
+            return slot == 3;
+        }
+
+        // bottom extract 2
+        // right extract 2
+        return switch (localDir) {
+            default -> side.getOpposite() == Direction.SOUTH && slot == 3 ||
+                    side.getOpposite() == Direction.EAST && slot == 3;
+            case EAST -> side.rotateYClockwise() == Direction.SOUTH && slot == 3 ||
+                    side.rotateYClockwise() == Direction.EAST && slot == 3;
+            case SOUTH -> side == Direction.SOUTH && slot == 3 ||
+                    side == Direction.EAST && slot == 3;
+            case WEST -> side.rotateYCounterclockwise() == Direction.SOUTH && slot == 3 ||
+                    side.rotateYCounterclockwise() == Direction.EAST && slot == 3;
+        };
+    }
+
+    //End sided inv
+
 
     private void consumeFuel() {
         if(!getStack(0).isEmpty()) {
