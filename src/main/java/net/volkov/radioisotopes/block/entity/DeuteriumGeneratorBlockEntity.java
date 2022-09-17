@@ -187,27 +187,27 @@ public class DeuteriumGeneratorBlockEntity extends BlockEntity implements NamedS
             return false;
         }
 
-        // Top insert 1 (water_bucket)
+        // Top insert 0 (fuel)
         // Right insert 1
-        // Left insert 0 (fuel)
+        // Left insert 1
 
         return switch (localDir) {
             default ->
-                    side.getOpposite() == Direction.NORTH && slot == 1 ||
+                    side.getOpposite() == Direction.NORTH && slot == 0 ||
                             side.getOpposite() == Direction.EAST && slot == 1 ||
-                            side.getOpposite() == Direction.WEST && slot == 0;
+                            side.getOpposite() == Direction.WEST && slot == 1;
             case EAST ->
-                    side.rotateYClockwise() == Direction.NORTH && slot == 1 ||
+                    side.rotateYClockwise() == Direction.NORTH && slot == 0 ||
                             side.rotateYClockwise() == Direction.EAST && slot == 1 ||
-                            side.rotateYClockwise() == Direction.WEST && slot == 0;
+                            side.rotateYClockwise() == Direction.WEST && slot == 1;
             case SOUTH ->
-                    side == Direction.NORTH && slot == 1 ||
+                    side == Direction.NORTH && slot == 0 ||
                             side == Direction.EAST && slot == 1 ||
-                            side == Direction.WEST && slot == 0;
+                            side == Direction.WEST && slot == 1;
             case WEST ->
-                    side.rotateYCounterclockwise() == Direction.NORTH && slot == 1 ||
+                    side.rotateYCounterclockwise() == Direction.NORTH && slot == 0 ||
                             side.rotateYCounterclockwise() == Direction.EAST && slot == 1 ||
-                            side.rotateYCounterclockwise() == Direction.WEST && slot == 0;
+                            side.rotateYCounterclockwise() == Direction.WEST && slot == 1;
         };
     }
 
