@@ -32,7 +32,7 @@ public class UraniumCentrifugeScreenHandler extends ScreenHandler {
         this.addSlot(new ModBRFuelSlot(inventory, 0, 33, 53));
         this.addSlot(new Slot(inventory, 1, 21, 17));
         this.addSlot(new Slot(inventory, 2, 45, 17));
-        this.addSlot(new ModResultSlot(inventory, 3, 115, 34));
+        this.addSlot(new ModResultSlot(inventory, 3, 116, 35));
 
         addPlayerInventory(playerInventory);
         addPlayerHotbar(playerInventory);
