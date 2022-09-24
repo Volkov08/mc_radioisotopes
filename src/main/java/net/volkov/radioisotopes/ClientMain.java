@@ -8,6 +8,7 @@ import net.volkov.radioisotopes.item.ModItems;
 import net.volkov.radioisotopes.recipe.ModRecipes;
 import net.volkov.radioisotopes.screen.ModScreenHandlers;
 import net.volkov.radioisotopes.util.ModRegistries;
+import net.volkov.radioisotopes.villager.ModVillagers;
 import net.volkov.radioisotopes.world.gen.ModWorldGen;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -34,5 +35,7 @@ public class ClientMain implements ModInitializer {
 		ModRecipes.registerRecipes();
 
 		ModScreenHandlers.registerAllScreenHandler();
+
+		ModVillagers.setupPOIs();
 	}
 }

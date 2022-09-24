@@ -38,5 +38,7 @@
 
   "effect.radioisotopes.radiation_poisoning": "Radiation",
 
-  "itemGroup.radioisotopes.uranium": "Uranium Items"
+  "itemGroup.radioisotopes.uranium": "Uranium Items",
+
+  "entity.minecraft.villager.physicist": "Physicist"
 }
