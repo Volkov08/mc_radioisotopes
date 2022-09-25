@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "#": {
+      "item": "minecraft:iron_ingot"
+    },
+    "T": {
+      "item": "minecraft:tnt"
+    },
+    "U": {
+      "item": "radioisotopes:uranium_ingot"
+    }
+  },
+  "pattern": [
+    "TU#",
+    "U U",
+    "#UT"
+  ],
+  "result": {
+    "item": "radioisotopes:uranium_pusher"
+  }
+}

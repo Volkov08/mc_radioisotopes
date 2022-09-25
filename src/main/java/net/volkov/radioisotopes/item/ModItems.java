@@ -90,6 +90,18 @@ public class ModItems {
             new ArmorItem(ModArmorMaterials.HEAVY_LEAD, EquipmentSlot.FEET,
                     new FabricItemSettings().group(ModItemGroup.URANIUM)));
 
+    public static final Item URANIUM_PUSHER = registerItem("uranium_pusher",
+            new Item(new FabricItemSettings().group(ModItemGroup.URANIUM)));
+
+    public static final Item TIMED_FUSE = registerItem("timed_fuse",
+            new Item(new FabricItemSettings().group(ModItemGroup.URANIUM)));
+    public static final Item CONTACT_FUSE = registerItem("contact_fuse",
+            new Item(new FabricItemSettings().group(ModItemGroup.URANIUM)));
+    public static final Item CASING_ALLOY = registerItem("casing_alloy",
+            new Item(new FabricItemSettings().group(ModItemGroup.URANIUM)));
+    public static final Item FUSION_BOMB_CASING = registerItem("fusion_bomb_casing",
+            new Item(new FabricItemSettings().group(ModItemGroup.URANIUM)));
+
 
 
     private static Item registerItem(String name, Item item) {

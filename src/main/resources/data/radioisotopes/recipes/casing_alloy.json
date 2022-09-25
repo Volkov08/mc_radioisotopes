@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "S": {
+      "item": "minecraft:iron_ingot"
+    },
+    "U": {
+      "item": "radioisotopes:lead_ingot"
+    },
+    "K": {
+      "item": "minecraft:copper_ingot"
+    },
+    "E": {
+      "item": "minecraft:netherite_scrap"
+    }
+  },
+  "pattern": [
+    "SUS",
+    "KEK",
+    "SUS"
+  ],
+  "result": {
+    "item": "radioisotopes:casing_alloy",
+    "count": 6
+  }
+}

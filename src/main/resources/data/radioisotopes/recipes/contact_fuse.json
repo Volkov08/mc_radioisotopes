@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "#": {
+      "item": "minecraft:iron_ingot"
+    },
+    "T": {
+      "item": "minecraft:tnt"
+    },
+    "R": {
+      "item": "minecraft:redstone"
+    },
+    "_": {
+      "item": "minecraft:light_weighted_pressure_plate"
+    }
+  },
+  "pattern": [
+    "#T#",
+    "_R_",
+    "#T#"
+  ],
+  "result": {
+    "item": "radioisotopes:contact_fuse"
+  }
+}
