@@ -90,6 +90,9 @@ public class ModItems {
             new ArmorItem(ModArmorMaterials.HEAVY_LEAD, EquipmentSlot.FEET,
                     new FabricItemSettings().group(ModItemGroup.URANIUM)));
 
+    public static final Item RAW_LITHIUM = registerItem("raw_lithium",
+            new Item(new FabricItemSettings().group(ModItemGroup.URANIUM)));
+
     public static final Item URANIUM_PUSHER = registerItem("uranium_pusher",
             new Item(new FabricItemSettings().group(ModItemGroup.URANIUM)));
 
