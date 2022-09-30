@@ -13,4 +13,8 @@ public class ModPlacedFeatures {
     public static final RegistryEntry<PlacedFeature> LEAD_ORE_PLACED = PlacedFeatures.register("lead_ore_placed",
             ModConfiguredFeatures.LEAD_ORE, ModOreFeatures.modifiersWithCount(7,
                     HeightRangePlacementModifier.trapezoid(YOffset.fixed(8), YOffset.fixed(85))));
+
+    public static final RegistryEntry<PlacedFeature> LITHIUM_ORE_PLACED = PlacedFeatures.register("lithium_ore_placed",
+            ModConfiguredFeatures.LITHIUM_ORE, ModOreFeatures.modifiersWithCount(6,
+                    HeightRangePlacementModifier.trapezoid(YOffset.fixed(55), YOffset.fixed(90))));
 }

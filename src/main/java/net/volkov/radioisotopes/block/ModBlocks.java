@@ -64,6 +64,10 @@ public class ModBlocks {
     public static final Block TENEBRIUM_ORE = registerBlock("tenebrium_ore",
             new Block(FabricBlockSettings.of(Material.STONE).strength(12.0f).requiresTool()), ModItemGroup.URANIUM);
 
+    public static final Block LITHIUM_ORE = registerBlock("lithium_ore",
+            new OreBlock(FabricBlockSettings.of(Material.STONE).strength(4.0f).requiresTool(),
+                    UniformIntProvider.create(2, 6)), ModItemGroup.URANIUM);
+
 
     private static Block registerBlockRarity(String name, Block block, ItemGroup group, Rarity rarity){
         registerBlockItemRarity(name, block, group, rarity);
