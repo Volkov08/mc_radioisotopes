@@ -21,11 +21,11 @@ public class ModBlocks {
 
     public static final Block URANIUM_ORE = registerBlock("uranium_ore",
             new OreBlock(FabricBlockSettings.of(Material.STONE).strength(4.0f).requiresTool().luminance(3),
-                    UniformIntProvider.create(2, 6)), ModItemGroup.URANIUM);
+                    UniformIntProvider.create(3, 8)), ModItemGroup.URANIUM);
 
     public static final Block DEEPSLATE_URANIUM_ORE = registerBlock("deepslate_uranium_ore",
             new OreBlock(FabricBlockSettings.of(Material.STONE).strength(4.5f).requiresTool().luminance(3),
-                    UniformIntProvider.create(2, 6)), ModItemGroup.URANIUM);
+                    UniformIntProvider.create(3, 8)), ModItemGroup.URANIUM);
 
     public static final Block URANIUM_BLOCK = registerBlock("uranium_block",
             new Block(FabricBlockSettings.of(Material.METAL).strength(6f).requiresTool().luminance(8)), ModItemGroup.URANIUM);
