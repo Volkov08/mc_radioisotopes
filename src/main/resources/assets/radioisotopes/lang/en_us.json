@@ -22,8 +22,14 @@
   "item.radioisotopes.lead_chestplate": "Lead Chestplate",
   "item.radioisotopes.lead_leggings": "Lead Leggings",
   "item.radioisotopes.lead_boots": "Lead Boots",
+  "item.radioisotopes.heavy_lead_helmet": "Heavy Lead Helmet",
+  "item.radioisotopes.heavy_lead_chestplate": "Heavy Lead Chestplate",
+  "item.radioisotopes.heavy_lead_leggings": "Heavy Lead Leggings",
+  "item.radioisotopes.heavy_lead_boots": "Heavy Lead Boots",
   "item.radioisotopes.raw_uranium": "Raw Uranium",
+
   "item.radioisotopes.raw_lithium": "Raw Lithium",
+  "item.radioisotopes.lithium_ingot": "Lithium Ingot",
 
   "block.radioisotopes.uranium_ore": "Uranium Ore",
   "block.radioisotopes.deepslate_uranium_ore": "Deepslate Uranium Ore",

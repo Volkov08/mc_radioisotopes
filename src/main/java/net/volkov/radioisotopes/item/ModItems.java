@@ -93,6 +93,9 @@ public class ModItems {
     public static final Item RAW_LITHIUM = registerItem("raw_lithium",
             new Item(new FabricItemSettings().group(ModItemGroup.URANIUM)));
 
+    public static final Item LITHIUM_INGOT = registerItem("lithium_ingot",
+            new Item(new FabricItemSettings().group(ModItemGroup.URANIUM)));
+
     public static final Item URANIUM_PUSHER = registerItem("uranium_pusher",
             new Item(new FabricItemSettings().group(ModItemGroup.URANIUM)));
 
