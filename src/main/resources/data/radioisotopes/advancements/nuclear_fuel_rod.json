@@ -3,11 +3,16 @@
     "icon": {
       "item": "radioisotopes:nuclear_fuel_rod"
     },
-    "title": "Nuclear Fuel",
-    "description": "Obtain a Glowstick on Steroids",
+    "title": {
+      "translate": "advancements.radioisotopes.nuclear_fuel.title"
+    },
+    "description": {
+      "translate": "advancements.radioisotopes.nuclear_fuel.description"
+    },
     "frame": "task",
     "show_toast": true,
-    "announce_to_chat": true
+    "announce_to_chat": true,
+    "hidden": false
   },
   "parent": "radioisotopes:radioisotopes",
   "criteria": {

@@ -27,6 +27,11 @@
   "item.radioisotopes.heavy_lead_leggings": "Schwerer Bleibeinschutz",
   "item.radioisotopes.heavy_lead_boots": "Schwere Bleistiefel",
   "item.radioisotopes.raw_uranium": "Rohes Uran",
+  "item.radioisotopes.casing_alloy": "Gehäuselegierung",
+  "item.radioisotopes.contact_fuze": "Aufschlagszünder",
+  "item.radioisotopes.timed_fuze": "Zeitzünder",
+  "item.radioisotopes.fusion_bomb_casing": "Fusionsbombengehäuse",
+  "item.radioisotopes.uranium_pusher": "Uranpusher",
 
   "item.radioisotopes.raw_lithium": "Rohes Lithium",
   "item.radioisotopes.lithium_ingot": "Lithiumbarren",
@@ -38,15 +43,23 @@
   "block.radioisotopes.lead_block": "Bleiblock",
   "block.radioisotopes.lead_wall": "Bleimauer",
   "block.radioisotopes.deepslate_lead_ore": "Tiefenschiefer-Bleierz",
+  "block.radioisotopes.end_stone_tenebrium_ore": "Tenebriumerz",
   "block.radioisotopes.uranium_block": "Uranblock",
   "block.radioisotopes.uranium_glass": "Uranglas",
   "block.radioisotopes.uranium_glass_pane": "Uranglasscheibe",
   "block.radioisotopes.deuterium_generator": "Deuterium Generator",
   "block.radioisotopes.uranium_centrifuge": "Uranzentrifuge",
 
+
   "effect.radioisotopes.radiation_poisoning": "Strahlung",
 
   "itemGroup.radioisotopes.uranium": "Uran",
 
-  "entity.minecraft.villager.physicist": "Physiker"
+  "entity.minecraft.villager.physicist": "Physiker",
+  "advancements.radioisotopes.heavy_lead_armor.title": "Sicherheit zuerst!",
+  "advancements.radioisotopes.heavy_lead_armor.description": "Besitze eine volle, schwere Bleirüstung, um dich vor Strahlung zu schützen",
+  "advancements.radioisotopes.nuclear_fuel.title": "Nuklearer Brennstoff",
+  "advancements.radioisotopes.nuclear_fuel.description": "Erhalte einen Brennstab",
+  "advancements.radioisotopes.uranium.title": "Uran!",
+  "advancements.radioisotopes.uranium.description": "Erhalte ein Stück dieses ... außergewöhnlichen Minerals"
 }

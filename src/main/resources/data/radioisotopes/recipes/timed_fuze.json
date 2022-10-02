@@ -7,19 +7,22 @@
     "T": {
       "item": "minecraft:tnt"
     },
-    "R": {
+    "U": {
+      "item": "minecraft:clock"
+    },
+    "M": {
       "item": "minecraft:redstone"
     },
-    "_": {
-      "item": "minecraft:light_weighted_pressure_plate"
+    "C": {
+      "item": "minecraft:redstone_torch"
     }
   },
   "pattern": [
     "#T#",
-    "_R_",
+    "CUM",
     "#T#"
   ],
   "result": {
-    "item": "radioisotopes:contact_fuse"
+    "item": "radioisotopes:timed_fuze"
   }
 }

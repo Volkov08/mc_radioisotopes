@@ -27,6 +27,12 @@
   "item.radioisotopes.heavy_lead_leggings": "Heavy Lead Leggings",
   "item.radioisotopes.heavy_lead_boots": "Heavy Lead Boots",
   "item.radioisotopes.raw_uranium": "Raw Uranium",
+  "item.radioisotopes.casing_alloy": "Casing Alloy",
+  "item.radioisotopes.contact_fuze": "Contact Fuze",
+  "item.radioisotopes.timed_fuze": "Timed Fuze",
+  "item.radioisotopes.fusion_bomb_casing": "Fusion Bomb Casing",
+  "item.radioisotopes.uranium_pusher": "Uranium Pusher",
+
 
   "item.radioisotopes.raw_lithium": "Raw Lithium",
   "item.radioisotopes.lithium_ingot": "Lithium Ingot",
@@ -44,9 +50,19 @@
   "block.radioisotopes.deuterium_generator": "Deuterium Generator",
   "block.radioisotopes.uranium_centrifuge": "Uranium Centrifuge",
 
+  "block.radioisotopes.end_stone_tenebrium_ore": "Tenebrium Ore",
+
   "effect.radioisotopes.radiation_poisoning": "Radiation",
 
   "itemGroup.radioisotopes.uranium": "Uranium Items",
 
-  "entity.minecraft.villager.physicist": "Physicist"
+  "entity.minecraft.villager.physicist": "Physicist",
+
+  "advancements.radioisotopes.heavy_lead_armor.title": "Safety First!",
+  "advancements.radioisotopes.heavy_lead_armor.description": "Obtain a full set of heavy lead armor in order to be safe from radiation posioning",
+  "advancements.radioisotopes.nuclear_fuel.title": "Nuclear Fuel",
+  "advancements.radioisotopes.nuclear_fuel.description": "Obtain a Glowstick on Steroids",
+  "advancements.radioisotopes.uranium.title": "Uranium!",
+  "advancements.radioisotopes.uranium.description": "Obtain an Piece of this extraordinary Material"
+
 }

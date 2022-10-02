@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "radioisotopes:item/contact_fuse"
+    "layer0": "radioisotopes:item/timed_fuze"
   }
 }

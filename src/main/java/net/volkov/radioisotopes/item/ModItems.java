@@ -99,9 +99,9 @@ public class ModItems {
     public static final Item URANIUM_PUSHER = registerItem("uranium_pusher",
             new Item(new FabricItemSettings().group(ModItemGroup.URANIUM)));
 
-    public static final Item TIMED_FUSE = registerItem("timed_fuse",
+    public static final Item TIMED_FUZE = registerItem("timed_fuze",
             new Item(new FabricItemSettings().group(ModItemGroup.URANIUM)));
-    public static final Item CONTACT_FUSE = registerItem("contact_fuse",
+    public static final Item CONTACT_FUZE = registerItem("contact_fuze",
             new Item(new FabricItemSettings().group(ModItemGroup.URANIUM)));
     public static final Item CASING_ALLOY = registerItem("casing_alloy",
             new Item(new FabricItemSettings().group(ModItemGroup.URANIUM)));

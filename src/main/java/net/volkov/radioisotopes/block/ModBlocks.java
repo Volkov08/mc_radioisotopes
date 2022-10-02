@@ -61,7 +61,7 @@ public class ModBlocks {
     public static final Block LEAD_WALL = registerBlock("lead_wall",
             new WallBlock(FabricBlockSettings.of(Material.METAL).strength(4.5f).requiresTool()), ModItemGroup.URANIUM);
 
-    public static final Block TENEBRIUM_ORE = registerBlock("tenebrium_ore",
+    public static final Block END_STONE_TENEBRIUM_ORE = registerBlock("end_stone_tenebrium_ore",
             new Block(FabricBlockSettings.of(Material.STONE).strength(12.0f).requiresTool()), ModItemGroup.URANIUM);
 
     public static final Block LITHIUM_ORE = registerBlock("lithium_ore",

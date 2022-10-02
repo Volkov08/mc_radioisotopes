@@ -3,8 +3,12 @@
     "icon": {
       "item": "radioisotopes:uranium_ingot"
     },
-    "title": "Uranium",
-    "description": "Obtain an Piece of this extraordinary Material",
+    "title": {
+    "translate": "advancements.radioisotopes.uranium.title"
+    },
+    "description": {
+      "translate": "advancements.radioisotopes.uranium.description"
+    },
     "frame": "task",
     "show_toast": true,
     "announce_to_chat": true,

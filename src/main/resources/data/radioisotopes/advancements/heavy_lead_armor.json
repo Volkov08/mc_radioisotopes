@@ -1,0 +1,51 @@
+{
+  "parent": "radioisotopes:radioisotopes",
+  "display": {
+    "icon": {
+      "item": "radioisotopes:heavy_lead_helmet",
+      "nbt": "{Damage:0}"
+    },
+    "title": {
+      "translate": "advancements.radioisotopes.heavy_lead_armor.title"
+    },
+    "description": {
+      "translate": "advancements.radioisotopes.heavy_lead_armor.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": true
+  },
+  "rewards": {
+    "experience": 20
+  },
+  "criteria": {
+    "heavy_lead_armor": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "radioisotopes:heavy_lead_helmet"
+            ]
+          },
+          {
+            "items": [
+              "radioisotopes:heavy_lead_chestplate"
+            ]
+          },
+          {
+            "items": [
+              "radioisotopes:heavy_lead_leggings"
+            ]
+          },
+          {
+            "items": [
+              "radioisotopes:heavy_lead_boots"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}
