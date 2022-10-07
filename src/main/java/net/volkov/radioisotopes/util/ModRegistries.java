@@ -73,7 +73,7 @@ public class ModRegistries {
         TradeOfferHelper.registerVillagerOffers(ModVillagers.PHYSICIST, 3,
                 factories -> {
                     factories.add((entity, random) -> new TradeOffer(
-                            new ItemStack(Items.EMERALD, 32),
+                            new ItemStack(Items.EMERALD, 30),
                             new ItemStack(ModItems.HEAVY_LEAD_HELMET, 1),
                             3,10,0.05f));
 
@@ -83,7 +83,7 @@ public class ModRegistries {
                             3,10,0.05f));
 
                     factories.add((entity, random) -> new TradeOffer(
-                            new ItemStack(Items.EMERALD, 40),
+                            new ItemStack(Items.EMERALD, 42),
                             new ItemStack(ModItems.HEAVY_LEAD_LEGGINGS, 1),
                             3,10,0.05f));
 
