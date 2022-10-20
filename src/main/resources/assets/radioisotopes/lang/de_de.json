@@ -50,12 +50,15 @@
   "block.radioisotopes.deuterium_generator": "Deuterium Generator",
   "block.radioisotopes.uranium_centrifuge": "Uranzentrifuge",
 
+  "item.radioisotopes.copper_wire": "Kupferkabel",
+  "item.radioisotopes.electric_engine": "Elektromotor",
 
   "effect.radioisotopes.radiation_poisoning": "Strahlung",
 
   "itemGroup.radioisotopes.uranium": "Uran",
 
   "entity.minecraft.villager.physicist": "Physiker",
+
   "advancements.radioisotopes.heavy_lead_armor.title": "Sicherheit zuerst!",
   "advancements.radioisotopes.heavy_lead_armor.description": "Besitze eine volle, schwere Bleirüstung, um dich vor Strahlung zu schützen",
   "advancements.radioisotopes.nuclear_fuel.title": "Nuklearer Brennstoff",

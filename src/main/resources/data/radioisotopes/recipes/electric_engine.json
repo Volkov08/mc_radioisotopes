@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "I": {
+      "item": "radioisotopes:iron_ingot"
+    },
+    "W": {
+      "item": "radioisotopes:copper_wire"
+    }
+  },
+  "pattern": [
+    " I ",
+    "IWI",
+    " I "
+  ],
+  "result": {
+    "item": "radioisotopes:electric_engine"
+  }
+}

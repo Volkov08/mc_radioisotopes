@@ -52,6 +52,9 @@
 
   "block.radioisotopes.end_stone_tenebrium_ore": "Tenebrium Ore",
 
+  "item.radioisotopes.copper_wire": "Copper Wire",
+  "item.radioisotopes.electric_engine": "Electric Engine",
+
   "effect.radioisotopes.radiation_poisoning": "Radiation",
 
   "itemGroup.radioisotopes.uranium": "Uranium Items",

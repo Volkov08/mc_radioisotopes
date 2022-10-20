@@ -96,6 +96,12 @@ public class ModItems {
     public static final Item LITHIUM_INGOT = registerItem("lithium_ingot",
             new Item(new FabricItemSettings().group(ModItemGroup.URANIUM)));
 
+    public static final Item COPPER_WIRE = registerItem("copper_wire",
+            new Item(new FabricItemSettings().group(ModItemGroup.URANIUM)));
+
+    public static final Item ELECTRIC_ENGINE = registerItem("electric_engine",
+            new Item(new FabricItemSettings().group(ModItemGroup.URANIUM)));
+
     public static final Item URANIUM_PUSHER = registerItem("uranium_pusher",
             new Item(new FabricItemSettings().group(ModItemGroup.URANIUM)));
 
