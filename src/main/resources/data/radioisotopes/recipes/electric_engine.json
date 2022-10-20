@@ -2,7 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "key": {
     "I": {
-      "item": "radioisotopes:iron_ingot"
+      "item": "minecraft:iron_ingot"
     },
     "W": {
       "item": "radioisotopes:copper_wire"
