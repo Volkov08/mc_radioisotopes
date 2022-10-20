@@ -1,13 +1,13 @@
 {
   "display": {
     "icon": {
-      "item": "radioisotopes:nuclear_fuel_rod"
+      "item": "radioisotopes:uranium_centrifuge"
     },
     "title": {
-      "translate": "advancements.radioisotopes.nuclear_fuel.title"
+      "translate": "advancements.radioisotopes.uranium_centrifuge.title"
     },
     "description": {
-      "translate": "advancements.radioisotopes.nuclear_fuel.description"
+      "translate": "advancements.radioisotopes.uranium_centrifuge.description"
     },
     "frame": "task",
     "show_toast": true,
@@ -15,9 +15,9 @@
     "hidden": false
   },
   "rewards": {
-    "experience": 20
+    "experience": 25
   },
-  "parent": "radioisotopes:radioisotopes",
+  "parent": "radioisotopes:nuclear_fuel_rod",
   "criteria": {
     "requirement": {
       "trigger": "minecraft:inventory_changed",
@@ -25,7 +25,7 @@
         "items": [
           {
             "items": [
-              "radioisotopes:nuclear_fuel_rod"
+              "radioisotopes:uranium_centrifuge"
             ]
           }
         ]

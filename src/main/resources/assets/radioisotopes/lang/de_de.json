@@ -64,5 +64,7 @@
   "advancements.radioisotopes.nuclear_fuel.title": "Nuklearer Brennstoff",
   "advancements.radioisotopes.nuclear_fuel.description": "Erhalte einen Brennstab",
   "advancements.radioisotopes.uranium.title": "Uran!",
-  "advancements.radioisotopes.uranium.description": "Erhalte ein Stück dieses ... außergewöhnlichen Minerals"
+  "advancements.radioisotopes.uranium.description": "Erhalte ein Stück dieses ... außergewöhnlichen Minerals",
+  "advancements.radioisotopes.uranium_centrifuge.title": "Uran Zentrifuge",
+  "advancements.radioisotopes.uranium_centrifuge.description": "Wollen sie diese außergewöhnlichen Waren kaufen?"
 }
