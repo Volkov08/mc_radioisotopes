@@ -1,0 +1,6 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "radioisotopes:block/atomic_reactor_controller"
+  }
+}

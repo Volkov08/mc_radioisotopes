@@ -49,6 +49,7 @@
   "block.radioisotopes.uranium_glass_pane": "Uranglasscheibe",
   "block.radioisotopes.deuterium_generator": "Deuterium Generator",
   "block.radioisotopes.uranium_centrifuge": "Uranzentrifuge",
+  "block.radioisotopes.atomic_reactor_controller": "Atomreaktorsteuerung",
 
   "item.radioisotopes.copper_wire": "Kupferkabel",
   "item.radioisotopes.electric_engine": "Elektromotor",

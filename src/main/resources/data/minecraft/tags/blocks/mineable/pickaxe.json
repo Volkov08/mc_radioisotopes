@@ -13,6 +13,7 @@
     "radioisotopes:lead_block",
     "radioisotopes:lead_wall",
     "radioisotopes:deuterium_generator",
-    "radioisotopes:uranium_centrifuge"
+    "radioisotopes:uranium_centrifuge",
+    "radioisotopes:atomic_reactor_controller"
   ]
 }
