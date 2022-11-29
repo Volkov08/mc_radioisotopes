@@ -1,6 +1,8 @@
 package net.volkov.radioisotopes.world.feature;
 
 
+import net.minecraft.block.Blocks;
+import net.minecraft.structure.rule.BlockMatchRuleTest;
 import net.volkov.radioisotopes.ClientMain;
 import net.volkov.radioisotopes.block.ModBlocks;
 import net.minecraft.util.registry.RegistryEntry;
@@ -23,8 +25,9 @@ public class ModConfiguredFeatures {
             OreFeatureConfig.createTarget(OreConfiguredFeatures.DEEPSLATE_ORE_REPLACEABLES,
                     ModBlocks.DEEPSLATE_LEAD_ORE.getDefaultState()));
 
-    public static final List<OreFeatureConfig.Target> OVERWORLD_LITHIUM_ORES = List.of(OreFeatureConfig.createTarget(OreConfiguredFeatures.STONE_ORE_REPLACEABLES,
-            ModBlocks.LITHIUM_ORE.getDefaultState()));
+    public static final List<OreFeatureConfig.Target> OVERWORLD_LITHIUM_ORES = List.of(
+            OreFeatureConfig.createTarget(new BlockMatchRuleTest(Blocks.DIORITE),
+                    ModBlocks.LITHIUM_ORE.getDefaultState()));
 
    public static final RegistryEntry<ConfiguredFeature<OreFeatureConfig, ?>> URANIUM_ORE =
            ConfiguredFeatures.register("uranium_ore", Feature.ORE,

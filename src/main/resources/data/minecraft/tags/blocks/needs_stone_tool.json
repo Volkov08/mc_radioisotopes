@@ -3,7 +3,7 @@
     "radioisotopes:lead_ore",
     "radioisotopes:deepslate_lead_ore",
     "radioisotopes:lead_block",
-    "radioisotopes:lead_wall"
-
+    "radioisotopes:lead_wall",
+    "radioisotopes:atomic_reactor_casing"
   ]
 }

@@ -51,6 +51,9 @@ public class ModBlocks {
     public static final Block ATOMIC_REACTOR_CONTROLLER = registerBlock("atomic_reactor_controller",
             new Block(FabricBlockSettings.of(Material.METAL).requiresTool().strength(4f).nonOpaque()), ModItemGroup.URANIUM);
 
+    public static final Block ATOMIC_REACTOR_CASING = registerBlock("atomic_reactor_casing",
+            new Block(FabricBlockSettings.of(Material.METAL).requiresTool().strength(4f).nonOpaque()), ModItemGroup.URANIUM);
+
 
     public static final Block LEAD_ORE = registerBlock("lead_ore",
             new Block(FabricBlockSettings.of(Material.STONE).strength(4.0f).requiresTool()), ModItemGroup.URANIUM);
