@@ -1,0 +1,11 @@
+{
+  "type": "radioisotopes:atomic_reactor_controller",
+  "ingredients": [
+    {
+      "item": "radioisotopes:lead_battery"
+    }
+  ],
+  "output": {
+    "item": "radioisotopes:full_lead_battery"
+  }
+}

@@ -114,6 +114,10 @@ public class ModItems {
     public static final Item FUSION_BOMB_CASING = registerItem("fusion_bomb_casing",
             new Item(new FabricItemSettings().group(ModItemGroup.URANIUM)));
 
+    public static final Item LEAD_BATTERY = registerItem("lead_battery",
+            new Item(new FabricItemSettings().group(ModItemGroup.URANIUM)));
+    public static final Item FULL_LEAD_BATTERY = registerItem("full_lead_battery",
+            new Item(new FabricItemSettings().group(ModItemGroup.URANIUM)));
 
 
     private static Item registerItem(String name, Item item) {

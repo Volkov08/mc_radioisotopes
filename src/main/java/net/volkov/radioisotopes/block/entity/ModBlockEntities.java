@@ -10,6 +10,7 @@ import net.volkov.radioisotopes.block.ModBlocks;
 public class ModBlockEntities {
     public static BlockEntityType<DeuteriumGeneratorBlockEntity> DEUTERIUM_GENERATOR;
     public static BlockEntityType<UraniumCentrifugeBlockEntity> URANIUM_CENTRIFUGE;
+    public static BlockEntityType<AtomicReactorControllerBlockEntity> ATOMIC_REACTOR_CONTROLLER;
 
     public static void registerAllBlockEntities() {
         DEUTERIUM_GENERATOR = Registry.register(Registry.BLOCK_ENTITY_TYPE,
@@ -20,6 +21,10 @@ public class ModBlockEntities {
                 new Identifier(ClientMain.MOD_ID, "uranium_centrifuge"),
                 FabricBlockEntityTypeBuilder.create(UraniumCentrifugeBlockEntity::new,
                         ModBlocks.URANIUM_CENTRIFUGE).build(null));
+        ATOMIC_REACTOR_CONTROLLER = Registry.register(Registry.BLOCK_ENTITY_TYPE,
+                new Identifier(ClientMain.MOD_ID, "atomic_reactor_controller"),
+                FabricBlockEntityTypeBuilder.create(AtomicReactorControllerBlockEntity::new,
+                        ModBlocks.ATOMIC_REACTOR_CONTROLLER).build(null));
     }
 
 }

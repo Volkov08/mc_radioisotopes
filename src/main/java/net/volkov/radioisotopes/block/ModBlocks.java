@@ -12,6 +12,7 @@ import net.minecraft.util.Rarity;
 import net.minecraft.util.math.intprovider.UniformIntProvider;
 import net.minecraft.util.registry.Registry;
 
+import net.volkov.radioisotopes.block.custom.ModAtomicReactorControllerBlock;
 import net.volkov.radioisotopes.block.custom.ModDeuteriumGeneratorBlock;
 import net.volkov.radioisotopes.block.custom.ModUraniumCentrifugeBlock;
 import net.volkov.radioisotopes.item.ModItemGroup;
@@ -49,7 +50,7 @@ public class ModBlocks {
             new ModUraniumCentrifugeBlock(FabricBlockSettings.of(Material.METAL).requiresTool().strength(4f).nonOpaque()), ModItemGroup.URANIUM);
 
     public static final Block ATOMIC_REACTOR_CONTROLLER = registerBlock("atomic_reactor_controller",
-            new Block(FabricBlockSettings.of(Material.METAL).requiresTool().strength(4f).nonOpaque()), ModItemGroup.URANIUM);
+            new ModAtomicReactorControllerBlock(FabricBlockSettings.of(Material.METAL).requiresTool().strength(4f).nonOpaque()), ModItemGroup.URANIUM);
 
     public static final Block ATOMIC_REACTOR_CASING = registerBlock("atomic_reactor_casing",
             new Block(FabricBlockSettings.of(Material.METAL).requiresTool().strength(4f).nonOpaque()), ModItemGroup.URANIUM);

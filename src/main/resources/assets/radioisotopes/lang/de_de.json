@@ -54,6 +54,8 @@
 
   "item.radioisotopes.copper_wire": "Kupferkabel",
   "item.radioisotopes.electric_engine": "Elektromotor",
+  "item.radioisotopes.lead_battery": "Bleiakku",
+  "item.radioisotopes.full_lead_battery": "Voller Bleiakku",
 
   "effect.radioisotopes.radiation_poisoning": "Strahlung",
 

@@ -5,6 +5,7 @@ import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.client.screenhandler.v1.ScreenRegistry;
 import net.minecraft.client.render.RenderLayer;
 import net.volkov.radioisotopes.block.ModBlocks;
+import net.volkov.radioisotopes.screen.AtomicReactorControllerScreen;
 import net.volkov.radioisotopes.screen.DeuteriumGeneratorScreen;
 import net.volkov.radioisotopes.screen.ModScreenHandlers;
 import net.volkov.radioisotopes.screen.UraniumCentrifugeScreen;
@@ -20,5 +21,6 @@ public class ClientOnly implements ClientModInitializer {
 
         ScreenRegistry.register(ModScreenHandlers.DEUTERIUM_GENERATOR_SCREEN_HANDLER, DeuteriumGeneratorScreen::new);
         ScreenRegistry.register(ModScreenHandlers.URANIUM_CENTRIFUGE_SCREEN_HANDLER, UraniumCentrifugeScreen::new);
+        ScreenRegistry.register(ModScreenHandlers.ATOMIC_REACTOR_CONTROLLER_SCREEN_HANDLER, AtomicReactorControllerScreen::new);
     }
 }
