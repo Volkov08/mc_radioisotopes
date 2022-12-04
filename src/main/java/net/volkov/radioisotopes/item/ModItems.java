@@ -52,6 +52,9 @@ public class ModItems {
     public static final Item HEAVY_WATER_BUCKET = registerItem("heavy_water_bucket",
             new Item(new FabricItemSettings().group(ModItemGroup.URANIUM).maxCount(1)));
 
+    public static final Item TRITIUM = registerItem("tritium",
+            new Item(new FabricItemSettings().group(ModItemGroup.URANIUM)));
+
     public static final Item RAW_LEAD = registerItem("raw_lead",
             new Item(new FabricItemSettings().group(ModItemGroup.URANIUM)));
 

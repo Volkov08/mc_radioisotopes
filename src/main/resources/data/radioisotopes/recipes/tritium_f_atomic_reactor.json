@@ -1,0 +1,11 @@
+{
+  "type": "radioisotopes:atomic_reactor_controller",
+  "ingredients": [
+    {
+      "item": "radioisotopes:lithium_ingot"
+    }
+  ],
+  "output": {
+    "item": "radioisotopes:tritium"
+  }
+}

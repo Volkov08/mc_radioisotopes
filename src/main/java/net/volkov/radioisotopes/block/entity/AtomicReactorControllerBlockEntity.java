@@ -34,7 +34,7 @@ public class AtomicReactorControllerBlockEntity extends BlockEntity implements N
 
     protected final PropertyDelegate propertyDelegate;
     private int progress = 0;
-    private int maxProgress = 5000;
+    private int maxProgress = 3000;
     private int fuelTime = 0;
     private int maxFuelTime = 0;
 
@@ -191,20 +191,20 @@ public class AtomicReactorControllerBlockEntity extends BlockEntity implements N
         return switch (localDir) {
             default ->
                     side.getOpposite() == Direction.NORTH && slot == 0 ||
-                            side.getOpposite() == Direction.EAST && slot == 1 ||
-                            side.getOpposite() == Direction.WEST && slot == 1;
+                            side.getOpposite() == Direction.EAST && slot == 0 ||
+                            side.getOpposite() == Direction.WEST && slot == 0;
             case EAST ->
                     side.rotateYClockwise() == Direction.NORTH && slot == 0 ||
-                            side.rotateYClockwise() == Direction.EAST && slot == 1 ||
-                            side.rotateYClockwise() == Direction.WEST && slot == 1;
+                            side.rotateYClockwise() == Direction.EAST && slot == 0 ||
+                            side.rotateYClockwise() == Direction.WEST && slot == 0;
             case SOUTH ->
                     side == Direction.NORTH && slot == 0 ||
-                            side == Direction.EAST && slot == 1 ||
-                            side == Direction.WEST && slot == 1;
+                            side == Direction.EAST && slot == 0 ||
+                            side == Direction.WEST && slot == 0;
             case WEST ->
                     side.rotateYCounterclockwise() == Direction.NORTH && slot == 0 ||
-                            side.rotateYCounterclockwise() == Direction.EAST && slot == 1 ||
-                            side.rotateYCounterclockwise() == Direction.WEST && slot == 1;
+                            side.rotateYCounterclockwise() == Direction.EAST && slot == 0 ||
+                            side.rotateYCounterclockwise() == Direction.WEST && slot == 0;
         };
     }
 
