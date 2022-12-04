@@ -1,0 +1,3 @@
+- Only allow recipes of the atomic_reactor to work, when structure is complete
+- Fusion Reactor
+- Atomic and Fusion Bomb
