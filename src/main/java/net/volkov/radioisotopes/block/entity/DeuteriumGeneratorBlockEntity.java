@@ -104,8 +104,14 @@ public class DeuteriumGeneratorBlockEntity extends BlockEntity implements NamedS
     }
 
     private void consumeFuel() {
-        if(!getStack(0).isEmpty()) {
+        if(getStack(0).getItem() == ModItems.FULL_LEAD_BATTERY) {
+            this.fuelTime = 30000;
+            removeStack(0, 1);
+            setStack(0, new ItemStack(ModItems.LEAD_BATTERY, getStack(0).getCount() + 1));
+            this.maxFuelTime = this.fuelTime;
 
+        }
+        else if(!getStack(0).isEmpty()) {
             this.fuelTime = 100;
             removeStack(0, 1);
             this.maxFuelTime = this.fuelTime;
@@ -113,6 +119,11 @@ public class DeuteriumGeneratorBlockEntity extends BlockEntity implements NamedS
     }
 
     public static void tick(World world, BlockPos pos, BlockState state, DeuteriumGeneratorBlockEntity entity) {
+        if(entity.getStack(0).getItem() == ModItems.LEAD_BATTERY && entity.getStack(2).isEmpty()) {
+            entity.removeStack(0, 1);
+            entity.setStack(2, new ItemStack(ModItems.LEAD_BATTERY, 1));
+        }
+
         if(isConsumingFuel(entity)) {
             entity.fuelTime--;
         }

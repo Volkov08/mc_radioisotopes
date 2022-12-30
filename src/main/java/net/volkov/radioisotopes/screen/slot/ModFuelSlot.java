@@ -5,6 +5,7 @@ import net.minecraft.inventory.Inventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.screen.slot.Slot;
+import net.volkov.radioisotopes.item.ModItems;
 
 public class ModFuelSlot extends Slot {
     public ModFuelSlot(Inventory inventory, int index, int x, int y) {
@@ -23,6 +24,11 @@ public class ModFuelSlot extends Slot {
     }
 
     public static boolean isPotato(ItemStack stack) {
-        return stack.isOf(Items.POTATO);
+        if(stack.isOf(Items.POTATO) || stack.isOf(ModItems.FULL_LEAD_BATTERY)) {
+            return true;
+        }
+        else {
+            return false;
+        }
     }
 }

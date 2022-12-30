@@ -38,6 +38,8 @@
   "item.radioisotopes.raw_lithium": "Raw Lithium",
   "item.radioisotopes.lithium_ingot": "Lithium Ingot",
 
+  "item.radioisotopes.fluorine": "Fluorine",
+
   "block.radioisotopes.uranium_ore": "Uranium Ore",
   "block.radioisotopes.deepslate_uranium_ore": "Deepslate Uranium Ore",
   "block.radioisotopes.lead_ore": "Lead Ore",
@@ -59,6 +61,9 @@
   "item.radioisotopes.electric_engine": "Electric Engine",
   "item.radioisotopes.lead_battery": "Lead Battery",
   "item.radioisotopes.full_lead_battery": "Full Lead Battery",
+
+  "item.radioisotopes.atomic_waste": "Atomic Waste",
+  "item.radioisotopes.plutonium": "Plutonium",
 
   "effect.radioisotopes.radiation_poisoning": "Radiation",
 

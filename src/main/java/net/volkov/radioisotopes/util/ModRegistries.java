@@ -20,10 +20,8 @@ public class ModRegistries {
     private static void registerFuels() {
         ClientMain.LOGGER.info("Registering fuels for " + ClientMain.MOD_ID);
         FuelRegistry registry = FuelRegistry.INSTANCE;
-
-        //Ähem also das sollten wir wohl besser rausnehmen,
-        //wenn wir den Reaktor hinzufügen
-        registry.add(ModItems.NUCLEAR_FUEL_ROD, 36000);
+        registry.add(ModItems.FULL_LEAD_BATTERY, 30000);
+        //registry.add(ModItems.NUCLEAR_FUEL_ROD, 36000);
         //registry.add(Items.POTATO, 36000);
     }
 

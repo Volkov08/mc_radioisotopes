@@ -2,12 +2,12 @@
   "type": "radioisotopes:uranium_centrifuge",
   "ingredients": [
     {
-      "item": "radioisotopes:uranium_block"
+      "item": "radioisotopes:atomic_waste"
     },{
       "item": "radioisotopes:fluorine"
     }
   ],
   "output": {
-    "item": "radioisotopes:enriched_uranium_ingot"
+    "item": "radioisotopes:plutonium"
   }
 }

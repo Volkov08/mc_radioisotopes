@@ -13,7 +13,8 @@
   },
   "pattern": [
     "H#H",
-    "H H"
+    "HGH",
+    "   "
   ],
   "result": {
     "item": "radioisotopes:heavy_lead_helmet"

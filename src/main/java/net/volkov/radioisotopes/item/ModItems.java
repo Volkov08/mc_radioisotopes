@@ -22,7 +22,7 @@ public class ModItems {
             new Item(new FabricItemSettings().group(ModItemGroup.URANIUM)));
 
     public static final Item NUCLEAR_FUEL_ROD = registerItem("nuclear_fuel_rod",
-            new Item(new FabricItemSettings().group(ModItemGroup.URANIUM)));
+            new Item(new FabricItemSettings().maxCount(1).group(ModItemGroup.URANIUM)));
 
     public static final Item URANIUM_SWORD = registerItem("uranium_sword",
             new ModDangerousSwordItem(ModToolMaterials.URANIUM, 3, -2.4f,
@@ -120,7 +120,17 @@ public class ModItems {
     public static final Item LEAD_BATTERY = registerItem("lead_battery",
             new Item(new FabricItemSettings().group(ModItemGroup.URANIUM)));
     public static final Item FULL_LEAD_BATTERY = registerItem("full_lead_battery",
+            new Item(new FabricItemSettings().recipeRemainder(LEAD_BATTERY).maxCount(1).group(ModItemGroup.URANIUM)));
+
+    public static final Item FLUORINE = registerItem("fluorine",
             new Item(new FabricItemSettings().group(ModItemGroup.URANIUM)));
+
+    public static final Item ATOMIC_WASTE = registerItem("atomic_waste",
+            new Item(new FabricItemSettings().group(ModItemGroup.URANIUM)));
+    public static final Item PLUTONIUM = registerItem("plutonium",
+            new Item(new FabricItemSettings().group(ModItemGroup.URANIUM)));
+
+
 
 
     private static Item registerItem(String name, Item item) {

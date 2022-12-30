@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "I": {
+      "item": "radioisotopes:plutonium"
+    },
+    "i": {
+      "item": "minecraft:iron_ingot"
+    }
+  },
+  "pattern": [
+    "iIi",
+    "iIi",
+    "iIi"
+  ],
+  "result": {
+    "item": "radioisotopes:nuclear_fuel_rod"
+  }
+}

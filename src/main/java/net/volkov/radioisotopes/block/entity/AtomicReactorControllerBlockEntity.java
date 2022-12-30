@@ -6,6 +6,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.Inventories;
 import net.minecraft.inventory.SimpleInventory;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.screen.NamedScreenHandlerFactory;
@@ -17,8 +18,10 @@ import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.world.World;
+import net.minecraft.world.explosion.Explosion;
 import net.volkov.radioisotopes.block.custom.ModAtomicReactorControllerBlock;
 import net.volkov.radioisotopes.block.custom.ModDeuteriumGeneratorBlock;
+import net.volkov.radioisotopes.item.ModItems;
 import net.volkov.radioisotopes.item.inventory.ImplementedInventory;
 import net.volkov.radioisotopes.recipe.AtomicReactorRecipe;
 import net.volkov.radioisotopes.recipe.DeuteriumGeneratorRecipe;
@@ -101,15 +104,21 @@ public class AtomicReactorControllerBlockEntity extends BlockEntity implements N
     }
 
     private void consumeFuel() {
-        if(!getStack(0).isEmpty()) {
+        if(getStack(0).getItem() == ModItems.NUCLEAR_FUEL_ROD) {
 
-            this.fuelTime = 34000;
+            this.fuelTime = 32000;
             removeStack(0, 1);
+            setStack(0, new ItemStack(ModItems.ATOMIC_WASTE, getStack(0).getCount() + 1));
             this.maxFuelTime = this.fuelTime;
         }
     }
 
     public static void tick(World world, BlockPos pos, BlockState state, AtomicReactorControllerBlockEntity entity) {
+        if(entity.getStack(0).getItem() == ModItems.ATOMIC_WASTE && entity.getStack(2).isEmpty()) {
+            entity.removeStack(0, 1);
+            entity.setStack(2, new ItemStack(ModItems.ATOMIC_WASTE, 1));
+        }
+
         if(isConsumingFuel(entity)) {
             entity.fuelTime--;
         }
@@ -180,10 +189,13 @@ public class AtomicReactorControllerBlockEntity extends BlockEntity implements N
     public boolean canInsert(int slot, ItemStack stack, @Nullable Direction side) {
         Direction localDir = this.getWorld().getBlockState(this.pos).get(ModAtomicReactorControllerBlock.FACING);
 
-        if(side == Direction.UP || side == Direction.DOWN) {
+        if(side == Direction.DOWN) {
             return false;
         }
 
+        if(side == Direction.UP) {
+            return slot == 1;
+        }
         // Top insert 0 (fuel)
         // Right insert 1
         // Left insert 1
