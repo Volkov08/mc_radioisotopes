@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "L": {
+      "item": "radioisotopes:heavy_lead_plate"
+    },
+    "W": {
+      "item": "minecraft:water_bucket"
+    },
+    "E": {
+      "item": "radioisotopes:electric_engine"
+    }
+  },
+  "pattern": [
+    "LEL",
+    "LWL",
+    "LLL"
+  ],
+  "result": {
+    "item": "radioisotopes:atomic_reactor_controller"
+  }
+}

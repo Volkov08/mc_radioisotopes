@@ -128,6 +128,6 @@ public class ModBlocks {
     }
 
     public static void registerModBlocks () {
-        net.volkov.radioisotopes.ClientMain.LOGGER.info("Registering Mod Blocks for" + net.volkov.radioisotopes.ClientMain.MOD_ID);
+        net.volkov.radioisotopes.ClientMain.LOGGER.info("Registering Mod Blocks for " + net.volkov.radioisotopes.ClientMain.MOD_ID);
     }
 }

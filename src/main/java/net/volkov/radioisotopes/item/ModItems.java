@@ -137,6 +137,6 @@ public class ModItems {
         return Registry.register(Registry.ITEM, new Identifier(ClientMain.MOD_ID, name), item);
     }
     public static void registerModItems() {
-        ClientMain.LOGGER.info("Registering Mod Items for" + ClientMain.MOD_ID);
+        ClientMain.LOGGER.info("Registering Mod Items for " + ClientMain.MOD_ID);
     }
 }

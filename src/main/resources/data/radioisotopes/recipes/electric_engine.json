@@ -9,9 +9,9 @@
     }
   },
   "pattern": [
-    " I ",
-    "IWI",
-    " I "
+    " W ",
+    "WIW",
+    " W "
   ],
   "result": {
     "item": "radioisotopes:electric_engine"

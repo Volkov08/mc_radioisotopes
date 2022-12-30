@@ -37,7 +37,7 @@ public class AtomicReactorControllerBlockEntity extends BlockEntity implements N
 
     protected final PropertyDelegate propertyDelegate;
     private int progress = 0;
-    private int maxProgress = 3000;
+    private int maxProgress = 2400;
     private int fuelTime = 0;
     private int maxFuelTime = 0;
 

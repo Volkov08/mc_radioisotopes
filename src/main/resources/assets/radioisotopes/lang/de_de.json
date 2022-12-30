@@ -63,18 +63,18 @@
   "item.radioisotopes.atomic_waste": "Atommüll",
   "item.radioisotopes.plutonium": "Plutonium",
 
-  "tooltip.radioisotopes.uranium_centrifuge_1": "§eMacht aus Uranblock bzw. Atommüll",
-  "tooltip.radioisotopes.uranium_centrifuge_2": "§e+ Fluor + Lohenrute (Brennstoff)",
-  "tooltip.radioisotopes.uranium_centrifuge_3": "§eangereichertes Uran bzw. Plutonium",
+  "tooltip.radioisotopes.uranium_centrifuge_1": "§e§lMacht aus Uranblock bzw. Atommüll",
+  "tooltip.radioisotopes.uranium_centrifuge_2": "§e§l+ Fluor + Lohenrute (Brennstoff)",
+  "tooltip.radioisotopes.uranium_centrifuge_3": "§e§langereichertes Uran bzw. Plutonium",
 
-  "tooltip.radioisotopes.atomic_reactor_controller_1": "§eKann mithilfe eines Brennstabs",
-  "tooltip.radioisotopes.atomic_reactor_controller_2": "§eBatterien laden und aus Lithium",
-  "tooltip.radioisotopes.atomic_reactor_controller_3": "§eTritium herstellen",
+  "tooltip.radioisotopes.atomic_reactor_controller_1": "§e§lKann mithilfe eines Brennstabs",
+  "tooltip.radioisotopes.atomic_reactor_controller_2": "§e§lBatterien laden und aus Lithium",
+  "tooltip.radioisotopes.atomic_reactor_controller_3": "§e§lTritium herstellen",
 
-  "tooltip.radioisotopes.deuterium_generator_1": "§eReichert schweres Wasser",
-  "tooltip.radioisotopes.deuterium_generator_2": "§emithilfe einer Stromquelle",
-  "tooltip.radioisotopes.deuterium_generator_3": "§e(Kartoffel od. Batterie)",
-  "tooltip.radioisotopes.deuterium_generator_4": "§eaus normalem Wasser an",
+  "tooltip.radioisotopes.deuterium_generator_1": "§e§lReichert schweres Wasser",
+  "tooltip.radioisotopes.deuterium_generator_2": "§e§lmithilfe einer Stromquelle",
+  "tooltip.radioisotopes.deuterium_generator_3": "§e§l(Kartoffel od. Batterie)",
+  "tooltip.radioisotopes.deuterium_generator_4": "§e§laus normalem Wasser an",
 
 
   "effect.radioisotopes.radiation_poisoning": "Strahlung",
