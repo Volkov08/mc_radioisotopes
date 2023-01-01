@@ -15,6 +15,7 @@
     "radioisotopes:deuterium_generator",
     "radioisotopes:uranium_centrifuge",
     "radioisotopes:atomic_reactor_controller",
-    "radioisotopes:atomic_reactor_casing"
+    "radioisotopes:atomic_reactor_casing",
+    "radioisotopes:end_stone_tenebrium_ore"
   ]
 }

@@ -29,6 +29,10 @@ public class ModConfiguredFeatures {
             OreFeatureConfig.createTarget(new BlockMatchRuleTest(Blocks.DIORITE),
                     ModBlocks.LITHIUM_ORE.getDefaultState()));
 
+    public static final List<OreFeatureConfig.Target> END_TENEBRIUM_ORES = List.of(
+            OreFeatureConfig.createTarget(new BlockMatchRuleTest(Blocks.END_STONE),
+                    ModBlocks.END_STONE_TENEBRIUM_ORE.getDefaultState()));
+
    public static final RegistryEntry<ConfiguredFeature<OreFeatureConfig, ?>> URANIUM_ORE =
            ConfiguredFeatures.register("uranium_ore", Feature.ORE,
                    new OreFeatureConfig(OVERWORLD_URANIUM_ORES, 9, 0.6f));
@@ -36,10 +40,12 @@ public class ModConfiguredFeatures {
    public static final RegistryEntry<ConfiguredFeature<OreFeatureConfig, ?>> LEAD_ORE =
            ConfiguredFeatures.register("lead_ore", Feature.ORE,
                    new OreFeatureConfig(OVERWORLD_LEAD_ORES, 12));
-
-    public static final RegistryEntry<ConfiguredFeature<OreFeatureConfig, ?>> LITHIUM_ORE =
-            ConfiguredFeatures.register("lithium_ore", Feature.ORE,
-                    new OreFeatureConfig(OVERWORLD_LITHIUM_ORES, 7));
+   public static final RegistryEntry<ConfiguredFeature<OreFeatureConfig, ?>> LITHIUM_ORE =
+           ConfiguredFeatures.register("lithium_ore", Feature.ORE,
+                   new OreFeatureConfig(OVERWORLD_LITHIUM_ORES, 7));
+   public static final RegistryEntry<ConfiguredFeature<OreFeatureConfig, ?>> END_TENEBRIUM_ORE =
+           ConfiguredFeatures.register("end_tenebrium_ore", Feature.ORE,
+                   new OreFeatureConfig(END_TENEBRIUM_ORES, 5));
 
    public static void registerConfiguredFeatures() {
        System.out.println("Registriert ModConfiguredFeatures für " + ClientMain.MOD_ID);
