@@ -63,7 +63,8 @@
   "item.radioisotopes.atomic_waste": "Atommüll",
   "item.radioisotopes.plutonium": "Plutonium",
 
-  "block.radioisotopes.atomic_bomb": "Atombombe",
+  "block.radioisotopes.uranium_atomic_bomb": "Uran Atombombe",
+  "block.radioisotopes.plutonium_atomic_bomb": "Plutonium Atombombe",
 
   "tooltip.radioisotopes.uranium_centrifuge_1": "§e§lMacht aus Uranblock bzw. Atommüll",
   "tooltip.radioisotopes.uranium_centrifuge_2": "§e§l+ Fluor + Lohenrute (Brennstoff)",

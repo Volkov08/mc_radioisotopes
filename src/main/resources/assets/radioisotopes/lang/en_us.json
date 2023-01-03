@@ -65,7 +65,8 @@
   "item.radioisotopes.atomic_waste": "Atomic Waste",
   "item.radioisotopes.plutonium": "Plutonium",
 
-  "block.radioisotopes.atomic_bomb": "Atomic Bomb",
+  "block.radioisotopes.uranium_atomic_bomb": "Uranium Atomic Bomb",
+  "block.radioisotopes.plutonium_atomic_bomb": "Plutonium Atomic Bomb",
 
   "effect.radioisotopes.radiation_poisoning": "Radiation",
 
