@@ -1,6 +1,9 @@
 package net.volkov.radioisotopes.item;
 
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
+import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.minecraft.block.Block;
+import net.minecraft.block.Material;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.item.ArmorItem;
 import net.minecraft.item.Item;
@@ -98,6 +101,8 @@ public class ModItems {
 
     public static final Item LITHIUM_INGOT = registerItem("lithium_ingot",
             new Item(new FabricItemSettings().group(ModItemGroup.URANIUM)));
+    public static final Item LITHIUM_DEUTERIDE = registerItem("lithium_deuteride",
+            new Item(new FabricItemSettings().group(ModItemGroup.URANIUM)));
 
     public static final Item COPPER_WIRE = registerItem("copper_wire",
             new Item(new FabricItemSettings().group(ModItemGroup.URANIUM)));
@@ -130,7 +135,10 @@ public class ModItems {
     public static final Item PLUTONIUM = registerItem("plutonium",
             new Item(new FabricItemSettings().group(ModItemGroup.URANIUM)));
 
-
+    public static final Item FISSION_STAGE = registerItem("fission_stage",
+            new Item(new FabricItemSettings().group(ModItemGroup.URANIUM)));
+    public static final Item FUSION_STAGE = registerItem("fusion_stage",
+            new Item(new FabricItemSettings().group(ModItemGroup.URANIUM)));
 
 
     private static Item registerItem(String name, Item item) {

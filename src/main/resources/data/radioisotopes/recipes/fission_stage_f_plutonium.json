@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "T": {
+      "item": "minecraft:tnt"
+    },
+    "P": {
+      "item": "radioisotopes:plutonium"
+    }
+  },
+  "pattern": [
+    "TTT",
+    "TPT",
+    "TTT"
+  ],
+  "result": {
+    "item": "radioisotopes:fission_stage"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "U": {
+      "item": "radioisotopes:enriched_uranium_ingot"
+    },
+    "P": {
+      "item": "radioisotopes:uranium_pusher"
+    }
+  },
+  "pattern": [
+    "   ",
+    "P U",
+    "   "
+  ],
+  "result": {
+    "item": "radioisotopes:fission_stage"
+  }
+}

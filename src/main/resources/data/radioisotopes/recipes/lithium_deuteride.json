@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "L": {
+      "item": "radioisotopes:lithium_ingot"
+    },
+    "D": {
+      "item": "radioisotopes:heavy_water_bucket"
+    }
+  },
+  "pattern": [
+    "   ",
+    "LD ",
+    "   "
+  ],
+  "result": {
+    "item": "radioisotopes:lithium_deuteride"
+  }
+}

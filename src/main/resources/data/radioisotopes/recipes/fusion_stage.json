@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "L": {
+      "item": "radioisotopes:lithium_deuteride"
+    },
+    "P": {
+      "item": "radioisotopes:plutonium"
+    }
+  },
+  "pattern": [
+    "   ",
+    "TPT",
+    "   "
+  ],
+  "result": {
+    "item": "radioisotopes:fusion_stage"
+  }
+}
