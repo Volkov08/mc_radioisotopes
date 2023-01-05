@@ -36,6 +36,7 @@
 
   "item.radioisotopes.raw_lithium": "Rohes Lithium",
   "item.radioisotopes.lithium_ingot": "Lithiumbarren",
+  "item.radioisotopes.lithium_deuteride": "Lithiumdeuterid",
 
   "item.radioisotopes.fluorine": "Fluor",
 
@@ -63,8 +64,8 @@
   "item.radioisotopes.atomic_waste": "Atommüll",
   "item.radioisotopes.plutonium": "Plutonium",
 
-  "block.radioisotopes.fission_stage": "Kernspaltungsstufe",
-  "block.radioisotopes.fusion_stage": "Kernfusionsstufe",
+  "item.radioisotopes.fission_stage": "Kernspaltungsstufe",
+  "item.radioisotopes.fusion_stage": "Kernfusionsstufe",
 
   "tooltip.radioisotopes.uranium_centrifuge_1": "§e§lMacht aus Uranblock bzw. Atommüll",
   "tooltip.radioisotopes.uranium_centrifuge_2": "§e§l+ Fluor + Lohenrute (Brennstoff)",

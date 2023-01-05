@@ -37,6 +37,7 @@
 
   "item.radioisotopes.raw_lithium": "Raw Lithium",
   "item.radioisotopes.lithium_ingot": "Lithium Ingot",
+  "item.radioisotopes.lithium_deuteride": "Lithium Deuteride",
 
   "item.radioisotopes.fluorine": "Fluorine",
 
@@ -65,8 +66,8 @@
   "item.radioisotopes.atomic_waste": "Atomic Waste",
   "item.radioisotopes.plutonium": "Plutonium",
 
-  "block.radioisotopes.fission_stage": "Nuclear Fission Stage",
-  "block.radioisotopes.fusion_stage": "Nuclear Fusion Stage",
+  "item.radioisotopes.fission_stage": "Nuclear Fission Stage",
+  "item.radioisotopes.fusion_stage": "Nuclear Fusion Stage",
 
   "effect.radioisotopes.radiation_poisoning": "Radiation",
 
