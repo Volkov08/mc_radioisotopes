@@ -17,7 +17,7 @@
   "rewards": {
     "experience": 25
   },
-  "parent": "radioisotopes:nuclear_fuel_rod",
+  "parent": "radioisotopes:radioisotopes",
   "criteria": {
     "requirement": {
       "trigger": "minecraft:inventory_changed",

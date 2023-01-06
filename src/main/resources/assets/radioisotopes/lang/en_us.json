@@ -85,6 +85,12 @@
   "advancements.radioisotopes.uranium.title": "Uranium!",
   "advancements.radioisotopes.uranium.description": "Obtain an Piece of this extraordinary Material",
   "advancements.radioisotopes.uranium_centrifuge.title": "Uranium Centrifuge",
-  "advancements.radioisotopes.uranium_centrifuge.description": "Lets start §mscam§r... trading!"
+  "advancements.radioisotopes.uranium_centrifuge.description": "Lets start §mscam§r... trading!",
+  "advancements.radioisotopes.atomic_waste.title": "Atomic Waste",
+  "advancements.radioisotopes.atomic_waste.description": "Dangerous stuff! But it might still be useful...",
+  "advancements.radioisotopes.atomic_bomb.title": "The Bomb",
+  "advancements.radioisotopes.atomic_bomb.description": "§6§oE = mc²!",
+  "advancements.radioisotopes.fusion_bomb.title": "Fusion Bomb",
+  "advancements.radioisotopes.fusion_bomb.description": "The first large-scale nuclear fusion device!"
 
 }

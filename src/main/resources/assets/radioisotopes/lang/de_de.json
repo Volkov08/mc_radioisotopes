@@ -97,5 +97,11 @@
   "advancements.radioisotopes.uranium.title": "Uran!",
   "advancements.radioisotopes.uranium.description": "Erhalte ein Stück dieses ... außergewöhnlichen Minerals",
   "advancements.radioisotopes.uranium_centrifuge.title": "Uran Zentrifuge",
-  "advancements.radioisotopes.uranium_centrifuge.description": "Wollen Sie diese wirklich außergewöhnlichen und sehr seltenen Waren kaufen?"
+  "advancements.radioisotopes.uranium_centrifuge.description": "Wollen Sie diese wirklich außergewöhnlichen und sehr seltenen Waren kaufen?",
+  "advancements.radioisotopes.atomic_waste.title": "Atommüll",
+  "advancements.radioisotopes.atomic_waste.description": "Gefährliches Zeug! Vielleicht ist es aber trotzdem noch nützlich...",
+  "advancements.radioisotopes.atomic_bomb.title": "Die Bombe",
+  "advancements.radioisotopes.atomic_bomb.description": "§6§oE = mc²!",
+  "advancements.radioisotopes.fusion_bomb.title": "Wasserstoffbombe",
+  "advancements.radioisotopes.fusion_bomb.description": "Die erste Gerätschaft zur Kernfusion im großen Maßstab!"
 }
