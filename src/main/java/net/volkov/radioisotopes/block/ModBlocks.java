@@ -91,6 +91,13 @@ public class ModBlocks {
             new OreBlock(FabricBlockSettings.of(Material.STONE).strength(4.0f).requiresTool(),
                     UniformIntProvider.create(2, 6)), ModItemGroup.URANIUM);
 
+    public static final Block ATOMIC_BOMB = registerBlock("atomic_bomb",
+            new Block(FabricBlockSettings.of(Material.METAL)), ModItemGroup.URANIUM);
+    public static final Block HYDROGEN_BOMB = registerBlock("fusion_bomb",
+            new Block(FabricBlockSettings.of(Material.METAL)), ModItemGroup.URANIUM);
+
+
+
 
     private static Block registerBlock(String name, Block block, ItemGroup group, String tooltipKey_1, String tooltipKey_2, String tooltipKey_3, String tooltipKey_4) {
         registerBlockItem(name, block, group, tooltipKey_1, tooltipKey_2, tooltipKey_3, tooltipKey_4);

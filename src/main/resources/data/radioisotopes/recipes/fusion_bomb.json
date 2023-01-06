@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "F": {
+      "item": "radioisotopes:fission_stage"
+    },
+    "H": {
+      "item": "radioisotopes:fusion_stage"
+    },
+    "C": {
+      "item": "radioisotopes:fusion_bomb_casing"
+    }
+  },
+  "pattern": [
+    "CCC",
+    "FH ",
+    "CCC"
+  ],
+  "result": {
+    "item": "radioisotopes:fusion_bomb"
+  }
+}

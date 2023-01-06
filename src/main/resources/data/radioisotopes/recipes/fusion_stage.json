@@ -9,9 +9,9 @@
     }
   },
   "pattern": [
-    "   ",
     "LPL",
-    "   "
+    "LPL",
+    "LPL"
   ],
   "result": {
     "item": "radioisotopes:fusion_stage"

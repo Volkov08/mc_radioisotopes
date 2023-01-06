@@ -67,6 +67,9 @@
   "item.radioisotopes.fission_stage": "Kernspaltungsstufe",
   "item.radioisotopes.fusion_stage": "Kernfusionsstufe",
 
+  "block.radioisotopes.atomic_bomb": "Atombombe",
+  "block.radioisotopes.fusion_bomb": "Fusionsbombe",
+
   "tooltip.radioisotopes.uranium_centrifuge_1": "§e§lMacht aus Uranblock bzw. Atommüll",
   "tooltip.radioisotopes.uranium_centrifuge_2": "§e§l+ Fluor + Lohenrute (Brennstoff)",
   "tooltip.radioisotopes.uranium_centrifuge_3": "§e§langereichertes Uran bzw. Plutonium",

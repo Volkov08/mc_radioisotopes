@@ -69,6 +69,9 @@
   "item.radioisotopes.fission_stage": "Nuclear Fission Stage",
   "item.radioisotopes.fusion_stage": "Nuclear Fusion Stage",
 
+  "block.radioisotopes.atomic_bomb": "Atomic Bomb",
+  "block.radioisotopes.fusion_bomb": "Fusion Bomb",
+
   "effect.radioisotopes.radiation_poisoning": "Radiation",
 
   "itemGroup.radioisotopes.uranium": "Uranium Items",
