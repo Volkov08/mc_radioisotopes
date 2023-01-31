@@ -105,7 +105,6 @@ public class AtomicReactorControllerBlockEntity extends BlockEntity implements N
 
     private void consumeFuel() {
         if(getStack(0).getItem() == ModItems.NUCLEAR_FUEL_ROD) {
-
             this.fuelTime = 32000;
             removeStack(0, 1);
             setStack(0, new ItemStack(ModItems.ATOMIC_WASTE, getStack(0).getCount() + 1));

@@ -19,9 +19,7 @@ import net.minecraft.util.registry.Registry;
 import net.minecraft.world.World;
 import net.volkov.radioisotopes.ClientMain;
 import net.volkov.radioisotopes.ClientOnly;
-import net.volkov.radioisotopes.block.custom.ModAtomicReactorControllerBlock;
-import net.volkov.radioisotopes.block.custom.ModDeuteriumGeneratorBlock;
-import net.volkov.radioisotopes.block.custom.ModUraniumCentrifugeBlock;
+import net.volkov.radioisotopes.block.custom.*;
 import net.volkov.radioisotopes.item.ModItemGroup;
 import org.jetbrains.annotations.Nullable;
 
@@ -68,8 +66,8 @@ public class ModBlocks {
             "tooltip.radioisotopes.atomic_reactor_controller_1", "tooltip.radioisotopes.atomic_reactor_controller_2",
             "tooltip.radioisotopes.atomic_reactor_controller_3", "");
 
-    public static final Block ATOMIC_REACTOR_CASING = registerBlock("atomic_reactor_casing",
-            new Block(FabricBlockSettings.of(Material.METAL).requiresTool().strength(4f).nonOpaque()), ModItemGroup.URANIUM);
+    public static final Block INDUSTRIAL_CASING = registerBlock("industrial_casing",
+            new Block(FabricBlockSettings.of(Material.METAL).requiresTool().strength(4f).resistance(1000f).nonOpaque()), ModItemGroup.URANIUM);
 
 
     public static final Block LEAD_ORE = registerBlock("lead_ore",
@@ -92,9 +90,9 @@ public class ModBlocks {
                     UniformIntProvider.create(2, 6)), ModItemGroup.URANIUM);
 
     public static final Block ATOMIC_BOMB = registerBlock("atomic_bomb",
-            new Block(FabricBlockSettings.of(Material.METAL)), ModItemGroup.URANIUM);
-    public static final Block HYDROGEN_BOMB = registerBlock("fusion_bomb",
-            new Block(FabricBlockSettings.of(Material.METAL)), ModItemGroup.URANIUM);
+            new ModAtomicBombBlock(FabricBlockSettings.of(Material.METAL).strength(4.5f)), ModItemGroup.URANIUM);
+    public static final Block FUSION_BOMB = registerBlock("fusion_bomb",
+            new ModFusionBombBlock(FabricBlockSettings.of(Material.METAL).strength(4.5f)), ModItemGroup.URANIUM);
 
 
     private static Block registerBlock(String name, Block block, ItemGroup group, String tooltipKey_1, String tooltipKey_2, String tooltipKey_3, String tooltipKey_4) {

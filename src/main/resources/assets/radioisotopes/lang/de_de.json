@@ -54,7 +54,7 @@
   "block.radioisotopes.deuterium_generator": "Deuterium Generator",
   "block.radioisotopes.uranium_centrifuge": "Uranzentrifuge",
   "block.radioisotopes.atomic_reactor_controller": "Atomreaktorsteuerung",
-  "block.radioisotopes.atomic_reactor_casing": "Atomreaktorhülle",
+  "block.radioisotopes.industrial_casing": "Industriegehäuse",
 
   "item.radioisotopes.copper_wire": "Kupferkabel",
   "item.radioisotopes.electric_engine": "Elektromotor",

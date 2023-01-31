@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "E": {
+      "item": "radioisotopes:electric_engine"
+    },
+    "I": {
+      "item": "radioisotopes:industrial_casing"
+    }
+  },
+  "pattern": [
+    "IEI",
+    "I I",
+    "III"
+  ],
+  "result": {
+    "item": "radioisotopes:uranium_centrifuge"
+  }
+}

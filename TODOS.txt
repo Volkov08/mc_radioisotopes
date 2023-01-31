@@ -1,9 +1,6 @@
-- Only allow recipes of the atomic_reactor to work, when structure is complete
-  + Replace GUI-Texture (currently vanilla)
+- Urgent!: Replace GUI-Texture for atomic_reactor (currently vanilla)
 
+Longterm goals:
 - Fusion Reactor
+- Include radiation effect into atomic explosions
 
-- Atomic and Fusion Bomb
-
-- Remove Heavy Water requirement for the Uranium Centrifuge (Did some research
-  -> Heavy Water not needed for the enrichment process)

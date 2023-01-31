@@ -10,12 +10,15 @@
     "radioisotopes:uranium_block",
     "radioisotopes:enriched_uranium_block",
     "radioisotopes:uranium_glass",
+    "radioisotopes:uranium_glass_pane",
     "radioisotopes:lead_block",
     "radioisotopes:lead_wall",
     "radioisotopes:deuterium_generator",
     "radioisotopes:uranium_centrifuge",
     "radioisotopes:atomic_reactor_controller",
-    "radioisotopes:atomic_reactor_casing",
-    "radioisotopes:end_stone_tenebrium_ore"
+    "radioisotopes:industrial_casing",
+    "radioisotopes:end_stone_tenebrium_ore",
+    "radioisotopes:atomic_bomb",
+    "radioisotopes:fusion_bomb"
   ]
 }

@@ -26,7 +26,7 @@ public class ModConfiguredFeatures {
                     ModBlocks.DEEPSLATE_LEAD_ORE.getDefaultState()));
 
     public static final List<OreFeatureConfig.Target> OVERWORLD_LITHIUM_ORES = List.of(
-            OreFeatureConfig.createTarget(new BlockMatchRuleTest(Blocks.DIORITE),
+            OreFeatureConfig.createTarget(new BlockMatchRuleTest(Blocks.CALCITE),
                     ModBlocks.LITHIUM_ORE.getDefaultState()));
 
     public static final List<OreFeatureConfig.Target> END_TENEBRIUM_ORES = List.of(

@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "B": {
+      "item": "minecraft:brick"
+    },
+    "C": {
+      "item": "radioisotopes:copper_wire"
+    },
+    "W": {
+      "item": "minecraft:bucket"
+    }
+  },
+  "pattern": [
+    " C ",
+    "BWB",
+    "BBB"
+  ],
+  "result": {
+    "item": "radioisotopes:deuterium_generator"
+  }
+}

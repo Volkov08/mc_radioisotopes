@@ -11,7 +11,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "radioisotopes:atomic_reactor_casing"
+          "name": "radioisotopes:atomic_bomb"
         }
       ],
       "rolls": 1.0

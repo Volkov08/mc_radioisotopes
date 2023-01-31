@@ -1,8 +1,8 @@
 {
   "type": "minecraft:crafting_shaped",
   "key": {
-    "F": {
-      "item": "radioisotopes:fission_stage"
+    "N": {
+      "item": "minecraft:netherite_scrap"
     },
     "I": {
       "item": "minecraft:iron_block"
@@ -10,10 +10,10 @@
   },
   "pattern": [
     "III",
-    "IFI",
+    "INI",
     "III"
   ],
   "result": {
-    "item": "radioisotopes:atomic_bomb"
+    "item": "radioisotopes:industrial_casing"
   }
 }

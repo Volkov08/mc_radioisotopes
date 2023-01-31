@@ -6,12 +6,15 @@
     },
     "P": {
       "item": "radioisotopes:plutonium"
+    },
+    "U": {
+      "item": "radioisotopes:uranium_ingot"
     }
   },
   "pattern": [
-    "TTT",
-    "TPT",
-    "TTT"
+    "TUT",
+    "UPU",
+    "TUT"
   ],
   "result": {
     "item": "radioisotopes:fission_stage"
