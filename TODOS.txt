@@ -1,8 +1,6 @@
 Shortterm goals:
-- Include radiation effect into atomic explosions
-- Make the electric engine or the uranium centrifuge spawn in a custom structure
+- Make the uranium centrifuge spawn in a custom structure
 
 Longterm goals:
 - Fusion Reactor (multiblock?)
-- Antimatter usage
-
+- Antimatter (Tenebrium Ore) usage -> e.g. Additional nuke and powerful sword
