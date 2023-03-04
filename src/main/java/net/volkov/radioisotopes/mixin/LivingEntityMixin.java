@@ -29,11 +29,12 @@ public abstract class LivingEntityMixin extends Entity {
             }
         }
     }
-
+    /*
     @Inject(method = "onStatusEffectRemoved", at = @At("HEAD"))
     public void onStatusEffectRemoved(StatusEffectInstance effect, CallbackInfo ci){
         if (this.isPlayer() && effect.getEffectType() == ModEffects.RAD_POISON){
             radiationDur = effect.getDuration();
         }
     }
+     */
 }

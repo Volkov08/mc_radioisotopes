@@ -16,6 +16,7 @@ import net.minecraft.screen.PropertyDelegate;
 import net.minecraft.screen.ScreenHandler;
 import net.minecraft.text.LiteralText;
 import net.minecraft.text.Text;
+import net.minecraft.text.TranslatableText;
 import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
@@ -76,7 +77,7 @@ public class DeuteriumGeneratorBlockEntity extends BlockEntity implements NamedS
 
     @Override
     public Text getDisplayName() {
-        return new LiteralText("Deuterium Generator");
+        return new TranslatableText("block.radioisotopes.deuterium_generator");
     }
 
     @Nullable

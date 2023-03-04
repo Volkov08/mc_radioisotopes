@@ -26,7 +26,7 @@ public class ModConfiguredFeatures {
                     ModBlocks.DEEPSLATE_LEAD_ORE.getDefaultState()));
 
     public static final List<OreFeatureConfig.Target> OVERWORLD_LITHIUM_ORES = List.of(
-            OreFeatureConfig.createTarget(new BlockMatchRuleTest(Blocks.CALCITE),
+            OreFeatureConfig.createTarget(new BlockMatchRuleTest(Blocks.DIORITE),
                     ModBlocks.LITHIUM_ORE.getDefaultState()));
 
     public static final List<OreFeatureConfig.Target> END_TENEBRIUM_ORES = List.of(
@@ -42,7 +42,7 @@ public class ModConfiguredFeatures {
                    new OreFeatureConfig(OVERWORLD_LEAD_ORES, 12));
    public static final RegistryEntry<ConfiguredFeature<OreFeatureConfig, ?>> LITHIUM_ORE =
            ConfiguredFeatures.register("lithium_ore", Feature.ORE,
-                   new OreFeatureConfig(OVERWORLD_LITHIUM_ORES, 7));
+                   new OreFeatureConfig(OVERWORLD_LITHIUM_ORES, 5));
    public static final RegistryEntry<ConfiguredFeature<OreFeatureConfig, ?>> END_TENEBRIUM_ORE =
            ConfiguredFeatures.register("end_tenebrium_ore", Feature.ORE,
                    new OreFeatureConfig(END_TENEBRIUM_ORES, 5));

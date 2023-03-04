@@ -12,9 +12,9 @@
     }
   },
   "pattern": [
-    "UUU",
+    "U U",
     "LPL",
-    "UUU"
+    "U U"
   ],
   "result": {
     "item": "radioisotopes:fusion_stage"

@@ -53,7 +53,7 @@
   "block.radioisotopes.uranium_glass_pane": "Uranium Glass Pane",
   "block.radioisotopes.deuterium_generator": "Deuterium Generator",
   "block.radioisotopes.uranium_centrifuge": "Uranium Centrifuge",
-  "block.radioisotopes.atomic_reactor_controller": "Atomic Reactor Controller",
+  "block.radioisotopes.atomic_reactor_controller": "Atomic Reactor",
   "block.radioisotopes.industrial_casing": "Industrial Casing",
 
   "block.radioisotopes.end_stone_tenebrium_ore": "Tenebrium Ore",
@@ -72,6 +72,19 @@
   "block.radioisotopes.atomic_bomb": "Atomic Bomb",
   "block.radioisotopes.fusion_bomb": "Fusion Bomb",
 
+  "tooltip.radioisotopes.uranium_centrifuge_1": "§e§lMakes enriched uranium",
+  "tooltip.radioisotopes.uranium_centrifuge_2": "§e§lfrom uranium block",
+  "tooltip.radioisotopes.uranium_centrifuge_3": "§e§l+ fluorine + blaze rod (fuel)",
+
+  "tooltip.radioisotopes.atomic_reactor_controller_1": "§e§lCharges batteries or produces",
+  "tooltip.radioisotopes.atomic_reactor_controller_2": "§e§ltritium from lithium and is fueled",
+  "tooltip.radioisotopes.atomic_reactor_controller_3": "§e§lby a nuclear fuel rod",
+
+  "tooltip.radioisotopes.deuterium_generator_1": "§e§lEnriches heavy water",
+  "tooltip.radioisotopes.deuterium_generator_2": "§e§lusing a power source",
+  "tooltip.radioisotopes.deuterium_generator_3": "§e§l(potato or battery)",
+  "tooltip.radioisotopes.deuterium_generator_4": "§e§lfrom normal water",
+
   "effect.radioisotopes.radiation_poisoning": "Radiation",
 
   "itemGroup.radioisotopes.uranium": "Uranium Items",
@@ -81,9 +94,11 @@
   "advancements.radioisotopes.heavy_lead_armor.title": "Safety First!",
   "advancements.radioisotopes.heavy_lead_armor.description": "Obtain a full set of heavy lead armor in order to be safe from radiation posioning",
   "advancements.radioisotopes.nuclear_fuel.title": "Nuclear Fuel",
-  "advancements.radioisotopes.nuclear_fuel.description": "Obtain a Glowstick on Steroids",
+  "advancements.radioisotopes.nuclear_fuel.description": "Obtain a glowstick on steroids",
+  "advancements.radioisotopes.atomic_reactor_controller.title": "A Nuclear Reactor!",
+  "advancements.radioisotopes.atomic_reactor_controller.description": "The §mplace§r block where the magic happens...",
   "advancements.radioisotopes.uranium.title": "Uranium!",
-  "advancements.radioisotopes.uranium.description": "Obtain an Piece of this extraordinary Material",
+  "advancements.radioisotopes.uranium.description": "Obtain an piece of this extraordinary material",
   "advancements.radioisotopes.uranium_centrifuge.title": "Uranium Centrifuge",
   "advancements.radioisotopes.uranium_centrifuge.description": "Lets start §mscam§r... trading!",
   "advancements.radioisotopes.atomic_waste.title": "Atomic Waste",

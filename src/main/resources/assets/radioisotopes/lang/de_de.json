@@ -53,7 +53,7 @@
   "block.radioisotopes.uranium_glass_pane": "Uranglasscheibe",
   "block.radioisotopes.deuterium_generator": "Deuterium Generator",
   "block.radioisotopes.uranium_centrifuge": "Uranzentrifuge",
-  "block.radioisotopes.atomic_reactor_controller": "Atomreaktorsteuerung",
+  "block.radioisotopes.atomic_reactor_controller": "Atomreaktor",
   "block.radioisotopes.industrial_casing": "Industriegehäuse",
 
   "item.radioisotopes.copper_wire": "Kupferkabel",
@@ -70,9 +70,9 @@
   "block.radioisotopes.atomic_bomb": "Atombombe",
   "block.radioisotopes.fusion_bomb": "Fusionsbombe",
 
-  "tooltip.radioisotopes.uranium_centrifuge_1": "§e§lMacht aus Uranblock bzw. Atommüll",
+  "tooltip.radioisotopes.uranium_centrifuge_1": "§e§lMacht aus Uranblock",
   "tooltip.radioisotopes.uranium_centrifuge_2": "§e§l+ Fluor + Lohenrute (Brennstoff)",
-  "tooltip.radioisotopes.uranium_centrifuge_3": "§e§langereichertes Uran bzw. Plutonium",
+  "tooltip.radioisotopes.uranium_centrifuge_3": "§e§langereichertes Uran",
 
   "tooltip.radioisotopes.atomic_reactor_controller_1": "§e§lKann mithilfe eines Brennstabs",
   "tooltip.radioisotopes.atomic_reactor_controller_2": "§e§lBatterien laden und aus Lithium",
@@ -94,6 +94,8 @@
   "advancements.radioisotopes.heavy_lead_armor.description": "Besitze eine volle, schwere Bleirüstung, um dich vor Strahlung zu schützen",
   "advancements.radioisotopes.nuclear_fuel.title": "Nuklearer Brennstoff",
   "advancements.radioisotopes.nuclear_fuel.description": "Erhalte einen Brennstab",
+  "advancements.radioisotopes.atomic_reactor_controller.title": "Ein Atomreaktor!",
+  "advancements.radioisotopes.atomic_reactor_controller.description": "Er läuft!",
   "advancements.radioisotopes.uranium.title": "Uran!",
   "advancements.radioisotopes.uranium.description": "Erhalte ein Stück dieses ... außergewöhnlichen Minerals",
   "advancements.radioisotopes.uranium_centrifuge.title": "Uran Zentrifuge",

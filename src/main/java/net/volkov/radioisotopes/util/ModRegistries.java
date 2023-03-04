@@ -109,6 +109,12 @@ public class ModRegistries {
                             new ItemStack(ModBlocks.URANIUM_CENTRIFUGE.asItem(), 1),
                             3,18,0.05f));
 
+                    factories.add((entity, random) -> new TradeOffer(
+                            new ItemStack(ModItems.ATOMIC_WASTE, 1),
+                            new ItemStack(Items.EMERALD, 26),
+                            new ItemStack(ModItems.PLUTONIUM, 1),
+                            5,22,0.05f));
+
                     /*
                     factories.add((entity, random) -> new TradeOffer(
                             new ItemStack(Items.EMERALD, 24),
@@ -128,7 +134,7 @@ public class ModRegistries {
                 TradeOfferHelper.registerVillagerOffers(ModVillagers.PHYSICIST, 5,
                 factories -> {
                     factories.add((entity, random) -> new TradeOffer(
-                            new ItemStack(Items.EMERALD, 32),
+                            new ItemStack(Items.EMERALD, 36),
                             new ItemStack(ModItems.ENRICHED_URANIUM_INGOT, 1),
                             2,16,0.05f));
                 });

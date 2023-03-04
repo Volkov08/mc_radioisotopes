@@ -1,13 +1,13 @@
 {
   "display": {
     "icon": {
-      "item": "radioisotopes:atomic_waste"
+      "item": "radioisotopes:atomic_reactor_controller"
     },
     "title": {
-      "translate": "advancements.radioisotopes.atomic_waste.title"
+      "translate": "advancements.radioisotopes.atomic_reactor_controller.title"
     },
     "description": {
-      "translate": "advancements.radioisotopes.atomic_waste.description"
+      "translate": "advancements.radioisotopes.atomic_reactor_controller.description"
     },
     "frame": "task",
     "show_toast": true,
@@ -15,9 +15,9 @@
     "hidden": false
   },
   "rewards": {
-    "experience": 0
+    "experience": 30
   },
-  "parent": "radioisotopes:atomic_reactor_controller",
+  "parent": "radioisotopes:nuclear_fuel_rod",
   "criteria": {
     "requirement": {
       "trigger": "minecraft:inventory_changed",
@@ -25,7 +25,7 @@
         "items": [
           {
             "items": [
-              "radioisotopes:atomic_waste"
+              "radioisotopes:atomic_reactor_controller"
             ]
           }
         ]

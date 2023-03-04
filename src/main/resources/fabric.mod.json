@@ -4,15 +4,15 @@
   "version": "${version}",
 
   "name": "Uranium Mod",
-  "description": "This is an example description! Tell everyone what your mod is about!",
+  "description": "This stand-alone mod is about all things related to uranium and other interesting elements.",
   "authors": [
     "Volkov08",
-    "Elias aka Eli42",
+    "Eli42",
     "Destrvktor"
   ],
   "contact": {
     "homepage": "https://fabricmc.net/",
-    "sources": "https://github.com/FabricMC/fabric-example-mod"
+    "sources": "https://github.com/Volkov08/mc_radioisotopes"
   },
 
   "license": "MIT",
@@ -32,7 +32,7 @@
   ],
 
   "depends": {
-    "fabricloader": ">=0.14.6",
+    "fabricloader": ">=0.14.14",
     "fabric": "*",
     "minecraft": "~1.18.2",
     "java": ">=17"

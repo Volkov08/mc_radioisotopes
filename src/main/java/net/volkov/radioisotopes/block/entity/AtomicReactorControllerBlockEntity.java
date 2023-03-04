@@ -1,7 +1,10 @@
 package net.volkov.radioisotopes.block.entity;
 
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
 import net.minecraft.block.entity.BlockEntity;
+import net.minecraft.entity.AreaEffectCloudEntity;
+import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.Inventories;
@@ -9,18 +12,23 @@ import net.minecraft.inventory.SimpleInventory;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NbtCompound;
+import net.minecraft.particle.ParticleTypes;
 import net.minecraft.screen.NamedScreenHandlerFactory;
 import net.minecraft.screen.PropertyDelegate;
 import net.minecraft.screen.ScreenHandler;
 import net.minecraft.text.LiteralText;
 import net.minecraft.text.Text;
+import net.minecraft.text.TranslatableText;
 import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.world.World;
 import net.minecraft.world.explosion.Explosion;
+import net.volkov.radioisotopes.ClientMain;
 import net.volkov.radioisotopes.block.custom.ModAtomicReactorControllerBlock;
 import net.volkov.radioisotopes.block.custom.ModDeuteriumGeneratorBlock;
+import net.volkov.radioisotopes.effect.ModEffects;
+import net.volkov.radioisotopes.entity.FissionRadEntity;
 import net.volkov.radioisotopes.item.ModItems;
 import net.volkov.radioisotopes.item.inventory.ImplementedInventory;
 import net.volkov.radioisotopes.recipe.AtomicReactorRecipe;
@@ -76,7 +84,7 @@ public class AtomicReactorControllerBlockEntity extends BlockEntity implements N
 
     @Override
     public Text getDisplayName() {
-        return new LiteralText("Atomic Reactor");
+        return new TranslatableText("block.radioisotopes.atomic_reactor_controller");
     }
 
     @Nullable
@@ -120,6 +128,17 @@ public class AtomicReactorControllerBlockEntity extends BlockEntity implements N
 
         if(isConsumingFuel(entity)) {
             entity.fuelTime--;
+            if (!world.isClient()) {
+                double x = Math.random();
+                if (x < 0.2573867 && x > 0.2573864) {
+                    world.removeBlock(pos, false);
+                    world.createExplosion(null, pos.getX(), pos.getY(), pos.getZ(), 4.0f, true, Explosion.DestructionType.BREAK);
+                    world.setBlockState(pos, Blocks.LAVA.getDefaultState());
+                    FissionRadEntity rad = new FissionRadEntity(ClientMain.REACTOR_RAD_ENTITY, world);
+                    rad.refreshPositionAndAngles(pos.getX(), pos.getY(), pos.getZ(), 0, 0);
+                    world.spawnEntity(rad);
+                }
+            }
         }
 
         if(hasRecipe(entity)) {

@@ -1,17 +1,20 @@
 {
   "type": "minecraft:crafting_shaped",
   "key": {
-    "N": {
-      "item": "minecraft:netherite_scrap"
+    "L": {
+      "item": "radioisotopes:heavy_lead_plate"
     },
     "I": {
-      "item": "minecraft:iron_block"
+      "item": "minecraft:iron_ingot"
+    },
+    "C": {
+      "item": "minecraft:white_concrete"
     }
   },
   "pattern": [
-    "III",
-    "INI",
-    "III"
+    "CIC",
+    "ILI",
+    "CIC"
   ],
   "result": {
     "item": "radioisotopes:industrial_casing"

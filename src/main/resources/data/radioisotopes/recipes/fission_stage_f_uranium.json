@@ -6,12 +6,15 @@
     },
     "P": {
       "item": "radioisotopes:uranium_pusher"
+    },
+    "C": {
+      "item": "radioisotopes:casing_alloy"
     }
   },
   "pattern": [
-    "   ",
+    " CC",
     "P U",
-    "   "
+    " CC"
   ],
   "result": {
     "item": "radioisotopes:fission_stage"

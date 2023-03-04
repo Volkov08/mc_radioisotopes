@@ -1,6 +1,8 @@
-- Urgent!: Replace GUI-Texture for atomic_reactor (currently vanilla)
+Shortterm goals:
+- Include radiation effect into atomic explosions
+- Make the electric engine or the uranium centrifuge spawn in a custom structure
 
 Longterm goals:
-- Fusion Reactor
-- Include radiation effect into atomic explosions
+- Fusion Reactor (multiblock?)
+- Antimatter usage
 

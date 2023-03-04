@@ -140,7 +140,6 @@ public class ModItems {
     public static final Item FUSION_STAGE = registerItem("fusion_stage",
             new Item(new FabricItemSettings().group(ModItemGroup.URANIUM)));
 
-
     private static Item registerItem(String name, Item item) {
         return Registry.register(Registry.ITEM, new Identifier(ClientMain.MOD_ID, name), item);
     }
