@@ -20,15 +20,8 @@ import net.volkov.radioisotopes.item.ModArmorMaterials;
 public class FissionRadEntity extends Entity {
 
     private int tickCounter = 0;
-    private final double full_lifetime = 90000;
-    private int lifetime = 90000;
-    private final float EFFECT_RANGE_1 = 30.0f;
-    private final float EFFECT_RANGE_2 = 70.0f;
-    private final float EFFECT_RANGE_3 = 110.0f;
-
-    private final double dur_1 = 70000;
-    private final double dur_2 = 42000;
-    private final double dur_3 = 15000;
+    private final double full_lifetime = 70000;
+    private int lifetime = 70000;
 
     public FissionRadEntity(EntityType<? extends Entity> entityType, World world) {
         super(entityType, world);
@@ -61,14 +54,8 @@ public class FissionRadEntity extends Entity {
             Vec3d playerPos = player.getPos();
             double distance = entityPos.distanceTo(playerPos);
 
-            if (distance <= EFFECT_RANGE_1) {
-                applyEffect(player, dur_1, 40000);
-            }
-            else if (distance <= EFFECT_RANGE_2) {
-                applyEffect(player, dur_2, 40000);
-            }
-            else if (distance <= EFFECT_RANGE_3) {
-                applyEffect(player, dur_3, 40000);
+            if (distance < 110.0f) {
+                applyEffect(player, 60000, distance, 110, 30000);
             }
 
         }
@@ -90,30 +77,30 @@ public class FissionRadEntity extends Entity {
         return hasLeadArmor;
     }
 
-    public void applyEffect(PlayerEntity player, double dur, int div) {
-        int r_dur = (int) Math.round((double) lifetime / full_lifetime * dur);
-        if (!player.hasStatusEffect(ModEffects.RAD_POISON)) {
-            if (r_dur >= div) {
-                if (!hasArmorOn(player, ModArmorMaterials.HEAVY_LEAD)) {
-                    player.addStatusEffect(new StatusEffectInstance(ModEffects.RAD_POISON, r_dur, 0));
+    public void applyEffect(PlayerEntity player, double dur, double distance, double full_distance, int div) {
+        double r_dur = Math.round((double) lifetime / full_lifetime * dur);
+        int f_dur = (int) Math.round(r_dur - (distance * r_dur / full_distance));
+        if (f_dur > 0) {
+            if (!player.hasStatusEffect(ModEffects.RAD_POISON)) {
+                if (f_dur >= div) {
+                    if (!hasArmorOn(player, ModArmorMaterials.HEAVY_LEAD)) {
+                        player.addStatusEffect(new StatusEffectInstance(ModEffects.RAD_POISON, f_dur, 0));
+                    }
+                } else {
+                    if (!hasArmorOn(player, ModArmorMaterials.LEAD) && !hasArmorOn(player, ModArmorMaterials.HEAVY_LEAD)) {
+                        player.addStatusEffect(new StatusEffectInstance(ModEffects.RAD_POISON, f_dur, 0));
+                    }
                 }
-            }
-            else {
-                if (!hasArmorOn(player, ModArmorMaterials.LEAD) && !hasArmorOn(player, ModArmorMaterials.HEAVY_LEAD)) {
-                    player.addStatusEffect(new StatusEffectInstance(ModEffects.RAD_POISON, r_dur, 0));
-                }
-            }
 
-        }
-        else if (player.getStatusEffect(ModEffects.RAD_POISON).getDuration() < r_dur) {
-            if (r_dur >= div) {
-                if (!hasArmorOn(player, ModArmorMaterials.HEAVY_LEAD)) {
-                    player.addStatusEffect(new StatusEffectInstance(ModEffects.RAD_POISON, r_dur, 0));
-                }
-            }
-            else {
-                if (!hasArmorOn(player, ModArmorMaterials.LEAD) && !hasArmorOn(player, ModArmorMaterials.HEAVY_LEAD)) {
-                    player.addStatusEffect(new StatusEffectInstance(ModEffects.RAD_POISON, r_dur, 0));
+            } else if (player.getStatusEffect(ModEffects.RAD_POISON).getDuration() < f_dur) {
+                if (f_dur >= div) {
+                    if (!hasArmorOn(player, ModArmorMaterials.HEAVY_LEAD)) {
+                        player.addStatusEffect(new StatusEffectInstance(ModEffects.RAD_POISON, f_dur, 0));
+                    }
+                } else {
+                    if (!hasArmorOn(player, ModArmorMaterials.LEAD) && !hasArmorOn(player, ModArmorMaterials.HEAVY_LEAD)) {
+                        player.addStatusEffect(new StatusEffectInstance(ModEffects.RAD_POISON, f_dur, 0));
+                    }
                 }
             }
         }
