@@ -91,9 +91,9 @@ public class ModRegistries {
                             3,10,0.05f));
 
                     factories.add((entity, random) -> new TradeOffer(
-                            new ItemStack(Items.EMERALD, 16),
+                            new ItemStack(Items.EMERALD, 32),
                             new ItemStack(ModItems.HEAVY_WATER_BUCKET, 1),
-                            12,4,0.05f));
+                            6,4,0.05f));
                 });
                 TradeOfferHelper.registerVillagerOffers(ModVillagers.PHYSICIST, 4,
                 factories -> {
@@ -115,6 +115,11 @@ public class ModRegistries {
                             new ItemStack(ModItems.PLUTONIUM, 1),
                             5,22,0.05f));
 
+                    factories.add((entity, random) -> new TradeOffer(
+                            new ItemStack(Items.EMERALD, 38),
+                            new ItemStack(ModItems.LITHIUM_INGOT, 1),
+                            3,18,0.05f));
+
                     /*
                     factories.add((entity, random) -> new TradeOffer(
                             new ItemStack(Items.EMERALD, 24),
@@ -134,7 +139,7 @@ public class ModRegistries {
                 TradeOfferHelper.registerVillagerOffers(ModVillagers.PHYSICIST, 5,
                 factories -> {
                     factories.add((entity, random) -> new TradeOffer(
-                            new ItemStack(Items.EMERALD, 36),
+                            new ItemStack(Items.EMERALD, 42),
                             new ItemStack(ModItems.ENRICHED_URANIUM_INGOT, 1),
                             2,16,0.05f));
                 });

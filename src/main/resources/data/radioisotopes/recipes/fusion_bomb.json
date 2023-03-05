@@ -12,9 +12,9 @@
     }
   },
   "pattern": [
-    "CCC",
-    "FH ",
-    "CCC"
+    "   ",
+    "FHC",
+    "   "
   ],
   "result": {
     "item": "radioisotopes:fusion_bomb"
