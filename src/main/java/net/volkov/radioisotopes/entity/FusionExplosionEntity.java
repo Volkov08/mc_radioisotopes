@@ -84,7 +84,7 @@ public class FusionExplosionEntity extends Entity {
                 world.createExplosion(null, pos.getX() + (r * Math.cos(x)), pos.getY(), pos.getZ() + (r * Math.sin(x)), 28.0f, true, Explosion.DestructionType.DESTROY);
                 x += 2;
             } else {
-                FissionRadEntity rad = new FissionRadEntity(ClientMain.FISSION_RAD_ENTITY, world);
+                FissionRadEntity rad = new FissionRadEntity(ModEntities.FISSION_RAD_ENTITY, world);
                 rad.refreshPositionAndAngles(pos.getX(), pos.getY(), pos.getZ(), 0, 0);
                 world.spawnEntity(rad);
                 remove(RemovalReason.DISCARDED);

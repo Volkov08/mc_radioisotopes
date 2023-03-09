@@ -6,10 +6,12 @@
     }
   },
   "pattern": [
+    "###",
+    "# #",
     "###"
   ],
   "result": {
     "item": "radioisotopes:fusion_bomb_casing",
-    "count": 2
+    "count": 1
   }
 }

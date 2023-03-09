@@ -29,6 +29,7 @@ import net.volkov.radioisotopes.block.custom.ModAtomicReactorControllerBlock;
 import net.volkov.radioisotopes.block.custom.ModDeuteriumGeneratorBlock;
 import net.volkov.radioisotopes.effect.ModEffects;
 import net.volkov.radioisotopes.entity.FissionRadEntity;
+import net.volkov.radioisotopes.entity.ModEntities;
 import net.volkov.radioisotopes.entity.ReactorRadEntity;
 import net.volkov.radioisotopes.item.ModItems;
 import net.volkov.radioisotopes.item.inventory.ImplementedInventory;
@@ -135,7 +136,7 @@ public class AtomicReactorControllerBlockEntity extends BlockEntity implements N
                     world.removeBlock(pos, false);
                     world.createExplosion(null, pos.getX(), pos.getY(), pos.getZ(), 4.0f, true, Explosion.DestructionType.BREAK);
                     world.setBlockState(pos, Blocks.LAVA.getDefaultState());
-                    ReactorRadEntity rad = new ReactorRadEntity(ClientMain.REACTOR_RAD_ENTITY, world);
+                    ReactorRadEntity rad = new ReactorRadEntity(ModEntities.REACTOR_RAD_ENTITY, world);
                     rad.refreshPositionAndAngles(pos.getX(), pos.getY(), pos.getZ(), 0, 0);
                     world.spawnEntity(rad);
                 }

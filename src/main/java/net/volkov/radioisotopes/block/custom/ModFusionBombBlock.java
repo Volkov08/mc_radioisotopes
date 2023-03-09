@@ -18,6 +18,7 @@ import net.volkov.radioisotopes.effect.ModEffects;
 import net.volkov.radioisotopes.entity.FissionExplosionEntity;
 import net.volkov.radioisotopes.entity.FissionRadEntity;
 import net.volkov.radioisotopes.entity.FusionExplosionEntity;
+import net.volkov.radioisotopes.entity.ModEntities;
 
 public class ModFusionBombBlock extends Block {
     public ModFusionBombBlock(Settings settings) {
@@ -44,7 +45,7 @@ public class ModFusionBombBlock extends Block {
         if (world.isClient) {
             return;
         }
-        FusionExplosionEntity nuke = new FusionExplosionEntity(ClientMain.FUSION_EXPLOSION_ENTITY, world);
+        FusionExplosionEntity nuke = new FusionExplosionEntity(ModEntities.FUSION_EXPLOSION_ENTITY, world);
         nuke.refreshPositionAndAngles(pos.getX(), pos.getY(), pos.getZ(), 0, 0);
         world.spawnEntity(nuke);
 

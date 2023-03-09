@@ -78,7 +78,7 @@ public class ReactorRadEntity extends Entity {
     }
 
     public void applyEffect(PlayerEntity player, double dur, double distance, double full_distance, int div) {
-        double r_dur = Math.round((double) lifetime / full_lifetime * dur);
+        double r_dur = (double) lifetime / full_lifetime * dur;
         int f_dur = (int) Math.round(r_dur - (distance * r_dur / full_distance));
         if (f_dur > 0) {
             if (!player.hasStatusEffect(ModEffects.RAD_POISON)) {

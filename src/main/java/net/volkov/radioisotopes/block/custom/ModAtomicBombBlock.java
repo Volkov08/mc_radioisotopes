@@ -24,6 +24,7 @@ import net.volkov.radioisotopes.ClientMain;
 import net.volkov.radioisotopes.effect.ModEffects;
 import net.volkov.radioisotopes.entity.FissionExplosionEntity;
 import net.volkov.radioisotopes.entity.FissionRadEntity;
+import net.volkov.radioisotopes.entity.ModEntities;
 import org.jetbrains.annotations.Nullable;
 
 public class ModAtomicBombBlock extends Block {
@@ -51,7 +52,7 @@ public class ModAtomicBombBlock extends Block {
         if (world.isClient) {
             return;
         }
-        FissionExplosionEntity nuke = new FissionExplosionEntity(ClientMain.FISSION_EXPLOSION_ENTITY, world);
+        FissionExplosionEntity nuke = new FissionExplosionEntity(ModEntities.FISSION_EXPLOSION_ENTITY, world);
         nuke.refreshPositionAndAngles(pos.getX(), pos.getY(), pos.getZ(), 0, 0);
         world.spawnEntity(nuke);
 
