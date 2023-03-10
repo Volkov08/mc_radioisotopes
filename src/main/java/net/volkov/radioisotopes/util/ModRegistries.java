@@ -68,7 +68,7 @@ public class ModRegistries {
                     factories.add((entity, random) -> new TradeOffer(
                             new ItemStack(ModItems.FLUORINE, 2),
                             new ItemStack(Items.EMERALD, 22),
-                            12,10,0.05f));
+                            12,12,0.05f));
                 });
         TradeOfferHelper.registerVillagerOffers(ModVillagers.PHYSICIST, 3,
                 factories -> {
@@ -95,7 +95,7 @@ public class ModRegistries {
                     factories.add((entity, random) -> new TradeOffer(
                             new ItemStack(ModItems.HEAVY_WATER_BUCKET, 1),
                             new ItemStack(Items.EMERALD, 32),
-                            8,25,0.05f));
+                            8,24,0.05f));
                 });
                 TradeOfferHelper.registerVillagerOffers(ModVillagers.PHYSICIST, 4,
                 factories -> {
@@ -103,18 +103,18 @@ public class ModRegistries {
                             new ItemStack(ModItems.ELECTRIC_ENGINE, 4),
                             new ItemStack(Items.EMERALD, 24),
                             new ItemStack(ModBlocks.URANIUM_CENTRIFUGE.asItem(), 1),
-                            3,18,0.05f));
+                            3,28,0.05f));
 
                     factories.add((entity, random) -> new TradeOffer(
                             new ItemStack(ModItems.ATOMIC_WASTE, 1),
                             new ItemStack(Items.EMERALD, 26),
                             new ItemStack(ModItems.PLUTONIUM, 1),
-                            5,22,0.05f));
+                            5,26,0.05f));
 
                     factories.add((entity, random) -> new TradeOffer(
                             new ItemStack(Items.EMERALD, 38),
                             new ItemStack(ModItems.LITHIUM_INGOT, 1),
-                            3,18,0.05f));
+                            3,26,0.05f));
 
                     /*
                     factories.add((entity, random) -> new TradeOffer(
