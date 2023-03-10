@@ -18,10 +18,10 @@ public class ModLootTableModifiers {
         LootTableLoadingCallback.EVENT.register(((resourceManager, manager, id, supplier, setter) -> {
 
             if(CREEPER_ID.equals(id)) {
-                // Adds a Lilac Flower Bulb to Creepers.
+                // Adds RAW_URANIUM to Creepers.
                 FabricLootPoolBuilder poolBuilder = FabricLootPoolBuilder.builder()
                         .rolls(ConstantLootNumberProvider.create(1))
-                        .conditionally(RandomChanceLootCondition.builder(0.3f)) // Drops 30% of the time
+                        .conditionally(RandomChanceLootCondition.builder(0.15f)) // Drops 15% of the time
                         .with(ItemEntry.builder(ModItems.RAW_URANIUM))
                         .withFunction(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 2.0f)).build());
                 supplier.withPool(poolBuilder.build());
