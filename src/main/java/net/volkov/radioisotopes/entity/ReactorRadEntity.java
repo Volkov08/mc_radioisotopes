@@ -12,8 +12,11 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.network.Packet;
 import net.minecraft.network.packet.s2c.play.EntitySpawnS2CPacket;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.world.RaycastContext;
 import net.minecraft.world.World;
+import net.volkov.radioisotopes.block.ModBlocks;
 import net.volkov.radioisotopes.effect.ModEffects;
 import net.volkov.radioisotopes.item.ModArmorMaterials;
 
@@ -37,8 +40,8 @@ public class ReactorRadEntity extends Entity {
         super.tick();
 
         tickCounter++;
-        if (tickCounter < 10) {
-            return; // skip tick checks until tickCounter reaches 10
+        if (tickCounter < 40) {
+            return; // skip tick checks until tickCounter reaches 40
         } else {
             tickCounter = 0; // reset tickCounter to 0
         }
@@ -55,6 +58,13 @@ public class ReactorRadEntity extends Entity {
             double distance = entityPos.distanceTo(playerPos);
 
             if (distance < 125.0f) {
+                RaycastContext context = new RaycastContext(entityPos, playerPos, RaycastContext.ShapeType.COLLIDER, RaycastContext.FluidHandling.NONE, this);
+                BlockPos blockPos = world.raycast(context).getBlockPos();
+                if (blockPos != null && world.getBlockState(blockPos).getBlock() == ModBlocks.LEAD_BLOCK ||
+                        blockPos != null && world.getBlockState(blockPos).getBlock() == ModBlocks.LEAD_WALL ||
+                        blockPos != null && world.getBlockState(blockPos).getBlock() == ModBlocks.INDUSTRIAL_CASING) {
+                    continue; // skip applying effect if there's a diamond block in between
+                }
                 applyEffect(player, 90000, distance, 125, 30000);
             }
 
