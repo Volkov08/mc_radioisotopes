@@ -132,7 +132,7 @@ public class AtomicReactorControllerBlockEntity extends BlockEntity implements N
             entity.fuelTime--;
             if (!world.isClient()) {
                 double x = Math.random();
-                if (x < 0.2573867 && x > 0.2573864 || true) {
+                if (x < 0.2573867 && x > 0.2573864) {
                     world.removeBlock(pos, false);
                     world.createExplosion(null, pos.getX(), pos.getY(), pos.getZ(), 4.0f, true, Explosion.DestructionType.BREAK);
                     world.setBlockState(pos, Blocks.LAVA.getDefaultState());
