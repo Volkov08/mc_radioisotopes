@@ -132,12 +132,12 @@ public class AtomicReactorControllerBlockEntity extends BlockEntity implements N
             entity.fuelTime--;
             if (!world.isClient()) {
                 double x = Math.random();
-                if (x < 0.2573867 && x > 0.2573864) {
+                if (x < 0.2573867 && x > 0.2573864 || true) {
                     world.removeBlock(pos, false);
                     world.createExplosion(null, pos.getX(), pos.getY(), pos.getZ(), 4.0f, true, Explosion.DestructionType.BREAK);
                     world.setBlockState(pos, Blocks.LAVA.getDefaultState());
                     ReactorRadEntity rad = new ReactorRadEntity(ModEntities.REACTOR_RAD_ENTITY, world);
-                    rad.refreshPositionAndAngles(pos.getX(), pos.getY(), pos.getZ(), 0, 0);
+                    rad.refreshPositionAndAngles(pos.getX() + 0.5, pos.getY() + 0.5, pos.getZ() + 0.5, 0, 0);
                     world.spawnEntity(rad);
                 }
             }
