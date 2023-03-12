@@ -8,6 +8,10 @@ there will be possibilities to protect yourself.
 **NOTE:** This is an ongoing project in the late ALPHA-phase, 
 and we are working on it in our limited free time.
 
+## Dependecies
+
+Fabric API (Tested with 0.75.1)
+
 ## Contributing
 Reasonable pull requests are always welcome!
 Please have a look at our TODOS.txt.
