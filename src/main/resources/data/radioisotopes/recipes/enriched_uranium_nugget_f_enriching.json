@@ -1,0 +1,13 @@
+{
+  "type": "radioisotopes:uranium_centrifuge",
+  "ingredients": [
+    {
+      "item": "radioisotopes:uranium_ingot"
+    },{
+      "item": "radioisotopes:fluorine"
+    }
+  ],
+  "output": {
+    "item": "radioisotopes:enriched_uranium_nugget"
+  }
+}
