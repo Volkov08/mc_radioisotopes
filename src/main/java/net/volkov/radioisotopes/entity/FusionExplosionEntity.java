@@ -80,7 +80,7 @@ public class FusionExplosionEntity extends Entity {
                     y_4 += 10;
                 }
             } else if (x <= 135) {
-                int r = 87;
+                int r = 90;
                 world.createExplosion(null, pos.getX() + (r * Math.cos(x)), pos.getY(), pos.getZ() + (r * Math.sin(x)), 28.0f, true, Explosion.DestructionType.DESTROY);
                 x += 2;
             } else {
