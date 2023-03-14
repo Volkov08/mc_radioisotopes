@@ -19,6 +19,7 @@ import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.world.World;
+import net.volkov.radioisotopes.block.custom.ModAtomicReactorControllerBlock;
 import net.volkov.radioisotopes.block.custom.ModDeuteriumGeneratorBlock;
 import net.volkov.radioisotopes.block.custom.ModUraniumCentrifugeBlock;
 import net.volkov.radioisotopes.item.inventory.ImplementedInventory;
@@ -136,29 +137,11 @@ public class UraniumCentrifugeBlockEntity extends BlockEntity implements NamedSc
 
     @Override
     public boolean canExtract(int slot, ItemStack stack, Direction side) {
-        Direction localDir = this.getWorld().getBlockState(this.pos).get(ModUraniumCentrifugeBlock.FACING);
-
-        if(side == Direction.UP) {
-            return false;
-        }
-
-        // Down extract 3
+        Direction localDir = this.getWorld().getBlockState(this.pos).get(ModAtomicReactorControllerBlock.FACING);
         if(side == Direction.DOWN) {
             return slot == 3;
         }
-
-        // bottom extract 3
-        // right extract 3
-        return switch (localDir) {
-            default -> side.getOpposite() == Direction.SOUTH && slot == 3 ||
-                    side.getOpposite() == Direction.EAST && slot == 3;
-            case EAST -> side.rotateYClockwise() == Direction.SOUTH && slot == 3 ||
-                    side.rotateYClockwise() == Direction.EAST && slot == 3;
-            case SOUTH -> side == Direction.SOUTH && slot == 3 ||
-                    side == Direction.EAST && slot == 3;
-            case WEST -> side.rotateYCounterclockwise() == Direction.SOUTH && slot == 3 ||
-                    side.rotateYCounterclockwise() == Direction.EAST && slot == 3;
-        };
+        return false;
     }
 
     //End sided inv

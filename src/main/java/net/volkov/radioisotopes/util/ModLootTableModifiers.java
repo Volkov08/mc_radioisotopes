@@ -23,7 +23,7 @@ public class ModLootTableModifiers {
                         .rolls(ConstantLootNumberProvider.create(1))
                         .conditionally(RandomChanceLootCondition.builder(0.15f)) // Drops 15% of the time
                         .with(ItemEntry.builder(ModItems.RAW_URANIUM))
-                        .withFunction(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 2.0f)).build());
+                        .withFunction(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 1.0f)).build());
                 supplier.withPool(poolBuilder.build());
             }
         }));

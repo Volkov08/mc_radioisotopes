@@ -22,6 +22,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.world.World;
 import net.volkov.radioisotopes.ClientMain;
+import net.volkov.radioisotopes.block.custom.ModAtomicReactorControllerBlock;
 import net.volkov.radioisotopes.block.custom.ModDeuteriumGeneratorBlock;
 import net.volkov.radioisotopes.item.ModItems;
 import net.volkov.radioisotopes.item.inventory.ImplementedInventory;
@@ -193,61 +194,25 @@ public class DeuteriumGeneratorBlockEntity extends BlockEntity implements NamedS
     //Beginning sided inv
     @Override
     public boolean canInsert(int slot, ItemStack stack, @Nullable Direction side) {
-        Direction localDir = this.getWorld().getBlockState(this.pos).get(ModDeuteriumGeneratorBlock.FACING);
+        Direction localDir = this.getWorld().getBlockState(this.pos).get(ModAtomicReactorControllerBlock.FACING);
 
-        if(side == Direction.UP || side == Direction.DOWN) {
+        if(side == Direction.DOWN) {
             return false;
         }
 
-        // Top insert 0 (fuel)
-        // Right insert 1
-        // Left insert 1
-
-        return switch (localDir) {
-            default ->
-                    side.getOpposite() == Direction.NORTH && slot == 0 ||
-                            side.getOpposite() == Direction.EAST && slot == 1 ||
-                            side.getOpposite() == Direction.WEST && slot == 1;
-            case EAST ->
-                    side.rotateYClockwise() == Direction.NORTH && slot == 0 ||
-                            side.rotateYClockwise() == Direction.EAST && slot == 1 ||
-                            side.rotateYClockwise() == Direction.WEST && slot == 1;
-            case SOUTH ->
-                    side == Direction.NORTH && slot == 0 ||
-                            side == Direction.EAST && slot == 1 ||
-                            side == Direction.WEST && slot == 1;
-            case WEST ->
-                    side.rotateYCounterclockwise() == Direction.NORTH && slot == 0 ||
-                            side.rotateYCounterclockwise() == Direction.EAST && slot == 1 ||
-                            side.rotateYCounterclockwise() == Direction.WEST && slot == 1;
-        };
+        if(side == Direction.UP) {
+            return slot == 1;
+        }
+        return slot == 0;
     }
 
     @Override
     public boolean canExtract(int slot, ItemStack stack, Direction side) {
-        Direction localDir = this.getWorld().getBlockState(this.pos).get(ModDeuteriumGeneratorBlock.FACING);
-
-        if(side == Direction.UP) {
-            return false;
-        }
-
-        // Down extract 2
+        Direction localDir = this.getWorld().getBlockState(this.pos).get(ModAtomicReactorControllerBlock.FACING);
         if(side == Direction.DOWN) {
             return slot == 2;
         }
-
-        // bottom extract 2
-        // right extract 2
-        return switch (localDir) {
-            default -> side.getOpposite() == Direction.SOUTH && slot == 2 ||
-                    side.getOpposite() == Direction.EAST && slot == 2;
-            case EAST -> side.rotateYClockwise() == Direction.SOUTH && slot == 2 ||
-                    side.rotateYClockwise() == Direction.EAST && slot == 2;
-            case SOUTH -> side == Direction.SOUTH && slot == 2 ||
-                    side == Direction.EAST && slot == 2;
-            case WEST -> side.rotateYCounterclockwise() == Direction.SOUTH && slot == 2 ||
-                    side.rotateYCounterclockwise() == Direction.EAST && slot == 2;
-        };
+        return false;
     }
 
     //End sided inv

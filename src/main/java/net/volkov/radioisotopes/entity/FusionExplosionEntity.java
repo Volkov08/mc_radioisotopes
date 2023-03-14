@@ -80,8 +80,8 @@ public class FusionExplosionEntity extends Entity {
                     y_4 += 10;
                 }
             } else if (x <= 135) {
-                int r = 90;
-                world.createExplosion(null, pos.getX() + (r * Math.cos(x)), pos.getY(), pos.getZ() + (r * Math.sin(x)), 28.0f, true, Explosion.DestructionType.DESTROY);
+                int r = 89;
+                world.createExplosion(null, pos.getX() + (r * Math.cos(x)), pos.getY(), pos.getZ() + (r * Math.sin(x)), 30.0f, true, Explosion.DestructionType.DESTROY);
                 x += 2;
             } else {
                 FissionRadEntity rad = new FissionRadEntity(ModEntities.FISSION_RAD_ENTITY, world);
