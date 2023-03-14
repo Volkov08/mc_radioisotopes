@@ -39,17 +39,17 @@ public class FissionRadEntity extends Entity {
     public void tick() {
         super.tick();
 
+        if (lifetime > 0) {
+            lifetime--;
+        } else {
+            remove(RemovalReason.DISCARDED); // Despawn entity when lifetime reaches 0
+        }
+
         tickCounter++;
         if (tickCounter < 40) {
             return; // skip tick checks until tickCounter reaches 40
         } else {
             tickCounter = 0; // reset tickCounter to 0
-        }
-
-        if (lifetime > 0) {
-            lifetime--;
-        } else {
-            remove(RemovalReason.DISCARDED); // Despawn entity when lifetime reaches 0
         }
 
         Vec3d entityPos = getPos();
@@ -63,7 +63,7 @@ public class FissionRadEntity extends Entity {
                 if (blockPos != null && world.getBlockState(blockPos).getBlock() == ModBlocks.LEAD_BLOCK ||
                         blockPos != null && world.getBlockState(blockPos).getBlock() == ModBlocks.LEAD_WALL ||
                         blockPos != null && world.getBlockState(blockPos).getBlock() == ModBlocks.INDUSTRIAL_CASING) {
-                    continue; // skip applying effect if there's a diamond block in between
+                    continue;
                 }
                 applyEffect(player, 60000, distance, 110, 30000);
             }
