@@ -2,7 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "key": {
     "O": {
-      "item": "minecraft:dark_oak_planks"
+      "tag": "minecraft:planks"
     },
     "L": {
       "item": "radioisotopes:heavy_lead_plate"
