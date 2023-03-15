@@ -137,7 +137,7 @@ public class UraniumCentrifugeBlockEntity extends BlockEntity implements NamedSc
 
     @Override
     public boolean canExtract(int slot, ItemStack stack, Direction side) {
-        Direction localDir = this.getWorld().getBlockState(this.pos).get(ModAtomicReactorControllerBlock.FACING);
+        Direction localDir = this.getWorld().getBlockState(this.pos).get(ModUraniumCentrifugeBlock.FACING);
         if(side == Direction.DOWN) {
             return slot == 3;
         }

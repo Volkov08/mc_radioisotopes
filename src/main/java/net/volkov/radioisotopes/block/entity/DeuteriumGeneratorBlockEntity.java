@@ -194,7 +194,7 @@ public class DeuteriumGeneratorBlockEntity extends BlockEntity implements NamedS
     //Beginning sided inv
     @Override
     public boolean canInsert(int slot, ItemStack stack, @Nullable Direction side) {
-        Direction localDir = this.getWorld().getBlockState(this.pos).get(ModAtomicReactorControllerBlock.FACING);
+        Direction localDir = this.getWorld().getBlockState(this.pos).get(ModDeuteriumGeneratorBlock.FACING);
 
         if(side == Direction.DOWN) {
             return false;
@@ -208,7 +208,7 @@ public class DeuteriumGeneratorBlockEntity extends BlockEntity implements NamedS
 
     @Override
     public boolean canExtract(int slot, ItemStack stack, Direction side) {
-        Direction localDir = this.getWorld().getBlockState(this.pos).get(ModAtomicReactorControllerBlock.FACING);
+        Direction localDir = this.getWorld().getBlockState(this.pos).get(ModDeuteriumGeneratorBlock.FACING);
         if(side == Direction.DOWN) {
             return slot == 2;
         }
