@@ -1,7 +1,10 @@
 {
   "type": "minecraft:crafting_shaped",
   "key": {
-    "I": {
+    "U": {
+      "item": "radioisotopes:uranium_ingot"
+    },
+    "E": {
       "item": "radioisotopes:enriched_uranium_ingot"
     },
     "i": {
@@ -9,9 +12,9 @@
     }
   },
   "pattern": [
-    "iIi",
-    "iIi",
-    "iIi"
+    "iUi",
+    "iEi",
+    "iUi"
   ],
   "result": {
     "item": "radioisotopes:nuclear_fuel_rod"
