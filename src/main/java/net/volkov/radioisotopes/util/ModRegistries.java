@@ -28,10 +28,10 @@ public class ModRegistries {
                 factories -> {
                     factories.add((entity, random) -> new TradeOffer(
                             new ItemStack(ModItems.RAW_URANIUM, 2),
-                            new ItemStack(Items.EMERALD, 16),
+                            new ItemStack(Items.EMERALD, 6),
                             8,3,0.05f));
                     factories.add((entity, random) -> new TradeOffer(
-                            new ItemStack(ModItems.RAW_LEAD, 6),
+                            new ItemStack(ModItems.RAW_LEAD, 7),
                             new ItemStack(Items.EMERALD, 2),
                             8,3,0.05f));
                 });
@@ -62,7 +62,7 @@ public class ModRegistries {
                             new ItemStack(ModBlocks.URANIUM_GLASS.asItem(), 4),
                             12,6,0.05f));
                     factories.add((entity, random) -> new TradeOffer(
-                            new ItemStack(Items.EMERALD, 2),
+                            new ItemStack(Items.EMERALD, 4),
                             new ItemStack(ModItems.HEAVY_LEAD_PLATE, 1),
                             12,8,0.05f));
                     factories.add((entity, random) -> new TradeOffer(
@@ -73,28 +73,28 @@ public class ModRegistries {
         TradeOfferHelper.registerVillagerOffers(ModVillagers.PHYSICIST, 3,
                 factories -> {
                     factories.add((entity, random) -> new TradeOffer(
-                            new ItemStack(Items.EMERALD, 30),
+                            new ItemStack(Items.EMERALD, 22),
                             new ItemStack(ModItems.HEAVY_LEAD_HELMET, 1),
                             3,16,0.05f));
 
                     factories.add((entity, random) -> new TradeOffer(
-                            new ItemStack(Items.EMERALD, 48),
+                            new ItemStack(Items.EMERALD, 29),
                             new ItemStack(ModItems.HEAVY_LEAD_CHESTPLATE, 1),
                             3,16,0.05f));
 
                     factories.add((entity, random) -> new TradeOffer(
-                            new ItemStack(Items.EMERALD, 42),
+                            new ItemStack(Items.EMERALD, 24),
                             new ItemStack(ModItems.HEAVY_LEAD_LEGGINGS, 1),
                             3,16,0.05f));
 
                     factories.add((entity, random) -> new TradeOffer(
-                            new ItemStack(Items.EMERALD, 24),
+                            new ItemStack(Items.EMERALD, 18),
                             new ItemStack(ModItems.HEAVY_LEAD_BOOTS, 1),
                             3,16,0.05f));
 
                     factories.add((entity, random) -> new TradeOffer(
                             new ItemStack(ModItems.HEAVY_WATER_BUCKET, 1),
-                            new ItemStack(Items.EMERALD, 32),
+                            new ItemStack(Items.EMERALD, 8),
                             8,24,0.05f));
                 });
                 TradeOfferHelper.registerVillagerOffers(ModVillagers.PHYSICIST, 4,
