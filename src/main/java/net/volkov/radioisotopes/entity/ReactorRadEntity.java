@@ -71,7 +71,7 @@ public class ReactorRadEntity extends Entity {
         }
     }
 
-    public boolean hasArmorOn(PlayerEntity player, ArmorMaterial material) {
+    private boolean hasArmorOn(PlayerEntity player, ArmorMaterial material) {
         int leadArmorCount = 0;
         for (ItemStack armorItem : player.getArmorItems()) {
             Item item = armorItem.getItem();
@@ -87,7 +87,7 @@ public class ReactorRadEntity extends Entity {
         return hasLeadArmor;
     }
 
-    public void applyEffect(PlayerEntity player, double dur, double distance, double full_distance, int div) {
+    private void applyEffect(PlayerEntity player, double dur, double distance, double full_distance, int div) {
         double r_dur = (double) lifetime / full_lifetime * dur;
         double f_dur = r_dur - (distance * r_dur / full_distance);
         if (f_dur > 0.0f) {
