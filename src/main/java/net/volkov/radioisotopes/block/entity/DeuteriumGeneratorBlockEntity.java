@@ -113,7 +113,7 @@ public class DeuteriumGeneratorBlockEntity extends BlockEntity implements NamedS
             this.maxFuelTime = this.fuelTime;
 
         }
-        else if(!getStack(0).isEmpty()) {
+        else if(getStack(0).getItem() == Items.POTATO) {
             this.fuelTime = 100;
             removeStack(0, 1);
             this.maxFuelTime = this.fuelTime;

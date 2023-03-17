@@ -22,6 +22,7 @@ import net.minecraft.world.World;
 import net.volkov.radioisotopes.block.custom.ModAtomicReactorControllerBlock;
 import net.volkov.radioisotopes.block.custom.ModDeuteriumGeneratorBlock;
 import net.volkov.radioisotopes.block.custom.ModUraniumCentrifugeBlock;
+import net.volkov.radioisotopes.item.ModItems;
 import net.volkov.radioisotopes.item.inventory.ImplementedInventory;
 import net.volkov.radioisotopes.recipe.UraniumCentrifugeRecipe;
 import net.volkov.radioisotopes.screen.UraniumCentrifugeScreenHandler;
@@ -148,8 +149,7 @@ public class UraniumCentrifugeBlockEntity extends BlockEntity implements NamedSc
 
 
     private void consumeFuel() {
-        if(!getStack(0).isEmpty()) {
-
+        if(getStack(0).getItem() == Items.BLAZE_ROD) {
             this.fuelTime = 2400;
             removeStack(0, 1);
             this.maxFuelTime = this.fuelTime;
