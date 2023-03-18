@@ -19,6 +19,7 @@ public abstract class LivingEntityMixin extends Entity {
         super(type,world);
     }
 
+    /*
     @Inject(method = "tick", at = @At("HEAD"))
     public void tick(CallbackInfo ci){
         if (!this.world.isClient && this.isPlayer()){
@@ -36,4 +37,5 @@ public abstract class LivingEntityMixin extends Entity {
             radiationDur = effect.getDuration();
         }
     }
+    */
 }
