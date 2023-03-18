@@ -1,6 +1,6 @@
 Shortterm goals:
-- Make the uranium centrifuge spawn in a custom structure
+- Push (emty) lead_battery from fuel slot into output/hopper (currently not implemented for vanilla furnaces)
 
 Longterm goals:
 - Fusion Reactor (multiblock?)
-- Antimatter (Tenebrium Ore) usage -> e.g. Additional nuke and powerful sword
+- Antimatter (Tenebrium Ore) usage -> e.g. additional nuke and powerful sword
