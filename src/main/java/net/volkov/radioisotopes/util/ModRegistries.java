@@ -106,7 +106,7 @@ public class ModRegistries {
                             3,28,0.05f));
 
                     factories.add((entity, random) -> new TradeOffer(
-                            new ItemStack(ModItems.ATOMIC_WASTE, 1),
+                            new ItemStack(ModItems.ATOMIC_WASTE, 3),
                             new ItemStack(Items.EMERALD, 26),
                             new ItemStack(ModItems.PLUTONIUM, 1),
                             5,26,0.05f));
