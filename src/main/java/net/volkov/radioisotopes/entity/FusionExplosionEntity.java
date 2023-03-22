@@ -20,7 +20,7 @@ public class FusionExplosionEntity extends Entity {
     private int y_3 = -28;
     private int y_4 = -20;
     private int x = 0;
-    private boolean bolt = true;
+    private int bolt = 0;
 
 
 
@@ -38,11 +38,11 @@ public class FusionExplosionEntity extends Entity {
         super.tick();
         if (!world.isClient) {
             Vec3d pos = this.getPos();
-            if (bolt) {
+            if (bolt < 4) {
                 LightningEntity lightning = new LightningEntity(EntityType.LIGHTNING_BOLT, world);
                 lightning.setPosition(pos.getX(), pos.getY(), pos.getZ());
                 world.spawnEntity(lightning);
-                bolt = false;
+                bolt += 1;
             } else if (y_1 <= 60) {
                 if (x <= 360) {
                     int r = 12;

@@ -18,7 +18,7 @@ public class FissionExplosionEntity extends Entity {
     private int y_1 = -50;
     private int y_2 = -25;
     private int x = 0;
-    private boolean bolt = true;
+    private int bolt = 0;
 
 
     public FissionExplosionEntity(EntityType<? extends Entity> type, World world) {
@@ -35,11 +35,11 @@ public class FissionExplosionEntity extends Entity {
         super.tick();
         if (!world.isClient) {
             Vec3d pos = this.getPos();
-            if (bolt) {
+            if (bolt < 4) {
                 LightningEntity lightning = new LightningEntity(EntityType.LIGHTNING_BOLT, world);
                 lightning.setPosition(pos.getX(), pos.getY(), pos.getZ());
                 world.spawnEntity(lightning);
-                bolt = false;
+                bolt += 1;
             } else if (y_1 <= 60) {
                 if (x <= 275) {
                     int r = 5;
@@ -51,7 +51,7 @@ public class FissionExplosionEntity extends Entity {
                 }
             } else if (y_2 <= 40) {
                 if (x <= 250) {
-                    int r = 30;
+                    int r = 24;
                     world.createExplosion(null, pos.getX() + (r * Math.cos(x)), pos.getY() + y_2, pos.getZ() + (r * Math.sin(x)), 30.0f, false, Explosion.DestructionType.DESTROY);
                     x += 8;
                 } else {
@@ -59,8 +59,8 @@ public class FissionExplosionEntity extends Entity {
                     y_2 += 12;
                 }
             } else if (x <= 135) {
-                int r = 55;
-                world.createExplosion(null, pos.getX() + (r * Math.cos(x)), pos.getY(), pos.getZ() + (r * Math.sin(x)), 24.0f, true, Explosion.DestructionType.DESTROY);
+                int r = 50;
+                world.createExplosion(null, pos.getX() + (r * Math.cos(x)), pos.getY(), pos.getZ() + (r * Math.sin(x)), 25.0f, true, Explosion.DestructionType.DESTROY);
                 x += 6;
             } else {
                 FissionRadEntity rad = new FissionRadEntity(ModEntities.FISSION_RAD_ENTITY, world);
