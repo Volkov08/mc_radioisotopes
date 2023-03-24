@@ -42,8 +42,8 @@ public class FissionExplosionEntity extends Entity {
                 bolt += 1;
             } else if (y_1 <= 60) {
                 if (x <= 275) {
-                    int r = 5;
-                    world.createExplosion(null, pos.getX() + (r * Math.cos(x)), pos.getY() + y_1, pos.getZ() + (r * Math.sin(x)), 25.0f, false, Explosion.DestructionType.DESTROY);
+                    int r = 4;
+                    world.createExplosion(null, pos.getX() + (r * Math.cos(x)), pos.getY() + y_1, pos.getZ() + (r * Math.sin(x)), 23.0f, false, Explosion.DestructionType.DESTROY);
                     x += 55;
                 } else {
                     x = 0;
@@ -59,7 +59,7 @@ public class FissionExplosionEntity extends Entity {
                     y_2 += 12;
                 }
             } else if (x <= 135) {
-                int r = 50;
+                int r = 48;
                 world.createExplosion(null, pos.getX() + (r * Math.cos(x)), pos.getY(), pos.getZ() + (r * Math.sin(x)), 25.0f, true, Explosion.DestructionType.DESTROY);
                 x += 6;
             } else {
