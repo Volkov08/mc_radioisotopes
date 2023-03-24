@@ -46,8 +46,8 @@ public class FissionRadEntity extends Entity {
         }
 
         tickCounter++;
-        if (tickCounter < 40) {
-            return; // skip tick checks until tickCounter reaches 40
+        if (tickCounter < 100) {
+            return; // skip tick checks until tickCounter reaches 100
         } else {
             tickCounter = 0; // reset tickCounter to 0
         }
@@ -58,16 +58,31 @@ public class FissionRadEntity extends Entity {
             double distance = entityPos.distanceTo(playerPos);
 
             if (distance < 110.0f) {
-                RaycastContext context = new RaycastContext(entityPos, playerPos, RaycastContext.ShapeType.COLLIDER, RaycastContext.FluidHandling.NONE, this);
-                BlockPos blockPos = world.raycast(context).getBlockPos();
-                if (blockPos != null && world.getBlockState(blockPos).getBlock() == ModBlocks.LEAD_BLOCK ||
-                        blockPos != null && world.getBlockState(blockPos).getBlock() == ModBlocks.LEAD_WALL ||
-                        blockPos != null && world.getBlockState(blockPos).getBlock() == ModBlocks.INDUSTRIAL_CASING) {
-                    continue;
-                }
-                applyEffect(player, 60000, distance, 110, 30000);
-            }
+                Vec3d direction = playerPos.subtract(entityPos).normalize();
+                double step = 0.1; // adjust this to control the resolution of the raycast
+                double steps = distance / step;
 
+                boolean hasLeadBlockInPath = false;
+                BlockPos lastBlockPos = null;
+                for (int i = 0; i < steps; i++) {
+                    Vec3d raycastPos = entityPos.add(direction.multiply(step * i));
+                    RaycastContext context = new RaycastContext(raycastPos, playerPos, RaycastContext.ShapeType.COLLIDER, RaycastContext.FluidHandling.NONE, this);
+                    BlockPos blockPos = world.raycast(context).getBlockPos();
+                    if (blockPos != null) {
+                        if (world.getBlockState(blockPos).getBlock() == ModBlocks.LEAD_BLOCK ||
+                                world.getBlockState(blockPos).getBlock() == ModBlocks.LEAD_WALL ||
+                                world.getBlockState(blockPos).getBlock() == ModBlocks.INDUSTRIAL_CASING) {
+                            hasLeadBlockInPath = true;
+                            break;
+                        }
+                        lastBlockPos = blockPos;
+                    }
+                }
+
+                if (!hasLeadBlockInPath && lastBlockPos != null) {
+                    applyEffect(player, 60000, distance, 110, 30000);
+                }
+            }
         }
     }
 
