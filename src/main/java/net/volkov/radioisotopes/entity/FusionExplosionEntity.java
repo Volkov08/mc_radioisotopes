@@ -36,64 +36,65 @@ public class FusionExplosionEntity extends Entity {
     @Override
     public void tick() {
         super.tick();
-        Vec3d pos = this.getPos();
-        if (bolt < 10) {
-            LightningEntity lightning = new LightningEntity(EntityType.LIGHTNING_BOLT, world);
-            lightning.setPosition(pos.getX(), pos.getY(), pos.getZ());
-            world.spawnEntity(lightning);
-            bolt += 1;
-        } else if (y_1 <= 60) {
-            if (x <= 360) {
-                int r = 12;
-                world.createExplosion(null, pos.getX() + (r * Math.cos(x)), pos.getY() + y_1, pos.getZ() + (r * Math.sin(x)), 27.0f, false, Explosion.DestructionType.DESTROY);
-                x += 40;
+        if (!world.isClient()) {
+            Vec3d pos = this.getPos();
+            if (bolt < 10) {
+                LightningEntity lightning = new LightningEntity(EntityType.LIGHTNING_BOLT, world);
+                lightning.setPosition(pos.getX(), pos.getY(), pos.getZ());
+                world.spawnEntity(lightning);
+                bolt += 1;
+            } else if (y_1 <= 60) {
+                if (x <= 360) {
+                    int r = 12;
+                    world.createExplosion(null, pos.getX() + (r * Math.cos(x)), pos.getY() + y_1, pos.getZ() + (r * Math.sin(x)), 27.0f, false, Explosion.DestructionType.DESTROY);
+                    x += 40;
+                } else {
+                    x = 0;
+                    y_1 += 7;
+                }
+            } else if (y_2 <= 40) {
+                if (x <= 300) {
+                    int r = 38;
+                    world.createExplosion(null, pos.getX() + (r * Math.cos(x)), pos.getY() + y_2, pos.getZ() + (r * Math.sin(x)), 30.0f, false, Explosion.DestructionType.DESTROY);
+                    x += 8;
+                } else {
+                    x = 0;
+                    y_2 += 12;
+                }
+            } else if (y_3 <= 30) {
+                if (x <= 350) {
+                    int r = 58;
+                    world.createExplosion(null, pos.getX() + (r * Math.cos(x)), pos.getY() + y_3, pos.getZ() + (r * Math.sin(x)), 30.0f, false, Explosion.DestructionType.DESTROY);
+                    x += 7;
+                } else {
+                    x = 0;
+                    y_3 += 12;
+                }
+            } else if (y_4 <= 30) {
+                if (x <= 350) {
+                    int r = 72;
+                    world.createExplosion(null, pos.getX() + (r * Math.cos(x)), pos.getY() + y_4, pos.getZ() + (r * Math.sin(x)), 30.0f, false, Explosion.DestructionType.DESTROY);
+                    x += 5;
+                } else {
+                    x = 0;
+                    y_4 += 10;
+                }
+            } else if (x <= 135) {
+                int r = 89;
+                world.createExplosion(null, pos.getX() + (r * Math.cos(x)), pos.getY(), pos.getZ() + (r * Math.sin(x)), 30.0f, true, Explosion.DestructionType.DESTROY);
+                x += 1;
             } else {
-                x = 0;
-                y_1 += 7;
+                FissionRadEntity rad = new FissionRadEntity(ModEntities.FISSION_RAD_ENTITY, world);
+                rad.refreshPositionAndAngles(pos.getX(), pos.getY(), pos.getZ(), 0, 0);
+                world.spawnEntity(rad);
+                MinecraftServer server = world.getServer();
+                if (server != null) {
+                    ServerWorld serverWorld = server.getWorld(world.getRegistryKey());
+                    serverWorld.setTimeOfDay(13000);
+                }
+                remove(RemovalReason.DISCARDED);
             }
-        } else if (y_2 <= 40) {
-            if (x <= 300) {
-                int r = 38;
-                world.createExplosion(null, pos.getX() + (r * Math.cos(x)), pos.getY() + y_2, pos.getZ() + (r * Math.sin(x)), 30.0f, false, Explosion.DestructionType.DESTROY);
-                x += 8;
-            } else {
-                x = 0;
-                y_2 += 12;
-            }
-        } else if (y_3 <= 30) {
-            if (x <= 350) {
-                int r = 58;
-                world.createExplosion(null, pos.getX() + (r * Math.cos(x)), pos.getY() + y_3, pos.getZ() + (r * Math.sin(x)), 30.0f, false, Explosion.DestructionType.DESTROY);
-                x += 7;
-            } else {
-                x = 0;
-                y_3 += 12;
-            }
-        } else if (y_4 <= 30) {
-            if (x <= 350) {
-                int r = 72;
-                world.createExplosion(null, pos.getX() + (r * Math.cos(x)), pos.getY() + y_4, pos.getZ() + (r * Math.sin(x)), 30.0f, false, Explosion.DestructionType.DESTROY);
-                x += 5;
-            } else {
-                x = 0;
-                y_4 += 10;
-            }
-        } else if (x <= 135) {
-            int r = 89;
-            world.createExplosion(null, pos.getX() + (r * Math.cos(x)), pos.getY(), pos.getZ() + (r * Math.sin(x)), 30.0f, true, Explosion.DestructionType.DESTROY);
-            x += 1;
-        } else {
-            FissionRadEntity rad = new FissionRadEntity(ModEntities.FISSION_RAD_ENTITY, world);
-            rad.refreshPositionAndAngles(pos.getX(), pos.getY(), pos.getZ(), 0, 0);
-            world.spawnEntity(rad);
-            MinecraftServer server = world.getServer();
-            if (server != null) {
-                ServerWorld serverWorld = server.getWorld(world.getRegistryKey());
-                serverWorld.setTimeOfDay(13000);
-            }
-            remove(RemovalReason.DISCARDED);
         }
-
     }
     @Override
     protected void readCustomDataFromNbt(NbtCompound nbt) {

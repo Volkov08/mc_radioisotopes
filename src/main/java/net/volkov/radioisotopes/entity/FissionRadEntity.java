@@ -38,49 +38,50 @@ public class FissionRadEntity extends Entity {
     @Override
     public void tick() {
         super.tick();
+        if (!world.isClient()) {
+            if (lifetime > 0) {
+                lifetime--;
+            } else {
+                remove(RemovalReason.DISCARDED); // Despawn entity when lifetime reaches 0
+            }
 
-        if (lifetime > 0) {
-            lifetime--;
-        } else {
-            remove(RemovalReason.DISCARDED); // Despawn entity when lifetime reaches 0
-        }
+            tickCounter++;
+            if (tickCounter < 100) {
+                return; // skip tick checks until tickCounter reaches 100
+            } else {
+                tickCounter = 0; // reset tickCounter to 0
+            }
 
-        tickCounter++;
-        if (tickCounter < 100) {
-            return; // skip tick checks until tickCounter reaches 100
-        } else {
-            tickCounter = 0; // reset tickCounter to 0
-        }
+            Vec3d entityPos = getPos();
+            for (PlayerEntity player : world.getPlayers()) {
+                Vec3d playerPos = player.getPos();
+                double distance = entityPos.distanceTo(playerPos);
 
-        Vec3d entityPos = getPos();
-        for (PlayerEntity player : world.getPlayers()) {
-            Vec3d playerPos = player.getPos();
-            double distance = entityPos.distanceTo(playerPos);
+                if (distance < 110.0f) {
+                    Vec3d direction = playerPos.subtract(entityPos).normalize();
+                    double step = 0.1; // adjust this to control the resolution of the raycast
+                    double steps = distance / step;
 
-            if (distance < 110.0f) {
-                Vec3d direction = playerPos.subtract(entityPos).normalize();
-                double step = 0.1; // adjust this to control the resolution of the raycast
-                double steps = distance / step;
-
-                boolean hasLeadBlockInPath = false;
-                BlockPos lastBlockPos = null;
-                for (int i = 0; i < steps; i++) {
-                    Vec3d raycastPos = entityPos.add(direction.multiply(step * i));
-                    RaycastContext context = new RaycastContext(raycastPos, playerPos, RaycastContext.ShapeType.COLLIDER, RaycastContext.FluidHandling.NONE, this);
-                    BlockPos blockPos = world.raycast(context).getBlockPos();
-                    if (blockPos != null) {
-                        if (world.getBlockState(blockPos).getBlock() == ModBlocks.LEAD_BLOCK ||
-                                world.getBlockState(blockPos).getBlock() == ModBlocks.LEAD_WALL ||
-                                world.getBlockState(blockPos).getBlock() == ModBlocks.INDUSTRIAL_CASING) {
-                            hasLeadBlockInPath = true;
-                            break;
+                    boolean hasLeadBlockInPath = false;
+                    BlockPos lastBlockPos = null;
+                    for (int i = 0; i < steps; i++) {
+                        Vec3d raycastPos = entityPos.add(direction.multiply(step * i));
+                        RaycastContext context = new RaycastContext(raycastPos, playerPos, RaycastContext.ShapeType.COLLIDER, RaycastContext.FluidHandling.NONE, this);
+                        BlockPos blockPos = world.raycast(context).getBlockPos();
+                        if (blockPos != null) {
+                            if (world.getBlockState(blockPos).getBlock() == ModBlocks.LEAD_BLOCK ||
+                                    world.getBlockState(blockPos).getBlock() == ModBlocks.LEAD_WALL ||
+                                    world.getBlockState(blockPos).getBlock() == ModBlocks.INDUSTRIAL_CASING) {
+                                hasLeadBlockInPath = true;
+                                break;
+                            }
+                            lastBlockPos = blockPos;
                         }
-                        lastBlockPos = blockPos;
                     }
-                }
 
-                if (!hasLeadBlockInPath && lastBlockPos != null) {
-                    applyEffect(player, 60000, distance, 110, 30000);
+                    if (!hasLeadBlockInPath && lastBlockPos != null) {
+                        applyEffect(player, 60000, distance, 110, 30000);
+                    }
                 }
             }
         }
