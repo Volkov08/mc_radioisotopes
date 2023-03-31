@@ -20,15 +20,10 @@ public class ModFuelSlot extends Slot {
 
     @Override
     public int getMaxItemCount(ItemStack stack) {
-        return ModFuelSlot.isPotato(stack) ? 1 : super.getMaxItemCount(stack);
+        return super.getMaxItemCount(stack);
     }
 
     public static boolean isPotato(ItemStack stack) {
-        if(stack.isOf(Items.POTATO) || stack.isOf(ModItems.FULL_LEAD_BATTERY)) {
-            return true;
-        }
-        else {
-            return false;
-        }
+        return stack.isOf(Items.POTATO) || stack.isOf(ModItems.FULL_LEAD_BATTERY);
     }
 }
