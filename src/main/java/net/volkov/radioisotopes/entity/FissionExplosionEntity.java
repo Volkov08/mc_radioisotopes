@@ -60,7 +60,7 @@ public class FissionExplosionEntity extends Entity {
                     y_2 += 12;
                 }
             } else if (x <= 135) {
-                int r = 38;
+                int r = 35;
                 world.createExplosion(null, pos.getX() + (r * Math.cos(x)), pos.getY(), pos.getZ() + (r * Math.sin(x)), 25.0f, true, Explosion.DestructionType.DESTROY);
                 x += 6;
             } else {
