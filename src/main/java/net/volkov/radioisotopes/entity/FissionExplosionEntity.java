@@ -42,27 +42,27 @@ public class FissionExplosionEntity extends Entity {
                 world.spawnEntity(lightning);
                 bolt += 1;
             } else if (y_1 <= 60) {
-                if (x <= 275) {
+                if (x <= 360) {
                     int r = 3;
-                    world.createExplosion(null, pos.getX() + (r * Math.cos(x)), pos.getY() + y_1, pos.getZ() + (r * Math.sin(x)), 18.0f, false, Explosion.DestructionType.DESTROY);
-                    x += 65;
+                    world.createExplosion(null, pos.getX() + (r * Math.sin(Math.toRadians(x))), pos.getY() + y_1, pos.getZ() + (r * Math.cos(Math.toRadians(x))), 18.0f, false, Explosion.DestructionType.DESTROY);
+                    x += 90;
                 } else {
                     x = 0;
                     y_1 += 7;
                 }
             } else if (y_2 <= 40) {
-                if (x <= 180) {
+                if (x <= 360) {
                     int r = 14;
-                    world.createExplosion(null, pos.getX() + (r * Math.cos(x)), pos.getY() + y_2, pos.getZ() + (r * Math.sin(x)), 30.0f, false, Explosion.DestructionType.DESTROY);
-                    x += 8;
+                    world.createExplosion(null, pos.getX() + (r * Math.sin(Math.toRadians(x))), pos.getY() + y_2, pos.getZ() + (r * Math.cos(Math.toRadians(x))), 30.0f, false, Explosion.DestructionType.DESTROY);
+                    x += 24;
                 } else {
                     x = 0;
                     y_2 += 12;
                 }
-            } else if (x <= 135) {
+            } else if (x <= 360) {
                 int r = 35;
-                world.createExplosion(null, pos.getX() + (r * Math.cos(x)), pos.getY(), pos.getZ() + (r * Math.sin(x)), 25.0f, true, Explosion.DestructionType.DESTROY);
-                x += 6;
+                world.createExplosion(null, pos.getX() + (r * Math.sin(Math.toRadians(x))), pos.getY(), pos.getZ() + (r * Math.cos(Math.toRadians(x))), 25.0f, true, Explosion.DestructionType.DESTROY);
+                x += 18;
             } else {
                 FissionRadEntity rad = new FissionRadEntity(ModEntities.FISSION_RAD_ENTITY, world);
                 rad.refreshPositionAndAngles(pos.getX(), pos.getY(), pos.getZ(), 0, 0);

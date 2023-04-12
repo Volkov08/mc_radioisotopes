@@ -46,43 +46,43 @@ public class FusionExplosionEntity extends Entity {
             } else if (y_1 <= 60) {
                 if (x <= 360) {
                     int r = 12;
-                    world.createExplosion(null, pos.getX() + (r * Math.cos(x)), pos.getY() + y_1, pos.getZ() + (r * Math.sin(x)), 27.0f, false, Explosion.DestructionType.DESTROY);
-                    x += 40;
+                    world.createExplosion(null, pos.getX() + (r * Math.sin(Math.toRadians(x))), pos.getY() + y_1, pos.getZ() + (r * Math.cos(Math.toRadians(x))), 27.0f, false, Explosion.DestructionType.DESTROY);
+                    x += 32;
                 } else {
                     x = 0;
                     y_1 += 7;
                 }
             } else if (y_2 <= 40) {
-                if (x <= 300) {
+                if (x <= 360) {
                     int r = 38;
-                    world.createExplosion(null, pos.getX() + (r * Math.cos(x)), pos.getY() + y_2, pos.getZ() + (r * Math.sin(x)), 30.0f, false, Explosion.DestructionType.DESTROY);
-                    x += 8;
+                    world.createExplosion(null, pos.getX() + (r * Math.sin(Math.toRadians(x))), pos.getY() + y_2, pos.getZ() + (r * Math.cos(Math.toRadians(x))), 36.0f, false, Explosion.DestructionType.DESTROY);
+                    x += 10;
                 } else {
                     x = 0;
                     y_2 += 12;
                 }
             } else if (y_3 <= 30) {
-                if (x <= 350) {
+                if (x <= 360) {
                     int r = 58;
-                    world.createExplosion(null, pos.getX() + (r * Math.cos(x)), pos.getY() + y_3, pos.getZ() + (r * Math.sin(x)), 30.0f, false, Explosion.DestructionType.DESTROY);
-                    x += 7;
+                    world.createExplosion(null, pos.getX() + (r * Math.sin(Math.toRadians(x))), pos.getY() + y_3, pos.getZ() + (r * Math.cos(Math.toRadians(x))), 36.0f, false, Explosion.DestructionType.DESTROY);
+                    x += 6;
                 } else {
                     x = 0;
                     y_3 += 12;
                 }
             } else if (y_4 <= 30) {
-                if (x <= 350) {
+                if (x <= 360) {
                     int r = 72;
-                    world.createExplosion(null, pos.getX() + (r * Math.cos(x)), pos.getY() + y_4, pos.getZ() + (r * Math.sin(x)), 30.0f, false, Explosion.DestructionType.DESTROY);
-                    x += 5;
+                    world.createExplosion(null, pos.getX() + (r * Math.sin(Math.toRadians(x))), pos.getY() + y_4, pos.getZ() + (r * Math.cos(Math.toRadians(x))), 36.0f, false, Explosion.DestructionType.DESTROY);
+                    x += 4;
                 } else {
                     x = 0;
                     y_4 += 10;
                 }
-            } else if (x <= 135) {
-                int r = 89;
-                world.createExplosion(null, pos.getX() + (r * Math.cos(x)), pos.getY(), pos.getZ() + (r * Math.sin(x)), 30.0f, true, Explosion.DestructionType.DESTROY);
-                x += 1;
+            } else if (x <= 360) {
+                int r = 91;
+                world.createExplosion(null, pos.getX() + (r * Math.sin(Math.toRadians(x))), pos.getY(), pos.getZ() + (r * Math.cos(Math.toRadians(x))), 27.0f, true, Explosion.DestructionType.DESTROY);
+                x += 4;
             } else {
                 FissionRadEntity rad = new FissionRadEntity(ModEntities.FISSION_RAD_ENTITY, world);
                 rad.refreshPositionAndAngles(pos.getX(), pos.getY(), pos.getZ(), 0, 0);
