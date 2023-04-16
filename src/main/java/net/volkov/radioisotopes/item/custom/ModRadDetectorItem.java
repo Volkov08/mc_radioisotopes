@@ -1,11 +1,17 @@
 package net.volkov.radioisotopes.item.custom;
 
 import net.minecraft.block.Block;
+import net.minecraft.client.gui.screen.Screen;
+import net.minecraft.client.item.TooltipContext;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.text.LiteralText;
+import net.minecraft.text.Text;
+import net.minecraft.text.TranslatableText;
+import net.minecraft.util.Formatting;
 import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
 import net.minecraft.util.math.BlockPos;
@@ -13,39 +19,74 @@ import net.minecraft.util.math.Box;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 import net.volkov.radioisotopes.block.ModBlocks;
+import net.volkov.radioisotopes.entity.ModEntities;
+import org.jetbrains.annotations.Nullable;
+
+import java.util.List;
 
 public class ModRadDetectorItem extends Item {
+    private int charge = 160;
 
     public ModRadDetectorItem(Settings settings) {
         super(settings);
     }
 
     @Override
-    public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
-        if (!world.isClient() && hand == Hand.OFF_HAND) {
-            outputRad(user, world);
-            user.getItemCooldownManager().set(this, 20);
+    public TypedActionResult<ItemStack> use(World world, PlayerEntity player, Hand hand) {
+        ItemStack stack = player.getStackInHand(hand);
+        if(charge > 0) {
+            outputRad(player, world);
         }
-
-        return super.use(world, user, hand);
+        else {
+            player.sendMessage(new LiteralText("Battery low"), false);
+        }
+        return TypedActionResult.success(stack);
     }
 
     private void outputRad(PlayerEntity player, World world) {
+        boolean has_rad = false;
         BlockPos pos = player.getBlockPos();
         Box box = new Box(pos).expand(15);
+        Box f_box = new Box(pos).expand(140);
+        Box r_box = new Box(pos).expand(155);
 
         for(BlockPos blockPos : BlockPos.iterate((int)box.minX, (int)box.minY, (int)box.minZ, (int)box.maxX, (int)box.maxY, (int)box.maxZ)) {
             Block c_block = world.getBlockState(blockPos).getBlock();
             if(c_block == ModBlocks.URANIUM_ORE || c_block == ModBlocks.DEEPSLATE_URANIUM_ORE || c_block == ModBlocks.URANIUM_BLOCK || c_block == ModBlocks.ENRICHED_URANIUM_BLOCK) {
-                if(!world.isClient()) {
-                    if(player instanceof ServerPlayerEntity) {
-                        player.sendMessage(new LiteralText("Radiation detected"), false);
-                    }
+                has_rad = true;
+                break;
+            }
+        }
+        if(!has_rad) {
+            for(Entity entity : world.getEntitiesByType(ModEntities.FISSION_RAD_ENTITY, f_box, entity -> true)) {
+                has_rad = true;
+                break;
+            }
+        }
+        if(!has_rad) {
+            for(Entity entity : world.getEntitiesByType(ModEntities.REACTOR_RAD_ENTITY, r_box, entity -> true)) {
+                has_rad = true;
+                break;
+            }
+        }
+        if(!world.isClient()) {
+            if(player instanceof ServerPlayerEntity) {
+                if(has_rad) {
+                    player.sendMessage(new LiteralText("Radiation detected"), false);
                 }
-
+                else {
+                    player.sendMessage(new LiteralText("No significant amount of radiation detected"), false);
+                }
 
             }
         }
-
+        charge--;
+    }
+    @Override
+    public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
+        String chargeString = String.format("%d", charge);
+        TranslatableText chargeText = new TranslatableText("tooltip.rad_detector.charge", chargeString);
+        tooltip.add(chargeText);
+        super.appendTooltip(stack, world, tooltip, context);
     }
 }

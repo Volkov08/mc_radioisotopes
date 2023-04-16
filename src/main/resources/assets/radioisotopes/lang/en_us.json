@@ -85,6 +85,8 @@
   "tooltip.radioisotopes.deuterium_generator_3": "§e§l(potato or battery)",
   "tooltip.radioisotopes.deuterium_generator_4": "§e§lfrom normal water",
 
+  "tooltip.rad_detector.charge": "Charge: %s",
+
   "effect.radioisotopes.radiation_poisoning": "Radiation",
 
   "itemGroup.radioisotopes.uranium": "Uranium Items",

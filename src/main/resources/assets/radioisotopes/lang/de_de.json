@@ -83,6 +83,7 @@
   "tooltip.radioisotopes.deuterium_generator_3": "§e§l(Kartoffel od. Batterie)",
   "tooltip.radioisotopes.deuterium_generator_4": "§e§laus normalem Wasser an",
 
+  "tooltip.rad_detector.charge": "Ladung: %s",
 
   "effect.radioisotopes.radiation_poisoning": "Strahlung",
 

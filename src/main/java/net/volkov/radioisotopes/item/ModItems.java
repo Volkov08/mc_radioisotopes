@@ -55,8 +55,8 @@ public class ModItems {
     public static final Item HEAVY_WATER_BUCKET = registerItem("heavy_water_bucket",
             new Item(new FabricItemSettings().group(ModItemGroup.URANIUM).maxCount(1)));
 
-    public static final Item TRITIUM = registerItem("tritium",
-            new Item(new FabricItemSettings().group(ModItemGroup.URANIUM)));
+    //public static final Item TRITIUM = registerItem("tritium",
+    //        new Item(new FabricItemSettings().group(ModItemGroup.URANIUM)));
 
     public static final Item RAW_LEAD = registerItem("raw_lead",
             new Item(new FabricItemSettings().group(ModItemGroup.URANIUM)));
@@ -113,10 +113,12 @@ public class ModItems {
     public static final Item URANIUM_PUSHER = registerItem("uranium_pusher",
             new Item(new FabricItemSettings().group(ModItemGroup.URANIUM)));
 
+    /*
     public static final Item TIMED_FUZE = registerItem("timed_fuze",
             new Item(new FabricItemSettings().group(ModItemGroup.URANIUM)));
     public static final Item CONTACT_FUZE = registerItem("contact_fuze",
             new Item(new FabricItemSettings().group(ModItemGroup.URANIUM)));
+     */
     public static final Item CASING_ALLOY = registerItem("casing_alloy",
             new Item(new FabricItemSettings().group(ModItemGroup.URANIUM)));
     public static final Item FUSION_BOMB_CASING = registerItem("fusion_bomb_casing",
@@ -139,6 +141,9 @@ public class ModItems {
             new Item(new FabricItemSettings().group(ModItemGroup.URANIUM)));
     public static final Item FUSION_STAGE = registerItem("fusion_stage",
             new Item(new FabricItemSettings().group(ModItemGroup.URANIUM)));
+
+    //public static final Item RAD_DETECTOR = registerItem("rad_detector",
+    //        new ModRadDetectorItem(new FabricItemSettings().group(ModItemGroup.URANIUM)));
 
     private static Item registerItem(String name, Item item) {
         return Registry.register(Registry.ITEM, new Identifier(ClientMain.MOD_ID, name), item);
