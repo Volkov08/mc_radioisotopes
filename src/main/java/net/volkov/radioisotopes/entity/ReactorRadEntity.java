@@ -14,7 +14,6 @@ import net.minecraft.network.Packet;
 import net.minecraft.network.packet.s2c.play.EntitySpawnS2CPacket;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3d;
-import net.minecraft.world.RaycastContext;
 import net.minecraft.world.World;
 import net.volkov.radioisotopes.block.ModBlocks;
 import net.volkov.radioisotopes.effect.ModEffects;
@@ -23,8 +22,8 @@ import net.volkov.radioisotopes.item.ModArmorMaterials;
 public class ReactorRadEntity extends Entity {
 
     private int tickCounter = 0;
-    private final double full_lifetime = 140000;
-    private int lifetime = 140000;
+    private final double full_lifetime = 125000d;
+    private int lifetime = 125000;
 
     public ReactorRadEntity(EntityType<? extends Entity> entityType, World world) {
         super(entityType, world);
@@ -52,37 +51,8 @@ public class ReactorRadEntity extends Entity {
                 tickCounter = 0; // reset tickCounter to 0
             }
 
-            Vec3d entityPos = getPos();
             for (PlayerEntity player : world.getPlayers()) {
-                Vec3d playerPos = player.getPos();
-                double distance = entityPos.distanceTo(playerPos);
-
-                if (distance < 125.0f) {
-                    Vec3d direction = playerPos.subtract(entityPos).normalize();
-                    double step = 0.1; // adjust this to control the resolution of the raycast
-                    double steps = distance / step;
-
-                    boolean hasLeadBlockInPath = false;
-                    BlockPos lastBlockPos = null;
-                    for (int i = 0; i < steps; i++) {
-                        Vec3d raycastPos = entityPos.add(direction.multiply(step * i));
-                        RaycastContext context = new RaycastContext(raycastPos, playerPos, RaycastContext.ShapeType.COLLIDER, RaycastContext.FluidHandling.NONE, this);
-                        BlockPos blockPos = world.raycast(context).getBlockPos();
-                        if (blockPos != null) {
-                            if (world.getBlockState(blockPos).getBlock() == ModBlocks.LEAD_BLOCK ||
-                                    world.getBlockState(blockPos).getBlock() == ModBlocks.LEAD_WALL ||
-                                    world.getBlockState(blockPos).getBlock() == ModBlocks.INDUSTRIAL_CASING) {
-                                hasLeadBlockInPath = true;
-                                break;
-                            }
-                            lastBlockPos = blockPos;
-                        }
-                    }
-
-                    if (!hasLeadBlockInPath && lastBlockPos != null) {
-                        applyEffect(player, 90000, distance, 125, 30000);
-                    }
-                }
+                protCheck(player, 125d);
             }
         }
     }
@@ -103,10 +73,10 @@ public class ReactorRadEntity extends Entity {
         return hasLeadArmor;
     }
 
-    private void applyEffect(PlayerEntity player, double dur, double distance, double full_distance, int div) {
-        double r_dur = (double) lifetime / full_lifetime * dur;
+    private void applyEffect(PlayerEntity player, double dur, double distance, double full_distance, double div) {
+        double r_dur = ((double) lifetime) / full_lifetime * dur;
         double f_dur = r_dur - (distance * r_dur / full_distance);
-        if (f_dur > 0.0f) {
+        if (f_dur > 0.0d) {
             if (!player.hasStatusEffect(ModEffects.RAD_POISON)) {
                 if (f_dur >= div) {
                     if (!hasArmorOn(player, ModArmorMaterials.HEAVY_LEAD)) {
@@ -139,6 +109,27 @@ public class ReactorRadEntity extends Entity {
                         player.addStatusEffect(new StatusEffectInstance(ModEffects.RAD_POISON, (int) Math.round(f_dur), 0));
                     }
                 }
+            }
+        }
+    }
+
+    private void protCheck(PlayerEntity player, double c_distance) {
+        boolean isProt = false;
+        Vec3d entityPos = this.getPos().add(0, this.getEyeHeight(this.getPose()), 0);
+        Vec3d playerPos = player.getPos().add(0, player.getEyeHeight(player.getPose()), 0);
+        Vec3d rayDir = playerPos.subtract(entityPos).normalize();
+        double maxDistance = entityPos.distanceTo(playerPos);
+        if (maxDistance < c_distance) {
+            BlockPos.Mutable pos = new BlockPos.Mutable();
+            for (double distance = 0; distance < maxDistance; distance += 0.1) {
+                pos.set(entityPos.add(rayDir.multiply(distance)).getX(), entityPos.add(rayDir.multiply(distance)).getY(), entityPos.add(rayDir.multiply(distance)).getZ());
+                if (world.getBlockState(pos).getBlock() == ModBlocks.LEAD_BLOCK || world.getBlockState(pos).getBlock() == ModBlocks.INDUSTRIAL_CASING || world.getBlockState(pos).getBlock() == ModBlocks.LEAD_WALL) {
+                    isProt = true;
+                    break;
+                }
+            }
+            if (!isProt) {
+                applyEffect(player, 90000d, maxDistance, c_distance, 30000d);
             }
         }
     }
