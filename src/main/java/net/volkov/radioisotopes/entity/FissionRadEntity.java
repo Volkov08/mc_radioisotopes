@@ -116,7 +116,7 @@ public class FissionRadEntity extends Entity {
 
     private void protCheck(PlayerEntity player, double c_distance) {
         boolean isProt = false;
-        Vec3d entityPos = this.getPos().add(0, this.getEyeHeight(this.getPose()), 0);
+        Vec3d entityPos = this.getPos();
         Vec3d playerPos = player.getPos().add(0, player.getEyeHeight(player.getPose()), 0);
         Vec3d rayDir = playerPos.subtract(entityPos).normalize();
         double maxDistance = entityPos.distanceTo(playerPos);
