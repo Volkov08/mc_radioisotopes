@@ -45,8 +45,8 @@ public class FusionExplosionEntity extends Entity {
                 bolt += 1;
             } else if (y_1 <= 60) {
                 if (x <= 360) {
-                    int r = 12;
-                    world.createExplosion(null, pos.getX() + (r * Math.sin(Math.toRadians(x))), pos.getY() + y_1, pos.getZ() + (r * Math.cos(Math.toRadians(x))), 27.0f, false, Explosion.DestructionType.DESTROY);
+                    int r = 15;
+                    world.createExplosion(null, pos.getX() + (r * Math.sin(Math.toRadians(x))), pos.getY() + y_1, pos.getZ() + (r * Math.cos(Math.toRadians(x))), 31.0f, false, Explosion.DestructionType.DESTROY);
                     x += 32;
                 } else {
                     x = 0;
@@ -81,7 +81,7 @@ public class FusionExplosionEntity extends Entity {
                 }
             } else if (x <= 360) {
                 int r = 91;
-                world.createExplosion(null, pos.getX() + (r * Math.sin(Math.toRadians(x))), pos.getY(), pos.getZ() + (r * Math.cos(Math.toRadians(x))), 27.0f, true, Explosion.DestructionType.DESTROY);
+                world.createExplosion(null, pos.getX() + (r * Math.sin(Math.toRadians(x))), pos.getY() + 4, pos.getZ() + (r * Math.cos(Math.toRadians(x))), 27.0f, true, Explosion.DestructionType.DESTROY);
                 x += 4;
             } else {
                 FissionRadEntity rad = new FissionRadEntity(ModEntities.FISSION_RAD_ENTITY, world);

@@ -130,7 +130,7 @@ public class FissionRadEntity extends Entity {
                 }
             }
             if (!isProt) {
-                applyEffect(player, 52000d, maxDistance, c_distance, 30000d);
+                applyEffect(player, 58000d, maxDistance, c_distance, 30000d);
             }
         }
     }
