@@ -81,7 +81,7 @@ public class ReactorRadEntity extends Entity {
                 if (f_dur >= div) {
                     if (!hasArmorOn(player, ModArmorMaterials.HEAVY_LEAD)) {
                         if (hasArmorOn(player, ModArmorMaterials.LEAD)) {
-                            player.addStatusEffect(new StatusEffectInstance(ModEffects.RAD_POISON, (int) Math.round(f_dur / 2), 0));
+                            player.addStatusEffect(new StatusEffectInstance(ModEffects.RAD_POISON, (int) Math.round(f_dur / 3), 0));
                         }
                         else {
                             player.addStatusEffect(new StatusEffectInstance(ModEffects.RAD_POISON, (int) Math.round(f_dur), 0));
@@ -97,7 +97,7 @@ public class ReactorRadEntity extends Entity {
                 if (f_dur >= div) {
                     if (!hasArmorOn(player, ModArmorMaterials.HEAVY_LEAD)) {
                         if (hasArmorOn(player, ModArmorMaterials.LEAD)) {
-                            player.addStatusEffect(new StatusEffectInstance(ModEffects.RAD_POISON, (int) Math.round(f_dur / 2), 0));
+                            player.addStatusEffect(new StatusEffectInstance(ModEffects.RAD_POISON, (int) Math.round(f_dur / 3), 0));
                         }
                         else {
                             player.addStatusEffect(new StatusEffectInstance(ModEffects.RAD_POISON, (int) Math.round(f_dur), 0));

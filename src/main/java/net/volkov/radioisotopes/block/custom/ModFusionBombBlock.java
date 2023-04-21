@@ -2,21 +2,8 @@ package net.volkov.radioisotopes.block.custom;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
-import net.minecraft.entity.AreaEffectCloudEntity;
-import net.minecraft.entity.EntityType;
-import net.minecraft.entity.LightningEntity;
-import net.minecraft.entity.effect.StatusEffectInstance;
-import net.minecraft.entity.effect.StatusEffects;
-import net.minecraft.particle.ParticleTypes;
-import net.minecraft.sound.SoundCategory;
-import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
-import net.minecraft.world.explosion.Explosion;
-import net.volkov.radioisotopes.ClientMain;
-import net.volkov.radioisotopes.effect.ModEffects;
-import net.volkov.radioisotopes.entity.FissionExplosionEntity;
-import net.volkov.radioisotopes.entity.FissionRadEntity;
 import net.volkov.radioisotopes.entity.FusionExplosionEntity;
 import net.volkov.radioisotopes.entity.ModEntities;
 

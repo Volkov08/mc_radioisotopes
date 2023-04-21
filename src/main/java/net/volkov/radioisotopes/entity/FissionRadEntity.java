@@ -14,7 +14,6 @@ import net.minecraft.network.Packet;
 import net.minecraft.network.packet.s2c.play.EntitySpawnS2CPacket;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3d;
-import net.minecraft.world.RaycastContext;
 import net.minecraft.world.World;
 import net.volkov.radioisotopes.block.ModBlocks;
 import net.volkov.radioisotopes.effect.ModEffects;
@@ -82,7 +81,7 @@ public class FissionRadEntity extends Entity {
                 if (f_dur >= div) {
                     if (!hasArmorOn(player, ModArmorMaterials.HEAVY_LEAD)) {
                         if (hasArmorOn(player, ModArmorMaterials.LEAD)) {
-                            player.addStatusEffect(new StatusEffectInstance(ModEffects.RAD_POISON, (int) Math.round(f_dur / 2), 0));
+                            player.addStatusEffect(new StatusEffectInstance(ModEffects.RAD_POISON, (int) Math.round(f_dur / 3), 0));
                         }
                         else {
                             player.addStatusEffect(new StatusEffectInstance(ModEffects.RAD_POISON, (int) Math.round(f_dur), 0));
@@ -98,7 +97,7 @@ public class FissionRadEntity extends Entity {
                 if (f_dur >= div) {
                     if (!hasArmorOn(player, ModArmorMaterials.HEAVY_LEAD)) {
                         if (hasArmorOn(player, ModArmorMaterials.LEAD)) {
-                            player.addStatusEffect(new StatusEffectInstance(ModEffects.RAD_POISON, (int) Math.round(f_dur / 2), 0));
+                            player.addStatusEffect(new StatusEffectInstance(ModEffects.RAD_POISON, (int) Math.round(f_dur / 3), 0));
                         }
                         else {
                             player.addStatusEffect(new StatusEffectInstance(ModEffects.RAD_POISON, (int) Math.round(f_dur), 0));
@@ -130,7 +129,7 @@ public class FissionRadEntity extends Entity {
                 }
             }
             if (!isProt) {
-                applyEffect(player, 58000d, maxDistance, c_distance, 30000d);
+                applyEffect(player, 68000d, maxDistance, c_distance, 30000d);
             }
         }
     }

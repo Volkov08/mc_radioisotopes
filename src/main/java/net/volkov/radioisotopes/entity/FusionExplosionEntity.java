@@ -45,8 +45,8 @@ public class FusionExplosionEntity extends Entity {
                 bolt += 1;
             } else if (y_1 <= 60) {
                 if (x <= 360) {
-                    int r = 15;
-                    world.createExplosion(null, pos.getX() + (r * Math.sin(Math.toRadians(x))), pos.getY() + y_1, pos.getZ() + (r * Math.cos(Math.toRadians(x))), 31.0f, false, Explosion.DestructionType.DESTROY);
+                    int r = 14;
+                    world.createExplosion(null, pos.getX() + (r * Math.sin(Math.toRadians(x))), pos.getY() + y_1, pos.getZ() + (r * Math.cos(Math.toRadians(x))), 36.0f, false, Explosion.DestructionType.DESTROY);
                     x += 32;
                 } else {
                     x = 0;
