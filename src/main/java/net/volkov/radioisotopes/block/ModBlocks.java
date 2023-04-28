@@ -15,10 +15,7 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.Rarity;
 import net.minecraft.util.math.intprovider.UniformIntProvider;
 import net.minecraft.util.registry.Registry;
-
 import net.minecraft.world.World;
-import net.volkov.radioisotopes.ClientMain;
-import net.volkov.radioisotopes.ClientOnly;
 import net.volkov.radioisotopes.block.custom.*;
 import net.volkov.radioisotopes.item.ModItemGroup;
 import org.jetbrains.annotations.Nullable;

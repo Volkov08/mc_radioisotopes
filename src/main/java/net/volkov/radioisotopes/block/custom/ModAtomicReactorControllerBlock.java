@@ -15,7 +15,6 @@ import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.volkov.radioisotopes.block.entity.AtomicReactorControllerBlockEntity;
-import net.volkov.radioisotopes.block.entity.DeuteriumGeneratorBlockEntity;
 import net.volkov.radioisotopes.block.entity.ModBlockEntities;
 import org.jetbrains.annotations.Nullable;
 

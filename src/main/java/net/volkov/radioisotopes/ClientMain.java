@@ -4,7 +4,7 @@ import net.fabricmc.api.ModInitializer;
 import net.volkov.radioisotopes.block.ModBlocks;
 import net.volkov.radioisotopes.block.entity.ModBlockEntities;
 import net.volkov.radioisotopes.effect.ModEffects;
-import net.volkov.radioisotopes.entity.*;
+import net.volkov.radioisotopes.entity.ModEntities;
 import net.volkov.radioisotopes.item.ModItems;
 import net.volkov.radioisotopes.recipe.ModRecipes;
 import net.volkov.radioisotopes.screen.ModScreenHandlers;

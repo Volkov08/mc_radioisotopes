@@ -1,7 +1,6 @@
 package net.volkov.radioisotopes.item.custom;
 
 import com.google.common.collect.ImmutableMap;
-import net.volkov.radioisotopes.item.ModArmorMaterials;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.effect.StatusEffectInstance;
@@ -11,6 +10,7 @@ import net.minecraft.item.ArmorItem;
 import net.minecraft.item.ArmorMaterial;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
+import net.volkov.radioisotopes.item.ModArmorMaterials;
 
 import java.util.Map;
 

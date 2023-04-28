@@ -1,14 +1,13 @@
 package net.volkov.radioisotopes.util;
 
 import net.fabricmc.fabric.api.object.builder.v1.trade.TradeOfferHelper;
+import net.fabricmc.fabric.api.registry.FuelRegistry;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.village.TradeOffer;
-import net.minecraft.village.VillagerProfession;
 import net.volkov.radioisotopes.ClientMain;
 import net.volkov.radioisotopes.block.ModBlocks;
 import net.volkov.radioisotopes.item.ModItems;
-import net.fabricmc.fabric.api.registry.FuelRegistry;
 import net.volkov.radioisotopes.villager.ModVillagers;
 
 public class ModRegistries {

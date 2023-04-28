@@ -1,5 +1,6 @@
 Shortterm goals:
-- Push (emty) lead_battery from fuel slot into output/hopper (currently not implemented for vanilla furnaces)
+- Push (empty) lead_battery from fuel slot into output/hopper (currently not implemented for vanilla furnaces)
+- Improve explosion visuals
 
 Longterm goals:
 - Fusion Reactor (multiblock?)

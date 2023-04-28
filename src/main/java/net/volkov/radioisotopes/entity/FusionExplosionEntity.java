@@ -8,12 +8,9 @@ import net.minecraft.network.Packet;
 import net.minecraft.network.packet.s2c.play.EntitySpawnS2CPacket;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.world.ServerWorld;
-import net.minecraft.sound.SoundCategory;
-import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 import net.minecraft.world.explosion.Explosion;
-import net.volkov.radioisotopes.ClientMain;
 
 public class FusionExplosionEntity extends Entity {
 
@@ -91,6 +88,7 @@ public class FusionExplosionEntity extends Entity {
                 if (server != null) {
                     ServerWorld serverWorld = server.getWorld(world.getRegistryKey());
                     serverWorld.setTimeOfDay(13000);
+                    serverWorld.setWeather(0, 600, true, true);
                 }
                 remove(RemovalReason.DISCARDED);
             }

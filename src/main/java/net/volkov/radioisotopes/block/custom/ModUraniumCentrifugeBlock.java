@@ -17,8 +17,8 @@ import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.world.World;
-import net.volkov.radioisotopes.block.entity.UraniumCentrifugeBlockEntity;
 import net.volkov.radioisotopes.block.entity.ModBlockEntities;
+import net.volkov.radioisotopes.block.entity.UraniumCentrifugeBlockEntity;
 import org.jetbrains.annotations.Nullable;
 
 public class ModUraniumCentrifugeBlock extends ModTallBlock implements BlockEntityProvider {
