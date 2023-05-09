@@ -3,6 +3,7 @@ package net.volkov.radioisotopes.block.custom;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockEntityProvider;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.block.entity.BlockEntityTicker;
 import net.minecraft.block.entity.BlockEntityType;
@@ -17,6 +18,7 @@ import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.world.World;
+import net.minecraft.world.WorldView;
 import net.volkov.radioisotopes.block.entity.ModBlockEntities;
 import net.volkov.radioisotopes.block.entity.UraniumCentrifugeBlockEntity;
 import org.jetbrains.annotations.Nullable;
@@ -26,6 +28,13 @@ public class ModUraniumCentrifugeBlock extends ModTallBlock implements BlockEnti
     public ModUraniumCentrifugeBlock(Settings settings) {
         super(settings);
         this.setDefaultState(((this.stateManager.getDefaultState()).with(FACING, Direction.NORTH)).with(HALF, DoubleBlockHalf.LOWER));
+    }
+
+    @Override
+    public boolean canPlaceAt(BlockState state, WorldView world, BlockPos pos) {
+        BlockPos blockPos = pos.up();
+        BlockState blockState = world.getBlockState(blockPos);
+        return blockState == Blocks.AIR.getDefaultState();
     }
 
     @Nullable
