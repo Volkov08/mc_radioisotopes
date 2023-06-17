@@ -4,8 +4,7 @@
   "package": "net.volkov.radioisotopes.mixin",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
-    "LivingEntityMixin",
-    "StructureFeatureAccessor"
+    "LivingEntityMixin"
   ],
   "client": [
     "MainMixin"

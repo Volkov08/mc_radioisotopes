@@ -10,7 +10,6 @@ import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.text.Text;
-import net.minecraft.text.TranslatableText;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.Rarity;
 import net.minecraft.util.math.intprovider.UniformIntProvider;
@@ -102,10 +101,10 @@ public class ModBlocks {
                 new BlockItem(block, new FabricItemSettings().group(group)) {
                     @Override
                     public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
-                        tooltip.add(new TranslatableText(tooltipKey_1));
-                        tooltip.add(new TranslatableText(tooltipKey_2));
-                        tooltip.add(new TranslatableText(tooltipKey_3));
-                        tooltip.add(new TranslatableText(tooltipKey_4));
+                        tooltip.add(Text.translatable(tooltipKey_1));
+                        tooltip.add(Text.translatable(tooltipKey_2));
+                        tooltip.add(Text.translatable(tooltipKey_3));
+                        tooltip.add(Text.translatable(tooltipKey_4));
                     }
                 });
     }

@@ -13,7 +13,6 @@ import net.minecraft.screen.NamedScreenHandlerFactory;
 import net.minecraft.screen.PropertyDelegate;
 import net.minecraft.screen.ScreenHandler;
 import net.minecraft.text.Text;
-import net.minecraft.text.TranslatableText;
 import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
@@ -75,7 +74,7 @@ public class AtomicReactorControllerBlockEntity extends BlockEntity implements N
 
     @Override
     public Text getDisplayName() {
-        return new TranslatableText("block.radioisotopes.atomic_reactor_controller");
+        return Text.translatable("block.radioisotopes.atomic_reactor_controller");
     }
 
     @Nullable

@@ -1,7 +1,7 @@
 package net.volkov.radioisotopes.util;
 
-import net.fabricmc.fabric.api.loot.v1.FabricLootPoolBuilder;
-import net.fabricmc.fabric.api.loot.v1.event.LootTableLoadingCallback;
+import net.fabricmc.fabric.api.loot.v2.LootTableEvents;
+import net.minecraft.loot.LootPool;
 import net.minecraft.loot.condition.RandomChanceLootCondition;
 import net.minecraft.loot.entry.ItemEntry;
 import net.minecraft.loot.function.SetCountLootFunction;
@@ -15,16 +15,16 @@ public class ModLootTableModifiers {
             = new Identifier("minecraft", "entities/creeper");
 
     public static void modifyLootTables() {
-        LootTableLoadingCallback.EVENT.register(((resourceManager, manager, id, supplier, setter) -> {
+        LootTableEvents.MODIFY.register(((resourceManager, manager, id, supplier, setter) -> {
 
             if(CREEPER_ID.equals(id)) {
                 // Adds RAW_URANIUM to Creepers.
-                FabricLootPoolBuilder poolBuilder = FabricLootPoolBuilder.builder()
+                LootPool.Builder poolBuilder = LootPool.builder()
                         .rolls(ConstantLootNumberProvider.create(1))
                         .conditionally(RandomChanceLootCondition.builder(0.15f)) // Drops 15% of the time
                         .with(ItemEntry.builder(ModItems.RAW_URANIUM))
-                        .withFunction(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 1.0f)).build());
-                supplier.withPool(poolBuilder.build());
+                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 1.0f)).build());
+                supplier.pool(poolBuilder.build());
             }
         }));
     }

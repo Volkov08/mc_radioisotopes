@@ -2,7 +2,7 @@ package net.volkov.radioisotopes;
 
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
-import net.fabricmc.fabric.api.client.rendereregistry.v1.EntityRendererRegistry;
+import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
 import net.fabricmc.fabric.api.client.screenhandler.v1.ScreenRegistry;
 import net.minecraft.client.render.RenderLayer;
 import net.volkov.radioisotopes.block.ModBlocks;
@@ -25,9 +25,9 @@ public class ClientOnly implements ClientModInitializer {
         ScreenRegistry.register(ModScreenHandlers.URANIUM_CENTRIFUGE_SCREEN_HANDLER, UraniumCentrifugeScreen::new);
         ScreenRegistry.register(ModScreenHandlers.ATOMIC_REACTOR_CONTROLLER_SCREEN_HANDLER, AtomicReactorControllerScreen::new);
 
-        EntityRendererRegistry.INSTANCE.register(ModEntities.FISSION_RAD_ENTITY, FissionRadEntityRenderer::new);
-        EntityRendererRegistry.INSTANCE.register(ModEntities.REACTOR_RAD_ENTITY, ReactorRadEntityRenderer::new);
-        EntityRendererRegistry.INSTANCE.register(ModEntities.FISSION_EXPLOSION_ENTITY, FissionExplosionEntityRenderer::new);
-        EntityRendererRegistry.INSTANCE.register(ModEntities.FUSION_EXPLOSION_ENTITY, FusionExplosionEntityRenderer::new);
+        EntityRendererRegistry.register(ModEntities.FISSION_RAD_ENTITY, FissionRadEntityRenderer::new);
+        EntityRendererRegistry.register(ModEntities.REACTOR_RAD_ENTITY, ReactorRadEntityRenderer::new);
+        EntityRendererRegistry.register(ModEntities.FISSION_EXPLOSION_ENTITY, FissionExplosionEntityRenderer::new);
+        EntityRendererRegistry.register(ModEntities.FUSION_EXPLOSION_ENTITY, FusionExplosionEntityRenderer::new);
     }
 }

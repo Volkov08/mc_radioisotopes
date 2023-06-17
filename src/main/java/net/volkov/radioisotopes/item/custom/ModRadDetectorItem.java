@@ -7,9 +7,8 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.server.network.ServerPlayerEntity;
-import net.minecraft.text.LiteralText;
+import net.minecraft.text.MutableText;
 import net.minecraft.text.Text;
-import net.minecraft.text.TranslatableText;
 import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
 import net.minecraft.util.math.BlockPos;
@@ -35,7 +34,7 @@ public class ModRadDetectorItem extends Item {
             outputRad(player, world);
         }
         else {
-            player.sendMessage(new LiteralText("Battery low"), false);
+            player.sendMessage(Text.literal("Battery low"), false);
         }
         return TypedActionResult.success(stack);
     }
@@ -69,10 +68,10 @@ public class ModRadDetectorItem extends Item {
         if(!world.isClient()) {
             if(player instanceof ServerPlayerEntity) {
                 if(has_rad) {
-                    player.sendMessage(new LiteralText("Radiation detected"), false);
+                    player.sendMessage(Text.literal("Radiation detected"), false);
                 }
                 else {
-                    player.sendMessage(new LiteralText("No significant amount of radiation detected"), false);
+                    player.sendMessage(Text.literal("No significant amount of radiation detected"), false);
                 }
 
             }
@@ -82,7 +81,7 @@ public class ModRadDetectorItem extends Item {
     @Override
     public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
         String chargeString = String.format("%d", charge);
-        TranslatableText chargeText = new TranslatableText("tooltip.rad_detector.charge", chargeString);
+        MutableText chargeText = Text.translatable("tooltip.rad_detector.charge", chargeString);
         tooltip.add(chargeText);
         super.appendTooltip(stack, world, tooltip, context);
     }
