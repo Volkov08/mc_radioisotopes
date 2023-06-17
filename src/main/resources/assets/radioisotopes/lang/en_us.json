@@ -108,6 +108,8 @@
   "advancements.radioisotopes.atomic_bomb.title": "The Bomb",
   "advancements.radioisotopes.atomic_bomb.description": "§6§oE = mc²!",
   "advancements.radioisotopes.fusion_bomb.title": "Fusion Bomb",
-  "advancements.radioisotopes.fusion_bomb.description": "The first large-scale nuclear fusion device!"
+  "advancements.radioisotopes.fusion_bomb.description": "The first large-scale nuclear fusion device!",
+
+  "radioisotopes.nuke_explosion": "Nuclear Explosion"
 
 }

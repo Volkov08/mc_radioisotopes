@@ -1,0 +1,8 @@
+{
+  "nuke_explosion": {
+    "subtitle": "radioisotopes.nuke_explosion",
+    "sounds": [
+      "radioisotopes:nuke_explosion"
+    ]
+  }
+}

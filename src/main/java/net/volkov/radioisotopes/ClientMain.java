@@ -1,6 +1,7 @@
 package net.volkov.radioisotopes;
 
 import net.fabricmc.api.ModInitializer;
+import net.minecraft.util.registry.Registry;
 import net.volkov.radioisotopes.block.ModBlocks;
 import net.volkov.radioisotopes.block.entity.ModBlockEntities;
 import net.volkov.radioisotopes.effect.ModEffects;
@@ -8,6 +9,7 @@ import net.volkov.radioisotopes.entity.ModEntities;
 import net.volkov.radioisotopes.item.ModItems;
 import net.volkov.radioisotopes.recipe.ModRecipes;
 import net.volkov.radioisotopes.screen.ModScreenHandlers;
+import net.volkov.radioisotopes.sound.ModSounds;
 import net.volkov.radioisotopes.util.ModLootTableModifiers;
 import net.volkov.radioisotopes.util.ModRegistries;
 import net.volkov.radioisotopes.villager.ModVillagers;
@@ -27,6 +29,8 @@ public class ClientMain implements ModInitializer {
 		ModItems.registerModItems();
 		ModBlocks.registerModBlocks();
 		ModEffects.registerEffects();
+
+		ModSounds.registerSounds();
 
 		ModRegistries.registerModStuffs();
 

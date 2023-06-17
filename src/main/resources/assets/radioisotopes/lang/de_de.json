@@ -106,5 +106,7 @@
   "advancements.radioisotopes.atomic_bomb.title": "Die Bombe",
   "advancements.radioisotopes.atomic_bomb.description": "§6§oE = mc²!",
   "advancements.radioisotopes.fusion_bomb.title": "Wasserstoffbombe",
-  "advancements.radioisotopes.fusion_bomb.description": "Die erste Gerätschaft zur Kernfusion im großen Maßstab!"
+  "advancements.radioisotopes.fusion_bomb.description": "Die erste Gerätschaft zur Kernfusion im großen Maßstab!",
+
+  "radioisotopes.nuke_explosion": "Nukleare Explosion"
 }

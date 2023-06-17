@@ -15,14 +15,11 @@ public class ModStructures {
      * It is always a good idea to register your Structures so that other mods and datapacks can
      * use them too directly from the registries. It great for mod/datapacks compatibility.
      */
-    public static StructureFeature<?> SKY_STRUCTURES = new SkyStructures();
     public static StructureFeature<?> END_LABOR = new EndLabor();
 
     public static void registerStructureFeatures() {
         // The generation step for when to generate the structure. there are 10 stages you can pick from!
         // This surface structure stage places the structure before plants and ores are generated.
-        StructureFeatureAccessor.callRegister(ClientMain.MOD_ID + ":sky_structures",
-                SKY_STRUCTURES, GenerationStep.Feature.SURFACE_STRUCTURES);
         StructureFeatureAccessor.callRegister(ClientMain.MOD_ID + ":end_labor",
                 END_LABOR, GenerationStep.Feature.SURFACE_STRUCTURES);
 
