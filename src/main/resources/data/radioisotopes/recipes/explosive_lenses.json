@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "T": {
+      "item": "minecraft:tnt"
+    },
+    "G": {
+      "item": "minecraft:gunpowder"
+    }
+  },
+  "pattern": [
+    "  T",
+    " GT",
+    "TTT"
+  ],
+  "result": {
+    "item": "radioisotopes:explosive_lenses",
+    "count": 2
+  }
+}

@@ -109,6 +109,9 @@ public class ModItems {
     public static final Item URANIUM_PUSHER = registerItem("uranium_pusher",
             new Item(new FabricItemSettings().group(ModItemGroup.URANIUM)));
 
+    public static final Item EXPLOSIVE_LENSES = registerItem("explosive_lenses",
+            new Item(new FabricItemSettings().group(ModItemGroup.URANIUM)));
+
     /*
     public static final Item TIMED_FUZE = registerItem("timed_fuze",
             new Item(new FabricItemSettings().group(ModItemGroup.URANIUM)));

@@ -2,7 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "key": {
     "T": {
-      "item": "minecraft:tnt"
+      "item": "radioisotopes:explosive_lenses"
     },
     "P": {
       "item": "radioisotopes:plutonium"
