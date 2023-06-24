@@ -63,6 +63,8 @@
   "item.radioisotopes.lead_battery": "Lead Battery",
   "item.radioisotopes.full_lead_battery": "Full Lead Battery",
 
+  "item.radioisotopes.rad_detector": "Radiation Detector",
+
   "item.radioisotopes.atomic_waste": "Atomic Waste",
   "item.radioisotopes.plutonium": "Plutonium",
 
@@ -86,6 +88,9 @@
   "tooltip.radioisotopes.deuterium_generator_4": "§e§lfrom normal water",
 
   "tooltip.rad_detector.charge": "Charge: %s",
+  "tooltip.rad_detector.hint_1": "§e§lRight-click to measure radiation",
+  "tooltip.rad_detector.hint_2": "§e§lRight-click with battery in offhand",
+  "tooltip.rad_detector.hint_3": "§e§lto recharge",
 
   "effect.radioisotopes.radiation_poisoning": "Radiation",
 

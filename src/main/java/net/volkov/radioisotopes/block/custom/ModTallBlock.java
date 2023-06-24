@@ -50,7 +50,7 @@ public class ModTallBlock extends Block {
     public boolean canPlaceAt(BlockState state, WorldView world, BlockPos pos) {
         BlockPos blockPos = pos.down();
         BlockState blockState = world.getBlockState(blockPos);
-        return state.get(HALF) == DoubleBlockHalf.LOWER ? true : blockState.isOf(this);
+        return state.get(HALF) == DoubleBlockHalf.LOWER || blockState.isOf(this);
     }
     public BlockState getStateForNeighborUpdate(BlockState state, Direction direction, BlockState neighborState, WorldAccess world, BlockPos pos, BlockPos neighborPos) {
         DoubleBlockHalf doubleBlockHalf = (DoubleBlockHalf)state.get(HALF);

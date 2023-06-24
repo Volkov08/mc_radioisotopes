@@ -34,7 +34,7 @@ public class ModUraniumCentrifugeBlock extends ModTallBlock implements BlockEnti
     public boolean canPlaceAt(BlockState state, WorldView world, BlockPos pos) {
         BlockPos blockPos = pos.up();
         BlockState blockState = world.getBlockState(blockPos);
-        return blockState == Blocks.AIR.getDefaultState();
+        return blockState == Blocks.AIR.getDefaultState() || blockState.isOf(this);
     }
 
     @Nullable

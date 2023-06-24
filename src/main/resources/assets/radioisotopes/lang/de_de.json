@@ -62,6 +62,8 @@
   "item.radioisotopes.lead_battery": "Bleiakku",
   "item.radioisotopes.full_lead_battery": "Voller Bleiakku",
 
+  "item.radioisotopes.rad_detector": "Stahlungserkenner",
+
   "item.radioisotopes.atomic_waste": "Atommüll",
   "item.radioisotopes.plutonium": "Plutonium",
 
@@ -85,6 +87,9 @@
   "tooltip.radioisotopes.deuterium_generator_4": "§e§laus normalem Wasser an",
 
   "tooltip.rad_detector.charge": "Ladung: %s",
+  "tooltip.rad_detector.hint_1": "§e§lRechtsklicken, um Strahlung zu messen",
+  "tooltip.rad_detector.hint_2": "§e§lMit Batterie in Offhand rechtsklicken,",
+  "tooltip.rad_detector.hint_3": "§e§lum aufzuladen",
 
   "effect.radioisotopes.radiation_poisoning": "Strahlung",
 

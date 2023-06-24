@@ -1,7 +1,9 @@
 package net.volkov.radioisotopes.block.entity;
 
+import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.BlockEntity;
+import net.minecraft.block.enums.DoubleBlockHalf;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.Inventories;
@@ -12,11 +14,15 @@ import net.minecraft.nbt.NbtCompound;
 import net.minecraft.screen.NamedScreenHandlerFactory;
 import net.minecraft.screen.PropertyDelegate;
 import net.minecraft.screen.ScreenHandler;
+import net.minecraft.state.property.EnumProperty;
+import net.minecraft.state.property.Properties;
 import net.minecraft.text.Text;
 import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.world.World;
+import net.volkov.radioisotopes.block.ModBlocks;
+import net.volkov.radioisotopes.block.custom.ModTallBlock;
 import net.volkov.radioisotopes.block.custom.ModUraniumCentrifugeBlock;
 import net.volkov.radioisotopes.item.inventory.ImplementedInventory;
 import net.volkov.radioisotopes.recipe.UraniumCentrifugeRecipe;
@@ -101,33 +107,34 @@ public class UraniumCentrifugeBlockEntity extends BlockEntity implements NamedSc
     @Override
     public boolean canInsert(int slot, ItemStack stack, @Nullable Direction side) {
         Direction localDir = this.getWorld().getBlockState(this.pos).get(ModUraniumCentrifugeBlock.FACING);
+        EnumProperty<DoubleBlockHalf> HALF = Properties.DOUBLE_BLOCK_HALF;
+        DoubleBlockHalf uc = this.getWorld().getBlockState(this.pos).get(HALF);
+        if (uc == DoubleBlockHalf.LOWER) {
+            if (side == Direction.UP || side == Direction.DOWN) {
+                return false;
+            }
 
-        if(side == Direction.UP || side == Direction.DOWN) {
+            // Top insert 0 (fuel)
+            // Right insert 1
+            // Left insert 2
+
+            return switch (localDir) {
+                default -> side.getOpposite() == Direction.NORTH && slot == 2 ||
+                        side.getOpposite() == Direction.EAST && slot == 0 ||
+                        side.getOpposite() == Direction.SOUTH && slot == 1;
+                case EAST -> side.rotateYClockwise() == Direction.NORTH && slot == 2 ||
+                        side.rotateYClockwise() == Direction.EAST && slot == 0 ||
+                        side.rotateYClockwise() == Direction.SOUTH && slot == 1;
+                case SOUTH -> side == Direction.NORTH && slot == 2 ||
+                        side == Direction.EAST && slot == 0 ||
+                        side == Direction.SOUTH && slot == 1;
+                case WEST -> side.rotateYCounterclockwise() == Direction.NORTH && slot == 2 ||
+                        side.rotateYCounterclockwise() == Direction.EAST && slot == 0 ||
+                        side.rotateYCounterclockwise() == Direction.SOUTH && slot == 1;
+            };
+        } else {
             return false;
         }
-
-        // Top insert 0 (fuel)
-        // Right insert 1
-        // Left insert 2
-
-        return switch (localDir) {
-            default ->
-                    side.getOpposite() == Direction.NORTH && slot == 0 ||
-                            side.getOpposite() == Direction.EAST && slot == 1 ||
-                            side.getOpposite() == Direction.WEST && slot == 2;
-            case EAST ->
-                    side.rotateYClockwise() == Direction.NORTH && slot == 0 ||
-                            side.rotateYClockwise() == Direction.EAST && slot == 1 ||
-                            side.rotateYClockwise() == Direction.WEST && slot == 2;
-            case SOUTH ->
-                    side == Direction.NORTH && slot == 0 ||
-                            side == Direction.EAST && slot == 1 ||
-                            side == Direction.WEST && slot == 2;
-            case WEST ->
-                    side.rotateYCounterclockwise() == Direction.NORTH && slot == 0 ||
-                            side.rotateYCounterclockwise() == Direction.EAST && slot == 1 ||
-                            side.rotateYCounterclockwise() == Direction.WEST && slot == 2;
-        };
     }
 
     @Override

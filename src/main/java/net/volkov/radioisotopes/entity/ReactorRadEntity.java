@@ -77,7 +77,7 @@ public class ReactorRadEntity extends Entity {
         double r_dur = ((double) lifetime) / full_lifetime * dur;
         double f_dur = r_dur - (distance * r_dur / full_distance);
         if (f_dur > 0.0d) {
-            if (!player.hasStatusEffect(ModEffects.RAD_POISON)) {
+            if (!player.hasStatusEffect(ModEffects.RAD_POISON) || player.getStatusEffect(ModEffects.RAD_POISON).getDuration() < f_dur) {
                 if (f_dur >= div) {
                     if (!hasArmorOn(player, ModArmorMaterials.HEAVY_LEAD)) {
                         if (hasArmorOn(player, ModArmorMaterials.LEAD)) {
@@ -86,23 +86,6 @@ public class ReactorRadEntity extends Entity {
                         else {
                             player.addStatusEffect(new StatusEffectInstance(ModEffects.RAD_POISON, (int) Math.round(f_dur), 0));
                         }
-                    }
-                } else {
-                    if (!hasArmorOn(player, ModArmorMaterials.LEAD) && !hasArmorOn(player, ModArmorMaterials.HEAVY_LEAD)) {
-                        player.addStatusEffect(new StatusEffectInstance(ModEffects.RAD_POISON, (int) Math.round(f_dur), 0));
-                    }
-                }
-
-            } else if (player.getStatusEffect(ModEffects.RAD_POISON).getDuration() < f_dur) {
-                if (f_dur >= div) {
-                    if (!hasArmorOn(player, ModArmorMaterials.HEAVY_LEAD)) {
-                        if (hasArmorOn(player, ModArmorMaterials.LEAD)) {
-                            player.addStatusEffect(new StatusEffectInstance(ModEffects.RAD_POISON, (int) Math.round(f_dur / 3), 0));
-                        }
-                        else {
-                            player.addStatusEffect(new StatusEffectInstance(ModEffects.RAD_POISON, (int) Math.round(f_dur), 0));
-                        }
-
                     }
                 } else {
                     if (!hasArmorOn(player, ModArmorMaterials.LEAD) && !hasArmorOn(player, ModArmorMaterials.HEAVY_LEAD)) {
@@ -116,12 +99,12 @@ public class ReactorRadEntity extends Entity {
     private void protCheck(PlayerEntity player, double c_distance) {
         boolean isProt = false;
         Vec3d entityPos = this.getPos();
-        Vec3d playerPos = player.getPos().add(0, player.getEyeHeight(player.getPose()), 0);
+        Vec3d playerPos = player.getPos().add(0d, player.getEyeHeight(player.getPose()), 0d);
         Vec3d rayDir = playerPos.subtract(entityPos).normalize();
         double maxDistance = entityPos.distanceTo(playerPos);
         if (maxDistance < c_distance) {
             BlockPos.Mutable pos = new BlockPos.Mutable();
-            for (double distance = 0; distance < maxDistance; distance += 0.1) {
+            for (double distance = 0d; distance < maxDistance; distance += 0.1d) {
                 pos.set(entityPos.add(rayDir.multiply(distance)).getX(), entityPos.add(rayDir.multiply(distance)).getY(), entityPos.add(rayDir.multiply(distance)).getZ());
                 if (world.getBlockState(pos).getBlock() == ModBlocks.LEAD_BLOCK || world.getBlockState(pos).getBlock() == ModBlocks.INDUSTRIAL_CASING || world.getBlockState(pos).getBlock() == ModBlocks.LEAD_WALL) {
                     isProt = true;
