@@ -62,7 +62,10 @@
   "item.radioisotopes.lead_battery": "Bleiakku",
   "item.radioisotopes.full_lead_battery": "Voller Bleiakku",
 
-  "item.radioisotopes.rad_detector": "Stahlungserkenner",
+  "item.radioisotopes.rad_detector": "Stahlungsmesser",
+  "item.radioisotopes.rad_detector.rad_det": "Strahlung erkannt",
+  "item.radioisotopes.rad_detector.rad_n_det": "Keine nennenswerte Strahlung erkannt",
+  "item.radioisotopes.batt_low": "Batterie leer!",
 
   "item.radioisotopes.atomic_waste": "Atommüll",
   "item.radioisotopes.plutonium": "Plutonium",
@@ -73,22 +76,22 @@
   "block.radioisotopes.atomic_bomb": "Atombombe",
   "block.radioisotopes.fusion_bomb": "Fusionsbombe",
 
-  "tooltip.radioisotopes.uranium_centrifuge_1": "§e§lMacht aus Uranblock",
+  "tooltip.radioisotopes.uranium_centrifuge_1": "§e§l-Macht aus Uranblock/Uranbarren",
   "tooltip.radioisotopes.uranium_centrifuge_2": "§e§l+ Fluor + Lohenrute (Brennstoff)",
   "tooltip.radioisotopes.uranium_centrifuge_3": "§e§langereichertes Uran",
 
-  "tooltip.radioisotopes.atomic_reactor_controller_1": "§e§lKann mithilfe eines Brennstabs",
+  "tooltip.radioisotopes.atomic_reactor_controller_1": "§e§l-Kann mithilfe eines Brennstabs",
   "tooltip.radioisotopes.atomic_reactor_controller_2": "§e§lBatterien laden und aus Lithium",
   "tooltip.radioisotopes.atomic_reactor_controller_3": "§e§lTritium herstellen",
 
-  "tooltip.radioisotopes.deuterium_generator_1": "§e§lReichert schweres Wasser",
+  "tooltip.radioisotopes.deuterium_generator_1": "§e§l-Reichert schweres Wasser",
   "tooltip.radioisotopes.deuterium_generator_2": "§e§lmithilfe einer Stromquelle",
   "tooltip.radioisotopes.deuterium_generator_3": "§e§l(Kartoffel od. Batterie)",
   "tooltip.radioisotopes.deuterium_generator_4": "§e§laus normalem Wasser an",
 
   "tooltip.rad_detector.charge": "Ladung: %s",
-  "tooltip.rad_detector.hint_1": "§e§lRechtsklicken, um Strahlung zu messen",
-  "tooltip.rad_detector.hint_2": "§e§lMit Batterie in Offhand rechtsklicken,",
+  "tooltip.rad_detector.hint_1": "§e§l-Rechtsklicken, um Strahlung zu messen",
+  "tooltip.rad_detector.hint_2": "§e§l-Mit Batterie in Offhand rechtsklicken,",
   "tooltip.rad_detector.hint_3": "§e§lum aufzuladen",
 
   "effect.radioisotopes.radiation_poisoning": "Strahlung",

@@ -88,7 +88,7 @@ public class FusionExplosionEntity extends Entity {
                 if (server != null) {
                     ServerWorld serverWorld = server.getWorld(world.getRegistryKey());
                     serverWorld.setTimeOfDay(13000);
-                    serverWorld.setWeather(0, 600, true, true);
+                    serverWorld.setWeather(0, 3600, true, true);
                 }
                 remove(RemovalReason.DISCARDED);
             }

@@ -64,6 +64,9 @@
   "item.radioisotopes.full_lead_battery": "Full Lead Battery",
 
   "item.radioisotopes.rad_detector": "Radiation Detector",
+  "item.radioisotopes.rad_detector.rad_det": "Radiation detected",
+  "item.radioisotopes.rad_detector.rad_n_det": "No significant amount of radiation detected",
+  "item.radioisotopes.batt_low": "Battery low!",
 
   "item.radioisotopes.atomic_waste": "Atomic Waste",
   "item.radioisotopes.plutonium": "Plutonium",
@@ -74,22 +77,22 @@
   "block.radioisotopes.atomic_bomb": "Atomic Bomb",
   "block.radioisotopes.fusion_bomb": "Fusion Bomb",
 
-  "tooltip.radioisotopes.uranium_centrifuge_1": "§e§lMakes enriched uranium",
-  "tooltip.radioisotopes.uranium_centrifuge_2": "§e§lfrom uranium block",
+  "tooltip.radioisotopes.uranium_centrifuge_1": "§e§l-Makes enriched uranium",
+  "tooltip.radioisotopes.uranium_centrifuge_2": "§e§lfrom uranium block/ingot",
   "tooltip.radioisotopes.uranium_centrifuge_3": "§e§l+ fluorine + blaze rod (fuel)",
 
-  "tooltip.radioisotopes.atomic_reactor_controller_1": "§e§lCharges batteries or produces",
+  "tooltip.radioisotopes.atomic_reactor_controller_1": "§e§l-Charges batteries or produces",
   "tooltip.radioisotopes.atomic_reactor_controller_2": "§e§ltritium from lithium and is fueled",
   "tooltip.radioisotopes.atomic_reactor_controller_3": "§e§lby a nuclear fuel rod",
 
-  "tooltip.radioisotopes.deuterium_generator_1": "§e§lEnriches heavy water",
+  "tooltip.radioisotopes.deuterium_generator_1": "§e§l-Enriches heavy water",
   "tooltip.radioisotopes.deuterium_generator_2": "§e§lusing a power source",
   "tooltip.radioisotopes.deuterium_generator_3": "§e§l(potato or battery)",
   "tooltip.radioisotopes.deuterium_generator_4": "§e§lfrom normal water",
 
   "tooltip.rad_detector.charge": "Charge: %s",
-  "tooltip.rad_detector.hint_1": "§e§lRight-click to measure radiation",
-  "tooltip.rad_detector.hint_2": "§e§lRight-click with battery in offhand",
+  "tooltip.rad_detector.hint_1": "§e§l-Right-click to measure radiation",
+  "tooltip.rad_detector.hint_2": "§e§l-Right-click with battery in offhand",
   "tooltip.rad_detector.hint_3": "§e§lto recharge",
 
   "effect.radioisotopes.radiation_poisoning": "Radiation",

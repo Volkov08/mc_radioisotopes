@@ -1,0 +1,28 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "C": {
+      "item": "radioisotopes:copper_wire"
+    },
+    "I": {
+      "item": "minecraft:iron_ingot"
+    },
+    "Q": {
+      "item": "minecraft:quartz"
+    },
+    "R": {
+      "item": "minecraft:redstone"
+    },
+    "B": {
+      "item": "radioisotopes:full_lead_battery"
+    }
+  },
+  "pattern": [
+    "IBI",
+    "IRC",
+    "IQI"
+  ],
+  "result": {
+    "item": "radioisotopes:rad_detector"
+  }
+}
