@@ -11,6 +11,7 @@ import net.volkov.radioisotopes.screen.ModScreenHandlers;
 import net.volkov.radioisotopes.sound.ModSounds;
 import net.volkov.radioisotopes.util.ModLootTableModifiers;
 import net.volkov.radioisotopes.util.ModRegistries;
+import net.volkov.radioisotopes.villager.ModVillagers;
 import net.volkov.radioisotopes.world.gen.ModWorldGen;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -25,6 +26,9 @@ public class ClientMain implements ModInitializer {
 
 		ModItems.registerModItems();
 		ModBlocks.registerModBlocks();
+
+		ModVillagers.registerVillagers();
+
 		ModEffects.registerEffects();
 
 		ModSounds.registerSounds();

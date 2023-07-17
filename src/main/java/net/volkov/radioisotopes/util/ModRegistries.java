@@ -27,12 +27,16 @@ public class ModRegistries {
                 factories -> {
                     factories.add((entity, random) -> new TradeOffer(
                             new ItemStack(ModItems.RAW_URANIUM, 2),
-                            new ItemStack(Items.EMERALD, 6),
-                            8,3,0.05f));
+                            new ItemStack(Items.EMERALD, 8),
+                            8,5,0.05f));
                     factories.add((entity, random) -> new TradeOffer(
                             new ItemStack(ModItems.RAW_LEAD, 7),
                             new ItemStack(Items.EMERALD, 2),
-                            8,3,0.05f));
+                            10,3,0.05f));
+                    factories.add((entity, random) -> new TradeOffer(
+                            new ItemStack(Items.COAL_BLOCK, 2),
+                            new ItemStack(Items.EMERALD, 5),
+                            10,3,0.05f));
                 });
 
         TradeOfferHelper.registerVillagerOffers(ModVillagers.PHYSICIST, 2,
@@ -66,7 +70,7 @@ public class ModRegistries {
                             12,8,0.05f));
                     factories.add((entity, random) -> new TradeOffer(
                             new ItemStack(ModItems.FLUORINE, 2),
-                            new ItemStack(Items.EMERALD, 22),
+                            new ItemStack(Items.EMERALD, 8),
                             12,12,0.05f));
                 });
         TradeOfferHelper.registerVillagerOffers(ModVillagers.PHYSICIST, 3,
@@ -93,7 +97,7 @@ public class ModRegistries {
 
                     factories.add((entity, random) -> new TradeOffer(
                             new ItemStack(ModItems.HEAVY_WATER_BUCKET, 1),
-                            new ItemStack(Items.EMERALD, 8),
+                            new ItemStack(Items.EMERALD, 12),
                             8,24,0.05f));
                 });
                 TradeOfferHelper.registerVillagerOffers(ModVillagers.PHYSICIST, 4,
@@ -102,7 +106,7 @@ public class ModRegistries {
                             new ItemStack(ModItems.ELECTRIC_ENGINE, 4),
                             new ItemStack(Items.EMERALD, 24),
                             new ItemStack(ModBlocks.URANIUM_CENTRIFUGE.asItem(), 1),
-                            3,28,0.05f));
+                            2,30,0.05f));
 
                     factories.add((entity, random) -> new TradeOffer(
                             new ItemStack(ModItems.ATOMIC_WASTE, 3),
@@ -114,6 +118,11 @@ public class ModRegistries {
                             new ItemStack(Items.EMERALD, 38),
                             new ItemStack(ModItems.LITHIUM_INGOT, 1),
                             3,26,0.05f));
+
+                    factories.add((entity, random) -> new TradeOffer(
+                            new ItemStack(ModItems.RAD_DETECTOR, 1),
+                            new ItemStack(Items.EMERALD, 16),
+                            6,20,0.05f));
 
                     /*
                     factories.add((entity, random) -> new TradeOffer(
