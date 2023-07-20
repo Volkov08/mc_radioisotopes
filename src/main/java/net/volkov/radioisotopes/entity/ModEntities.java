@@ -16,6 +16,7 @@ public class ModEntities {
     public static EntityType<FusionExplosionEntity> FUSION_EXPLOSION_ENTITY;
 
     public static void registerAllEntities() {
+        ClientMain.LOGGER.info("Registering Mod Entities for " + ClientMain.MOD_ID);
         FISSION_RAD_ENTITY = Registry.register(
                 Registry.ENTITY_TYPE,
                 new Identifier(ClientMain.MOD_ID, "fission_rad_entity"),

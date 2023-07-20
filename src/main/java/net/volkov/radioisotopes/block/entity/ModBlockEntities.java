@@ -13,6 +13,7 @@ public class ModBlockEntities {
     public static BlockEntityType<AtomicReactorControllerBlockEntity> ATOMIC_REACTOR_CONTROLLER;
 
     public static void registerAllBlockEntities() {
+        ClientMain.LOGGER.info("Registering Mod Block Entities for " + ClientMain.MOD_ID);
         DEUTERIUM_GENERATOR = Registry.register(Registry.BLOCK_ENTITY_TYPE,
                 new Identifier(ClientMain.MOD_ID, "deuterium_generator"),
                 FabricBlockEntityTypeBuilder.create(DeuteriumGeneratorBlockEntity::new,

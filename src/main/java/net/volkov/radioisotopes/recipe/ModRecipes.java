@@ -6,6 +6,7 @@ import net.volkov.radioisotopes.ClientMain;
 
 public class ModRecipes {
     public static void registerRecipes() {
+        ClientMain.LOGGER.info("Registering Mod Recipes for " + ClientMain.MOD_ID);
         Registry.register(Registry.RECIPE_SERIALIZER, new Identifier(ClientMain.MOD_ID, DeuteriumGeneratorRecipe.Serializer.ID),
                 DeuteriumGeneratorRecipe.Serializer.INSTANCE);
         Registry.register(Registry.RECIPE_TYPE, new Identifier(ClientMain.MOD_ID, DeuteriumGeneratorRecipe.Type.ID),

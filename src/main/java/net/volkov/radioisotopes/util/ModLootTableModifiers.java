@@ -8,6 +8,7 @@ import net.minecraft.loot.function.SetCountLootFunction;
 import net.minecraft.loot.provider.number.ConstantLootNumberProvider;
 import net.minecraft.loot.provider.number.UniformLootNumberProvider;
 import net.minecraft.util.Identifier;
+import net.volkov.radioisotopes.ClientMain;
 import net.volkov.radioisotopes.item.ModItems;
 
 public class ModLootTableModifiers {
@@ -15,6 +16,7 @@ public class ModLootTableModifiers {
             = new Identifier("minecraft", "entities/creeper");
 
     public static void modifyLootTables() {
+        ClientMain.LOGGER.info("Modifying loot tables for " + ClientMain.MOD_ID);
         LootTableEvents.MODIFY.register(((resourceManager, manager, id, supplier, setter) -> {
 
             if(CREEPER_ID.equals(id)) {

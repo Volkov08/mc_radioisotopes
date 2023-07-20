@@ -14,7 +14,8 @@ public class ModEffects {
         return Registry.register(Registry.STATUS_EFFECT, new Identifier(ClientMain.MOD_ID, name), effect);
     }
 
-    public static void registerEffects(){
+    public static void registerEffects() {
+        ClientMain.LOGGER.info("Registering Mod Effects for " + ClientMain.MOD_ID);
         RAD_POISON = registerStatusEffect("radiation_poisoning",new RadiationPoisoningEffect(StatusEffectCategory.HARMFUL, 11534112));
     }
 }
