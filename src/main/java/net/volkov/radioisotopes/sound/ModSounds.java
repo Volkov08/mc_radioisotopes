@@ -10,7 +10,7 @@ public class ModSounds {
     public static SoundEvent NUKE_EXPLOSION =  new SoundEvent(NUKE_EXPLOSION_ID);
 
     public static void registerSounds() {
-        ClientMain.LOGGER.info("Registering Mod Sounds for " + ClientMain.MOD_ID);
+        ClientMain.LOGGER.info("Registering mod sounds for " + ClientMain.MOD_ID);
         Registry.register(Registry.SOUND_EVENT, ModSounds.NUKE_EXPLOSION_ID, ModSounds.NUKE_EXPLOSION);
     }
 }

@@ -15,6 +15,7 @@ import net.minecraft.util.Rarity;
 import net.minecraft.util.math.intprovider.UniformIntProvider;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.World;
+import net.volkov.radioisotopes.ClientMain;
 import net.volkov.radioisotopes.block.custom.*;
 import net.volkov.radioisotopes.item.ModItemGroup;
 import org.jetbrains.annotations.Nullable;
@@ -125,7 +126,7 @@ public class ModBlocks {
         return Registry.register(Registry.ITEM, new Identifier(net.volkov.radioisotopes.ClientMain.MOD_ID, name), new BlockItem(block, new FabricItemSettings().group(group)));
     }
 
-    public static void registerModBlocks () {
-        net.volkov.radioisotopes.ClientMain.LOGGER.info("Registering Mod Blocks for " + net.volkov.radioisotopes.ClientMain.MOD_ID);
+    public static void registerModBlocks() {
+        ClientMain.LOGGER.info("Registering mod blocks for " + ClientMain.MOD_ID);
     }
 }

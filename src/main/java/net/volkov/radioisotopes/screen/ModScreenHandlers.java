@@ -11,6 +11,7 @@ public class ModScreenHandlers {
     public static ScreenHandlerType<AtomicReactorControllerScreenHandler> ATOMIC_REACTOR_CONTROLLER_SCREEN_HANDLER;
 
     public static void registerAllScreenHandler() {
+        ClientMain.LOGGER.info("Registering mod screens for " + ClientMain.MOD_ID);
         DEUTERIUM_GENERATOR_SCREEN_HANDLER =
             ScreenHandlerRegistry.registerSimple(new Identifier(ClientMain.MOD_ID, "deuterium_generator"),
                     DeuteriumGeneratorScreenHandler::new);

@@ -30,7 +30,7 @@ public class ModVillagers {
     }
 
     public static void registerVillagers() {
-        ClientMain.LOGGER.debug("Registering Villagers for " + ClientMain.MOD_ID);
+        ClientMain.LOGGER.debug("Registering villagers for " + ClientMain.MOD_ID);
     }
 
 
