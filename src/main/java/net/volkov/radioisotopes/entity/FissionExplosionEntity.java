@@ -18,6 +18,7 @@ public class FissionExplosionEntity extends Entity {
     private int y_2 = -25;
     private int x = 0;
     private int bolt = 0;
+    private int r = 0;
 
     public FissionExplosionEntity(EntityType<? extends Entity> type, World world) {
         super(type, world);
@@ -40,7 +41,7 @@ public class FissionExplosionEntity extends Entity {
                 bolt += 1;
             } else if (y_1 <= 60) {
                 if (x <= 360) {
-                    int r = 3;
+                    r = 3;
                     world.createExplosion(null, pos.getX() + (r * Math.sin(Math.toRadians(x))), pos.getY() + y_1, pos.getZ() + (r * Math.cos(Math.toRadians(x))), 18.0f, false, Explosion.DestructionType.DESTROY);
                     x += 90;
                 } else {
@@ -49,7 +50,7 @@ public class FissionExplosionEntity extends Entity {
                 }
             } else if (y_2 <= 40) {
                 if (x <= 360) {
-                    int r = 14;
+                    r = 14;
                     world.createExplosion(null, pos.getX() + (r * Math.sin(Math.toRadians(x))), pos.getY() + y_2, pos.getZ() + (r * Math.cos(Math.toRadians(x))), 30.0f, false, Explosion.DestructionType.DESTROY);
                     x += 24;
                 } else {
@@ -57,7 +58,7 @@ public class FissionExplosionEntity extends Entity {
                     y_2 += 12;
                 }
             } else if (x <= 360) {
-                int r = 35;
+                r = 35;
                 world.createExplosion(null, pos.getX() + (r * Math.sin(Math.toRadians(x))), pos.getY() + 4, pos.getZ() + (r * Math.cos(Math.toRadians(x))), 27.0f, true, Explosion.DestructionType.DESTROY);
                 x += 15;
             } else {
@@ -67,13 +68,33 @@ public class FissionExplosionEntity extends Entity {
                 MinecraftServer server = world.getServer();
                 if (server != null) {
                     ServerWorld serverWorld = server.getWorld(world.getRegistryKey());
-                    serverWorld.setTimeOfDay(13000);
                     serverWorld.setWeather(0, 3600, true, true);
                 }
                 remove(RemovalReason.DISCARDED);
             }
         }
     }
+
+    @Override
+    public NbtCompound writeNbt(NbtCompound nbt) {
+        nbt.putInt("fission_explosion.bolt", bolt);
+        nbt.putInt("fission_explosion.y_1", y_1);
+        nbt.putInt("fission_explosion.y_2", y_2);
+        nbt.putInt("fission_explosion.x", x);
+        nbt.putInt("fission_explosion.r", r);
+        return super.writeNbt(nbt);
+    }
+
+    @Override
+    public void readNbt(NbtCompound nbt) {
+        super.readNbt(nbt);
+        bolt = nbt.getInt("fission_explosion.bolt");
+        y_1 = nbt.getInt("fission_explosion.y_1");
+        y_2 = nbt.getInt("fission_explosion.y_2");
+        x = nbt.getInt("fission_explosion.x");
+        r = nbt.getInt("fission_explosion.r");
+    }
+
     @Override
     protected void readCustomDataFromNbt(NbtCompound nbt) {
 

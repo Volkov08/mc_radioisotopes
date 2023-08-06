@@ -120,6 +120,18 @@ public class FissionRadEntity extends Entity {
     }
 
     @Override
+    public NbtCompound writeNbt(NbtCompound nbt) {
+        nbt.putInt("fission_rad.lifetime", lifetime);
+        return super.writeNbt(nbt);
+    }
+
+    @Override
+    public void readNbt(NbtCompound nbt) {
+        super.readNbt(nbt);
+        lifetime = nbt.getInt("fission_rad.lifetime");
+    }
+
+    @Override
     protected void readCustomDataFromNbt(NbtCompound nbt) {
 
     }

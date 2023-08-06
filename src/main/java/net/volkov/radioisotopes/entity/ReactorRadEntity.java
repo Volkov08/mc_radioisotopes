@@ -118,6 +118,18 @@ public class ReactorRadEntity extends Entity {
     }
 
     @Override
+    public NbtCompound writeNbt(NbtCompound nbt) {
+        nbt.putInt("reactor_rad.lifetime", lifetime);
+        return super.writeNbt(nbt);
+    }
+
+    @Override
+    public void readNbt(NbtCompound nbt) {
+        super.readNbt(nbt);
+        lifetime = nbt.getInt("reactor_rad.lifetime");
+    }
+
+    @Override
     protected void readCustomDataFromNbt(NbtCompound nbt) {
 
     }

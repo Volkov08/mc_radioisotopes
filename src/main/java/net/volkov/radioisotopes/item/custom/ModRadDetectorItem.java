@@ -46,12 +46,10 @@ public class ModRadDetectorItem extends Item {
     }
 
     private void outputRad(PlayerEntity player, World world, Hand hand) {
-        if (Objects.equals(player.getOffHandStack().getItem(), ModItems.FULL_LEAD_BATTERY)) {
+        if (Objects.equals(player.getOffHandStack().getItem(), ModItems.FULL_LEAD_BATTERY) && player.getStackInHand(hand).getNbt().getInt("radioisotopes.battery") == 0) {
             player.getInventory().removeStack(40);
             player.getInventory().setStack(40, new ItemStack(ModItems.LEAD_BATTERY));
-            NbtCompound nbtData = new NbtCompound();
-            nbtData.putInt("radioisotopes.battery", 160);
-            player.getStackInHand(hand).setNbt(nbtData);
+            player.getStackInHand(hand).setNbt(new NbtCompound());
         }
         else if (player.getStackInHand(hand).getNbt().getInt("radioisotopes.battery") > 0) {
             boolean has_rad = false;
