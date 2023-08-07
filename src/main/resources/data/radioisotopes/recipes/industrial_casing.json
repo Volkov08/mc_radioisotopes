@@ -12,9 +12,9 @@
     }
   },
   "pattern": [
-    "CIC",
     "ILI",
-    "CIC"
+    "LCL",
+    "ILI"
   ],
   "result": {
     "item": "radioisotopes:industrial_casing"
