@@ -79,7 +79,7 @@ public class FissionRadEntity extends Entity {
         double r_dur = ((double) lifetime) / full_lifetime * dur;
         double f_dur = r_dur - (distance * r_dur / full_distance);
         if (f_dur > 0.0d) {
-            if (!player.hasStatusEffect(ModEffects.RAD_POISON) || player.getStatusEffect(ModEffects.RAD_POISON).getDuration() < f_dur) {
+            if (!player.hasStatusEffect(ModEffects.RAD_POISON)) {
                 if (f_dur >= div) {
                     if (!hasArmorOn(player, ModArmorMaterials.HEAVY_LEAD)) {
                         if (hasArmorOn(player, ModArmorMaterials.LEAD)) {
@@ -92,6 +92,21 @@ public class FissionRadEntity extends Entity {
                 } else {
                     if (!hasArmorOn(player, ModArmorMaterials.LEAD) && !hasArmorOn(player, ModArmorMaterials.HEAVY_LEAD)) {
                         player.addStatusEffect(new StatusEffectInstance(ModEffects.RAD_POISON, (int) Math.round(f_dur), 0));
+                    }
+                }
+            } else if (player.getStatusEffect(ModEffects.RAD_POISON).getDuration() <= 30000) {
+                if (f_dur >= div) {
+                    if (!hasArmorOn(player, ModArmorMaterials.HEAVY_LEAD)) {
+                        if (hasArmorOn(player, ModArmorMaterials.LEAD)) {
+                            player.addStatusEffect(new StatusEffectInstance(ModEffects.RAD_POISON, (int) (player.getStatusEffect(ModEffects.RAD_POISON).getDuration() + Math.round(f_dur / 3)), 0));
+                        }
+                        else {
+                            player.addStatusEffect(new StatusEffectInstance(ModEffects.RAD_POISON, (int) (player.getStatusEffect(ModEffects.RAD_POISON).getDuration() + Math.round(f_dur)), 0));
+                        }
+                    }
+                } else {
+                    if (!hasArmorOn(player, ModArmorMaterials.LEAD) && !hasArmorOn(player, ModArmorMaterials.HEAVY_LEAD)) {
+                        player.addStatusEffect(new StatusEffectInstance(ModEffects.RAD_POISON, (int) (player.getStatusEffect(ModEffects.RAD_POISON).getDuration() + Math.round(f_dur)), 0));
                     }
                 }
             }
@@ -114,7 +129,7 @@ public class FissionRadEntity extends Entity {
                 }
             }
             if (!isProt) {
-                applyEffect(player, 68000d, maxDistance, c_distance, 30000d);
+                applyEffect(player, 5000d, maxDistance, c_distance, 30000d);
             }
         }
     }
