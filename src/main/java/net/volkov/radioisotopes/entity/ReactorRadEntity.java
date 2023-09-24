@@ -127,7 +127,7 @@ public class ReactorRadEntity extends Entity {
                 }
             }
             if (!isProt) {
-                applyEffect(player, 6500d, maxDistance, c_distance, 30000d);
+                applyEffect(player, 6500d, maxDistance, c_distance, 3000d);
             }
         }
     }
