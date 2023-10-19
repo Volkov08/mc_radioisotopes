@@ -116,9 +116,10 @@ public class ModItems {
     /*
     public static final Item TIMED_FUZE = registerItem("timed_fuze",
             new Item(new FabricItemSettings().group(ModItemGroup.URANIUM)));
+     */
     public static final Item CONTACT_FUZE = registerItem("contact_fuze",
             new Item(new FabricItemSettings().group(ModItemGroup.URANIUM)));
-     */
+
     public static final Item CASING_ALLOY = registerItem("casing_alloy",
             new Item(new FabricItemSettings().group(ModItemGroup.URANIUM)));
     public static final Item FUSION_BOMB_CASING = registerItem("fusion_bomb_casing",
@@ -134,12 +135,18 @@ public class ModItems {
 
     public static final Item ATOMIC_WASTE = registerItem("atomic_waste",
             new Item(new FabricItemSettings().group(ModItemGroup.URANIUM)));
+
     public static final Item PLUTONIUM = registerItem("plutonium",
             new Item(new FabricItemSettings().group(ModItemGroup.URANIUM)));
 
     public static final Item FISSION_STAGE = registerItem("fission_stage",
             new Item(new FabricItemSettings().group(ModItemGroup.URANIUM)));
     public static final Item FUSION_STAGE = registerItem("fusion_stage",
+            new Item(new FabricItemSettings().group(ModItemGroup.URANIUM)));
+
+    public static final Item DAVY_CHROCKETT = registerItem("davy_chrockett",
+            new ModDavyChrockettItem(new FabricItemSettings().maxCount(1).group(ModItemGroup.URANIUM)));
+    public static final Item M388_NUCLEAR_ROUND = registerItem("m388_nuclear_round",
             new Item(new FabricItemSettings().group(ModItemGroup.URANIUM)));
 
     public static final Item RAD_DETECTOR = registerItem("rad_detector",

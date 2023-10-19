@@ -25,9 +25,10 @@ public class ClientOnly implements ClientModInitializer {
         ScreenRegistry.register(ModScreenHandlers.URANIUM_CENTRIFUGE_SCREEN_HANDLER, UraniumCentrifugeScreen::new);
         ScreenRegistry.register(ModScreenHandlers.ATOMIC_REACTOR_CONTROLLER_SCREEN_HANDLER, AtomicReactorControllerScreen::new);
 
-        EntityRendererRegistry.register(ModEntities.FISSION_RAD_ENTITY, FissionRadEntityRenderer::new);
-        EntityRendererRegistry.register(ModEntities.REACTOR_RAD_ENTITY, ReactorRadEntityRenderer::new);
+        EntityRendererRegistry.register(ModEntities.RAD_ENTITY, RadEntityRenderer::new);
         EntityRendererRegistry.register(ModEntities.FISSION_EXPLOSION_ENTITY, FissionExplosionEntityRenderer::new);
         EntityRendererRegistry.register(ModEntities.FUSION_EXPLOSION_ENTITY, FusionExplosionEntityRenderer::new);
+        EntityRendererRegistry.register(ModEntities.M388_EXPLOSION_ENTITY, M388ExplosionEntityRenderer::new);
+        EntityRendererRegistry.register(ModEntities.M388_ENTITY, M388EntityRenderer::new);
     }
 }

@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "I": {
+      "item": "minecraft:iron_ingot"
+    },
+    "F": {
+      "item": "radioisotopes:fission_stage"
+    },
+    "R": {
+      "item": "minecraft:firework_rocket"
+    },
+    "C": {
+      "item": "radioisotopes:contact_fuze"
+    }
+  },
+  "pattern": [
+    "ICI",
+    "IFI",
+    "IRI"
+  ],
+  "result": {
+    "item": "radioisotopes:m388_nuclear_round",
+    "count": 3
+  }
+}

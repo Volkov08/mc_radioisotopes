@@ -21,6 +21,7 @@ public class FusionExplosionEntity extends Entity {
     private int x = 0;
     private int r = 0;
     private int bolt = 0;
+    private boolean has_rad = false;
 
     public FusionExplosionEntity(EntityType<? extends Entity> type, World world) {
         super(type, world);
@@ -36,7 +37,12 @@ public class FusionExplosionEntity extends Entity {
         super.tick();
         if (!world.isClient()) {
             Vec3d pos = this.getPos();
-            if (bolt < 10) {
+            if (!has_rad) {
+                RadEntity rad = new RadEntity(ModEntities.RAD_ENTITY, world, 70000, 95d, 7000d);
+                rad.refreshPositionAndAngles(pos.getX(), pos.getY(), pos.getZ(), 0, 0);
+                world.spawnEntity(rad);
+                has_rad = true;
+            } else if (bolt < 10) {
                 LightningEntity lightning = new LightningEntity(EntityType.LIGHTNING_BOLT, world);
                 lightning.setPosition(pos.getX(), pos.getY(), pos.getZ());
                 world.spawnEntity(lightning);
@@ -82,9 +88,6 @@ public class FusionExplosionEntity extends Entity {
                 world.createExplosion(null, pos.getX() + (r * Math.sin(Math.toRadians(x))), pos.getY() + 4, pos.getZ() + (r * Math.cos(Math.toRadians(x))), 27.0f, true, Explosion.DestructionType.DESTROY);
                 x += 4;
             } else {
-                FissionRadEntity rad = new FissionRadEntity(ModEntities.FISSION_RAD_ENTITY, world);
-                rad.refreshPositionAndAngles(pos.getX(), pos.getY(), pos.getZ(), 0, 0);
-                world.spawnEntity(rad);
                 MinecraftServer server = world.getServer();
                 if (server != null) {
                     ServerWorld serverWorld = server.getWorld(world.getRegistryKey());
@@ -97,6 +100,7 @@ public class FusionExplosionEntity extends Entity {
 
     @Override
     public NbtCompound writeNbt(NbtCompound nbt) {
+        nbt.putBoolean("fusion_explosion.has_rad", has_rad);
         nbt.putInt("fusion_explosion.bolt", bolt);
         nbt.putInt("fusion_explosion.y_1", y_1);
         nbt.putInt("fusion_explosion.y_2", y_2);
@@ -110,6 +114,7 @@ public class FusionExplosionEntity extends Entity {
     @Override
     public void readNbt(NbtCompound nbt) {
         super.readNbt(nbt);
+        has_rad = nbt.getBoolean("fusion_explosion.has_rad");
         bolt = nbt.getInt("fusion_explosion.bolt");
         y_1 = nbt.getInt("fusion_explosion.y_1");
         y_2 = nbt.getInt("fusion_explosion.y_2");

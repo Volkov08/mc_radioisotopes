@@ -19,6 +19,7 @@ import net.minecraft.util.math.Box;
 import net.minecraft.world.World;
 import net.volkov.radioisotopes.block.ModBlocks;
 import net.volkov.radioisotopes.entity.ModEntities;
+import net.volkov.radioisotopes.entity.RadEntity;
 import net.volkov.radioisotopes.item.ModItems;
 import org.jetbrains.annotations.Nullable;
 
@@ -68,16 +69,8 @@ public class ModRadDetectorItem extends Item {
                 }
             }
             if (!has_rad) {
-                for (Entity entity : world.getEntitiesByType(ModEntities.FISSION_RAD_ENTITY, f_box, entity -> true)) {
-                    if (entity.getPos().distanceTo(player.getPos()) <= 135d) {
-                        has_rad = true;
-                        break;
-                    }
-                }
-            }
-            if (!has_rad) {
-                for (Entity entity : world.getEntitiesByType(ModEntities.REACTOR_RAD_ENTITY, r_box, entity -> true)) {
-                    if (entity.getPos().distanceTo(player.getPos()) <= 155d) {
+                for (RadEntity entity : world.getEntitiesByType(ModEntities.RAD_ENTITY, f_box, entity -> true)) {
+                    if (entity.getPos().distanceTo(player.getPos()) <= entity.distance + 28d) {
                         has_rad = true;
                         break;
                     }

@@ -76,6 +76,9 @@
   "block.radioisotopes.atomic_bomb": "Atombombe",
   "block.radioisotopes.fusion_bomb": "Fusionsbombe",
 
+  "item.radioisotopes.davy_chrockett": "Davy Chrockett Geschütz",
+  "item.radioisotopes.m388_nuclear_round": "Nuklearer Sprengkopf M388",
+
   "tooltip.radioisotopes.uranium_centrifuge_1": "§e§l-Macht aus Uranblock/Uranbarren",
   "tooltip.radioisotopes.uranium_centrifuge_2": "§e§l+ Fluor + Lohenrute (Brennstoff)",
   "tooltip.radioisotopes.uranium_centrifuge_3": "§e§langereichertes Uran",

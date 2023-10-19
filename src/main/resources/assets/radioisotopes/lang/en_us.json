@@ -77,6 +77,9 @@
   "block.radioisotopes.atomic_bomb": "Atomic Bomb",
   "block.radioisotopes.fusion_bomb": "Fusion Bomb",
 
+  "item.radioisotopes.davy_chrockett": "Davy Chrockett Rifle",
+  "item.radioisotopes.m388_nuclear_round": "M388 Nuclear Round",
+
   "tooltip.radioisotopes.uranium_centrifuge_1": "§e§l-Makes enriched uranium",
   "tooltip.radioisotopes.uranium_centrifuge_2": "§e§lfrom uranium block/ingot",
   "tooltip.radioisotopes.uranium_centrifuge_3": "§e§l+ fluorine + blaze rod (fuel)",

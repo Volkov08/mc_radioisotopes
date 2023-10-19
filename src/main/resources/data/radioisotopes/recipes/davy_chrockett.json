@@ -1,25 +1,25 @@
 {
   "type": "minecraft:crafting_shaped",
   "key": {
-    "#": {
+    "I": {
       "item": "minecraft:iron_ingot"
     },
+    "B": {
+      "tag": "minecraft:wooden_buttons"
+    },
     "T": {
-      "item": "minecraft:comparator"
+      "item": "minecraft:repeater"
     },
     "R": {
       "item": "minecraft:redstone"
-    },
-    "_": {
-      "item": "minecraft:light_weighted_pressure_plate"
     }
   },
   "pattern": [
-    "#R#",
-    "_T_",
-    "#R#"
+    "I I",
+    "IRI",
+    "ITB"
   ],
   "result": {
-    "item": "radioisotopes:contact_fuze"
+    "item": "radioisotopes:davy_chrockett"
   }
 }

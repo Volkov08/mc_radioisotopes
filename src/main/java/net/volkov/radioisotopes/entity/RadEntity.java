@@ -19,14 +19,24 @@ import net.volkov.radioisotopes.block.ModBlocks;
 import net.volkov.radioisotopes.effect.ModEffects;
 import net.volkov.radioisotopes.item.ModArmorMaterials;
 
-public class ReactorRadEntity extends Entity {
+public class RadEntity extends Entity {
 
     private int tickCounter = 0;
-    private final double full_lifetime = 125000d;
-    private int lifetime = 125000;
+    private int lifetime;
+    private double full_lifetime;
+    public double distance;
+    private double strength;
 
-    public ReactorRadEntity(EntityType<? extends Entity> entityType, World world) {
+    public RadEntity(EntityType<? extends Entity> entityType, World world, int lifetime, double distance, double strength) {
         super(entityType, world);
+        this.lifetime = lifetime;
+        this.full_lifetime = lifetime;
+        this.distance = distance;
+        this.strength = strength;
+    }
+
+    public RadEntity(EntityType<RadEntity> radEntityType, World world) {
+        super(radEntityType, world);
     }
 
     @Override
@@ -52,7 +62,7 @@ public class ReactorRadEntity extends Entity {
             }
 
             for (PlayerEntity player : world.getPlayers()) {
-                protCheck(player, 125d);
+                protCheck(player, distance);
             }
         }
     }
@@ -92,19 +102,19 @@ public class ReactorRadEntity extends Entity {
                         player.addStatusEffect(new StatusEffectInstance(ModEffects.RAD_POISON, (int) Math.round(f_dur), 0));
                     }
                 }
-            } else if (player.getStatusEffect(ModEffects.RAD_POISON).getDuration() <= 30000) {
+            } else if (player.getStatusEffect(ModEffects.RAD_POISON).getDuration() <= 40000) {
                 if (f_dur >= div) {
                     if (!hasArmorOn(player, ModArmorMaterials.HEAVY_LEAD)) {
                         if (hasArmorOn(player, ModArmorMaterials.LEAD)) {
-                            player.addStatusEffect(new StatusEffectInstance(ModEffects.RAD_POISON, (int) (player.getStatusEffect(ModEffects.RAD_POISON).getDuration() + Math.round(f_dur / 3)), 0));
+                            player.addStatusEffect(new StatusEffectInstance(ModEffects.RAD_POISON, Math.min((int)(player.getStatusEffect(ModEffects.RAD_POISON).getDuration() + Math.round(f_dur / 3)), 40000), 0));
                         }
                         else {
-                            player.addStatusEffect(new StatusEffectInstance(ModEffects.RAD_POISON, (int) (player.getStatusEffect(ModEffects.RAD_POISON).getDuration() + Math.round(f_dur)), 0));
+                            player.addStatusEffect(new StatusEffectInstance(ModEffects.RAD_POISON, Math.min((int)(player.getStatusEffect(ModEffects.RAD_POISON).getDuration() + Math.round(f_dur)), 40000), 0));
                         }
                     }
                 } else {
                     if (!hasArmorOn(player, ModArmorMaterials.LEAD) && !hasArmorOn(player, ModArmorMaterials.HEAVY_LEAD)) {
-                        player.addStatusEffect(new StatusEffectInstance(ModEffects.RAD_POISON, (int) (player.getStatusEffect(ModEffects.RAD_POISON).getDuration() + Math.round(f_dur)), 0));
+                        player.addStatusEffect(new StatusEffectInstance(ModEffects.RAD_POISON, Math.min((int)(player.getStatusEffect(ModEffects.RAD_POISON).getDuration() + Math.round(f_dur)), 40000), 0));
                     }
                 }
             }
@@ -127,21 +137,21 @@ public class ReactorRadEntity extends Entity {
                 }
             }
             if (!isProt) {
-                applyEffect(player, 6500d, maxDistance, c_distance, 2200d);
+                applyEffect(player, strength, maxDistance, c_distance, 3200d);
             }
         }
     }
 
     @Override
     public NbtCompound writeNbt(NbtCompound nbt) {
-        nbt.putInt("reactor_rad.lifetime", lifetime);
+        nbt.putInt("fission_rad.lifetime", lifetime);
         return super.writeNbt(nbt);
     }
 
     @Override
     public void readNbt(NbtCompound nbt) {
         super.readNbt(nbt);
-        lifetime = nbt.getInt("reactor_rad.lifetime");
+        lifetime = nbt.getInt("fission_rad.lifetime");
     }
 
     @Override
@@ -160,4 +170,3 @@ public class ReactorRadEntity extends Entity {
     }
 
 }
-
