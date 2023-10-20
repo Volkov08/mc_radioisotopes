@@ -43,14 +43,14 @@ public class ModEntities {
                 Registry.ENTITY_TYPE,
                 new Identifier(ClientMain.MOD_ID, "m388_explosion_entity"),
                 FabricEntityTypeBuilder.<M388ExplosionEntity>create(SpawnGroup.MISC, M388ExplosionEntity::new)
-                        .dimensions(EntityDimensions.fixed(0.5f, 0.5f))
+                        .dimensions(EntityDimensions.fixed(0.1f, 0.1f))
                         .build()
         );
         M388_ENTITY = Registry.register(
                 Registry.ENTITY_TYPE,
                 new Identifier(ClientMain.MOD_ID, "m388_entity"),
                 FabricEntityTypeBuilder.<M388Entity>create(SpawnGroup.MISC, M388Entity::new)
-                        .dimensions(EntityDimensions.fixed(0.5f, 0.5f))
+                        .dimensions(EntityDimensions.fixed(0.4f, 0.4f))
                         .build()
         );
     }
