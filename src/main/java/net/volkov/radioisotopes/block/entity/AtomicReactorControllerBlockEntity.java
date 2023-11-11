@@ -3,6 +3,7 @@ package net.volkov.radioisotopes.block.entity;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.entity.BlockEntity;
+import net.minecraft.block.entity.HopperBlockEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.Inventories;
@@ -27,6 +28,7 @@ import net.volkov.radioisotopes.recipe.AtomicReactorRecipe;
 import net.volkov.radioisotopes.screen.AtomicReactorControllerScreenHandler;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.Objects;
 import java.util.Optional;
 
 public class AtomicReactorControllerBlockEntity extends BlockEntity implements NamedScreenHandlerFactory, ImplementedInventory {
@@ -111,9 +113,19 @@ public class AtomicReactorControllerBlockEntity extends BlockEntity implements N
     }
 
     public static void tick(World world, BlockPos pos, BlockState state, AtomicReactorControllerBlockEntity entity) {
-        if(entity.getStack(0).getItem() == ModItems.ATOMIC_WASTE && entity.getStack(2).isEmpty()) {
-            entity.removeStack(0, 1);
-            entity.setStack(2, new ItemStack(ModItems.ATOMIC_WASTE, 1));
+        if(world.getBlockState(pos.down()) == Blocks.HOPPER.getDefaultState() && entity.getStack(0).getItem() == ModItems.ATOMIC_WASTE) {
+            HopperBlockEntity hopper = (HopperBlockEntity) world.getBlockEntity(pos.down());
+            int slot = -1;
+            for (int i = 0; i<=4; i++) {
+                if (hopper.getStack(i).isEmpty() || (Objects.equals(hopper.getStack(i).getItem(), ModItems.ATOMIC_WASTE) && hopper.getStack(i).getCount() < ModItems.ATOMIC_WASTE.getMaxCount())) {
+                    slot = i;
+                    break;
+                }
+            }
+            if (slot != -1) {
+                entity.removeStack(0);
+                hopper.setStack(slot, new ItemStack(ModItems.ATOMIC_WASTE, hopper.getStack(slot).getCount() + 1));
+            }
         }
 
         if(isConsumingFuel(entity)) {

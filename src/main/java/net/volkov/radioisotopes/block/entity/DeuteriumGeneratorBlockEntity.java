@@ -1,7 +1,9 @@
 package net.volkov.radioisotopes.block.entity;
 
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
 import net.minecraft.block.entity.BlockEntity;
+import net.minecraft.block.entity.HopperBlockEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.Inventories;
@@ -24,6 +26,7 @@ import net.volkov.radioisotopes.recipe.DeuteriumGeneratorRecipe;
 import net.volkov.radioisotopes.screen.DeuteriumGeneratorScreenHandler;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.Objects;
 import java.util.Optional;
 
 public class DeuteriumGeneratorBlockEntity extends BlockEntity implements NamedScreenHandlerFactory, ImplementedInventory {
@@ -114,9 +117,19 @@ public class DeuteriumGeneratorBlockEntity extends BlockEntity implements NamedS
     }
 
     public static void tick(World world, BlockPos pos, BlockState state, DeuteriumGeneratorBlockEntity entity) {
-        if(entity.getStack(0).getItem() == ModItems.LEAD_BATTERY && entity.getStack(2).isEmpty()) {
-            entity.removeStack(0, 1);
-            entity.setStack(2, new ItemStack(ModItems.LEAD_BATTERY, 1));
+        if(world.getBlockState(pos.down()) == Blocks.HOPPER.getDefaultState() && entity.getStack(0).getItem() == ModItems.LEAD_BATTERY) {
+            HopperBlockEntity hopper = (HopperBlockEntity) world.getBlockEntity(pos.down());
+            int slot = -1;
+            for (int i = 0; i<=4; i++) {
+                if (hopper.getStack(i).isEmpty() || (Objects.equals(hopper.getStack(i).getItem(), ModItems.LEAD_BATTERY) && hopper.getStack(i).getCount() < ModItems.LEAD_BATTERY.getMaxCount())) {
+                    slot = i;
+                    break;
+                }
+            }
+            if (slot != -1) {
+                entity.removeStack(0);
+                hopper.setStack(slot, new ItemStack(ModItems.LEAD_BATTERY, hopper.getStack(slot).getCount() + 1));
+            }
         }
 
         if(isConsumingFuel(entity)) {

@@ -1,5 +1,4 @@
 Shortterm goals:
-- Push (empty) lead_battery from fuel slot into output/hopper (currently not implemented for vanilla furnaces)
 - Improve explosion visuals (e.g. custom renderer)
 - Special radiation during explosions
 
