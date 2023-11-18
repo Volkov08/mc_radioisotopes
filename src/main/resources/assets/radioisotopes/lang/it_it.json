@@ -1,0 +1,125 @@
+{
+    "item.radioisotopes.enriched_uranium_ingot": "Lingotto di uranio arricchito",
+    "item.radioisotopes.enriched_uranium_nugget": "Pepita di uranio arricchito",
+  
+    "block.radioisotopes.enriched_uranium_block": "Blocco di uranio arricchito",
+  
+    "item.radioisotopes.uranium_ingot": "Lingotto di uranio",
+    "item.radioisotopes.uranium_nugget": "Pepita di uranio",
+    "item.radioisotopes.nuclear_fuel_rod": "Barra di combustibile nucleare",
+  
+    "item.radioisotopes.uranium_pickaxe": "Piccone di uranio",
+    "item.radioisotopes.uranium_sword": "Spada di uranio",
+    "item.radioisotopes.uranium_axe": "Ascia di uranio",
+    "item.radioisotopes.uranium_hoe": "Zappa di uranio",
+    "item.radioisotopes.uranium_shovel": "Pala di uranio",
+    "item.radioisotopes.heavy_water_bucket": "Secchio di acqua pesante",
+    "item.radioisotopes.tritium": "Trizio",
+    "item.radioisotopes.raw_lead": "Piombo grezzo",
+    "item.radioisotopes.lead_plate": "Piastra di piombo",
+    "item.radioisotopes.heavy_lead_plate": "Piastra di piombo pesante",
+    "item.radioisotopes.lead_ingot": "Lingotto di piombo",
+    "item.radioisotopes.lead_helmet": "Elmo di piombo",
+    "item.radioisotopes.lead_chestplate": "Corazza di piombo",
+    "item.radioisotopes.lead_leggings": "Gambiere di piombo",
+    "item.radioisotopes.lead_boots": "Stivali di piombo",
+    "item.radioisotopes.heavy_lead_helmet": "Elmo di piombo pesante",
+    "item.radioisotopes.heavy_lead_chestplate": "Corazza di piombo pesante",
+    "item.radioisotopes.heavy_lead_leggings": "Gambiere di piombo pesante",
+    "item.radioisotopes.heavy_lead_boots": "Stivali di piombo pesante",
+    "item.radioisotopes.raw_uranium": "Uranio grezzo",
+    "item.radioisotopes.casing_alloy": "Lega dell'involucro",
+    "item.radioisotopes.contact_fuze": "Spoletta di contatto",
+    "item.radioisotopes.timed_fuze": "Timed Fuze",
+    "item.radioisotopes.fusion_bomb_casing": "Fusion Bomb Casing",
+    "item.radioisotopes.uranium_pusher": "Spintore di uranio",
+    "item.radioisotopes.explosive_lenses": "Lenti esplosive",
+  
+    "item.radioisotopes.raw_lithium": "Litio grezzo",
+    "item.radioisotopes.lithium_ingot": "Lingotto di litio",
+    "item.radioisotopes.lithium_deuteride": "Deuteruro di litio",
+  
+    "item.radioisotopes.fluorine": "Fluoro",
+  
+    "block.radioisotopes.uranium_ore": "Minerale di uranio",
+    "block.radioisotopes.deepslate_uranium_ore": "Minerale di uranio in ardesia profonda",
+    "block.radioisotopes.lead_ore": "Minerale di piombo",
+    "block.radioisotopes.lithium_ore": "Minerale di litio",
+    "block.radioisotopes.lead_block": "Blocco di piombo",
+    "block.radioisotopes.lead_wall": "Muro di piombo",
+    "block.radioisotopes.deepslate_lead_ore": "Minerale di piombo in ardesia profonda",
+    "block.radioisotopes.uranium_block": "Blocco di uranio",
+    "block.radioisotopes.uranium_glass": "Vetro all'uranio",
+    "block.radioisotopes.uranium_glass_pane": "Pannello di vetro all'uranio",
+    "block.radioisotopes.deuterium_generator": "Generatore di deuterio",
+    "block.radioisotopes.uranium_centrifuge": "Centrifuga per uranio",
+    "block.radioisotopes.atomic_reactor_controller": "Reattore atomico",
+    "block.radioisotopes.industrial_casing": "Involucro industriale",
+  
+    "block.radioisotopes.end_stone_tenebrium_ore": "Minerale di tenebrium",
+  
+    "item.radioisotopes.copper_wire": "Cavo di rame",
+    "item.radioisotopes.electric_engine": "Motore elettrico",
+    "item.radioisotopes.lead_battery": "Batteria al piombo",
+    "item.radioisotopes.full_lead_battery": "Batteria al piombo piena",
+  
+    "item.radioisotopes.rad_detector": "Rilevatore di radiazioni",
+    "item.radioisotopes.rad_detector.rad_det": "Rilevate radiazioni",
+    "item.radioisotopes.rad_detector.rad_n_det": "Nessuna quantità significativa di radiazioni rilevata",
+    "item.radioisotopes.batt_low": "Batteria scarica!",
+  
+    "item.radioisotopes.atomic_waste": "Rifiuti atomici",
+    "item.radioisotopes.plutonium": "Plutonio",
+  
+    "item.radioisotopes.fission_stage": "Fase di fissione nucleare",
+    "item.radioisotopes.fusion_stage": "Fase di fusione nucleare",
+  
+    "block.radioisotopes.atomic_bomb": "Bomba atomica",
+    "block.radioisotopes.fusion_bomb": "Bomba a fusione",
+  
+    "item.radioisotopes.davy_chrockett": "Fucile Davy Chrockett",
+    "item.radioisotopes.m388_nuclear_round": "Colpi nucleari M388",
+  
+    "tooltip.radioisotopes.uranium_centrifuge_1": "§e§l-Produce uranio arricchito",
+    "tooltip.radioisotopes.uranium_centrifuge_2": "§e§ldal blocco/lingotto di uranio",
+    "tooltip.radioisotopes.uranium_centrifuge_3": "§e§l+ fluoro + verga di blaze (carburante)",
+  
+    "tooltip.radioisotopes.atomic_reactor_controller_1": "§e§l-Ricarica batterie o le produce",
+    "tooltip.radioisotopes.atomic_reactor_controller_2": "§e§ltrizio dal litio ed è alimentato",
+    "tooltip.radioisotopes.atomic_reactor_controller_3": "§e§lda una barra di combustibile nucleare",
+  
+    "tooltip.radioisotopes.deuterium_generator_1": "§e§l-Arricchisce l'acqua pesante",
+    "tooltip.radioisotopes.deuterium_generator_2": "§e§lutilizzando una fonte di alimentazione",
+    "tooltip.radioisotopes.deuterium_generator_3": "§e§l(patata o batteria)",
+    "tooltip.radioisotopes.deuterium_generator_4": "§e§ldall'acqua normale",
+  
+    "tooltip.rad_detector.charge": "Carica: %s",
+    "tooltip.rad_detector.hint_1": "§e§l-Tasto-destro per misurare le radiazioni",
+    "tooltip.rad_detector.hint_2": "§e§l-Tasto-destro con una batteria nella seconda mano",
+    "tooltip.rad_detector.hint_3": "§e§lper ricaricare",
+  
+    "effect.radioisotopes.radiation_poisoning": "Radiazioni",
+  
+    "itemGroup.radioisotopes.uranium": "Oggetti di uranio",
+  
+    "entity.minecraft.villager.physicist": "Fisico",
+  
+    "advancements.radioisotopes.heavy_lead_armor.title": "Prima la sicurezza!",
+    "advancements.radioisotopes.heavy_lead_armor.description": "Ottieni un'armatura completa di piombo pesante per essere sicuro dall'avvelenamento da radiazioni",
+    "advancements.radioisotopes.nuclear_fuel.title": "Carburante nucleare",
+    "advancements.radioisotopes.nuclear_fuel.description": "Ottieni uno stick luminoso sotto steroidi",
+    "advancements.radioisotopes.atomic_reactor_controller.title": "Un reattore nucleare!",
+    "advancements.radioisotopes.atomic_reactor_controller.description": "Sta andando!",
+    "advancements.radioisotopes.uranium.title": "Uranio!",
+    "advancements.radioisotopes.uranium.description": "Ottieni un pezzo di questo materiale straordinario. Non c'erano quei fisici nei loro laboratori segreti in una dimensione solitaria, che lo stavano studiando?",
+    "advancements.radioisotopes.uranium_centrifuge.title": "Centrifuga per uranio",
+    "advancements.radioisotopes.uranium_centrifuge.description": "Commerciamo con questo §mdubbioso§r villico!",
+    "advancements.radioisotopes.atomic_waste.title": "Rifiuti atomici",
+    "advancements.radioisotopes.atomic_waste.description": "Roba pericolosa! Ma potrebbe comunque rendersi utile... (potresti chiedere al villico di tua fiducia)",
+    "advancements.radioisotopes.atomic_bomb.title": "La bomba",
+    "advancements.radioisotopes.atomic_bomb.description": "§6§oE = mc²!",
+    "advancements.radioisotopes.fusion_bomb.title": "Bomba a fusione",
+    "advancements.radioisotopes.fusion_bomb.description": "Il primo dispositivo per la fusione nucleare su larga scala!",
+  
+    "radioisotopes.nuke_explosion": "Esplosione nucleare"
+}
