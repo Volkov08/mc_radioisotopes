@@ -102,7 +102,7 @@ public class RadEntity extends Entity {
                         player.addStatusEffect(new StatusEffectInstance(ModEffects.RAD_POISON, (int) Math.round(f_dur), 0));
                     }
                 }
-            } else if (player.getStatusEffect(ModEffects.RAD_POISON).getDuration() <= 40000) {
+            } else if (player.getStatusEffect(ModEffects.RAD_POISON).getDuration() < 40000) {
                 if (f_dur >= div) {
                     if (!hasArmorOn(player, ModArmorMaterials.HEAVY_LEAD)) {
                         if (hasArmorOn(player, ModArmorMaterials.LEAD)) {
@@ -144,14 +144,20 @@ public class RadEntity extends Entity {
 
     @Override
     public NbtCompound writeNbt(NbtCompound nbt) {
-        nbt.putInt("fission_rad.lifetime", lifetime);
+        nbt.putInt("rad.lifetime", lifetime);
+        nbt.putDouble("rad.full_lifetime", full_lifetime);
+        nbt.putDouble("rad.distance", distance);
+        nbt.putDouble("rad.strength", strength);
         return super.writeNbt(nbt);
     }
 
     @Override
     public void readNbt(NbtCompound nbt) {
         super.readNbt(nbt);
-        lifetime = nbt.getInt("fission_rad.lifetime");
+        lifetime = nbt.getInt("rad.lifetime");
+        full_lifetime = nbt.getDouble("rad.full_lifetime");
+        distance = nbt.getDouble("rad.distance");
+        strength = nbt.getDouble("rad.strength");
     }
 
     @Override

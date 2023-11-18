@@ -41,18 +41,18 @@ public class M388ExplosionEntity extends Entity {
                 lightning.setPosition(pos.getX(), pos.getY(), pos.getZ());
                 world.spawnEntity(lightning);
                 bolt += 1;
-            } else if (y_1 <= 25) {
+            } else if (y_1 <= 20) {
                 if (x <= 360) {
-                    r = 4;
-                    world.createExplosion(null, pos.getX() + (r * Math.sin(Math.toRadians(x))), pos.getY() + y_1, pos.getZ() + (r * Math.cos(Math.toRadians(x))), 12.0f, true, Explosion.DestructionType.DESTROY);
+                    r = 3;
+                    world.createExplosion(null, pos.getX() + (r * Math.sin(Math.toRadians(x))), pos.getY() + y_1, pos.getZ() + (r * Math.cos(Math.toRadians(x))), 10.0f, true, Explosion.DestructionType.DESTROY);
                     x += 45;
                 } else {
                     x = 0;
                     y_1 += 5;
                 }
             } else if (x <= 360) {
-                r = 15;
-                world.createExplosion(null, pos.getX() + (r * Math.sin(Math.toRadians(x))), pos.getY(), pos.getZ() + (r * Math.cos(Math.toRadians(x))), 10.0f, true, Explosion.DestructionType.DESTROY);
+                r = 13;
+                world.createExplosion(null, pos.getX() + (r * Math.sin(Math.toRadians(x))), pos.getY(), pos.getZ() + (r * Math.cos(Math.toRadians(x))), 8.0f, true, Explosion.DestructionType.DESTROY);
                 x += 30;
             } else {
                 remove(RemovalReason.DISCARDED);
