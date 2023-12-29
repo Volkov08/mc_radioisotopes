@@ -42,7 +42,7 @@ public class ModConfiguredFeatures {
                    new OreFeatureConfig(OVERWORLD_LEAD_ORES, 9));
    public static final RegistryEntry<ConfiguredFeature<OreFeatureConfig, ?>> LITHIUM_ORE =
            ConfiguredFeatures.register("lithium_ore", Feature.ORE,
-                   new OreFeatureConfig(OVERWORLD_LITHIUM_ORES, 5));
+                   new OreFeatureConfig(OVERWORLD_LITHIUM_ORES, 4));
    public static final RegistryEntry<ConfiguredFeature<OreFeatureConfig, ?>> END_TENEBRIUM_ORE =
            ConfiguredFeatures.register("end_tenebrium_ore", Feature.ORE,
                    new OreFeatureConfig(END_TENEBRIUM_ORES, 5));
