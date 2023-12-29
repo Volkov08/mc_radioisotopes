@@ -49,11 +49,11 @@ public class ModItems {
     public static final Item ENRICHED_URANIUM_NUGGET = registerItem("enriched_uranium_nugget",
             new Item(new FabricItemSettings().group(ModItemGroup.URANIUM)));
 
-    public static final Item HEAVY_WATER_BUCKET = registerItem("heavy_water_bucket",
-            new Item(new FabricItemSettings().group(ModItemGroup.URANIUM).maxCount(1).recipeRemainder(Items.BUCKET)));
+    public static final Item DEUTERIUM = registerItem("deuterium",
+            new Item(new FabricItemSettings().group(ModItemGroup.URANIUM)));
 
-    //public static final Item TRITIUM = registerItem("tritium",
-    //        new Item(new FabricItemSettings().group(ModItemGroup.URANIUM)));
+    public static final Item TRITIUM = registerItem("tritium",
+            new Item(new FabricItemSettings().group(ModItemGroup.URANIUM)));
 
     public static final Item RAW_LEAD = registerItem("raw_lead",
             new Item(new FabricItemSettings().group(ModItemGroup.URANIUM)));
@@ -98,6 +98,7 @@ public class ModItems {
 
     public static final Item LITHIUM_INGOT = registerItem("lithium_ingot",
             new Item(new FabricItemSettings().group(ModItemGroup.URANIUM)));
+
     public static final Item LITHIUM_DEUTERIDE = registerItem("lithium_deuteride",
             new Item(new FabricItemSettings().group(ModItemGroup.URANIUM)));
 
@@ -105,9 +106,6 @@ public class ModItems {
             new Item(new FabricItemSettings().group(ModItemGroup.URANIUM)));
 
     public static final Item ELECTRIC_ENGINE = registerItem("electric_engine",
-            new Item(new FabricItemSettings().group(ModItemGroup.URANIUM)));
-
-    public static final Item URANIUM_PUSHER = registerItem("uranium_pusher",
             new Item(new FabricItemSettings().group(ModItemGroup.URANIUM)));
 
     public static final Item EXPLOSIVE_LENSES = registerItem("explosive_lenses",
@@ -136,10 +134,28 @@ public class ModItems {
     public static final Item ATOMIC_WASTE = registerItem("atomic_waste",
             new Item(new FabricItemSettings().group(ModItemGroup.URANIUM)));
 
-    public static final Item PLUTONIUM = registerItem("plutonium",
+    public static final Item PLUTONIUM_INGOT = registerItem("plutonium_ingot",
+            new Item(new FabricItemSettings().group(ModItemGroup.URANIUM)));
+    public static final Item PLUTONIUM_PIT = registerItem("plutonium_pit",
+            new Item(new FabricItemSettings().group(ModItemGroup.URANIUM)));
+    public static final Item BOOST_CAPSULE = registerItem("boost_capsule",
+            new Item(new FabricItemSettings().group(ModItemGroup.URANIUM)));
+    public static final Item BOOSTED_PLUTONIUM_PIT = registerItem("boosted_plutonium_pit",
+            new Item(new FabricItemSettings().group(ModItemGroup.URANIUM)));
+    public static final Item BOOST_ROD = registerItem("boost_rod",
+            new Item(new FabricItemSettings().group(ModItemGroup.URANIUM)));
+    public static final Item PLUTONIUM_SPARK_PLUG = registerItem("plutonium_spark_plug",
+            new Item(new FabricItemSettings().group(ModItemGroup.URANIUM)));
+    public static final Item URANIUM_PUSHER = registerItem("uranium_pusher",
+            new Item(new FabricItemSettings().group(ModItemGroup.URANIUM)));
+    public static final Item URANIUM_TARGET = registerItem("uranium_target",
             new Item(new FabricItemSettings().group(ModItemGroup.URANIUM)));
 
-    public static final Item FISSION_STAGE = registerItem("fission_stage",
+    public static final Item GUN_FISSION_STAGE = registerItem("gun_fission_stage",
+            new Item(new FabricItemSettings().group(ModItemGroup.URANIUM)));
+    public static final Item IMPLOSION_FISSION_STAGE = registerItem("implosion_fission_stage",
+            new Item(new FabricItemSettings().group(ModItemGroup.URANIUM)));
+    public static final Item BOOSTED_IMPLOSION_FISSION_STAGE = registerItem("boosted_implosion_fission_stage",
             new Item(new FabricItemSettings().group(ModItemGroup.URANIUM)));
     public static final Item FUSION_STAGE = registerItem("fusion_stage",
             new Item(new FabricItemSettings().group(ModItemGroup.URANIUM)));

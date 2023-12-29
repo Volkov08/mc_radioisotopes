@@ -1,0 +1,6 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "radioisotopes:block/gun_atomic_bomb"
+  }
+}

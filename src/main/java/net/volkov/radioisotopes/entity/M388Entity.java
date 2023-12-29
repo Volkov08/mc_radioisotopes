@@ -53,7 +53,7 @@ public class M388Entity extends PersistentProjectileEntity {
 
     private void explode() {
         Vec3d pos = this.getPos();
-        M388ExplosionEntity nuke = new M388ExplosionEntity(ModEntities.M388_EXPLOSION_ENTITY, world);
+        NuclearExplosionEntity nuke = new NuclearExplosionEntity(ModEntities.NUCLEAR_EXPLOSION_ENTITY, world, 16);
         nuke.refreshPositionAndAngles(pos.getX(), pos.getY(), pos.getZ(), 0, 0);
         world.spawnEntity(nuke);
         this.remove(RemovalReason.DISCARDED);

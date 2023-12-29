@@ -56,13 +56,12 @@ public class ModRadDetectorItem extends Item {
             boolean has_rad = false;
             BlockPos pos = player.getBlockPos();
             Box box = new Box(pos).expand(15);
-            Box f_box = new Box(pos).expand(135);
-            Box r_box = new Box(pos).expand(155);
+            Box f_box = new Box(pos).expand(153);
 
             for (BlockPos blockPos : BlockPos.iterate((int) box.minX, (int) box.minY, (int) box.minZ, (int) box.maxX, (int) box.maxY, (int) box.maxZ)) {
                 if (blockPos.isWithinDistance(player.getPos(), 15d)) {
                     Block c_block = world.getBlockState(blockPos).getBlock();
-                    if (c_block == ModBlocks.URANIUM_ORE || c_block == ModBlocks.DEEPSLATE_URANIUM_ORE || c_block == ModBlocks.URANIUM_BLOCK || c_block == ModBlocks.ENRICHED_URANIUM_BLOCK) {
+                    if (c_block == ModBlocks.URANIUM_ORE || c_block == ModBlocks.DEEPSLATE_URANIUM_ORE || c_block == ModBlocks.URANIUM_BLOCK) {
                         has_rad = true;
                         break;
                     }

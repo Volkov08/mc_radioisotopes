@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "T": {
+      "item": "radioisotopes:uranium_target"
+    },
+    "P": {
+      "item": "radioisotopes:uranium_pusher"
+    },
+    "C": {
+      "item": "radioisotopes:casing_alloy"
+    }
+  },
+  "pattern": [
+    " C ",
+    "PTC",
+    " C "
+  ],
+  "result": {
+    "item": "radioisotopes:gun_fission_stage"
+  }
+}

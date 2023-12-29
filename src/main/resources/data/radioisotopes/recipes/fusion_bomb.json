@@ -2,7 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "key": {
     "F": {
-      "item": "radioisotopes:fission_stage"
+      "item": "radioisotopes:boosted_implosion_fission_stage"
     },
     "H": {
       "item": "radioisotopes:fusion_stage"

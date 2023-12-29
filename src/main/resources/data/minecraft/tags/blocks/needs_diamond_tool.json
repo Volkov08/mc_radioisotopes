@@ -4,7 +4,6 @@
     "radioisotopes:deepslate_uranium_ore",
     "radioisotopes:lithium_ore",
     "radioisotopes:uranium_block",
-    "radioisotopes:enriched_uranium_block",
     "radioisotopes:atomic_reactor_controller"
   ]
 }

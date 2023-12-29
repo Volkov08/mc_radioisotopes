@@ -62,7 +62,7 @@ public class RadEntity extends Entity {
             }
 
             for (PlayerEntity player : world.getPlayers()) {
-                protCheck(player, distance);
+                protCheck(player);
             }
         }
     }
@@ -83,9 +83,9 @@ public class RadEntity extends Entity {
         return hasLeadArmor;
     }
 
-    private void applyEffect(PlayerEntity player, double dur, double distance, double full_distance, double div) {
-        double r_dur = ((double) lifetime) / full_lifetime * dur;
-        double f_dur = r_dur - (distance * r_dur / full_distance);
+    private void applyEffect(PlayerEntity player, double max_distance, double div) {
+        double r_dur = ((double) lifetime) / full_lifetime * strength;
+        double f_dur = r_dur - (max_distance * r_dur / distance);
         if (f_dur > 0.0d) {
             if (!player.hasStatusEffect(ModEffects.RAD_POISON)) {
                 if (f_dur >= div) {
@@ -121,23 +121,23 @@ public class RadEntity extends Entity {
         }
     }
 
-    private void protCheck(PlayerEntity player, double c_distance) {
+    private void protCheck(PlayerEntity player) {
         boolean isProt = false;
         Vec3d entityPos = this.getPos();
         Vec3d playerPos = player.getPos().add(0d, player.getEyeHeight(player.getPose()), 0d);
         Vec3d rayDir = playerPos.subtract(entityPos).normalize();
         double maxDistance = entityPos.distanceTo(playerPos);
-        if (maxDistance < c_distance) {
+        if (maxDistance <= distance) {
             BlockPos.Mutable pos = new BlockPos.Mutable();
-            for (double distance = 0d; distance < maxDistance; distance += 0.1d) {
-                pos.set(entityPos.add(rayDir.multiply(distance)).getX(), entityPos.add(rayDir.multiply(distance)).getY(), entityPos.add(rayDir.multiply(distance)).getZ());
+            for (double ray_distance = 0d; ray_distance < maxDistance; ray_distance += 0.1d) {
+                pos.set(entityPos.add(rayDir.multiply(ray_distance)).getX(), entityPos.add(rayDir.multiply(ray_distance)).getY(), entityPos.add(rayDir.multiply(ray_distance)).getZ());
                 if (world.getBlockState(pos).getBlock() == ModBlocks.LEAD_BLOCK || world.getBlockState(pos).getBlock() == ModBlocks.INDUSTRIAL_CASING || world.getBlockState(pos).getBlock() == ModBlocks.LEAD_WALL) {
                     isProt = true;
                     break;
                 }
             }
             if (!isProt) {
-                applyEffect(player, strength, maxDistance, c_distance, 3200d);
+                applyEffect(player, maxDistance, 3200d);
             }
         }
     }

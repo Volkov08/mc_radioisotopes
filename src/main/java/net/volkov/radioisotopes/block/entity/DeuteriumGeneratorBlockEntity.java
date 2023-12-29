@@ -184,7 +184,11 @@ public class DeuteriumGeneratorBlockEntity extends BlockEntity implements NamedS
                 .getFirstMatch(DeuteriumGeneratorRecipe.Type.INSTANCE, inventory, world);
 
         if(match.isPresent()) {
-            entity.removeStack(1,1);
+            if (entity.getStack(1).getItem().hasRecipeRemainder()) {
+                entity.setStack(1, new ItemStack(entity.getStack(1).getItem().getRecipeRemainder()));
+            } else {
+                entity.removeStack(1,1);
+            }
 
             entity.setStack(2, new ItemStack(match.get().getOutput().getItem(),
                     entity.getStack(2).getCount() + 1));

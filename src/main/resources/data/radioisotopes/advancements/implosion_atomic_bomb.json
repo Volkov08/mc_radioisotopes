@@ -1,0 +1,35 @@
+{
+  "display": {
+    "icon": {
+      "item": "radioisotopes:implosion_atomic_bomb"
+    },
+    "title": {
+      "translate": "advancements.radioisotopes.implosion_atomic_bomb.title"
+    },
+    "description": {
+      "translate": "advancements.radioisotopes.implosion_atomic_bomb.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "rewards": {
+    "experience": 20
+  },
+  "parent": "radioisotopes:atomic_waste",
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "radioisotopes:implosion_atomic_bomb"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

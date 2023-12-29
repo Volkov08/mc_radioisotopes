@@ -96,7 +96,7 @@ public class ModRegistries {
                             3,16,0.05f));
 
                     factories.add((entity, random) -> new TradeOffer(
-                            new ItemStack(ModItems.HEAVY_WATER_BUCKET, 1),
+                            new ItemStack(ModItems.DEUTERIUM, 1),
                             new ItemStack(Items.EMERALD, 12),
                             8,24,0.05f));
                 });
@@ -109,9 +109,9 @@ public class ModRegistries {
                             2,30,0.05f));
 
                     factories.add((entity, random) -> new TradeOffer(
-                            new ItemStack(ModItems.ATOMIC_WASTE, 3),
+                            new ItemStack(ModItems.ATOMIC_WASTE, 2),
                             new ItemStack(Items.EMERALD, 26),
-                            new ItemStack(ModItems.PLUTONIUM, 1),
+                            new ItemStack(ModItems.PLUTONIUM_INGOT, 1),
                             5,26,0.05f));
 
                     factories.add((entity, random) -> new TradeOffer(

@@ -13,7 +13,7 @@
   "item.radioisotopes.uranium_axe": "Uranaxt",
   "item.radioisotopes.uranium_hoe": "Uranharke",
   "item.radioisotopes.uranium_shovel": "Uranschaufel",
-  "item.radioisotopes.heavy_water_bucket": "Schwerwassereimer",
+  "item.radioisotopes.deuterium": "Deuterium",
   "item.radioisotopes.tritium": "Tritium",
   "item.radioisotopes.raw_lead": "Rohes Blei",
   "item.radioisotopes.lead_plate": "Bleiplatte",
@@ -33,6 +33,7 @@
   "item.radioisotopes.timed_fuze": "Zeitzünder",
   "item.radioisotopes.fusion_bomb_casing": "Fusionsbombengehäuse",
   "item.radioisotopes.uranium_pusher": "Uranpusher",
+  "item.radioisotopes.uranium_target": "Uranziel",
   "item.radioisotopes.explosive_lenses": "Explosivlinsen",
 
   "item.radioisotopes.raw_lithium": "Rohes Lithium",
@@ -68,12 +69,21 @@
   "item.radioisotopes.batt_low": "Batterie leer!",
 
   "item.radioisotopes.atomic_waste": "Atommüll",
-  "item.radioisotopes.plutonium": "Plutonium",
+  "item.radioisotopes.plutonium_ingot": "Plutoniumbarren",
+  "item.radioisotopes.plutonium_pit": "Plutoniumkern",
+  "item.radioisotopes.boost_capsule": "Boostkapsel",
+  "item.radioisotopes.boosted_plutonium_pit": "Geboosteter Plutoniumkern",
+  "item.radioisotopes.boost_rod": "Boostrohr",
+  "item.radioisotopes.plutonium_spark_plug": "Plutonium 'Spark-Plug'",
 
-  "item.radioisotopes.fission_stage": "Kernspaltungsstufe",
-  "item.radioisotopes.fusion_stage": "Kernfusionsstufe",
+  "item.radioisotopes.gun_fission_stage": "Kanonentyp-Spaltungsstufe",
+  "item.radioisotopes.implosion_fission_stage": "Implosionstyp-Spaltungsstufe",
+  "item.radioisotopes.boosted_implosion_fission_stage": "Geboostete Implosionstyp-Spaltungsstufe",
+  "item.radioisotopes.fusion_stage": "Fusionsstufe",
 
-  "block.radioisotopes.atomic_bomb": "Atombombe",
+  "block.radioisotopes.gun_atomic_bomb": "Kanonentyp-Atombombe",
+  "block.radioisotopes.implosion_atomic_bomb": "Implosionstyp-Atombombe",
+  "block.radioisotopes.boosted_implosion_atomic_bomb": "Geboostete Implosionstyp-Atombombe",
   "block.radioisotopes.fusion_bomb": "Fusionsbombe",
 
   "item.radioisotopes.davy_chrockett": "Davy Chrockett Geschütz",
@@ -87,7 +97,7 @@
   "tooltip.radioisotopes.atomic_reactor_controller_2": "§e§lBatterien laden und aus Lithium",
   "tooltip.radioisotopes.atomic_reactor_controller_3": "§e§lTritium herstellen",
 
-  "tooltip.radioisotopes.deuterium_generator_1": "§e§l-Reichert schweres Wasser",
+  "tooltip.radioisotopes.deuterium_generator_1": "§e§l-Reichert Deuterium",
   "tooltip.radioisotopes.deuterium_generator_2": "§e§lmithilfe einer Stromquelle",
   "tooltip.radioisotopes.deuterium_generator_3": "§e§l(Kartoffel od. Batterie)",
   "tooltip.radioisotopes.deuterium_generator_4": "§e§laus normalem Wasser an",
@@ -115,8 +125,11 @@
   "advancements.radioisotopes.uranium_centrifuge.description": "§oWollen Sie diese wirklich außergewöhnlichen und sehr seltenen Waren kaufen?§r (Physiker)",
   "advancements.radioisotopes.atomic_waste.title": "Atommüll",
   "advancements.radioisotopes.atomic_waste.description": "Gefährliches Zeug! Vielleicht ist es aber trotzdem noch nützlich... (du könntest den Villager deines Vertrauens fragen)",
-  "advancements.radioisotopes.atomic_bomb.title": "Die Bombe",
-  "advancements.radioisotopes.atomic_bomb.description": "§6§oE = mc²!",
+  "advancements.radioisotopes.gun_atomic_bomb.title": "Little Boy",
+  "advancements.radioisotopes.gun_atomic_bomb.description": "Ineffizient, aber funktionell...",
+  "advancements.radioisotopes.implosion_atomic_bomb.title": "Das Gadget",
+  "advancements.radioisotopes.implosion_atomic_bomb.description": "§6§oE = mc²!",
+
   "advancements.radioisotopes.fusion_bomb.title": "Wasserstoffbombe",
   "advancements.radioisotopes.fusion_bomb.description": "Die erste Gerätschaft zur Kernfusion im großen Maßstab!",
 

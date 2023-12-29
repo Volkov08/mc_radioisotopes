@@ -11,9 +11,7 @@ import net.volkov.radioisotopes.ClientMain;
 public class ModEntities {
 
     public static EntityType<RadEntity> RAD_ENTITY;
-    public static EntityType<FissionExplosionEntity> FISSION_EXPLOSION_ENTITY;
-    public static EntityType<FusionExplosionEntity> FUSION_EXPLOSION_ENTITY;
-    public static EntityType<M388ExplosionEntity> M388_EXPLOSION_ENTITY;
+    public static EntityType<NuclearExplosionEntity> NUCLEAR_EXPLOSION_ENTITY;
     public static EntityType<M388Entity> M388_ENTITY;
 
     public static void registerAllEntities() {
@@ -25,24 +23,10 @@ public class ModEntities {
                         .dimensions(EntityDimensions.fixed(0.1f, 0.1f))
                         .build()
         );
-        FISSION_EXPLOSION_ENTITY = Registry.register(
+        NUCLEAR_EXPLOSION_ENTITY = Registry.register(
                 Registry.ENTITY_TYPE,
-                new Identifier(ClientMain.MOD_ID, "fission_explosion_entity"),
-                FabricEntityTypeBuilder.create(SpawnGroup.MISC, FissionExplosionEntity::new)
-                        .dimensions(EntityDimensions.fixed(0.1f, 0.1f))
-                        .build()
-        );
-        FUSION_EXPLOSION_ENTITY = Registry.register(
-                Registry.ENTITY_TYPE,
-                new Identifier(ClientMain.MOD_ID, "fusion_explosion_entity"),
-                FabricEntityTypeBuilder.create(SpawnGroup.MISC, FusionExplosionEntity::new)
-                        .dimensions(EntityDimensions.fixed(0.1f, 0.1f))
-                        .build()
-        );
-        M388_EXPLOSION_ENTITY = Registry.register(
-                Registry.ENTITY_TYPE,
-                new Identifier(ClientMain.MOD_ID, "m388_explosion_entity"),
-                FabricEntityTypeBuilder.<M388ExplosionEntity>create(SpawnGroup.MISC, M388ExplosionEntity::new)
+                new Identifier(ClientMain.MOD_ID, "nuclear_explosion_entity"),
+                FabricEntityTypeBuilder.<NuclearExplosionEntity>create(SpawnGroup.MISC, NuclearExplosionEntity::new)
                         .dimensions(EntityDimensions.fixed(0.1f, 0.1f))
                         .build()
         );

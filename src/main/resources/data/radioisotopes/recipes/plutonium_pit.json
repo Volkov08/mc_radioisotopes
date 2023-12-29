@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "P": {
+      "item": "radioisotopes:plutonium_ingot"
+    }
+  },
+  "pattern": [
+    " P ",
+    "P P",
+    " P "
+  ],
+  "result": {
+    "item": "radioisotopes:plutonium_pit"
+  }
+}

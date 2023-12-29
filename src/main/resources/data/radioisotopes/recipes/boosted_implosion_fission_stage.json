@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "T": {
+      "item": "radioisotopes:explosive_lenses"
+    },
+    "P": {
+      "item": "radioisotopes:boosted_plutonium_pit"
+    },
+    "C": {
+      "item": "radioisotopes:casing_alloy"
+    }
+  },
+  "pattern": [
+    "TCT",
+    "CPC",
+    "TCT"
+  ],
+  "result": {
+    "item": "radioisotopes:boosted_implosion_fission_stage"
+  }
+}

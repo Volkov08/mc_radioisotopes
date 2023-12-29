@@ -9,11 +9,14 @@
     },
     "U": {
       "item": "radioisotopes:enriched_uranium_ingot"
+    },
+    "C": {
+      "item": "radioisotopes:casing_alloy"
     }
   },
   "pattern": [
     "TU#",
-    "U U",
+    "UCU",
     "#UT"
   ],
   "result": {

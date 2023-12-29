@@ -36,8 +36,10 @@ public class ModBlocks {
     public static final Block URANIUM_BLOCK = registerBlock("uranium_block",
             new Block(FabricBlockSettings.of(Material.METAL).strength(6f).requiresTool().luminance(8)), ModItemGroup.URANIUM);
 
+    /*
     public static final Block ENRICHED_URANIUM_BLOCK = registerBlock("enriched_uranium_block",
             new Block(FabricBlockSettings.of(Material.METAL).strength(8f).requiresTool().luminance(12)), ModItemGroup.URANIUM);
+    */
 
     public static final Block URANIUM_GLASS = registerBlock("uranium_glass",
             new GlassBlock(FabricBlockSettings.of(Material.GLASS).strength(0.3f).luminance(6).nonOpaque().sounds(BlockSoundGroup.GLASS)) {
@@ -86,8 +88,12 @@ public class ModBlocks {
             new OreBlock(FabricBlockSettings.of(Material.STONE).strength(4.0f).requiresTool(),
                     UniformIntProvider.create(2, 6)), ModItemGroup.URANIUM);
 
-    public static final Block ATOMIC_BOMB = registerBlock("atomic_bomb",
-            new ModAtomicBombBlock(FabricBlockSettings.of(Material.METAL).strength(4.5f)), ModItemGroup.URANIUM);
+    public static final Block GUN_ATOMIC_BOMB = registerBlock("gun_atomic_bomb",
+            new ModGunAtomicBombBlock(FabricBlockSettings.of(Material.METAL).strength(4.5f)), ModItemGroup.URANIUM);
+    public static final Block IMPLOSION_ATOMIC_BOMB = registerBlock("implosion_atomic_bomb",
+            new ModImplosionAtomicBombBlock(FabricBlockSettings.of(Material.METAL).strength(4.5f)), ModItemGroup.URANIUM);
+    public static final Block BOOSTED_IMPLOSION_ATOMIC_BOMB = registerBlock("boosted_implosion_atomic_bomb",
+            new ModBoostedImplosionAtomicBombBlock(FabricBlockSettings.of(Material.METAL).strength(4.5f)), ModItemGroup.URANIUM);
     public static final Block FUSION_BOMB = registerBlock("fusion_bomb",
             new ModFusionBombBlock(FabricBlockSettings.of(Material.METAL).strength(4.5f)), ModItemGroup.URANIUM);
 

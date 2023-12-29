@@ -35,7 +35,7 @@ public class ModConfiguredFeatures {
 
    public static final RegistryEntry<ConfiguredFeature<OreFeatureConfig, ?>> URANIUM_ORE =
            ConfiguredFeatures.register("uranium_ore", Feature.ORE,
-                   new OreFeatureConfig(OVERWORLD_URANIUM_ORES, 7, 0.85f));
+                   new OreFeatureConfig(OVERWORLD_URANIUM_ORES, 7, 0.75f));
 
    public static final RegistryEntry<ConfiguredFeature<OreFeatureConfig, ?>> LEAD_ORE =
            ConfiguredFeatures.register("lead_ore", Feature.ORE,

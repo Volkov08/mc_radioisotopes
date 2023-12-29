@@ -5,7 +5,7 @@
       "item": "radioisotopes:lithium_ingot"
     },
     "D": {
-      "item": "radioisotopes:heavy_water_bucket"
+      "item": "radioisotopes:deuterium"
     }
   },
   "pattern": [
