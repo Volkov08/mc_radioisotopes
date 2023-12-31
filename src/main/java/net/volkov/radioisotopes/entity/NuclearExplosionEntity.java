@@ -23,10 +23,12 @@ public class NuclearExplosionEntity extends Entity {
     private int z_range;
     private boolean has_rad;
     private int bolt;
+    private double radiation;
 
-    public NuclearExplosionEntity(EntityType<? extends Entity> type, World world, int radius) {
+    public NuclearExplosionEntity(EntityType<? extends Entity> type, World world, int radius, double radiation) {
         super(type, world);
         this.radius = radius;
+        this.radiation = radiation;
         this.x_range = -radius;
         this.y_range = radius;
         this.z_range = -radius;
@@ -47,7 +49,7 @@ public class NuclearExplosionEntity extends Entity {
         if (!world.isClient()) {
             BlockPos pos = this.getBlockPos();
             if (!has_rad) {
-                RadEntity rad = new RadEntity(ModEntities.RAD_ENTITY, world, 70000, radius * 1.4d, 7000d);
+                RadEntity rad = new RadEntity(ModEntities.RAD_ENTITY, world, 70000, radius * 1.4d, radiation);
                 rad.refreshPositionAndAngles(pos.getX(), pos.getY(), pos.getZ(), 0, 0);
                 world.spawnEntity(rad);
                 has_rad = true;
@@ -119,6 +121,7 @@ public class NuclearExplosionEntity extends Entity {
         nbt.putInt("nuke.x_range", x_range);
         nbt.putInt("nuke.y_range", y_range);
         nbt.putInt("nuke.z_range", z_range);
+        nbt.putDouble("nuke.radiation", radiation);
         nbt.putBoolean("nuke.has_rad", has_rad);
         nbt.putInt("nuke.bolt", bolt);
         return super.writeNbt(nbt);
@@ -131,6 +134,7 @@ public class NuclearExplosionEntity extends Entity {
         x_range = nbt.getInt("nuke.x_range");
         y_range = nbt.getInt("nuke.y_range");
         z_range = nbt.getInt("nuke.z_range");
+        radiation = nbt.getDouble("nuke.radiation");
         has_rad = nbt.getBoolean("nuke.has_rad");
         bolt = nbt.getInt("nuke.bolt");
     }
