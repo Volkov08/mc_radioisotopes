@@ -56,7 +56,7 @@ public class ModRadDetectorItem extends Item {
             boolean has_rad = false;
             BlockPos pos = player.getBlockPos();
             Box box = new Box(pos).expand(15);
-            Box f_box = new Box(pos).expand(153);
+            Box f_box = new Box(pos).expand(220);
 
             for (BlockPos blockPos : BlockPos.iterate((int) box.minX, (int) box.minY, (int) box.minZ, (int) box.maxX, (int) box.maxY, (int) box.maxZ)) {
                 if (blockPos.isWithinDistance(player.getPos(), 15d)) {
@@ -69,7 +69,7 @@ public class ModRadDetectorItem extends Item {
             }
             if (!has_rad) {
                 for (RadEntity entity : world.getEntitiesByType(ModEntities.RAD_ENTITY, f_box, entity -> true)) {
-                    if (entity.getPos().distanceTo(player.getPos()) <= entity.distance + 28d) {
+                    if (entity.getPos().distanceTo(player.getPos()) <= (double) 4 / 3 * entity.distance) {
                         has_rad = true;
                         break;
                     }
