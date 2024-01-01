@@ -1,9 +1,9 @@
 package net.volkov.radioisotopes.entity;
 
+import net.minecraft.block.Blocks;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LightningEntity;
-import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.mob.MobEntity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -77,9 +77,9 @@ public class NuclearExplosionEntity extends Entity {
                         if (z_range <= radius) {
                             BlockPos dpos = pos.add(x_range, y_range, z_range);
                             if (pos.isWithinDistance(dpos, (double) (radius * 4) / 5)) {
-                                this.world.removeBlock(dpos, false);
+                                this.world.setBlockState(dpos, Blocks.AIR.getDefaultState());
                             } else if (pos.isWithinDistance(dpos, radius) && this.random.nextInt(2) == 0) {
-                                this.world.removeBlock(dpos, false);
+                                this.world.setBlockState(dpos, Blocks.AIR.getDefaultState());
                             }
                             z_range++;
                         } else {
