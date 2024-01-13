@@ -1,5 +1,6 @@
 package net.volkov.radioisotopes.entity;
 
+import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
@@ -12,6 +13,8 @@ import net.minecraft.network.Packet;
 import net.minecraft.network.packet.s2c.play.EntitySpawnS2CPacket;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.world.ServerWorld;
+import net.minecraft.tag.BlockTags;
+import net.minecraft.tag.TagKey;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Box;
 import net.minecraft.world.World;
@@ -49,7 +52,7 @@ public class NuclearExplosionEntity extends Entity {
         if (!world.isClient()) {
             BlockPos pos = this.getBlockPos();
             if (!has_rad) {
-                RadEntity rad = new RadEntity(ModEntities.RAD_ENTITY, world, 70000, radius * 1.4d, radiation);
+                RadEntity rad = new RadEntity(ModEntities.RAD_ENTITY, world, 90000, radius * 1.5d, radiation);
                 rad.refreshPositionAndAngles(pos.getX(), pos.getY(), pos.getZ(), 0, 0);
                 world.spawnEntity(rad);
                 has_rad = true;
@@ -60,7 +63,7 @@ public class NuclearExplosionEntity extends Entity {
                 bolt += 1;
             }
 
-            Box box = new Box(pos).expand((double) 5 / 3 * radius);
+            Box box = new Box(pos).expand(1.3d * radius);
             for (Entity entity : this.world.getOtherEntities(this, box)) {
                 if (entity instanceof PlayerEntity || entity instanceof MobEntity) {
                     if (this.getPos().distanceTo(entity.getPos()) <= (double) 5 / 3 * radius) {
@@ -76,10 +79,17 @@ public class NuclearExplosionEntity extends Entity {
                     if (x_range <= radius) {
                         if (z_range <= radius) {
                             BlockPos dpos = pos.add(x_range, y_range, z_range);
-                            if (pos.isWithinDistance(dpos, (double) (radius * 4) / 5)) {
-                                this.world.setBlockState(dpos, Blocks.AIR.getDefaultState());
-                            } else if (pos.isWithinDistance(dpos, radius) && this.random.nextInt(2) == 0) {
-                                this.world.setBlockState(dpos, Blocks.AIR.getDefaultState());
+                            BlockState block = world.getBlockState(dpos);
+                            if (pos.isWithinDistance(dpos, (double) (radius * 3) / 5)) {
+                                world.setBlockState(dpos, Blocks.AIR.getDefaultState());
+                            } else if (pos.isWithinDistance(dpos, (double) (radius * 4) / 5)) {
+                                if (block.isIn(BlockTags.LEAVES)) {
+                                    world.setBlockState(dpos, Blocks.AIR.getDefaultState());
+                                } else if (random.nextInt(3) > 0) {
+                                    world.setBlockState(dpos, Blocks.AIR.getDefaultState());
+                                }
+                            } else if (pos.isWithinDistance(dpos, radius) && block.isIn(BlockTags.LEAVES)) {
+                                world.setBlockState(dpos, Blocks.AIR.getDefaultState());
                             }
                             z_range++;
                         } else {
