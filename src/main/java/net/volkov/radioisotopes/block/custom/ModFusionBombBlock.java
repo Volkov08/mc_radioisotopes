@@ -32,7 +32,7 @@ public class ModFusionBombBlock extends Block {
         if (world.isClient) {
             return;
         }
-        NuclearExplosionEntity nuke = new NuclearExplosionEntity(ModEntities.NUCLEAR_EXPLOSION_ENTITY, world, 100, 8300d);
+        NuclearExplosionEntity nuke = new NuclearExplosionEntity(ModEntities.NUCLEAR_EXPLOSION_ENTITY, world, 108, 8300d);
         nuke.refreshPositionAndAngles(pos.getX(), pos.getY(), pos.getZ(), 0, 0);
         world.spawnEntity(nuke);
 

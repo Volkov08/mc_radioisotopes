@@ -25,6 +25,7 @@ public class NuclearExplosionEntity extends Entity {
     private int y_range;
     private int z_range;
     private boolean has_rad;
+    private boolean has_damaged;
     private int bolt;
     private double radiation;
 
@@ -63,26 +64,31 @@ public class NuclearExplosionEntity extends Entity {
                 bolt += 1;
             }
 
-            Box box = new Box(pos).expand(1.3d * radius);
-            for (Entity entity : this.world.getOtherEntities(this, box)) {
-                if (entity instanceof PlayerEntity || entity instanceof MobEntity) {
-                    if (this.getPos().distanceTo(entity.getPos()) <= (double) 5 / 3 * radius) {
-                        entity.damage(DamageSource.MAGIC, (float) (18.0d - (this.getPos().distanceTo(entity.getPos()) / ((double) 5 / 3 * radius) * 18.0d)));
+            if(!has_damaged) {
+                Box box = new Box(pos).expand(1.2d * radius);
+                for (Entity entity : this.world.getOtherEntities(this, box)) {
+                    if (entity instanceof PlayerEntity || entity instanceof MobEntity) {
+                        if (this.getPos().distanceTo(entity.getPos()) <= 0.64d * radius) {
+                            entity.damage(DamageSource.MAGIC, 6000.0f);
+                        } else if (this.getPos().distanceTo(entity.getPos()) <= 1.2d * radius) {
+                            entity.damage(DamageSource.MAGIC, 6000.0f - ((float) this.getPos().distanceTo(entity.getPos()) - 0.64f) / (0.56f * radius) * 6000.0f);
+                        }
                         entity.setOnFireFor(60);
                     }
                 }
+                has_damaged = true;
             }
 
             int i = 0;
-            while (i < 500) {
+            while (i < 750) {
                 if (y_range >= -radius) {
                     if (x_range <= radius) {
                         if (z_range <= radius) {
                             BlockPos dpos = pos.add(x_range, y_range, z_range);
                             BlockState block = world.getBlockState(dpos);
-                            if (pos.isWithinDistance(dpos, (double) (radius * 3) / 5)) {
+                            if (pos.isWithinDistance(dpos, radius * 0.64d)) {
                                 world.setBlockState(dpos, Blocks.AIR.getDefaultState());
-                            } else if (pos.isWithinDistance(dpos, (double) (radius * 4) / 5)) {
+                            } else if (pos.isWithinDistance(dpos, radius * 0.76d)) {
                                 if (block.isIn(BlockTags.LEAVES)) {
                                     world.setBlockState(dpos, Blocks.AIR.getDefaultState());
                                 } else if (random.nextInt(3) > 0) {
@@ -133,6 +139,7 @@ public class NuclearExplosionEntity extends Entity {
         nbt.putInt("nuke.z_range", z_range);
         nbt.putDouble("nuke.radiation", radiation);
         nbt.putBoolean("nuke.has_rad", has_rad);
+        nbt.putBoolean("nuke.has_damaged", has_damaged);
         nbt.putInt("nuke.bolt", bolt);
         return super.writeNbt(nbt);
     }
@@ -146,6 +153,7 @@ public class NuclearExplosionEntity extends Entity {
         z_range = nbt.getInt("nuke.z_range");
         radiation = nbt.getDouble("nuke.radiation");
         has_rad = nbt.getBoolean("nuke.has_rad");
+        has_damaged = nbt.getBoolean("nuke.has_damaged");
         bolt = nbt.getInt("nuke.bolt");
     }
 
