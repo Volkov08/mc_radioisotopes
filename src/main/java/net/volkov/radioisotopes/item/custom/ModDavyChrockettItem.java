@@ -21,7 +21,7 @@ public class ModDavyChrockettItem extends Item {
         if(!world.isClient() && hand == Hand.MAIN_HAND) {
             if (Objects.equals(player.getOffHandStack().getItem(), ModItems.M388_NUCLEAR_ROUND)) {
                 M388Entity round = new M388Entity(world, player);
-                round.setVelocity(player, player.getPitch(), player.getYaw(), 0.0f, 5.0f, 0.2f);
+                round.setVelocity(player, player.getPitch(), player.getYaw(), 0.0f, 5.0f, 0.0f);
                 world.spawnEntity(round);
                 if (!player.isCreative()) {
                     player.getInventory().removeStack(40, 1);

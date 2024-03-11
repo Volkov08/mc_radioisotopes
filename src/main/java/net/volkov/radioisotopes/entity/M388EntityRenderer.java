@@ -20,6 +20,7 @@ public class M388EntityRenderer extends EntityRenderer<M388Entity> {
     public void render(M388Entity persistentProjectileEntity, float f, float g, MatrixStack matrixStack, VertexConsumerProvider vertexConsumerProvider, int i) {
         matrixStack.push();
         matrixStack.scale(-1.0f, -1.0f, 1.0f);
+        matrixStack.translate(0.0f, 1.0f, 0.0f);
         float yaw = MathHelper.lerp(g, persistentProjectileEntity.prevYaw, persistentProjectileEntity.getYaw());
         float pitch = MathHelper.lerp(g, persistentProjectileEntity.prevPitch, persistentProjectileEntity.getPitch());
         matrixStack.multiply(Vec3f.POSITIVE_Y.getDegreesQuaternion(-yaw));
