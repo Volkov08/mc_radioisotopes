@@ -5,7 +5,7 @@
       "item": "minecraft:iron_ingot"
     },
     "F": {
-      "item": "radioisotopes:implosion_fission_stage"
+      "item": "radioisotopes:low_yield_implosion_fission_stage"
     },
     "R": {
       "item": "minecraft:firework_rocket"
@@ -20,7 +20,6 @@
     "IRI"
   ],
   "result": {
-    "item": "radioisotopes:m388_nuclear_round",
-    "count": 3
+    "item": "radioisotopes:m388_nuclear_round"
   }
 }

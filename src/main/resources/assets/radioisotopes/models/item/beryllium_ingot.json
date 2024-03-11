@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "radioisotopes:item/fission_stage"
+    "layer0": "radioisotopes:item/beryllium_ingot"
   }
 }

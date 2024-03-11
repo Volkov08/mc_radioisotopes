@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "U": {
+      "item": "radioisotopes:enriched_uranium_ingot"
+    }
+  },
+  "pattern": [
+    " U ",
+    "U U",
+    " U "
+  ],
+  "result": {
+    "item": "radioisotopes:uranium_spark_plug"
+  }
+}

@@ -35,12 +35,19 @@
   "item.radioisotopes.uranium_pusher": "Uranpusher",
   "item.radioisotopes.uranium_target": "Uranziel",
   "item.radioisotopes.explosive_lenses": "Explosivlinsen",
+  "item.radioisotopes.small_explosive_lenses": "Kleine Explosivlinsen",
 
   "item.radioisotopes.raw_lithium": "Rohes Lithium",
   "item.radioisotopes.lithium_ingot": "Lithiumbarren",
   "item.radioisotopes.lithium_deuteride": "Lithiumdeuterid",
 
   "item.radioisotopes.fluorine": "Fluor",
+
+  "item.radioisotopes.tungsten_carbide_nugget": "Wolframcarbidnugget",
+  "item.radioisotopes.tungsten_carbide_ingot": "Wolframcarbidbarren",
+
+  "item.radioisotopes.beryllium_nugget": "Berylliumnugget",
+  "item.radioisotopes.beryllium_ingot": "Berylliumbarren",
 
   "block.radioisotopes.uranium_ore": "Uranerz",
   "block.radioisotopes.deepslate_uranium_ore": "Tiefenschiefer-Uranerz",
@@ -73,11 +80,11 @@
   "item.radioisotopes.plutonium_pit": "Plutoniumkern",
   "item.radioisotopes.boost_capsule": "Boostkapsel",
   "item.radioisotopes.boosted_plutonium_pit": "Geboosteter Plutoniumkern",
-  "item.radioisotopes.boost_rod": "Boostrohr",
-  "item.radioisotopes.plutonium_spark_plug": "Plutonium 'Spark-Plug'",
+  "item.radioisotopes.uranium_spark_plug": "Uran 'Spark-Plug'",
 
   "item.radioisotopes.gun_fission_stage": "Kanonentyp-Spaltungsstufe",
   "item.radioisotopes.implosion_fission_stage": "Implosionstyp-Spaltungsstufe",
+  "item.radioisotopes.low_yield_implosion_fission_stage": "Ineffiziente Implosionstyp-Spaltungsstufe",
   "item.radioisotopes.boosted_implosion_fission_stage": "Geboostete Implosionstyp-Spaltungsstufe",
   "item.radioisotopes.fusion_stage": "Fusionsstufe",
 

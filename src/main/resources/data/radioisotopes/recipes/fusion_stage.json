@@ -4,17 +4,17 @@
     "L": {
       "item": "radioisotopes:lithium_deuteride"
     },
-    "P": {
-      "item": "radioisotopes:plutonium_spark_plug"
+    "S": {
+      "item": "radioisotopes:uranium_spark_plug"
     },
     "U": {
       "item": "radioisotopes:uranium_ingot"
     }
   },
   "pattern": [
-    "U U",
-    "LPL",
-    "U U"
+    "ULU",
+    "LSL",
+    "ULU"
   ],
   "result": {
     "item": "radioisotopes:fusion_stage"

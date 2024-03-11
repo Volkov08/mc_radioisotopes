@@ -53,7 +53,7 @@ public class NuclearExplosionEntity extends Entity {
         if (!world.isClient()) {
             BlockPos pos = this.getBlockPos();
             if (!has_rad) {
-                RadEntity rad = new RadEntity(ModEntities.RAD_ENTITY, world, 90000, radius * 1.5d, radiation);
+                RadEntity rad = new RadEntity(ModEntities.RAD_ENTITY, world, 90000, radius * 1.5d, radiation, false);
                 rad.refreshPositionAndAngles(pos.getX(), pos.getY(), pos.getZ(), 0, 0);
                 world.spawnEntity(rad);
                 has_rad = true;
@@ -69,9 +69,9 @@ public class NuclearExplosionEntity extends Entity {
                 for (Entity entity : this.world.getOtherEntities(this, box)) {
                     if (entity instanceof PlayerEntity || entity instanceof MobEntity) {
                         if (this.getPos().distanceTo(entity.getPos()) <= 0.64d * radius) {
-                            entity.damage(DamageSource.MAGIC, 6000.0f);
+                            entity.damage(DamageSource.GENERIC, 6000.0f);
                         } else if (this.getPos().distanceTo(entity.getPos()) <= 1.2d * radius) {
-                            entity.damage(DamageSource.MAGIC, 6000.0f - ((float) this.getPos().distanceTo(entity.getPos()) - 0.64f) / (0.56f * radius) * 6000.0f);
+                            entity.damage(DamageSource.GENERIC, 6000.0f - ((float) this.getPos().distanceTo(entity.getPos()) - (0.64f * radius)) / (0.56f * radius) * 6000.0f);
                         }
                         entity.setOnFireFor(60);
                     }
@@ -89,12 +89,14 @@ public class NuclearExplosionEntity extends Entity {
                             if (pos.isWithinDistance(dpos, radius * 0.64d)) {
                                 world.setBlockState(dpos, Blocks.AIR.getDefaultState());
                             } else if (pos.isWithinDistance(dpos, radius * 0.76d)) {
-                                if (block.isIn(BlockTags.LEAVES)) {
+                                if (block.isIn(BlockTags.LEAVES) || block.isIn(BlockTags.FLOWERS) || block.isOf(Blocks.GRASS) || block.isOf(Blocks.TALL_GRASS)) {
                                     world.setBlockState(dpos, Blocks.AIR.getDefaultState());
                                 } else if (random.nextInt(3) > 0) {
                                     world.setBlockState(dpos, Blocks.AIR.getDefaultState());
+                                } else if (block == Blocks.GRASS_BLOCK.getDefaultState()) {
+                                    world.setBlockState(dpos, Blocks.DIRT.getDefaultState());
                                 }
-                            } else if (pos.isWithinDistance(dpos, radius) && block.isIn(BlockTags.LEAVES)) {
+                            } else if (pos.isWithinDistance(dpos, radius) && (block.isIn(BlockTags.LEAVES) || block.isIn(BlockTags.FLOWERS) || block.isOf(Blocks.GRASS) || block.isOf(Blocks.TALL_GRASS))) {
                                 world.setBlockState(dpos, Blocks.AIR.getDefaultState());
                             }
                             z_range++;
@@ -155,6 +157,11 @@ public class NuclearExplosionEntity extends Entity {
         has_rad = nbt.getBoolean("nuke.has_rad");
         has_damaged = nbt.getBoolean("nuke.has_damaged");
         bolt = nbt.getInt("nuke.bolt");
+    }
+
+    @Override
+    public boolean isFireImmune() {
+        return true;
     }
 
     @Override

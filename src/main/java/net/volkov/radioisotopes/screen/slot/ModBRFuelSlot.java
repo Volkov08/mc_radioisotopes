@@ -18,7 +18,7 @@ public class ModBRFuelSlot extends Slot {
 
     @Override
     public int getMaxItemCount(ItemStack stack) {
-        return ModBRFuelSlot.isBlazeRod(stack) ? 64 : super.getMaxItemCount(stack);
+        return super.getMaxItemCount(stack);
     }
 
     public static boolean isBlazeRod(ItemStack stack) {

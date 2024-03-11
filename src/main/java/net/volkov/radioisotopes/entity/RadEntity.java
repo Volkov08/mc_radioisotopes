@@ -26,13 +26,15 @@ public class RadEntity extends Entity {
     private double full_lifetime;
     public double distance;
     private double strength;
+    private boolean canShield;
 
-    public RadEntity(EntityType<? extends Entity> entityType, World world, int lifetime, double distance, double strength) {
+    public RadEntity(EntityType<? extends Entity> entityType, World world, int lifetime, double distance, double strength, boolean canShield) {
         super(entityType, world);
         this.lifetime = lifetime;
         this.full_lifetime = lifetime;
         this.distance = distance;
         this.strength = strength;
+        this.canShield = canShield;
     }
 
     public RadEntity(EntityType<RadEntity> radEntityType, World world) {
@@ -86,7 +88,7 @@ public class RadEntity extends Entity {
     private void applyEffect(PlayerEntity player, double max_distance, double div) {
         double r_dur = ((double) lifetime) / full_lifetime * strength;
         double f_dur = r_dur - (max_distance * r_dur / distance);
-        if (f_dur > 0.0d) {
+        if (f_dur >= 200.0d) {
             if (!player.hasStatusEffect(ModEffects.RAD_POISON)) {
                 if (f_dur >= div) {
                     if (!hasArmorOn(player, ModArmorMaterials.HEAVY_LEAD)) {
@@ -122,24 +124,22 @@ public class RadEntity extends Entity {
     }
 
     private void protCheck(PlayerEntity player) {
-        boolean isProt = false;
         Vec3d entityPos = this.getPos();
         Vec3d playerPos = player.getPos().add(0d, player.getEyeHeight(player.getPose()), 0d);
-        Vec3d rayDir = playerPos.subtract(entityPos).normalize();
         double maxDistance = entityPos.distanceTo(playerPos);
-        if (maxDistance <= distance) {
-            BlockPos.Mutable pos = new BlockPos.Mutable();
-            for (double ray_distance = 0d; ray_distance < maxDistance; ray_distance += 0.1d) {
-                pos.set(entityPos.add(rayDir.multiply(ray_distance)).getX(), entityPos.add(rayDir.multiply(ray_distance)).getY(), entityPos.add(rayDir.multiply(ray_distance)).getZ());
-                if (world.getBlockState(pos).getBlock() == ModBlocks.LEAD_BLOCK || world.getBlockState(pos).getBlock() == ModBlocks.INDUSTRIAL_CASING || world.getBlockState(pos).getBlock() == ModBlocks.LEAD_WALL) {
-                    isProt = true;
-                    break;
+        if (canShield) {
+            Vec3d rayDir = playerPos.subtract(entityPos).normalize();
+            if (maxDistance <= distance) {
+                BlockPos.Mutable pos = new BlockPos.Mutable();
+                for (double ray_distance = 0d; ray_distance < maxDistance; ray_distance += 0.05d) {
+                    pos.set(entityPos.add(rayDir.multiply(ray_distance)).getX(), entityPos.add(rayDir.multiply(ray_distance)).getY(), entityPos.add(rayDir.multiply(ray_distance)).getZ());
+                    if (world.getBlockState(pos).getBlock() == ModBlocks.LEAD_BLOCK || world.getBlockState(pos).getBlock() == ModBlocks.INDUSTRIAL_CASING || world.getBlockState(pos).getBlock() == ModBlocks.LEAD_WALL) {
+                        return;
+                    }
                 }
             }
-            if (!isProt) {
-                applyEffect(player, maxDistance, 3200d);
-            }
         }
+        applyEffect(player, maxDistance, 3200d);
     }
 
     @Override
@@ -148,6 +148,7 @@ public class RadEntity extends Entity {
         nbt.putDouble("rad.full_lifetime", full_lifetime);
         nbt.putDouble("rad.distance", distance);
         nbt.putDouble("rad.strength", strength);
+        nbt.putBoolean("rad.canShield", canShield);
         return super.writeNbt(nbt);
     }
 
@@ -158,6 +159,7 @@ public class RadEntity extends Entity {
         full_lifetime = nbt.getDouble("rad.full_lifetime");
         distance = nbt.getDouble("rad.distance");
         strength = nbt.getDouble("rad.strength");
+        canShield = nbt.getBoolean("rad.canShield");
     }
 
     @Override
@@ -168,6 +170,11 @@ public class RadEntity extends Entity {
     @Override
     protected void writeCustomDataToNbt(NbtCompound nbt) {
 
+    }
+
+    @Override
+    public boolean isFireImmune() {
+        return true;
     }
 
     @Override

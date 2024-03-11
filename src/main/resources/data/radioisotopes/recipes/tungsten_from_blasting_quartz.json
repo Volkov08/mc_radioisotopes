@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:blasting",
+  "ingredient": {
+    "item": "minecraft:quartz"
+  },
+  "result": "radioisotopes:tungsten_carbide_nugget",
+  "experience": 0.5,
+  "cookingtime": 280
+}

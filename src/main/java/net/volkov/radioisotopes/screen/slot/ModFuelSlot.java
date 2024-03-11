@@ -1,6 +1,5 @@
 package net.volkov.radioisotopes.screen.slot;
 
-import net.minecraft.block.entity.AbstractFurnaceBlockEntity;
 import net.minecraft.inventory.Inventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;

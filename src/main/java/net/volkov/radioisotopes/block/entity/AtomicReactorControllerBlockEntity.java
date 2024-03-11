@@ -3,7 +3,6 @@ package net.volkov.radioisotopes.block.entity;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.entity.BlockEntity;
-import net.minecraft.block.entity.HopperBlockEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.Inventories;
@@ -19,7 +18,6 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.world.World;
 import net.minecraft.world.explosion.Explosion;
-import net.volkov.radioisotopes.block.custom.ModAtomicReactorControllerBlock;
 import net.volkov.radioisotopes.entity.ModEntities;
 import net.volkov.radioisotopes.entity.RadEntity;
 import net.volkov.radioisotopes.item.ModItems;
@@ -28,7 +26,6 @@ import net.volkov.radioisotopes.recipe.AtomicReactorRecipe;
 import net.volkov.radioisotopes.screen.AtomicReactorControllerScreenHandler;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.Objects;
 import java.util.Optional;
 
 public class AtomicReactorControllerBlockEntity extends BlockEntity implements NamedScreenHandlerFactory, ImplementedInventory {
@@ -113,21 +110,6 @@ public class AtomicReactorControllerBlockEntity extends BlockEntity implements N
     }
 
     public static void tick(World world, BlockPos pos, BlockState state, AtomicReactorControllerBlockEntity entity) {
-        if(world.getBlockState(pos.down()) == Blocks.HOPPER.getDefaultState() && entity.getStack(0).getItem() == ModItems.ATOMIC_WASTE) {
-            HopperBlockEntity hopper = (HopperBlockEntity) world.getBlockEntity(pos.down());
-            int slot = -1;
-            for (int i = 0; i<=4; i++) {
-                if (hopper.getStack(i).isEmpty() || (Objects.equals(hopper.getStack(i).getItem(), ModItems.ATOMIC_WASTE) && hopper.getStack(i).getCount() < ModItems.ATOMIC_WASTE.getMaxCount())) {
-                    slot = i;
-                    break;
-                }
-            }
-            if (slot != -1) {
-                entity.removeStack(0);
-                hopper.setStack(slot, new ItemStack(ModItems.ATOMIC_WASTE, hopper.getStack(slot).getCount() + 1));
-            }
-        }
-
         if(isConsumingFuel(entity)) {
             entity.fuelTime--;
             if (!world.isClient()) {
@@ -136,7 +118,7 @@ public class AtomicReactorControllerBlockEntity extends BlockEntity implements N
                     world.removeBlock(pos, false);
                     world.createExplosion(null, pos.getX(), pos.getY(), pos.getZ(), 4.0f, true, Explosion.DestructionType.BREAK);
                     world.setBlockState(pos, Blocks.LAVA.getDefaultState());
-                    RadEntity rad = new RadEntity(ModEntities.RAD_ENTITY, world, 125000, 125d, 9400d);
+                    RadEntity rad = new RadEntity(ModEntities.RAD_ENTITY, world, 125000, 125d, 9400d, true);
                     rad.refreshPositionAndAngles(pos.getX() + 0.5, pos.getY() + 0.5, pos.getZ() + 0.5, 0, 0);
                     world.spawnEntity(rad);
                 }
@@ -207,8 +189,6 @@ public class AtomicReactorControllerBlockEntity extends BlockEntity implements N
     //Beginning sided inv
     @Override
     public boolean canInsert(int slot, ItemStack stack, @Nullable Direction side) {
-        Direction localDir = this.getWorld().getBlockState(this.pos).get(ModAtomicReactorControllerBlock.FACING);
-
         if(side == Direction.DOWN) {
             return false;
         }
@@ -216,13 +196,15 @@ public class AtomicReactorControllerBlockEntity extends BlockEntity implements N
         if(side == Direction.UP) {
             return slot == 1;
         }
-        return slot == 0;
+        return slot == 0 && (stack.isOf(ModItems.ATOMIC_WASTE) || stack.isOf(ModItems.NUCLEAR_FUEL_ROD));
     }
 
     @Override
     public boolean canExtract(int slot, ItemStack stack, Direction side) {
-        Direction localDir = this.getWorld().getBlockState(this.pos).get(ModAtomicReactorControllerBlock.FACING);
         if(side == Direction.DOWN) {
+            if (slot == 0) {
+                return stack.isOf(ModItems.ATOMIC_WASTE);
+            }
             return slot == 2;
         }
         return false;

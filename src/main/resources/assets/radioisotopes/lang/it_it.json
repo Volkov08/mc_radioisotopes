@@ -74,8 +74,7 @@
     "item.radioisotopes.plutonium_pit": "Fossa di plutonio",
     "item.radioisotopes.boost_capsule": "Capsula di spinta",
     "item.radioisotopes.boosted_plutonium_pit": "Fossa di plutonio potenziata",
-    "item.radioisotopes.boost_rod": "Asta di spinta",
-    "item.radioisotopes.plutonium_spark_plug": "Candela al plutonio",
+    "item.radioisotopes.uranium_spark_plug": "Candela al uranio",
   
     "item.radioisotopes.gun_fission_stage": "Fase di fissione a cannone",
     "item.radioisotopes.implosion_fission_stage": "Fase di fissione a implosione",

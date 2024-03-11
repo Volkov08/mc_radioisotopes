@@ -110,6 +110,8 @@ public class ModItems {
 
     public static final Item EXPLOSIVE_LENSES = registerItem("explosive_lenses",
             new Item(new FabricItemSettings().group(ModItemGroup.URANIUM)));
+    public static final Item SMALL_EXPLOSIVE_LENSES = registerItem("small_explosive_lenses",
+            new Item(new FabricItemSettings().group(ModItemGroup.URANIUM)));
 
     /*
     public static final Item TIMED_FUZE = registerItem("timed_fuze",
@@ -142,18 +144,27 @@ public class ModItems {
             new Item(new FabricItemSettings().group(ModItemGroup.URANIUM)));
     public static final Item BOOSTED_PLUTONIUM_PIT = registerItem("boosted_plutonium_pit",
             new Item(new FabricItemSettings().group(ModItemGroup.URANIUM)));
-    public static final Item BOOST_ROD = registerItem("boost_rod",
+    public static final Item URANIUM_SPARK_PLUG = registerItem("uranium_spark_plug",
             new Item(new FabricItemSettings().group(ModItemGroup.URANIUM)));
-    public static final Item PLUTONIUM_SPARK_PLUG = registerItem("plutonium_spark_plug",
+    public static final Item BERYLLIUM_NUGGET = registerItem("beryllium_nugget",
+            new Item(new FabricItemSettings().group(ModItemGroup.URANIUM)));
+    public static final Item BERYLLIUM_INGOT = registerItem("beryllium_ingot",
+            new Item(new FabricItemSettings().group(ModItemGroup.URANIUM)));
+    public static final Item TUNGSTEN_CARBIDE_NUGGET = registerItem("tungsten_carbide_nugget",
+            new Item(new FabricItemSettings().group(ModItemGroup.URANIUM)));
+    public static final Item TUNGSTEN_CARBIDE_INGOT = registerItem("tungsten_carbide_ingot",
             new Item(new FabricItemSettings().group(ModItemGroup.URANIUM)));
     public static final Item URANIUM_PUSHER = registerItem("uranium_pusher",
             new Item(new FabricItemSettings().group(ModItemGroup.URANIUM)));
     public static final Item URANIUM_TARGET = registerItem("uranium_target",
             new Item(new FabricItemSettings().group(ModItemGroup.URANIUM)));
 
+
     public static final Item GUN_FISSION_STAGE = registerItem("gun_fission_stage",
             new Item(new FabricItemSettings().group(ModItemGroup.URANIUM)));
     public static final Item IMPLOSION_FISSION_STAGE = registerItem("implosion_fission_stage",
+            new Item(new FabricItemSettings().group(ModItemGroup.URANIUM)));
+    public static final Item LOW_YIELD_IMPLOSION_FISSION_STAGE = registerItem("low_yield_implosion_fission_stage",
             new Item(new FabricItemSettings().group(ModItemGroup.URANIUM)));
     public static final Item BOOSTED_IMPLOSION_FISSION_STAGE = registerItem("boosted_implosion_fission_stage",
             new Item(new FabricItemSettings().group(ModItemGroup.URANIUM)));

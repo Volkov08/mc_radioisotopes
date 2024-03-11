@@ -2,10 +2,10 @@
   "type": "minecraft:crafting_shaped",
   "key": {
     "T": {
-      "item": "radioisotopes:explosive_lenses"
+      "item": "radioisotopes:small_explosive_lenses"
     },
     "P": {
-      "item": "radioisotopes:boosted_plutonium_pit"
+      "item": "radioisotopes:plutonium_pit"
     },
     "B": {
       "item": "radioisotopes:beryllium_ingot"
@@ -17,6 +17,6 @@
     "TBT"
   ],
   "result": {
-    "item": "radioisotopes:boosted_implosion_fission_stage"
+    "item": "radioisotopes:low_yield_implosion_fission_stage"
   }
 }

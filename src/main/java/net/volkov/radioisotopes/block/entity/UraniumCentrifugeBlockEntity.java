@@ -1,6 +1,5 @@
 package net.volkov.radioisotopes.block.entity;
 
-import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.block.enums.DoubleBlockHalf;
@@ -21,8 +20,6 @@ import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.world.World;
-import net.volkov.radioisotopes.block.ModBlocks;
-import net.volkov.radioisotopes.block.custom.ModTallBlock;
 import net.volkov.radioisotopes.block.custom.ModUraniumCentrifugeBlock;
 import net.volkov.radioisotopes.item.inventory.ImplementedInventory;
 import net.volkov.radioisotopes.recipe.UraniumCentrifugeRecipe;
@@ -120,16 +117,16 @@ public class UraniumCentrifugeBlockEntity extends BlockEntity implements NamedSc
 
             return switch (localDir) {
                 default -> side.getOpposite() == Direction.NORTH && slot == 2 ||
-                        side.getOpposite() == Direction.EAST && slot == 0 ||
+                        side.getOpposite() == Direction.EAST && slot == 0 && stack.isOf(Items.BLAZE_ROD) ||
                         side.getOpposite() == Direction.SOUTH && slot == 1;
                 case EAST -> side.rotateYClockwise() == Direction.NORTH && slot == 2 ||
-                        side.rotateYClockwise() == Direction.EAST && slot == 0 ||
+                        side.rotateYClockwise() == Direction.EAST && slot == 0 && stack.isOf(Items.BLAZE_ROD) ||
                         side.rotateYClockwise() == Direction.SOUTH && slot == 1;
                 case SOUTH -> side == Direction.NORTH && slot == 2 ||
                         side == Direction.EAST && slot == 0 ||
                         side == Direction.SOUTH && slot == 1;
                 case WEST -> side.rotateYCounterclockwise() == Direction.NORTH && slot == 2 ||
-                        side.rotateYCounterclockwise() == Direction.EAST && slot == 0 ||
+                        side.rotateYCounterclockwise() == Direction.EAST && slot == 0 && stack.isOf(Items.BLAZE_ROD) ||
                         side.rotateYCounterclockwise() == Direction.SOUTH && slot == 1;
             };
         } else {
@@ -139,7 +136,6 @@ public class UraniumCentrifugeBlockEntity extends BlockEntity implements NamedSc
 
     @Override
     public boolean canExtract(int slot, ItemStack stack, Direction side) {
-        Direction localDir = this.getWorld().getBlockState(this.pos).get(ModUraniumCentrifugeBlock.FACING);
         if(side == Direction.DOWN) {
             return slot == 3;
         }

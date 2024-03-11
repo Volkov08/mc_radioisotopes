@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "radioisotopes:item/boost_rod"
+    "layer0": "radioisotopes:item/beryllium_nugget"
   }
 }

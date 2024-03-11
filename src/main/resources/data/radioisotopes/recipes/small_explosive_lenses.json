@@ -9,12 +9,12 @@
     }
   },
   "pattern": [
-    "GTT",
-    "TTT",
-    "TTT"
+    "   ",
+    " GT",
+    " TT"
   ],
   "result": {
-    "item": "radioisotopes:explosive_lenses",
+    "item": "radioisotopes:small_explosive_lenses",
     "count": 2
   }
 }

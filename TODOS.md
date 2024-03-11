@@ -1,5 +1,7 @@
+# Todo's
+
 Shortterm goals:
-- Improve explosion visuals (e.g. custom renderer)
+- Improve explosion visuals (custom rendering)
 - Special radiation during explosions
 
 Longterm goals:
