@@ -103,14 +103,14 @@ public class ModRegistries {
                 TradeOfferHelper.registerVillagerOffers(ModVillagers.PHYSICIST, 4,
                 factories -> {
                     factories.add((entity, random) -> new TradeOffer(
-                            new ItemStack(ModItems.ELECTRIC_ENGINE, 4),
                             new ItemStack(Items.EMERALD, 24),
+                            new ItemStack(ModItems.ELECTRIC_ENGINE, 4),
                             new ItemStack(ModBlocks.URANIUM_CENTRIFUGE.asItem(), 1),
                             2,30,0.05f));
 
                     factories.add((entity, random) -> new TradeOffer(
-                            new ItemStack(ModItems.ATOMIC_WASTE, 2),
                             new ItemStack(Items.EMERALD, 26),
+                            new ItemStack(ModItems.ATOMIC_WASTE, 2),
                             new ItemStack(ModItems.PLUTONIUM_INGOT, 1),
                             5,26,0.05f));
 
