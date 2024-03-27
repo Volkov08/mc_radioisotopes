@@ -25,6 +25,9 @@
     ],
     "client": [
       "net.volkov.radioisotopes.ClientOnly"
+    ],
+    "emi": [
+      "net.volkov.radioisotopes.compat.emi.ModEmiPlugin"
     ]
   },
   "mixins": [

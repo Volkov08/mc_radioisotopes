@@ -51,19 +51,13 @@ public class ModBlocks {
 
 
     public static final Block DEUTERIUM_GENERATOR = registerBlock("deuterium_generator",
-            new ModDeuteriumGeneratorBlock(FabricBlockSettings.of(Material.METAL).requiresTool().strength(4f).nonOpaque()), ModItemGroup.URANIUM,
-            "tooltip.radioisotopes.deuterium_generator_1", "tooltip.radioisotopes.deuterium_generator_2",
-            "tooltip.radioisotopes.deuterium_generator_3", "tooltip.radioisotopes.deuterium_generator_4");
+            new ModDeuteriumGeneratorBlock(FabricBlockSettings.of(Material.METAL).requiresTool().strength(4f).nonOpaque()), ModItemGroup.URANIUM);
 
     public static final Block URANIUM_CENTRIFUGE = registerBlock("uranium_centrifuge",
-            new ModUraniumCentrifugeBlock(FabricBlockSettings.of(Material.METAL).requiresTool().strength(4f).nonOpaque()), ModItemGroup.URANIUM,
-            "tooltip.radioisotopes.uranium_centrifuge_1", "tooltip.radioisotopes.uranium_centrifuge_2",
-            "tooltip.radioisotopes.uranium_centrifuge_3", "");
+            new ModUraniumCentrifugeBlock(FabricBlockSettings.of(Material.METAL).requiresTool().strength(4f).nonOpaque()), ModItemGroup.URANIUM);
 
     public static final Block ATOMIC_REACTOR_CONTROLLER = registerBlock("atomic_reactor_controller",
-            new ModAtomicReactorControllerBlock(FabricBlockSettings.of(Material.METAL).requiresTool().strength(4f).nonOpaque()), ModItemGroup.URANIUM,
-            "tooltip.radioisotopes.atomic_reactor_controller_1", "tooltip.radioisotopes.atomic_reactor_controller_2",
-            "tooltip.radioisotopes.atomic_reactor_controller_3", "");
+            new ModAtomicReactorControllerBlock(FabricBlockSettings.of(Material.METAL).requiresTool().strength(4f).nonOpaque()), ModItemGroup.URANIUM);
 
     public static final Block INDUSTRIAL_CASING = registerBlock("industrial_casing",
             new Block(FabricBlockSettings.of(Material.METAL).requiresTool().strength(4f).resistance(1000f).nonOpaque()), ModItemGroup.URANIUM);

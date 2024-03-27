@@ -140,5 +140,9 @@
   "advancements.radioisotopes.fusion_bomb.title": "Wasserstoffbombe",
   "advancements.radioisotopes.fusion_bomb.description": "Die erste Gerätschaft zur Kernfusion im großen Maßstab!",
 
-  "radioisotopes.nuke_explosion": "Nukleare Explosion"
+  "radioisotopes.nuke_explosion": "Nukleare Explosion",
+
+  "emi.category.radioisotopes.atomic_reactor_controller": "Atomreaktor",
+  "emi.category.radioisotopes.deuterium_generator": "Deuterium Generator",
+  "emi.category.radioisotopes.uranium_centrifuge": "Uranzentrifuge"
 }

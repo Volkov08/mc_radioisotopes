@@ -47,6 +47,10 @@ public class UraniumCentrifugeRecipe implements Recipe<SimpleInventory> {
         return output.copy();
     }
 
+    public DefaultedList<Ingredient> getInput(){
+        return recipeItems;
+    }
+
     @Override
     public Identifier getId() {
         return id;

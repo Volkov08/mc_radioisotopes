@@ -24,11 +24,11 @@ public class DeuteriumGeneratorRecipe implements Recipe<SimpleInventory> {
 
     @Override
     public boolean matches(SimpleInventory inventory, World world) {
-            if(world.isClient()) { return false; }
-            if(recipeItems.get(0).test(inventory.getStack(1))) {
-                return true;
-            }
-            return false;
+        if(world.isClient()) { return false; }
+        if(recipeItems.get(0).test(inventory.getStack(1))) {
+            return true;
+        }
+        return false;
     }
 
     @Override
@@ -44,6 +44,10 @@ public class DeuteriumGeneratorRecipe implements Recipe<SimpleInventory> {
     @Override
     public ItemStack getOutput() {
         return output.copy();
+    }
+
+    public DefaultedList<Ingredient> getInput(){
+        return recipeItems;
     }
 
     @Override

@@ -21,6 +21,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.world.World;
 import net.volkov.radioisotopes.block.custom.ModUraniumCentrifugeBlock;
+import net.volkov.radioisotopes.item.ModItems;
 import net.volkov.radioisotopes.item.inventory.ImplementedInventory;
 import net.volkov.radioisotopes.recipe.UraniumCentrifugeRecipe;
 import net.volkov.radioisotopes.screen.UraniumCentrifugeScreenHandler;
@@ -35,7 +36,7 @@ public class UraniumCentrifugeBlockEntity extends BlockEntity implements NamedSc
 
     protected final PropertyDelegate propertyDelegate;
     private int progress = 0;
-    private int maxProgress = 6000;
+    private int maxProgress = 5000;
     private int fuelTime = 0;
     private int maxFuelTime = 0;
 
@@ -117,16 +118,16 @@ public class UraniumCentrifugeBlockEntity extends BlockEntity implements NamedSc
 
             return switch (localDir) {
                 default -> side.getOpposite() == Direction.NORTH && slot == 2 ||
-                        side.getOpposite() == Direction.EAST && slot == 0 && stack.isOf(Items.BLAZE_ROD) ||
+                        side.getOpposite() == Direction.EAST && slot == 0 && (stack.isOf(ModItems.LEAD_BATTERY) || stack.isOf(ModItems.FULL_LEAD_BATTERY) || stack.isOf(Items.POTATO)) ||
                         side.getOpposite() == Direction.SOUTH && slot == 1;
                 case EAST -> side.rotateYClockwise() == Direction.NORTH && slot == 2 ||
-                        side.rotateYClockwise() == Direction.EAST && slot == 0 && stack.isOf(Items.BLAZE_ROD) ||
+                        side.rotateYClockwise() == Direction.EAST && slot == 0 && (stack.isOf(ModItems.LEAD_BATTERY) || stack.isOf(ModItems.FULL_LEAD_BATTERY) || stack.isOf(Items.POTATO)) ||
                         side.rotateYClockwise() == Direction.SOUTH && slot == 1;
                 case SOUTH -> side == Direction.NORTH && slot == 2 ||
                         side == Direction.EAST && slot == 0 ||
                         side == Direction.SOUTH && slot == 1;
                 case WEST -> side.rotateYCounterclockwise() == Direction.NORTH && slot == 2 ||
-                        side.rotateYCounterclockwise() == Direction.EAST && slot == 0 && stack.isOf(Items.BLAZE_ROD) ||
+                        side.rotateYCounterclockwise() == Direction.EAST && slot == 0 && (stack.isOf(ModItems.LEAD_BATTERY) || stack.isOf(ModItems.FULL_LEAD_BATTERY) || stack.isOf(Items.POTATO)) ||
                         side.rotateYCounterclockwise() == Direction.SOUTH && slot == 1;
             };
         } else {
@@ -137,6 +138,9 @@ public class UraniumCentrifugeBlockEntity extends BlockEntity implements NamedSc
     @Override
     public boolean canExtract(int slot, ItemStack stack, Direction side) {
         if(side == Direction.DOWN) {
+            if (slot == 0) {
+                return stack.isOf(ModItems.LEAD_BATTERY);
+            }
             return slot == 3;
         }
         return false;
@@ -146,8 +150,15 @@ public class UraniumCentrifugeBlockEntity extends BlockEntity implements NamedSc
 
 
     private void consumeFuel() {
-        if(getStack(0).getItem() == Items.BLAZE_ROD) {
-            this.fuelTime = 2400;
+        if(getStack(0).getItem() == ModItems.FULL_LEAD_BATTERY) {
+            this.fuelTime = 30000;
+            removeStack(0, 1);
+            setStack(0, new ItemStack(ModItems.LEAD_BATTERY, getStack(0).getCount() + 1));
+            this.maxFuelTime = this.fuelTime;
+
+        }
+        else if(getStack(0).getItem() == Items.POTATO) {
+            this.fuelTime = 100;
             removeStack(0, 1);
             this.maxFuelTime = this.fuelTime;
         }

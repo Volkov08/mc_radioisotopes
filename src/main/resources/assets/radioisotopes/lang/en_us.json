@@ -140,6 +140,9 @@
   "advancements.radioisotopes.fusion_bomb.title": "Fusion Bomb",
   "advancements.radioisotopes.fusion_bomb.description": "The first large-scale nuclear fusion device!",
 
-  "radioisotopes.nuke_explosion": "Nuclear Explosion"
+  "radioisotopes.nuke_explosion": "Nuclear Explosion",
 
+  "emi.category.radioisotopes.atomic_reactor_controller": "Atomic Reactor",
+  "emi.category.radioisotopes.deuterium_generator": "Deuterium Generator",
+  "emi.category.radioisotopes.uranium_centrifuge": "Uranium Centrifuge"
 }

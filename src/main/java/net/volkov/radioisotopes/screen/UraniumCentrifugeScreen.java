@@ -55,7 +55,7 @@ public class UraniumCentrifugeScreen extends HandledScreen<UraniumCentrifugeScre
         }
 
         if(handler.hasFuel()) {
-            drawTexture(matrices, x + 34, y + 36 + 14 - handler.getScaledFuelProgress(), 176,
+            drawTexture(matrices, x + 34, y + 37 + 14 - handler.getScaledFuelProgress(), 176,
                     14 - handler.getScaledFuelProgress(), 14, handler.getScaledFuelProgress());
         }
     }

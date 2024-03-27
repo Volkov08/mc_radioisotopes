@@ -132,5 +132,9 @@
     "advancements.radioisotopes.fusion_bomb.title": "Bomba a fusione",
     "advancements.radioisotopes.fusion_bomb.description": "Il primo dispositivo per la fusione nucleare su larga scala!",
   
-    "radioisotopes.nuke_explosion": "Esplosione nucleare"
+    "radioisotopes.nuke_explosion": "Esplosione nucleare",
+
+    "emi.category.radioisotopes.atomic_reactor_controller": "Reattore atomico",
+    "emi.category.radioisotopes.deuterium_generator": "Generatore di deuterio",
+    "emi.category.radioisotopes.uranium_centrifuge": "Centrifuga per uranio"
 }

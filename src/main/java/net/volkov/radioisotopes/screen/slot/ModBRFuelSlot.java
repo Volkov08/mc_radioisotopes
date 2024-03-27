@@ -4,6 +4,7 @@ import net.minecraft.inventory.Inventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.screen.slot.Slot;
+import net.volkov.radioisotopes.item.ModItems;
 
 public class ModBRFuelSlot extends Slot {
     public ModBRFuelSlot(Inventory inventory, int index, int x, int y) {
@@ -13,7 +14,7 @@ public class ModBRFuelSlot extends Slot {
 
     @Override
     public boolean canInsert(ItemStack stack) {
-        return ModBRFuelSlot.isBlazeRod(stack);
+        return ModBRFuelSlot.isEnergy(stack);
     }
 
     @Override
@@ -21,7 +22,7 @@ public class ModBRFuelSlot extends Slot {
         return super.getMaxItemCount(stack);
     }
 
-    public static boolean isBlazeRod(ItemStack stack) {
-        return stack.isOf(Items.BLAZE_ROD);
+    public static boolean isEnergy(ItemStack stack) {
+        return stack.isOf(Items.POTATO) || stack.isOf(ModItems.FULL_LEAD_BATTERY);
     }
 }
