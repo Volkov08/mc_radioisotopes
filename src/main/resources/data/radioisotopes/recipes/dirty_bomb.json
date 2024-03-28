@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "W": {
+      "item": "radioisotopes:atomic_waste"
+    },
+    "T": {
+      "item": "minecraft:tnt"
+    },
+    "I": {
+      "item": "minecraft:iron_ingot"
+    }
+  },
+  "pattern": [
+    "III",
+    "WTW",
+    "III"
+  ],
+  "result": {
+    "item": "radioisotopes:dirty_bomb"
+  }
+}

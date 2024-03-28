@@ -92,6 +92,7 @@
   "block.radioisotopes.implosion_atomic_bomb": "Implosionstyp-Atombombe",
   "block.radioisotopes.boosted_implosion_atomic_bomb": "Geboostete Implosionstyp-Atombombe",
   "block.radioisotopes.fusion_bomb": "Fusionsbombe",
+  "block.radioisotopes.dirty_bomb": "Schmutzige Bombe",
 
   "item.radioisotopes.davy_chrockett": "Davy Chrockett Geschütz",
   "item.radioisotopes.m388_nuclear_round": "Nuklearer Sprengkopf M388",

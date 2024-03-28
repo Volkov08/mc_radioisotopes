@@ -20,6 +20,7 @@
     "radioisotopes:gun_atomic_bomb",
     "radioisotopes:implosion_atomic_bomb",
     "radioisotopes:boosted_implosion_atomic_bomb",
-    "radioisotopes:fusion_bomb"
+    "radioisotopes:fusion_bomb",
+    "radioisotopes:dirty_bomb"
   ]
 }

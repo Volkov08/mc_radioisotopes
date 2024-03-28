@@ -91,6 +91,9 @@ public class ModBlocks {
     public static final Block FUSION_BOMB = registerBlock("fusion_bomb",
             new ModFusionBombBlock(FabricBlockSettings.of(Material.METAL).strength(4.5f)), ModItemGroup.URANIUM);
 
+    public static final Block DIRTY_BOMB = registerBlock("dirty_bomb",
+            new ModDirtyBombBlock(FabricBlockSettings.of(Material.METAL).strength(4.5f)), ModItemGroup.URANIUM);
+
 
     private static Block registerBlock(String name, Block block, ItemGroup group, String tooltipKey_1, String tooltipKey_2, String tooltipKey_3, String tooltipKey_4) {
         registerBlockItem(name, block, group, tooltipKey_1, tooltipKey_2, tooltipKey_3, tooltipKey_4);

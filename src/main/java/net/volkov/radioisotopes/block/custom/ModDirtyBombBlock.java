@@ -2,13 +2,16 @@ package net.volkov.radioisotopes.block.custom;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+import net.minecraft.world.explosion.Explosion;
 import net.volkov.radioisotopes.entity.ModEntities;
 import net.volkov.radioisotopes.entity.NuclearExplosionEntity;
+import net.volkov.radioisotopes.entity.RadEntity;
 
-public class ModBoostedImplosionAtomicBombBlock extends Block {
-    public ModBoostedImplosionAtomicBombBlock(Settings settings) {
+public class ModDirtyBombBlock extends Block {
+    public ModDirtyBombBlock(Settings settings) {
         super(settings);
     }
 
@@ -32,11 +35,12 @@ public class ModBoostedImplosionAtomicBombBlock extends Block {
         if (world.isClient) {
             return;
         }
-        NuclearExplosionEntity nuke = new NuclearExplosionEntity(ModEntities.NUCLEAR_EXPLOSION_ENTITY, world, 62, 8500d);
-        nuke.refreshPositionAndAngles(pos.getX(), pos.getY(), pos.getZ(), 0, 0);
-        world.spawnEntity(nuke);
-
+        
         world.removeBlock(pos, false);
+        world.createExplosion(null, pos.getX(), pos.getY(), pos.getZ(), 4.0f, true, Explosion.DestructionType.BREAK);
+        world.setBlockState(pos, Blocks.LAVA.getDefaultState());
+        RadEntity rad = new RadEntity(ModEntities.RAD_ENTITY, world, 125000, 35d, 9400d, false);
+        rad.refreshPositionAndAngles(pos.getX() + 0.5, pos.getY() + 0.5, pos.getZ() + 0.5, 0, 0);
+        world.spawnEntity(rad);
     }
-
 }

@@ -93,6 +93,7 @@
   "block.radioisotopes.implosion_atomic_bomb": "Implosion-Type Atomic Bomb",
   "block.radioisotopes.boosted_implosion_atomic_bomb": "Boosted Implosion-Type Atomic Bomb",
   "block.radioisotopes.fusion_bomb": "Fusion Bomb",
+  "block.radioisotopes.dirty_bomb": "Dirty Bomb",
 
   "item.radioisotopes.davy_chrockett": "Davy Chrockett Rifle",
   "item.radioisotopes.m388_nuclear_round": "M388 Nuclear Round",

@@ -18,13 +18,13 @@ public class ModFusionBombBlock extends Block {
             return;
         }
         if (world.isReceivingRedstonePower(pos)) {
-            ModFusionBombBlock.primeNuke(world, pos);
+            primeNuke(world, pos);
         }
     }
     @Override
     public void neighborUpdate(BlockState state, World world, BlockPos pos, Block block, BlockPos fromPos, boolean notify) {
         if (world.isReceivingRedstonePower(pos)) {
-            ModFusionBombBlock.primeNuke(world, pos);
+            primeNuke(world, pos);
         }
     }
 
