@@ -80,7 +80,7 @@ public class NuclearExplosionEntity extends Entity {
             }
 
             int i = 0;
-            while (i < 750) {
+            while (i < 1400) {
                 if (y_range >= -radius) {
                     if (x_range <= radius) {
                         if (z_range <= radius) {
