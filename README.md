@@ -9,17 +9,18 @@ and we are working on it in our limited free time.
 
 ## Dependecies
 
-Fabric API (Tested with Version 0.77.0)
+- [Fabric API](https://modrinth.com/mod/fabric-api) (Tested with Version 0.77.0)
+- [EMI Recipe Viewer](https://modrinth.com/mod/emi)
 
 ## Contributing
 Reasonable pull requests are always welcome!
-Please have a look at our TODOS.txt.
+Please have a look at our [TODOS](TODOS.md)-file.
 
 ## Curseforge and Downloads
 
 Modrinth Download: https://modrinth.com/mod/radioisotopes
 
-Curseforge Download: https://www.curseforge.com/minecraft/mc-mods/radioisotopes
+Curseforge Download (no longer maintained): https://www.curseforge.com/minecraft/mc-mods/radioisotopes
 
 **Note:** The mod is currently not available in the Curseforge App!
 
