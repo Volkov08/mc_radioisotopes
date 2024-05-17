@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "T": {
+      "item": "radioisotopes:explosive_lenses"
+    },
+    "P": {
+      "item": "radioisotopes:composite_pit"
+    },
+    "U": {
+      "item": "radioisotopes:uranium_ingot"
+    }
+  },
+  "pattern": [
+    "TUT",
+    "UPU",
+    "TUT"
+  ],
+  "result": {
+    "item": "radioisotopes:implosion_fission_stage"
+  }
+}

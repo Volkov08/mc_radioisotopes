@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "P": {
+      "item": "radioisotopes:plutonium_ingot"
+    },
+    "U": {
+      "item": "radioisotopes:enriched_uranium_ingot"
+    }
+  },
+  "pattern": [
+    " U ",
+    "UPU",
+    " U "
+  ],
+  "result": {
+    "item": "radioisotopes:composite_pit"
+  }
+}

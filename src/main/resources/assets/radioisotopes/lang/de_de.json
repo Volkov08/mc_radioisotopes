@@ -78,6 +78,7 @@
   "item.radioisotopes.atomic_waste": "Atommüll",
   "item.radioisotopes.plutonium_ingot": "Plutoniumbarren",
   "item.radioisotopes.plutonium_pit": "Plutoniumkern",
+  "item.radioisotopes.composite_pit": "Misch-Kern",
   "item.radioisotopes.boost_capsule": "Boostkapsel",
   "item.radioisotopes.boosted_plutonium_pit": "Geboosteter Plutoniumkern",
   "item.radioisotopes.uranium_spark_plug": "Uran 'Spark-Plug'",

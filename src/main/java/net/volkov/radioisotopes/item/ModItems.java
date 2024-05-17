@@ -140,6 +140,8 @@ public class ModItems {
             new Item(new FabricItemSettings().group(ModItemGroup.URANIUM)));
     public static final Item PLUTONIUM_PIT = registerItem("plutonium_pit",
             new Item(new FabricItemSettings().group(ModItemGroup.URANIUM)));
+    public static final Item COMPOSITE_PIT = registerItem("composite_pit",
+            new Item(new FabricItemSettings().group(ModItemGroup.URANIUM)));
     public static final Item BOOST_CAPSULE = registerItem("boost_capsule",
             new Item(new FabricItemSettings().group(ModItemGroup.URANIUM)));
     public static final Item BOOSTED_PLUTONIUM_PIT = registerItem("boosted_plutonium_pit",
