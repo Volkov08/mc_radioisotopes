@@ -1,0 +1,11 @@
+{
+  "type": "radioisotopes:atomic_reactor_controller",
+  "ingredients": [
+    {
+      "item": "radioisotopes:bismuth_ingot"
+    }
+  ],
+  "output": {
+    "item": "radioisotopes:polonium_nugget"
+  }
+}

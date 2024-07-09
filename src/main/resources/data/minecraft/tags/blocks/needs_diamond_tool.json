@@ -4,6 +4,7 @@
     "radioisotopes:deepslate_uranium_ore",
     "radioisotopes:lithium_ore",
     "radioisotopes:uranium_block",
-    "radioisotopes:atomic_reactor_controller"
+    "radioisotopes:bismuth_ore",
+    "radioisotopes:bismuth_block"
   ]
 }

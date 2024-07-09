@@ -21,5 +21,10 @@ public class ModRecipes {
                 AtomicReactorRecipe.Serializer.INSTANCE);
         Registry.register(Registry.RECIPE_TYPE, new Identifier(ClientMain.MOD_ID, AtomicReactorRecipe.Type.ID),
                 AtomicReactorRecipe.Type.INSTANCE);
+
+        Registry.register(Registry.RECIPE_SERIALIZER, new Identifier(ClientMain.MOD_ID, PlutoniumReprocessingPlantRecipe.Serializer.ID),
+                PlutoniumReprocessingPlantRecipe.Serializer.INSTANCE);
+        Registry.register(Registry.RECIPE_TYPE, new Identifier(ClientMain.MOD_ID, PlutoniumReprocessingPlantRecipe.Type.ID),
+                PlutoniumReprocessingPlantRecipe.Type.INSTANCE);
     }
 }

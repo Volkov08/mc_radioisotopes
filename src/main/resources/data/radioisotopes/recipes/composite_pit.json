@@ -6,11 +6,14 @@
     },
     "U": {
       "item": "radioisotopes:enriched_uranium_ingot"
+    },
+    "N": {
+      "item": "radioisotopes:neutron_initiator"
     }
   },
   "pattern": [
-    " U ",
-    "UPU",
+    " P ",
+    "UNP",
     " U "
   ],
   "result": {

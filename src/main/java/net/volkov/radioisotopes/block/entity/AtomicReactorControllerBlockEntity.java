@@ -101,7 +101,7 @@ public class AtomicReactorControllerBlockEntity extends BlockEntity implements N
     }
 
     private void consumeFuel() {
-        if(getStack(0).getItem() == ModItems.NUCLEAR_FUEL_ROD) {
+        if(getStack(0).getItem() == ModItems.NUCLEAR_FUEL_STACK) {
             this.fuelTime = 32000;
             removeStack(0, 1);
             setStack(0, new ItemStack(ModItems.ATOMIC_WASTE, getStack(0).getCount() + 1));
@@ -196,7 +196,7 @@ public class AtomicReactorControllerBlockEntity extends BlockEntity implements N
         if(side == Direction.UP) {
             return slot == 1;
         }
-        return slot == 0 && (stack.isOf(ModItems.ATOMIC_WASTE) || stack.isOf(ModItems.NUCLEAR_FUEL_ROD));
+        return slot == 0 && (stack.isOf(ModItems.ATOMIC_WASTE) || stack.isOf(ModItems.NUCLEAR_FUEL_STACK));
     }
 
     @Override

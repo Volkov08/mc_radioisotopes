@@ -9,11 +9,14 @@
     },
     "C": {
       "item": "radioisotopes:fusion_bomb_casing"
+    },
+    "N": {
+      "item": "radioisotopes:neutron_generator"
     }
   },
   "pattern": [
-    "   ",
-    "FHC",
+    "N  ",
+    "FCH",
     "   "
   ],
   "result": {

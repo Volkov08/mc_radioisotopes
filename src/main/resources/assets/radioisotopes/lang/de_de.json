@@ -7,6 +7,8 @@
   "item.radioisotopes.uranium_ingot": "Uranbarren",
   "item.radioisotopes.uranium_nugget": "Urannugget",
   "item.radioisotopes.nuclear_fuel_rod": "Nuklearer Brennstab",
+  "item.radioisotopes.pobe_rod": "Polonium-Beryllium-Stab",
+  "item.radioisotopes.nuclear_fuel_stack": "Nukleare Brennstoffeinheit",
 
   "item.radioisotopes.uranium_pickaxe": "Uranspitzhacke",
   "item.radioisotopes.uranium_sword": "Uranschwert",
@@ -63,6 +65,9 @@
   "block.radioisotopes.deuterium_generator": "Deuterium Generator",
   "block.radioisotopes.uranium_centrifuge": "Uranzentrifuge",
   "block.radioisotopes.atomic_reactor_controller": "Atomreaktor",
+  "block.radioisotopes.plutonium_reprocessing_plant": "Plutonium-Aufbereitungsanlage",
+  "block.radioisotopes.bismuth_ore": "Bismuterz",
+  "block.radioisotopes.bismuth_block": "Bismutblock",
   "block.radioisotopes.industrial_casing": "Industriegehäuse",
 
   "item.radioisotopes.copper_wire": "Kupferkabel",
@@ -76,10 +81,15 @@
   "item.radioisotopes.batt_low": "Batterie leer!",
 
   "item.radioisotopes.atomic_waste": "Atommüll",
+  "item.radioisotopes.raw_bismuth": "Rohes Bismut",
+  "item.radioisotopes.bismuth_ingot": "Bismutbarren",
+  "item.radioisotopes.polonium_nugget": "Poloniumnugget",
   "item.radioisotopes.plutonium_ingot": "Plutoniumbarren",
+  "item.radioisotopes.neutron_initiator": "Neutroneninitiator",
   "item.radioisotopes.plutonium_pit": "Plutoniumkern",
   "item.radioisotopes.composite_pit": "Misch-Kern",
   "item.radioisotopes.boost_capsule": "Boostkapsel",
+  "item.radioisotopes.neutron_generator": "Neutronengenerator",
   "item.radioisotopes.boosted_plutonium_pit": "Geboosteter Plutoniumkern",
   "item.radioisotopes.uranium_spark_plug": "Uran 'Spark-Plug'",
 
@@ -118,7 +128,7 @@
 
   "effect.radioisotopes.radiation_poisoning": "Strahlung",
 
-  "itemGroup.radioisotopes.uranium": "Uran",
+  "itemGroup.radioisotopes.uranium": "Radioisotopes",
 
   "entity.minecraft.villager.physicist": "Physiker",
 
@@ -146,5 +156,6 @@
 
   "emi.category.radioisotopes.atomic_reactor_controller": "Atomreaktor",
   "emi.category.radioisotopes.deuterium_generator": "Deuterium Generator",
-  "emi.category.radioisotopes.uranium_centrifuge": "Uranzentrifuge"
+  "emi.category.radioisotopes.uranium_centrifuge": "Uranzentrifuge",
+  "emi.category.radioisotopes.plutonium_reprocessing_plant": "Plutonium-Aufbereitungsanlage"
 }

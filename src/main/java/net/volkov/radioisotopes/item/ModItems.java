@@ -22,6 +22,12 @@ public class ModItems {
             new Item(new FabricItemSettings().group(ModItemGroup.URANIUM)));
 
     public static final Item NUCLEAR_FUEL_ROD = registerItem("nuclear_fuel_rod",
+            new Item(new FabricItemSettings().group(ModItemGroup.URANIUM)));
+
+    public static final Item POBE_ROD = registerItem("pobe_rod",
+            new Item(new FabricItemSettings().group(ModItemGroup.URANIUM)));
+
+    public static final Item NUCLEAR_FUEL_STACK = registerItem("nuclear_fuel_stack",
             new Item(new FabricItemSettings().maxCount(1).group(ModItemGroup.URANIUM)));
 
     public static final Item URANIUM_SWORD = registerItem("uranium_sword",
@@ -44,6 +50,8 @@ public class ModItems {
             new ModShovelItem(ModToolMaterials.URANIUM, 2, -3.0f,
                     new FabricItemSettings().group(ModItemGroup.URANIUM)));
 
+    public static final Item FLUORINE = registerItem("fluorine",
+            new Item(new FabricItemSettings().group(ModItemGroup.URANIUM)));
     public static final Item ENRICHED_URANIUM_INGOT = registerItem("enriched_uranium_ingot",
             new Item(new FabricItemSettings().group(ModItemGroup.URANIUM)));
     public static final Item ENRICHED_URANIUM_NUGGET = registerItem("enriched_uranium_nugget",
@@ -130,19 +138,25 @@ public class ModItems {
     public static final Item FULL_LEAD_BATTERY = registerItem("full_lead_battery",
             new Item(new FabricItemSettings().recipeRemainder(LEAD_BATTERY).maxCount(1).group(ModItemGroup.URANIUM)));
 
-    public static final Item FLUORINE = registerItem("fluorine",
-            new Item(new FabricItemSettings().group(ModItemGroup.URANIUM)));
-
     public static final Item ATOMIC_WASTE = registerItem("atomic_waste",
             new Item(new FabricItemSettings().group(ModItemGroup.URANIUM)));
-
+    public static final Item RAW_BISMUTH = registerItem("raw_bismuth",
+            new Item(new FabricItemSettings().group(ModItemGroup.URANIUM)));
+    public static final Item BISMUTH_INGOT = registerItem("bismuth_ingot",
+            new Item(new FabricItemSettings().group(ModItemGroup.URANIUM)));
+    public static final Item POLONIUM_NUGGET = registerItem("polonium_nugget",
+            new Item(new FabricItemSettings().group(ModItemGroup.URANIUM)));
     public static final Item PLUTONIUM_INGOT = registerItem("plutonium_ingot",
+            new Item(new FabricItemSettings().group(ModItemGroup.URANIUM)));
+    public static final Item NEUTRON_INITIATOR = registerItem("neutron_initiator",
             new Item(new FabricItemSettings().group(ModItemGroup.URANIUM)));
     public static final Item PLUTONIUM_PIT = registerItem("plutonium_pit",
             new Item(new FabricItemSettings().group(ModItemGroup.URANIUM)));
     public static final Item COMPOSITE_PIT = registerItem("composite_pit",
             new Item(new FabricItemSettings().group(ModItemGroup.URANIUM)));
     public static final Item BOOST_CAPSULE = registerItem("boost_capsule",
+            new Item(new FabricItemSettings().group(ModItemGroup.URANIUM)));
+    public static final Item NEUTRON_GENERATOR = registerItem("neutron_generator",
             new Item(new FabricItemSettings().group(ModItemGroup.URANIUM)));
     public static final Item BOOSTED_PLUTONIUM_PIT = registerItem("boosted_plutonium_pit",
             new Item(new FabricItemSettings().group(ModItemGroup.URANIUM)));

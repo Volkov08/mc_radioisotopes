@@ -11,6 +11,7 @@ public class ModBlockEntities {
     public static BlockEntityType<DeuteriumGeneratorBlockEntity> DEUTERIUM_GENERATOR;
     public static BlockEntityType<UraniumCentrifugeBlockEntity> URANIUM_CENTRIFUGE;
     public static BlockEntityType<AtomicReactorControllerBlockEntity> ATOMIC_REACTOR_CONTROLLER;
+    public static BlockEntityType<PlutoniumReprocessingPlantBlockEntity> PLUTONIUM_REPROCESSING_PLANT;
 
     public static void registerAllBlockEntities() {
         ClientMain.LOGGER.info("Registering mod block entities for " + ClientMain.MOD_ID);
@@ -26,6 +27,10 @@ public class ModBlockEntities {
                 new Identifier(ClientMain.MOD_ID, "atomic_reactor_controller"),
                 FabricBlockEntityTypeBuilder.create(AtomicReactorControllerBlockEntity::new,
                         ModBlocks.ATOMIC_REACTOR_CONTROLLER).build(null));
+        PLUTONIUM_REPROCESSING_PLANT = Registry.register(Registry.BLOCK_ENTITY_TYPE,
+                new Identifier(ClientMain.MOD_ID, "plutonium_reprocessing_plant"),
+                FabricBlockEntityTypeBuilder.create(PlutoniumReprocessingPlantBlockEntity::new,
+                        ModBlocks.PLUTONIUM_REPROCESSING_PLANT).build(null));
     }
 
 }

@@ -7,6 +7,8 @@
   "item.radioisotopes.uranium_ingot": "Uranium Ingot",
   "item.radioisotopes.uranium_nugget": "Uranium Nugget",
   "item.radioisotopes.nuclear_fuel_rod": "Nuclear Fuel Rod",
+  "item.radioisotopes.pobe_rod": "Polonium-Beryllium Rod",
+  "item.radioisotopes.nuclear_fuel_stack": "Nuclear Fuel Stack",
 
   "item.radioisotopes.uranium_pickaxe": "Uranium Pickaxe",
   "item.radioisotopes.uranium_sword": "Uranium Sword",
@@ -62,6 +64,9 @@
   "block.radioisotopes.deuterium_generator": "Deuterium Generator",
   "block.radioisotopes.uranium_centrifuge": "Uranium Centrifuge",
   "block.radioisotopes.atomic_reactor_controller": "Atomic Reactor",
+  "block.radioisotopes.plutonium_reprocessing_plant": "Plutonium Reprocessing Plant",
+  "block.radioisotopes.bismuth_ore": "Bismuth Ore",
+  "block.radioisotopes.bismuth_block": "Bismuth Block",
   "block.radioisotopes.industrial_casing": "Industrial Casing",
 
   "block.radioisotopes.end_stone_tenebrium_ore": "Tenebrium Ore",
@@ -77,10 +82,15 @@
   "item.radioisotopes.batt_low": "Battery low!",
 
   "item.radioisotopes.atomic_waste": "Atomic Waste",
+  "item.radioisotopes.raw_bismuth": "Raw Bismuth",
+  "item.radioisotopes.bismuth_ingot": "Bismuth Ingot",
+  "item.radioisotopes.polonium_nugget": "Polonium Nugget",
   "item.radioisotopes.plutonium_ingot": "Plutonium Ingot",
+  "item.radioisotopes.neutron_initiator": "Neutron Initiator",
   "item.radioisotopes.plutonium_pit": "Plutonium Pit",
   "item.radioisotopes.composite_pit": "Composite Pit",
   "item.radioisotopes.boost_capsule": "Boost-Capsule",
+  "item.radioisotopes.neutron_generator": "Neutron Generator",
   "item.radioisotopes.boosted_plutonium_pit": "Boosted Plutonium Pit",
   "item.radioisotopes.uranium_spark_plug": "Uranium 'Spark-Plug'",
 
@@ -119,7 +129,7 @@
 
   "effect.radioisotopes.radiation_poisoning": "Radiation",
 
-  "itemGroup.radioisotopes.uranium": "Uranium Items",
+  "itemGroup.radioisotopes.uranium": "Radioisotopes",
 
   "entity.minecraft.villager.physicist": "Physicist",
 
@@ -146,5 +156,6 @@
 
   "emi.category.radioisotopes.atomic_reactor_controller": "Atomic Reactor",
   "emi.category.radioisotopes.deuterium_generator": "Deuterium Generator",
-  "emi.category.radioisotopes.uranium_centrifuge": "Uranium Centrifuge"
+  "emi.category.radioisotopes.uranium_centrifuge": "Uranium Centrifuge",
+  "emi.category.radioisotopes.plutonium_reprocessing_plant": "Plutonium Reprocessing Plant"
 }

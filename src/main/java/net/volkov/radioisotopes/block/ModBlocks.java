@@ -49,16 +49,6 @@ public class ModBlocks {
             new PaneBlock(FabricBlockSettings.of(Material.GLASS).strength(0.3f).luminance(6).nonOpaque().sounds(BlockSoundGroup.GLASS)) {
             }, ModItemGroup.URANIUM);
 
-
-    public static final Block DEUTERIUM_GENERATOR = registerBlock("deuterium_generator",
-            new ModDeuteriumGeneratorBlock(FabricBlockSettings.of(Material.METAL).requiresTool().strength(4f).nonOpaque()), ModItemGroup.URANIUM);
-
-    public static final Block URANIUM_CENTRIFUGE = registerBlock("uranium_centrifuge",
-            new ModUraniumCentrifugeBlock(FabricBlockSettings.of(Material.METAL).requiresTool().strength(4f).nonOpaque()), ModItemGroup.URANIUM);
-
-    public static final Block ATOMIC_REACTOR_CONTROLLER = registerBlock("atomic_reactor_controller",
-            new ModAtomicReactorControllerBlock(FabricBlockSettings.of(Material.METAL).requiresTool().strength(4f).nonOpaque()), ModItemGroup.URANIUM);
-
     public static final Block INDUSTRIAL_CASING = registerBlock("industrial_casing",
             new Block(FabricBlockSettings.of(Material.METAL).requiresTool().strength(4f).resistance(1000f).nonOpaque()), ModItemGroup.URANIUM);
 
@@ -81,6 +71,25 @@ public class ModBlocks {
     public static final Block LITHIUM_ORE = registerBlock("lithium_ore",
             new OreBlock(FabricBlockSettings.of(Material.STONE).strength(4.0f).requiresTool(),
                     UniformIntProvider.create(2, 6)), ModItemGroup.URANIUM);
+
+    public static final Block BISMUTH_ORE = registerBlock("bismuth_ore",
+            new OreBlock(FabricBlockSettings.of(Material.STONE).strength(4.0f).requiresTool(),
+                    UniformIntProvider.create(2, 6)), ModItemGroup.URANIUM);
+    public static final Block BISMUTH_BLOCK = registerBlock("bismuth_block",
+            new OreBlock(FabricBlockSettings.of(Material.STONE).strength(4.0f).requiresTool(),
+                    UniformIntProvider.create(2, 6)), ModItemGroup.URANIUM);
+
+    public static final Block DEUTERIUM_GENERATOR = registerBlock("deuterium_generator",
+            new ModDeuteriumGeneratorBlock(FabricBlockSettings.of(Material.METAL).requiresTool().strength(4f).nonOpaque()), ModItemGroup.URANIUM);
+
+    public static final Block URANIUM_CENTRIFUGE = registerBlock("uranium_centrifuge",
+            new ModUraniumCentrifugeBlock(FabricBlockSettings.of(Material.METAL).requiresTool().strength(4f).nonOpaque()), ModItemGroup.URANIUM);
+
+    public static final Block ATOMIC_REACTOR_CONTROLLER = registerBlock("atomic_reactor_controller",
+            new ModAtomicReactorControllerBlock(FabricBlockSettings.of(Material.METAL).requiresTool().strength(4f).nonOpaque()), ModItemGroup.URANIUM);
+
+    public static final Block PLUTONIUM_REPROCESSING_PLANT = registerBlock("plutonium_reprocessing_plant",
+            new ModPlutoniumReprocessingPlantBlock(FabricBlockSettings.of(Material.METAL).requiresTool().strength(4f).nonOpaque()), ModItemGroup.URANIUM);
 
     public static final Block GUN_ATOMIC_BOMB = registerBlock("gun_atomic_bomb",
             new ModGunAtomicBombBlock(FabricBlockSettings.of(Material.METAL).strength(4.5f)), ModItemGroup.URANIUM);

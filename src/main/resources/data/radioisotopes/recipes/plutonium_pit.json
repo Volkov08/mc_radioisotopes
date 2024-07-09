@@ -3,11 +3,14 @@
   "key": {
     "P": {
       "item": "radioisotopes:plutonium_ingot"
+    },
+    "N": {
+      "item": "radioisotopes:neutron_initiator"
     }
   },
   "pattern": [
     " P ",
-    "P P",
+    "PNP",
     " P "
   ],
   "result": {

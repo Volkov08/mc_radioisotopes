@@ -17,6 +17,7 @@
     "iUi"
   ],
   "result": {
-    "item": "radioisotopes:nuclear_fuel_rod"
+    "item": "radioisotopes:nuclear_fuel_rod",
+    "count": 2
   }
 }

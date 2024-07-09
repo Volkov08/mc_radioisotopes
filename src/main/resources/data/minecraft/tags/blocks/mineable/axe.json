@@ -1,5 +1,13 @@
 {
   "values": [
-
+    "radioisotopes:deuterium_generator",
+    "radioisotopes:uranium_centrifuge",
+    "radioisotopes:atomic_reactor_controller",
+    "radioisotopes:plutonium_reprocessing_plant",
+    "radioisotopes:gun_atomic_bomb",
+    "radioisotopes:implosion_atomic_bomb",
+    "radioisotopes:boosted_implosion_atomic_bomb",
+    "radioisotopes:fusion_bomb",
+    "radioisotopes:dirty_bomb"
   ]
 }

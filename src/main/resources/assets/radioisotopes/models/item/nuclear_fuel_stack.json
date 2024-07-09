@@ -1,0 +1,6 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "radioisotopes:item/nuclear_fuel_stack"
+  }
+}

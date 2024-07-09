@@ -9,6 +9,7 @@ public class ModScreenHandlers {
     public static ScreenHandlerType<DeuteriumGeneratorScreenHandler> DEUTERIUM_GENERATOR_SCREEN_HANDLER;
     public static ScreenHandlerType<UraniumCentrifugeScreenHandler> URANIUM_CENTRIFUGE_SCREEN_HANDLER;
     public static ScreenHandlerType<AtomicReactorControllerScreenHandler> ATOMIC_REACTOR_CONTROLLER_SCREEN_HANDLER;
+    public static ScreenHandlerType<PlutoniumReprocessingPlantScreenHandler> PLUTONIUM_REPROCESSING_PLANT_SCREEN_HANDLER;
 
     public static void registerAllScreenHandler() {
         ClientMain.LOGGER.info("Registering mod screens for " + ClientMain.MOD_ID);
@@ -21,6 +22,9 @@ public class ModScreenHandlers {
         ATOMIC_REACTOR_CONTROLLER_SCREEN_HANDLER =
                 ScreenHandlerRegistry.registerSimple(new Identifier(ClientMain.MOD_ID, "atomic_reactor_controller"),
                         AtomicReactorControllerScreenHandler::new);
+        PLUTONIUM_REPROCESSING_PLANT_SCREEN_HANDLER =
+                ScreenHandlerRegistry.registerSimple(new Identifier(ClientMain.MOD_ID, "plutonium_reprocessing_plant"),
+                        PlutoniumReprocessingPlantScreenHandler::new);
     }
 
 }

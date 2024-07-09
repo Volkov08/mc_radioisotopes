@@ -6,10 +6,13 @@
     },
     "I": {
       "item": "minecraft:iron_ingot"
+    },
+    "N": {
+      "item": "radioisotopes:neutron_generator"
     }
   },
   "pattern": [
-    "III",
+    "INI",
     "IFI",
     "III"
   ],

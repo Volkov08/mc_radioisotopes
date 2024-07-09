@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "I": {
+      "item": "minecraft:iron_nugget"
+    },
+    "P": {
+      "item": "radioisotopes:polonium_nugget"
+    },
+    "B": {
+      "item": "radioisotopes:beryllium_ingot"
+    }
+  },
+  "pattern": [
+    "III",
+    "PIB",
+    "III"
+  ],
+  "result": {
+    "item": "radioisotopes:neutron_initiator"
+  }
+}

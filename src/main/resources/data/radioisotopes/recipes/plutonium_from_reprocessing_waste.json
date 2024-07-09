@@ -1,0 +1,13 @@
+{
+  "type": "radioisotopes:plutonium_reprocessing_plant",
+  "ingredients": [
+    {
+      "item": "radioisotopes:atomic_waste"
+    },{
+      "item": "radioisotopes:bismuth_ingot"
+    }
+  ],
+  "output": {
+    "item": "radioisotopes:plutonium_ingot"
+  }
+}

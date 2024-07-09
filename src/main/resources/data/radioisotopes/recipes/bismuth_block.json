@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "radioisotopes:bismuth_ingot"
+    }
+  },
+  "result": {
+    "item": "radioisotopes:bismuth_block"
+  }
+}

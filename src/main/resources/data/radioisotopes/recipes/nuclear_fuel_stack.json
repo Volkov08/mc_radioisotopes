@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "F": {
+      "item": "radioisotopes:nuclear_fuel_rod"
+    },
+    "N": {
+      "item": "radioisotopes:pobe_rod"
+    },
+    "R": {
+      "item": "radioisotopes:tungsten_carbide_ingot"
+    }
+  },
+  "pattern": [
+    "RFR",
+    "FNF",
+    "RFR"
+  ],
+  "result": {
+    "item": "radioisotopes:nuclear_fuel_stack"
+  }
+}

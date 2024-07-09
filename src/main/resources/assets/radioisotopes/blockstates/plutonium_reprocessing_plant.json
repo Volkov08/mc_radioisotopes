@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=north": { "model": "radioisotopes:block/plutonium_reprocessing_plant" },
+    "facing=east": { "model": "radioisotopes:block/plutonium_reprocessing_plant", "y": 90 },
+    "facing=south": { "model": "radioisotopes:block/plutonium_reprocessing_plant", "y": 180 },
+    "facing=west": { "model": "radioisotopes:block/plutonium_reprocessing_plant", "y": 270 }
+  }
+}

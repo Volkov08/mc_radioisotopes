@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:blasting",
+  "ingredient": {
+    "item": "radioisotopes:raw_bismuth"
+  },
+  "result": "radioisotopes:bismuth_ingot",
+  "experience": 1.5,
+  "cookingtime": 150
+}

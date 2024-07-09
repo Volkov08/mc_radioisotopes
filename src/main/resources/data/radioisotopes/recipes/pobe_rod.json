@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "P": {
+      "item": "radioisotopes:polonium_nugget"
+    },
+    "B": {
+      "item": "radioisotopes:beryllium_ingot"
+    },
+    "i": {
+      "item": "minecraft:iron_ingot"
+    }
+  },
+  "pattern": [
+    "iBi",
+    "iPi",
+    "iBi"
+  ],
+  "result": {
+    "item": "radioisotopes:pobe_rod"
+  }
+}

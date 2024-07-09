@@ -57,7 +57,7 @@ public class AtomicReactorEmiRecipe implements EmiRecipe {
     public void addWidgets(WidgetHolder widgets) {
         widgets.addFillingArrow(26, 1, 5000);
         widgets.addSlot(input.get(0), 0, 0);
-        widgets.addSlot(EmiStack.of(ModItems.NUCLEAR_FUEL_ROD), 0, 20);
+        widgets.addSlot(EmiStack.of(ModItems.NUCLEAR_FUEL_STACK), 0, 20);
         widgets.addTexture(EmiTexture.EMPTY_FLAME, 20, 22);
         widgets.addAnimatedTexture(EmiTexture.FULL_FLAME, 20, 22, 15000, false, true, true);
         widgets.addSlot(output.get(0), 58, 0).recipeContext(this);

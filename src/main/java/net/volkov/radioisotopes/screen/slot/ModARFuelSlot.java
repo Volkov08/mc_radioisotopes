@@ -22,6 +22,6 @@ public class ModARFuelSlot extends Slot {
     }
 
     public static boolean isFuelRod(ItemStack stack) {
-        return stack.isOf(ModItems.NUCLEAR_FUEL_ROD);
+        return stack.isOf(ModItems.NUCLEAR_FUEL_STACK);
     }
 }

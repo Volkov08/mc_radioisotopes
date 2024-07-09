@@ -99,30 +99,39 @@ public class ModRegistries {
                             new ItemStack(ModItems.DEUTERIUM, 1),
                             new ItemStack(Items.EMERALD, 12),
                             8,24,0.05f));
+                    factories.add((entity, random) -> new TradeOffer(
+                            new ItemStack(Items.EMERALD, 20),
+                            new ItemStack(ModItems.POLONIUM_NUGGET, 1),
+                            3,26,0.05f));
                 });
                 TradeOfferHelper.registerVillagerOffers(ModVillagers.PHYSICIST, 4,
                 factories -> {
                     factories.add((entity, random) -> new TradeOffer(
-                            new ItemStack(Items.EMERALD, 24),
+                            new ItemStack(Items.EMERALD, 40),
                             new ItemStack(ModItems.ELECTRIC_ENGINE, 4),
                             new ItemStack(ModBlocks.URANIUM_CENTRIFUGE.asItem(), 1),
+                            3,35,0.05f));
+
+                    factories.add((entity, random) -> new TradeOffer(
+                            new ItemStack(Items.EMERALD, 35),
+                            new ItemStack(ModBlocks.PLUTONIUM_REPROCESSING_PLANT, 1),
                             2,30,0.05f));
 
                     factories.add((entity, random) -> new TradeOffer(
                             new ItemStack(Items.EMERALD, 26),
-                            new ItemStack(ModItems.ATOMIC_WASTE, 2),
-                            new ItemStack(ModItems.PLUTONIUM_INGOT, 1),
-                            5,26,0.05f));
-
-                    factories.add((entity, random) -> new TradeOffer(
-                            new ItemStack(Items.EMERALD, 38),
                             new ItemStack(ModItems.LITHIUM_INGOT, 1),
                             3,26,0.05f));
+
+                    factories.add((entity, random) -> new TradeOffer(
+                            new ItemStack(Items.EMERALD, 28),
+                            new ItemStack(ModItems.NEUTRON_GENERATOR, 1),
+                            2,24,0.05f));
 
                     factories.add((entity, random) -> new TradeOffer(
                             new ItemStack(ModItems.RAD_DETECTOR, 1),
                             new ItemStack(Items.EMERALD, 16),
                             6,20,0.05f));
+
 
                     /*
                     factories.add((entity, random) -> new TradeOffer(

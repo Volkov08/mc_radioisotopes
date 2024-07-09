@@ -18,6 +18,10 @@ public class ModPlacedFeatures {
             ModConfiguredFeatures.LITHIUM_ORE, ModOreFeatures.modifiersWithCount(6,
                     HeightRangePlacementModifier.trapezoid(YOffset.fixed(-15), YOffset.fixed(75))));
 
+    public static final RegistryEntry<PlacedFeature> BISMUTH_ORE_PLACED = PlacedFeatures.register("bismuth_ore_placed",
+            ModConfiguredFeatures.BISMUTH_ORE, ModOreFeatures.modifiersWithCount(6,
+                    HeightRangePlacementModifier.trapezoid(YOffset.fixed(15), YOffset.fixed(75))));
+
     public static final RegistryEntry<PlacedFeature> END_TENEBRIUM_ORE_PLACED = PlacedFeatures.register("end_tenebrium_ore_placed",
             ModConfiguredFeatures.END_TENEBRIUM_ORE, ModOreFeatures.modifiersWithCount(4,
                     HeightRangePlacementModifier.uniform(YOffset.fixed(-80), YOffset.fixed(80))));
