@@ -3,8 +3,8 @@ package net.volkov.radioisotopes.entity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.EquipmentSlot;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffectInstance;
-import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ArmorItem;
 import net.minecraft.item.ArmorMaterial;
 import net.minecraft.item.Item;
@@ -13,6 +13,7 @@ import net.minecraft.nbt.NbtCompound;
 import net.minecraft.network.Packet;
 import net.minecraft.network.packet.s2c.play.EntitySpawnS2CPacket;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.Box;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 import net.volkov.radioisotopes.block.ModBlocks;
@@ -62,84 +63,88 @@ public class RadEntity extends Entity {
             } else {
                 tickCounter = 0; // reset tickCounter to 0
             }
-
-            for (PlayerEntity player : world.getPlayers()) {
-                protCheck(player);
+            for (LivingEntity entity : world.getEntitiesByClass(LivingEntity.class, new Box(this.getBlockPos()).expand(distance), entity -> true)) {
+                protCheck(entity);
             }
         }
     }
 
-    private boolean hasArmorOn(PlayerEntity player, ArmorMaterial material) {
-        int leadArmorCount = 0;
-        for (ItemStack armorItem : player.getArmorItems()) {
-            Item item = armorItem.getItem();
-            if (item instanceof ArmorItem && ((ArmorItem) item).getMaterial() == material) {
-                EquipmentSlot slotType = ((ArmorItem) item).getSlotType();
-                if (slotType == EquipmentSlot.HEAD || slotType == EquipmentSlot.CHEST
-                        || slotType == EquipmentSlot.LEGS || slotType == EquipmentSlot.FEET) {
-                    leadArmorCount++;
+    private boolean hasArmorOn(LivingEntity entity, ArmorMaterial material) {
+        if (entity.isPlayer()) {
+            int leadArmorCount = 0;
+            for (ItemStack armorItem : entity.getArmorItems()) {
+                Item item = armorItem.getItem();
+                if (item instanceof ArmorItem && ((ArmorItem) item).getMaterial() == material) {
+                    EquipmentSlot slotType = ((ArmorItem) item).getSlotType();
+                    if (slotType == EquipmentSlot.HEAD || slotType == EquipmentSlot.CHEST
+                            || slotType == EquipmentSlot.LEGS || slotType == EquipmentSlot.FEET) {
+                        leadArmorCount++;
+                    }
                 }
             }
+            boolean hasLeadArmor = leadArmorCount == 4;
+            return hasLeadArmor;
         }
-        boolean hasLeadArmor = leadArmorCount == 4;
-        return hasLeadArmor;
+        return false;
     }
 
-    private void applyEffect(PlayerEntity player, double max_distance, double div) {
+    private void applyEffect(LivingEntity entity, double max_distance, double div) {
         double r_dur = ((double) lifetime) / full_lifetime * strength;
         double f_dur = r_dur - (max_distance * r_dur / distance);
         if (f_dur >= 200.0d) {
-            if (!player.hasStatusEffect(ModEffects.RAD_POISON)) {
+            if (!entity.hasStatusEffect(ModEffects.RAD_POISON)) {
                 if (f_dur >= div) {
-                    if (!hasArmorOn(player, ModArmorMaterials.HEAVY_LEAD)) {
-                        if (hasArmorOn(player, ModArmorMaterials.LEAD)) {
-                            player.addStatusEffect(new StatusEffectInstance(ModEffects.RAD_POISON, (int) Math.round(f_dur / 2), 0));
+                    if (!hasArmorOn(entity, ModArmorMaterials.HEAVY_LEAD)) {
+                        if (hasArmorOn(entity, ModArmorMaterials.LEAD)) {
+                            entity.addStatusEffect(new StatusEffectInstance(ModEffects.RAD_POISON, (int) Math.round(f_dur / 2), 0));
                         }
                         else {
-                            player.addStatusEffect(new StatusEffectInstance(ModEffects.RAD_POISON, (int) Math.round(f_dur), 0));
+                            entity.addStatusEffect(new StatusEffectInstance(ModEffects.RAD_POISON, (int) Math.round(f_dur), 0));
                         }
                     }
                 } else {
-                    if (!hasArmorOn(player, ModArmorMaterials.LEAD) && !hasArmorOn(player, ModArmorMaterials.HEAVY_LEAD)) {
-                        player.addStatusEffect(new StatusEffectInstance(ModEffects.RAD_POISON, (int) Math.round(f_dur), 0));
+                    if (!hasArmorOn(entity, ModArmorMaterials.LEAD) && !hasArmorOn(entity, ModArmorMaterials.HEAVY_LEAD)) {
+                        entity.addStatusEffect(new StatusEffectInstance(ModEffects.RAD_POISON, (int) Math.round(f_dur), 0));
                     }
                 }
-            } else if (player.getStatusEffect(ModEffects.RAD_POISON).getDuration() < 40000) {
+            } else if (entity.getStatusEffect(ModEffects.RAD_POISON).getDuration() < 40000) {
                 if (f_dur >= div) {
-                    if (!hasArmorOn(player, ModArmorMaterials.HEAVY_LEAD)) {
-                        if (hasArmorOn(player, ModArmorMaterials.LEAD)) {
-                            player.addStatusEffect(new StatusEffectInstance(ModEffects.RAD_POISON, Math.min((int)(player.getStatusEffect(ModEffects.RAD_POISON).getDuration() + Math.round(f_dur / 2)), 40000), 0));
+                    if (!hasArmorOn(entity, ModArmorMaterials.HEAVY_LEAD)) {
+                        if (hasArmorOn(entity, ModArmorMaterials.LEAD)) {
+                            entity.addStatusEffect(new StatusEffectInstance(ModEffects.RAD_POISON, Math.min((int)(entity.getStatusEffect(ModEffects.RAD_POISON).getDuration() + Math.round(f_dur / 2)), 40000), 0));
                         }
                         else {
-                            player.addStatusEffect(new StatusEffectInstance(ModEffects.RAD_POISON, Math.min((int)(player.getStatusEffect(ModEffects.RAD_POISON).getDuration() + Math.round(f_dur)), 40000), 0));
+                            entity.addStatusEffect(new StatusEffectInstance(ModEffects.RAD_POISON, Math.min((int)(entity.getStatusEffect(ModEffects.RAD_POISON).getDuration() + Math.round(f_dur)), 40000), 0));
                         }
                     }
                 } else {
-                    if (!hasArmorOn(player, ModArmorMaterials.LEAD) && !hasArmorOn(player, ModArmorMaterials.HEAVY_LEAD)) {
-                        player.addStatusEffect(new StatusEffectInstance(ModEffects.RAD_POISON, Math.min((int)(player.getStatusEffect(ModEffects.RAD_POISON).getDuration() + Math.round(f_dur)), 40000), 0));
+                    if (!hasArmorOn(entity, ModArmorMaterials.LEAD) && !hasArmorOn(entity, ModArmorMaterials.HEAVY_LEAD)) {
+                        entity.addStatusEffect(new StatusEffectInstance(ModEffects.RAD_POISON, Math.min((int)(entity.getStatusEffect(ModEffects.RAD_POISON).getDuration() + Math.round(f_dur)), 40000), 0));
                     }
                 }
             }
         }
     }
 
-    private void protCheck(PlayerEntity player) {
+    private void protCheck(LivingEntity entity) {
         Vec3d entityPos = this.getPos();
-        Vec3d playerPos = player.getPos().add(0d, player.getEyeHeight(player.getPose()), 0d);
+        Vec3d playerPos = entity.getPos().add(0d, entity.getEyeHeight(entity.getPose()), 0d);
         double maxDistance = entityPos.distanceTo(playerPos);
-        if (canShield) {
-            Vec3d rayDir = playerPos.subtract(entityPos).normalize();
-            if (maxDistance <= distance) {
+        if (maxDistance <= this.distance) {
+            if (canShield) {
+                Vec3d rayDir = playerPos.subtract(entityPos).normalize();
                 BlockPos.Mutable pos = new BlockPos.Mutable();
-                for (double ray_distance = 0d; ray_distance < maxDistance; ray_distance += 0.05d) {
+                for (double ray_distance = 0d; ray_distance < maxDistance; ray_distance += 0.08d) {
                     pos.set(entityPos.add(rayDir.multiply(ray_distance)).getX(), entityPos.add(rayDir.multiply(ray_distance)).getY(), entityPos.add(rayDir.multiply(ray_distance)).getZ());
                     if (world.getBlockState(pos).getBlock() == ModBlocks.LEAD_BLOCK || world.getBlockState(pos).getBlock() == ModBlocks.INDUSTRIAL_CASING || world.getBlockState(pos).getBlock() == ModBlocks.LEAD_WALL) {
                         return;
                     }
                 }
             }
+        } else {
+            return;
         }
-        applyEffect(player, maxDistance, 3200d);
+        applyEffect(entity, maxDistance, 3200d);
     }
 
     @Override

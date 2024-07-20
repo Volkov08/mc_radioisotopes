@@ -39,7 +39,7 @@ public class ModDirtyBombBlock extends Block {
         world.removeBlock(pos, false);
         world.createExplosion(null, pos.getX(), pos.getY(), pos.getZ(), 4.0f, true, Explosion.DestructionType.BREAK);
         world.setBlockState(pos, Blocks.LAVA.getDefaultState());
-        RadEntity rad = new RadEntity(ModEntities.RAD_ENTITY, world, 125000, 35d, 9400d, false);
+        RadEntity rad = new RadEntity(ModEntities.RAD_ENTITY, world, 125000, 35d, 9400d, true);
         rad.refreshPositionAndAngles(pos.getX() + 0.5, pos.getY() + 0.5, pos.getZ() + 0.5, 0, 0);
         world.spawnEntity(rad);
     }
