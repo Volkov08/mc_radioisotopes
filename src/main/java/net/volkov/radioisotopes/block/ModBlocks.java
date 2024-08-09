@@ -76,8 +76,7 @@ public class ModBlocks {
             new OreBlock(FabricBlockSettings.of(Material.STONE).strength(4.0f).requiresTool(),
                     UniformIntProvider.create(2, 6)), ModItemGroup.URANIUM);
     public static final Block BISMUTH_BLOCK = registerBlock("bismuth_block",
-            new OreBlock(FabricBlockSettings.of(Material.STONE).strength(4.0f).requiresTool(),
-                    UniformIntProvider.create(2, 6)), ModItemGroup.URANIUM);
+            new Block(FabricBlockSettings.of(Material.METAL).strength(4.5f).requiresTool()), ModItemGroup.URANIUM);
 
     public static final Block DEUTERIUM_GENERATOR = registerBlock("deuterium_generator",
             new ModDeuteriumGeneratorBlock(FabricBlockSettings.of(Material.METAL).requiresTool().strength(4f).nonOpaque()), ModItemGroup.URANIUM);
