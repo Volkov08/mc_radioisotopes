@@ -127,6 +127,8 @@
   "tooltip.rad_detector.hint_2": "§e§l-Right-click with battery in offhand",
   "tooltip.rad_detector.hint_3": "§e§lto recharge",
 
+  "tooltip.lead_battery.hint_1": "§e§lUniversal energy source",
+
   "effect.radioisotopes.radiation_poisoning": "Radiation",
 
   "itemGroup.radioisotopes.uranium": "Radioisotopes",

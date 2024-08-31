@@ -136,7 +136,7 @@ public class ModItems {
     public static final Item LEAD_BATTERY = registerItem("lead_battery",
             new Item(new FabricItemSettings().group(ModItemGroup.URANIUM)));
     public static final Item FULL_LEAD_BATTERY = registerItem("full_lead_battery",
-            new Item(new FabricItemSettings().recipeRemainder(LEAD_BATTERY).maxCount(1).group(ModItemGroup.URANIUM)));
+            new ModLeadBatteryItem(new FabricItemSettings().recipeRemainder(LEAD_BATTERY).maxCount(1).group(ModItemGroup.URANIUM)));
 
     public static final Item ATOMIC_WASTE = registerItem("atomic_waste",
             new Item(new FabricItemSettings().group(ModItemGroup.URANIUM)));

@@ -11,10 +11,10 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.network.Packet;
 import net.minecraft.network.packet.s2c.play.EntitySpawnS2CPacket;
+import net.minecraft.particle.ParticleTypes;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.tag.BlockTags;
-import net.minecraft.tag.TagKey;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Box;
 import net.minecraft.world.World;
@@ -89,14 +89,14 @@ public class NuclearExplosionEntity extends Entity {
                             if (pos.isWithinDistance(dpos, radius * 0.64d)) {
                                 world.setBlockState(dpos, Blocks.AIR.getDefaultState());
                             } else if (pos.isWithinDistance(dpos, radius * 0.76d)) {
-                                if (block.isIn(BlockTags.LEAVES) || block.isIn(BlockTags.FLOWERS) || block.isOf(Blocks.GRASS) || block.isOf(Blocks.TALL_GRASS)) {
+                                if (isWeakBlock(block)) {
                                     world.setBlockState(dpos, Blocks.AIR.getDefaultState());
                                 } else if (random.nextInt(3) > 0) {
                                     world.setBlockState(dpos, Blocks.AIR.getDefaultState());
-                                } else if (block == Blocks.GRASS_BLOCK.getDefaultState()) {
+                                } else if (block.isOf(Blocks.GRASS_BLOCK)) {
                                     world.setBlockState(dpos, Blocks.DIRT.getDefaultState());
                                 }
-                            } else if (pos.isWithinDistance(dpos, radius) && (block.isIn(BlockTags.LEAVES) || block.isIn(BlockTags.FLOWERS) || block.isOf(Blocks.GRASS) || block.isOf(Blocks.TALL_GRASS))) {
+                            } else if (pos.isWithinDistance(dpos, radius) && isWeakBlock(block) && random.nextInt(4) > 0) {
                                 world.setBlockState(dpos, Blocks.AIR.getDefaultState());
                             }
                             z_range++;
@@ -121,6 +121,10 @@ public class NuclearExplosionEntity extends Entity {
                 i++;
             }
         }
+    }
+
+    private boolean isWeakBlock(BlockState block) {
+        return block.isIn(BlockTags.SNOW) || block.isIn(BlockTags.SAND) || block.isOf(Blocks.WATER) || block.isIn(BlockTags.LEAVES) || block.isIn(BlockTags.FLOWERS) || block.isOf(Blocks.GRASS) || block.isOf(Blocks.TALL_GRASS);
     }
 
     @Override
