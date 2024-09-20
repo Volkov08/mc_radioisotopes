@@ -91,13 +91,19 @@ public class NuclearExplosionEntity extends Entity {
                             } else if (pos.isWithinDistance(dpos, radius * 0.76d)) {
                                 if (isWeakBlock(block)) {
                                     world.setBlockState(dpos, Blocks.AIR.getDefaultState());
+                                } else if (block.isIn(BlockTags.ICE)) {
+                                    world.setBlockState(dpos, Blocks.WATER.getDefaultState());
                                 } else if (random.nextInt(3) > 0) {
                                     world.setBlockState(dpos, Blocks.AIR.getDefaultState());
                                 } else if (block.isOf(Blocks.GRASS_BLOCK)) {
                                     world.setBlockState(dpos, Blocks.DIRT.getDefaultState());
                                 }
-                            } else if (pos.isWithinDistance(dpos, radius) && isWeakBlock(block) && random.nextInt(4) > 0) {
-                                world.setBlockState(dpos, Blocks.AIR.getDefaultState());
+                            } else if (pos.isWithinDistance(dpos, radius)) {
+                                if (block.isIn(BlockTags.ICE)) {
+                                    world.setBlockState(dpos, Blocks.WATER.getDefaultState());
+                                } else if (isWeakBlock(block) && random.nextInt(5) > 0 || block.isIn(BlockTags.SNOW)) {
+                                    world.setBlockState(dpos, Blocks.AIR.getDefaultState());
+                                }
                             }
                             z_range++;
                         } else {

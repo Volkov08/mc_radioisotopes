@@ -5,6 +5,8 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffectInstance;
+import net.minecraft.entity.mob.MobEntity;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ArmorItem;
 import net.minecraft.item.ArmorMaterial;
 import net.minecraft.item.Item;
@@ -38,7 +40,7 @@ public class RadEntity extends Entity {
         this.canShield = canShield;
     }
 
-    public RadEntity(EntityType<RadEntity> radEntityType, World world) {
+    public RadEntity(EntityType<? extends Entity> radEntityType, World world) {
         super(radEntityType, world);
     }
 
@@ -64,28 +66,27 @@ public class RadEntity extends Entity {
                 tickCounter = 0; // reset tickCounter to 0
             }
             for (LivingEntity entity : world.getEntitiesByClass(LivingEntity.class, new Box(this.getBlockPos()).expand(distance), entity -> true)) {
-                protCheck(entity);
+                if (entity instanceof PlayerEntity || entity instanceof MobEntity) {
+                    protCheck(entity);
+                }
             }
         }
     }
 
     private boolean hasArmorOn(LivingEntity entity, ArmorMaterial material) {
-        if (entity.isPlayer()) {
-            int leadArmorCount = 0;
-            for (ItemStack armorItem : entity.getArmorItems()) {
-                Item item = armorItem.getItem();
-                if (item instanceof ArmorItem && ((ArmorItem) item).getMaterial() == material) {
-                    EquipmentSlot slotType = ((ArmorItem) item).getSlotType();
-                    if (slotType == EquipmentSlot.HEAD || slotType == EquipmentSlot.CHEST
-                            || slotType == EquipmentSlot.LEGS || slotType == EquipmentSlot.FEET) {
-                        leadArmorCount++;
-                    }
+        int leadArmorCount = 0;
+        for (ItemStack armorItem : entity.getArmorItems()) {
+            Item item = armorItem.getItem();
+            if (item instanceof ArmorItem && ((ArmorItem) item).getMaterial() == material) {
+                EquipmentSlot slotType = ((ArmorItem) item).getSlotType();
+                if (slotType == EquipmentSlot.HEAD || slotType == EquipmentSlot.CHEST
+                        || slotType == EquipmentSlot.LEGS || slotType == EquipmentSlot.FEET) {
+                    leadArmorCount++;
                 }
             }
-            boolean hasLeadArmor = leadArmorCount == 4;
-            return hasLeadArmor;
         }
-        return false;
+        boolean hasLeadArmor = leadArmorCount == 4;
+        return hasLeadArmor;
     }
 
     private void applyEffect(LivingEntity entity, double max_distance, double div) {
