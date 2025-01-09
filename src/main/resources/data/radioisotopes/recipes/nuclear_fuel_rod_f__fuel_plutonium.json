@@ -5,7 +5,7 @@
       "item": "radioisotopes:uranium_ingot"
     },
     "P": {
-      "item": "radioisotopes:weapons_grade_plutonium_ingot"
+      "item": "radioisotopes:fuel_grade_plutonium_ingot"
     },
     "i": {
       "item": "minecraft:iron_ingot"

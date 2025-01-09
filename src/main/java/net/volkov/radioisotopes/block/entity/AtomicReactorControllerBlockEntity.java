@@ -35,8 +35,7 @@ public class AtomicReactorControllerBlockEntity extends BlockEntity implements N
     protected final PropertyDelegate propertyDelegate;
     private int progress = 0;
     private int maxProgress = 2400;
-    private int fuelTime = 0;
-    private int maxFuelTime = 0;
+    public final int maxFuelTime = 80000;
 
     public AtomicReactorControllerBlockEntity(BlockPos pos, BlockState state) {
         super(ModBlockEntities.ATOMIC_REACTOR_CONTROLLER, pos, state);
@@ -45,8 +44,6 @@ public class AtomicReactorControllerBlockEntity extends BlockEntity implements N
                 switch (index) {
                     case 0: return AtomicReactorControllerBlockEntity.this.progress;
                     case 1: return AtomicReactorControllerBlockEntity.this.maxProgress;
-                    case 2: return AtomicReactorControllerBlockEntity.this.fuelTime;
-                    case 3: return AtomicReactorControllerBlockEntity.this.maxFuelTime;
                     default: return 0;
                 }
             }
@@ -55,8 +52,6 @@ public class AtomicReactorControllerBlockEntity extends BlockEntity implements N
                 switch(index) {
                     case 0: AtomicReactorControllerBlockEntity.this.progress = value; break;
                     case 1: AtomicReactorControllerBlockEntity.this.maxProgress = value; break;
-                    case 2: AtomicReactorControllerBlockEntity.this.fuelTime = value; break;
-                    case 3: AtomicReactorControllerBlockEntity.this.maxFuelTime = value; break;
                 }
             }
 
@@ -87,8 +82,6 @@ public class AtomicReactorControllerBlockEntity extends BlockEntity implements N
         super.writeNbt(nbt);
         Inventories.writeNbt(nbt, inventory);
         nbt.putInt("blaster.progress", progress);
-        nbt.putInt("blaster.fuelTime", fuelTime);
-        nbt.putInt("blaster.maxFuelTime", maxFuelTime);
     }
 
     @Override
@@ -96,42 +89,24 @@ public class AtomicReactorControllerBlockEntity extends BlockEntity implements N
         Inventories.readNbt(nbt, inventory);
         super.readNbt(nbt);
         progress = nbt.getInt("blaster.progress");
-        fuelTime = nbt.getInt("blaster.fuelTime");
-        maxFuelTime = nbt.getInt("blaster.maxFuelTime");
-    }
-
-    private void consumeFuel() {
-        if(getStack(0).getItem() == ModItems.NUCLEAR_FUEL_STACK) {
-            this.fuelTime = 32000;
-            removeStack(0, 1);
-            setStack(0, new ItemStack(ModItems.ATOMIC_WASTE, getStack(0).getCount() + 1));
-            this.maxFuelTime = this.fuelTime;
-        }
     }
 
     public static void tick(World world, BlockPos pos, BlockState state, AtomicReactorControllerBlockEntity entity) {
-        if(isConsumingFuel(entity)) {
-            entity.fuelTime--;
-            if (!world.isClient()) {
-                double x = Math.random();
-                if (x < 0.2573867 && x > 0.2573866) {
-                    world.removeBlock(pos, false);
-                    world.createExplosion(null, pos.getX(), pos.getY(), pos.getZ(), 4.0f, true, Explosion.DestructionType.BREAK);
-                    world.setBlockState(pos, Blocks.LAVA.getDefaultState());
-                    RadEntity rad = new RadEntity(ModEntities.RAD_ENTITY, world, 125000, 125d, 9400d, true);
-                    rad.refreshPositionAndAngles(pos.getX() + 0.5, pos.getY() + 0.5, pos.getZ() + 0.5, 0, 0);
-                    world.spawnEntity(rad);
+        if (hasRecipe(entity)) {
+            if (hasFuelInFuelSlot(entity) && consumeFuel(entity)) {
+                if (!world.isClient()) {
+                    double x = Math.random();
+                    if (x < 0.2573867 && x > 0.2573866) {
+                        world.removeBlock(pos, false);
+                        world.createExplosion(null, pos.getX(), pos.getY(), pos.getZ(), 4.0f, true, Explosion.DestructionType.BREAK);
+                        world.setBlockState(pos, Blocks.LAVA.getDefaultState());
+                        RadEntity rad = new RadEntity(ModEntities.RAD_ENTITY, world, 125000, 125d, 9400d, true);
+                        rad.refreshPositionAndAngles(pos.getX() + 0.5, pos.getY() + 0.5, pos.getZ() + 0.5, 0, 0);
+                        world.spawnEntity(rad);
+                    }
                 }
-            }
-        }
-
-        if(hasRecipe(entity)) {
-            if(hasFuelInFuelSlot(entity) && !isConsumingFuel(entity)) {
-                entity.consumeFuel();
-            }
-            if(isConsumingFuel(entity)) {
                 entity.progress++;
-                if(entity.progress > entity.maxProgress) {
+                if (entity.progress > entity.maxProgress) {
                     craftItem(entity);
                 }
             }
@@ -144,8 +119,22 @@ public class AtomicReactorControllerBlockEntity extends BlockEntity implements N
         return !entity.getStack(0).isEmpty();
     }
 
-    private static boolean isConsumingFuel(AtomicReactorControllerBlockEntity entity) {
-        return entity.fuelTime > 0;
+    private static boolean consumeFuel(AtomicReactorControllerBlockEntity entity) {
+        if (entity.getStack(0).getItem() == ModItems.NUCLEAR_FUEL_STACK) {
+            NbtCompound nbtData = new NbtCompound();
+            if (entity.getStack(0).hasNbt()) {
+                if (entity.getStack(0).getNbt().getInt("radioisotopes.depletion") < entity.maxFuelTime) {
+                    nbtData.putInt("radioisotopes.depletion", entity.getStack(0).getNbt().getInt("radioisotopes.depletion") + 1);
+                    entity.getStack(0).setNbt(nbtData);
+                    return true;
+                }
+            } else {
+                nbtData.putInt("radioisotopes.depletion", 1);
+                entity.getStack(0).setNbt(nbtData);
+                return true;
+            }
+        }
+        return false;
     }
 
     private static boolean hasRecipe(AtomicReactorControllerBlockEntity entity) {
@@ -196,14 +185,14 @@ public class AtomicReactorControllerBlockEntity extends BlockEntity implements N
         if(side == Direction.UP) {
             return slot == 1;
         }
-        return slot == 0 && (stack.isOf(ModItems.ATOMIC_WASTE) || stack.isOf(ModItems.NUCLEAR_FUEL_STACK));
+        return slot == 0 && stack.isOf(ModItems.NUCLEAR_FUEL_STACK);
     }
 
     @Override
     public boolean canExtract(int slot, ItemStack stack, Direction side) {
         if(side == Direction.DOWN) {
             if (slot == 0) {
-                return stack.isOf(ModItems.ATOMIC_WASTE);
+                return stack.getItem() == ModItems.NUCLEAR_FUEL_STACK && stack.hasNbt() && stack.getNbt().getInt("fuel_stack.depletion") == maxFuelTime;
             }
             return slot == 2;
         }

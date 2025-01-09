@@ -29,7 +29,7 @@ public class ModEmiPlugin implements EmiPlugin {
     public static final EmiStack PLUTONIUM_WS = EmiStack.of(ModBlocks.PLUTONIUM_REPROCESSING_PLANT);
 
     public static final EmiRecipeCategory REACTOR_CAT
-            = new EmiRecipeCategory(new Identifier(ClientMain.MOD_ID, "atomic_reactor_controller"), REACTOR_WS, new EmiTexture(R_SPRITE_SHEET, 176, 31, 16, 16));
+            = new EmiRecipeCategory(new Identifier(ClientMain.MOD_ID, "atomic_reactor_controller"), REACTOR_WS, new EmiTexture(R_SPRITE_SHEET, 176, 32, 16, 16));
     public static final EmiRecipeCategory GENERATOR_CAT
             = new EmiRecipeCategory(new Identifier(ClientMain.MOD_ID, "deuterium_generator"), GENERATOR_WS, new EmiTexture(G_SPRITE_SHEET, 176, 31, 16, 16));
     public static final EmiRecipeCategory CENTRIFUGE_CAT

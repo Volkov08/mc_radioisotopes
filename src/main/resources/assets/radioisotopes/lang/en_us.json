@@ -81,11 +81,11 @@
   "item.radioisotopes.rad_detector.rad_n_det": "No significant amount of radiation detected",
   "item.radioisotopes.batt_low": "Battery low!",
 
-  "item.radioisotopes.atomic_waste": "Atomic Waste",
   "item.radioisotopes.raw_bismuth": "Raw Bismuth",
   "item.radioisotopes.bismuth_ingot": "Bismuth Ingot",
   "item.radioisotopes.polonium_nugget": "Polonium Nugget",
-  "item.radioisotopes.plutonium_ingot": "Plutonium Ingot",
+  "item.radioisotopes.weapons_grade_plutonium_ingot": "Weapons-Grade Plutonium Ingot",
+  "item.radioisotopes.fuel_grade_plutonium_ingot": "Fuel-Grade Plutonium Ingot",
   "item.radioisotopes.neutron_initiator": "Neutron Initiator",
   "item.radioisotopes.plutonium_pit": "Plutonium Pit",
   "item.radioisotopes.composite_pit": "Composite Pit",
@@ -104,7 +104,6 @@
   "block.radioisotopes.implosion_atomic_bomb": "Implosion-Type Atomic Bomb",
   "block.radioisotopes.boosted_implosion_atomic_bomb": "Boosted Implosion-Type Atomic Bomb",
   "block.radioisotopes.fusion_bomb": "Fusion Bomb",
-  "block.radioisotopes.dirty_bomb": "Dirty Bomb",
 
   "item.radioisotopes.davy_chrockett": "Davy Chrockett Rifle",
   "item.radioisotopes.m388_nuclear_round": "M388 Nuclear Round",
@@ -127,6 +126,8 @@
   "tooltip.rad_detector.hint_2": "§e§l-Right-click with battery in offhand",
   "tooltip.rad_detector.hint_3": "§e§lto recharge",
 
+  "tooltip.fuel_stack.depletion": "Depletion: %s",
+
   "tooltip.lead_battery.hint_1": "§e§lUniversal energy source",
 
   "effect.radioisotopes.radiation_poisoning": "Radiation",
@@ -145,8 +146,6 @@
   "advancements.radioisotopes.uranium.description": "Obtain an piece of this extraordinary material. Weren't there these physicists in their secret laboratories in a lonely dimension, who were studying it?",
   "advancements.radioisotopes.uranium_centrifuge.title": "Uranium Centrifuge",
   "advancements.radioisotopes.uranium_centrifuge.description": "Lets start trading with this §mdubious§r Villager!",
-  "advancements.radioisotopes.atomic_waste.title": "Atomic Waste",
-  "advancements.radioisotopes.atomic_waste.description": "Dangerous stuff! But it might still be useful... (you might ask the villager of your trust)",
   "advancements.radioisotopes.gun_atomic_bomb.title": "Little Boy",
   "advancements.radioisotopes.gun_atomic_bomb.description": "Inefficent, but functional...",
   "advancements.radioisotopes.implosion_atomic_bomb.title": "The Gadget",

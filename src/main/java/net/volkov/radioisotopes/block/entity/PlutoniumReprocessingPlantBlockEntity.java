@@ -7,6 +7,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.Inventories;
 import net.minecraft.inventory.SimpleInventory;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.nbt.NbtCompound;
@@ -190,46 +191,43 @@ public class PlutoniumReprocessingPlantBlockEntity extends BlockEntity implement
     }
 
     private static boolean hasRecipe(PlutoniumReprocessingPlantBlockEntity entity) {
-        World world = entity.world;
-        SimpleInventory inventory = new SimpleInventory(entity.inventory.size());
-        for (int i = 0; i < entity.inventory.size(); i++) {
-            inventory.setStack(i, entity.getStack(i));
+        if (entity.getStack(1).getItem() == ModItems.NUCLEAR_FUEL_STACK && entity.getStack(2).getItem() == ModItems.BISMUTH_INGOT) {
+            if (entity.getStack(1).hasNbt() && entity.getStack(1).getNbt().getInt("radioisotopes.depletion") > 75000) {
+                return canInsertAmountIntoOutputSlot(entity, 3)
+                        && canInsertItemIntoOutputSlot(entity, ModItems.FUEL_GRADE_PLUTONIUM_INGOT);
+            } else if (entity.getStack(1).hasNbt() && entity.getStack(1).getNbt().getInt("radioisotopes.depletion") > 50000) {
+                return canInsertAmountIntoOutputSlot(entity, 2)
+                        && canInsertItemIntoOutputSlot(entity, ModItems.FUEL_GRADE_PLUTONIUM_INGOT);
+            } else if (entity.getStack(1).hasNbt() && entity.getStack(1).getNbt().getInt("radioisotopes.depletion") > 25000) {
+                return canInsertAmountIntoOutputSlot(entity, 1)
+                        && canInsertItemIntoOutputSlot(entity, ModItems.WEAPONS_GRADE_PLUTONIUM_INGOT);
+            }
         }
-
-        Optional<PlutoniumReprocessingPlantRecipe> match = world.getRecipeManager()
-                .getFirstMatch(PlutoniumReprocessingPlantRecipe.Type.INSTANCE, inventory, world);
-
-        return match.isPresent() && canInsertAmountIntoOutputSlot(inventory)
-                && canInsertItemIntoOutputSlot(inventory, match.get().getOutput());
+        return false;
     }
 
     private static void craftItem(PlutoniumReprocessingPlantBlockEntity entity) {
-        World world = entity.world;
-        SimpleInventory inventory = new SimpleInventory(entity.inventory.size());
-        for (int i = 0; i < entity.inventory.size(); i++) {
-            inventory.setStack(i, entity.getStack(i));
-        }
-
-        Optional<PlutoniumReprocessingPlantRecipe> match = world.getRecipeManager()
-                .getFirstMatch(PlutoniumReprocessingPlantRecipe.Type.INSTANCE, inventory, world);
-
-        if(match.isPresent()) {
-            entity.removeStack(1,1);
-            entity.removeStack(2,1);
-
-            entity.setStack(3, new ItemStack(match.get().getOutput().getItem(),
+        if (entity.getStack(1).hasNbt() && entity.getStack(1).getNbt().getInt("radioisotopes.depletion") >= 75000) {
+            entity.setStack(3, new ItemStack(ModItems.FUEL_GRADE_PLUTONIUM_INGOT,
+                    entity.getStack(3).getCount() + 3));
+        } else if (entity.getStack(1).hasNbt() && entity.getStack(1).getNbt().getInt("radioisotopes.depletion") >= 50000) {
+            entity.setStack(3, new ItemStack(ModItems.WEAPONS_GRADE_PLUTONIUM_INGOT,
+                    entity.getStack(3).getCount() + 2));
+        } else if (entity.getStack(1).hasNbt() && entity.getStack(1).getNbt().getInt("radioisotopes.depletion") >= 25000) {
+            entity.setStack(3, new ItemStack(ModItems.WEAPONS_GRADE_PLUTONIUM_INGOT,
                     entity.getStack(3).getCount() + 1));
-
-            entity.resetProgress();
         }
+        entity.removeStack(1,1);
+        entity.removeStack(2,1);
+        entity.resetProgress();
     }
 
-    private static boolean canInsertItemIntoOutputSlot(SimpleInventory inventory, ItemStack output) {
-        return inventory.getStack(3).getItem() == output.getItem() || inventory.getStack(3).isEmpty();
+    private static boolean canInsertItemIntoOutputSlot(PlutoniumReprocessingPlantBlockEntity entity, Item output) {
+        return entity.getStack(3).getItem() == output || entity.getStack(3).isEmpty();
     }
 
-    private static boolean canInsertAmountIntoOutputSlot(SimpleInventory inventory) {
-        return inventory.getStack(3).getMaxCount() > inventory.getStack(3).getCount();
+    private static boolean canInsertAmountIntoOutputSlot(PlutoniumReprocessingPlantBlockEntity entity, int amount) {
+        return entity.getStack(3).getMaxCount() > entity.getStack(3).getCount() + amount;
     }
 
     private void resetProgress() {

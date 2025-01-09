@@ -62,7 +62,7 @@ public class UraniumCentrifugeEmiRecipe implements EmiRecipe {
         widgets.addSlot(input.get(0), 0, 0);
         widgets.addSlot(input.get(1), 20, 0);
         widgets.addSlot(EmiStack.of(Items.POTATO), 0, 20);
-        widgets.addSlot(EmiStack.of(ModItems.FULL_LEAD_BATTERY), 0, 40);
+        widgets.addSlot(EmiStack.of(ModItems.FULL_LEAD_BATTERY).setRemainder(EmiStack.of(ModItems.LEAD_BATTERY)), 0, 40);
         widgets.addTexture(c_gui, 19, 32, 14, 14, 34, 37);
         widgets.addAnimatedTexture(c_gui, 19, 32, 14, 14, 176, 0, 15000, false, true, true);
         widgets.addSlot(output.get(0), 78, 0).recipeContext(this);

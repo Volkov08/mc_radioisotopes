@@ -28,7 +28,7 @@ public class ModItems {
             new Item(new FabricItemSettings().group(ModItemGroup.URANIUM)));
 
     public static final Item NUCLEAR_FUEL_STACK = registerItem("nuclear_fuel_stack",
-            new Item(new FabricItemSettings().maxCount(1).group(ModItemGroup.URANIUM)));
+            new ModFuelStackItem(new FabricItemSettings().maxCount(1).group(ModItemGroup.URANIUM)));
 
     public static final Item URANIUM_SWORD = registerItem("uranium_sword",
             new ModDangerousSwordItem(ModToolMaterials.URANIUM, 3, -2.4f,
@@ -138,15 +138,15 @@ public class ModItems {
     public static final Item FULL_LEAD_BATTERY = registerItem("full_lead_battery",
             new ModLeadBatteryItem(new FabricItemSettings().recipeRemainder(LEAD_BATTERY).maxCount(1).group(ModItemGroup.URANIUM)));
 
-    public static final Item ATOMIC_WASTE = registerItem("atomic_waste",
-            new Item(new FabricItemSettings().group(ModItemGroup.URANIUM)));
     public static final Item RAW_BISMUTH = registerItem("raw_bismuth",
             new Item(new FabricItemSettings().group(ModItemGroup.URANIUM)));
     public static final Item BISMUTH_INGOT = registerItem("bismuth_ingot",
             new Item(new FabricItemSettings().group(ModItemGroup.URANIUM)));
     public static final Item POLONIUM_NUGGET = registerItem("polonium_nugget",
             new Item(new FabricItemSettings().group(ModItemGroup.URANIUM)));
-    public static final Item PLUTONIUM_INGOT = registerItem("plutonium_ingot",
+    public static final Item WEAPONS_GRADE_PLUTONIUM_INGOT = registerItem("weapons_grade_plutonium_ingot",
+            new Item(new FabricItemSettings().group(ModItemGroup.URANIUM)));
+    public static final Item FUEL_GRADE_PLUTONIUM_INGOT = registerItem("fuel_grade_plutonium_ingot",
             new Item(new FabricItemSettings().group(ModItemGroup.URANIUM)));
     public static final Item NEUTRON_INITIATOR = registerItem("neutron_initiator",
             new Item(new FabricItemSettings().group(ModItemGroup.URANIUM)));

@@ -80,11 +80,11 @@
   "item.radioisotopes.rad_detector.rad_n_det": "Keine nennenswerte Strahlung erkannt",
   "item.radioisotopes.batt_low": "Batterie leer!",
 
-  "item.radioisotopes.atomic_waste": "Atommüll",
   "item.radioisotopes.raw_bismuth": "Rohes Bismut",
   "item.radioisotopes.bismuth_ingot": "Bismutbarren",
   "item.radioisotopes.polonium_nugget": "Poloniumnugget",
-  "item.radioisotopes.plutonium_ingot": "Plutoniumbarren",
+  "item.radioisotopes.weapons_grade_plutonium_ingot": "Waffenfähiger Plutoniumbarren",
+  "item.radioisotopes.fuel_grade_plutonium_ingot": "Brennstofffähiger Plutoniumbarren",
   "item.radioisotopes.neutron_initiator": "Neutroneninitiator",
   "item.radioisotopes.plutonium_pit": "Plutoniumkern",
   "item.radioisotopes.composite_pit": "Misch-Kern",
@@ -103,7 +103,6 @@
   "block.radioisotopes.implosion_atomic_bomb": "Implosionstyp-Atombombe",
   "block.radioisotopes.boosted_implosion_atomic_bomb": "Geboostete Implosionstyp-Atombombe",
   "block.radioisotopes.fusion_bomb": "Fusionsbombe",
-  "block.radioisotopes.dirty_bomb": "Schmutzige Bombe",
 
   "item.radioisotopes.davy_chrockett": "Davy Chrockett Geschütz",
   "item.radioisotopes.m388_nuclear_round": "Nuklearer Sprengkopf M388",
@@ -126,6 +125,8 @@
   "tooltip.rad_detector.hint_2": "§e§l-Mit Batterie in Offhand rechtsklicken,",
   "tooltip.rad_detector.hint_3": "§e§lum aufzuladen",
 
+  "tooltip.fuel_stack.depletion": "Abbrand: %s",
+
   "tooltip.lead_battery.hint_1": "§e§lUniverselle Energiequelle",
 
   "effect.radioisotopes.radiation_poisoning": "Strahlung",
@@ -144,13 +145,10 @@
   "advancements.radioisotopes.uranium.description": "Erhalte ein Stück dieses ... außergewöhnlichen Minerals. Gab es da nicht diese Physiker, die sich in ihren geheimen Laboren in einer einsamen Dimension damit beschäftigt haben?",
   "advancements.radioisotopes.uranium_centrifuge.title": "Uran Zentrifuge",
   "advancements.radioisotopes.uranium_centrifuge.description": "§oWollen Sie diese wirklich außergewöhnlichen und sehr seltenen Waren kaufen?§r (Physiker)",
-  "advancements.radioisotopes.atomic_waste.title": "Atommüll",
-  "advancements.radioisotopes.atomic_waste.description": "Gefährliches Zeug! Vielleicht ist es aber trotzdem noch nützlich... (du könntest den Villager deines Vertrauens fragen)",
   "advancements.radioisotopes.gun_atomic_bomb.title": "Little Boy",
   "advancements.radioisotopes.gun_atomic_bomb.description": "Ineffizient, aber funktionell...",
   "advancements.radioisotopes.implosion_atomic_bomb.title": "Das Gadget",
   "advancements.radioisotopes.implosion_atomic_bomb.description": "§6§oE = mc²!",
-
   "advancements.radioisotopes.fusion_bomb.title": "Wasserstoffbombe",
   "advancements.radioisotopes.fusion_bomb.description": "Die erste Gerätschaft zur Kernfusion im großen Maßstab!",
 

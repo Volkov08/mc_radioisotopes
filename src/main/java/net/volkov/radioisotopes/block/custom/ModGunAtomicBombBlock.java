@@ -4,6 +4,7 @@ import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+import net.minecraft.world.explosion.Explosion;
 import net.volkov.radioisotopes.entity.ModEntities;
 import net.volkov.radioisotopes.entity.NuclearExplosionEntity;
 
@@ -26,6 +27,11 @@ public class ModGunAtomicBombBlock extends Block {
         if (world.isReceivingRedstonePower(pos)) {
             primeNuke(world, pos);
         }
+    }
+
+    @Override
+    public void onDestroyedByExplosion(World world, BlockPos pos, Explosion explosion) {
+        primeNuke(world, pos);
     }
 
     private static void primeNuke(World world, BlockPos pos) {

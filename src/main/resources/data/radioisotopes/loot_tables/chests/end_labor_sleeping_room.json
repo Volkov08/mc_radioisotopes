@@ -318,12 +318,7 @@
         },
         {
           "type": "minecraft:item",
-          "weight": 2,
-          "name": "radioisotopes:nuclear_fuel_rod"
-        },
-        {
-          "type": "minecraft:item",
-          "weight": 2,
+          "weight": 3,
           "functions": [
             {
               "function": "minecraft:set_count",
@@ -335,12 +330,55 @@
               "add": false
             }
           ],
-          "name": "radioisotopes:plutonium_ingot"
+          "name": "radioisotopes:nuclear_fuel_rod"
         },
         {
           "type": "minecraft:item",
           "weight": 4,
-          "name": "radioisotopes:atomic_waste"
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1.0,
+                "max": 3.0
+              },
+              "add": false
+            }
+          ],
+          "name": "radioisotopes:enriched_uranium_ingot"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 4,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1.0,
+                "max": 3.0
+              },
+              "add": false
+            }
+          ],
+          "name": "radioisotopes:weapons_grade_plutonium_ingot"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 2,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 3.0,
+                "max": 8.0
+              },
+              "add": false
+            }
+          ],
+          "name": "radioisotopes:fuel_grade_plutonium_ingot"
         }
       ]
     }

@@ -17,7 +17,7 @@
   "rewards": {
     "experience": 20
   },
-  "parent": "radioisotopes:atomic_waste",
+  "parent": "radioisotopes:atomic_reactor_controller",
   "criteria": {
     "requirement": {
       "trigger": "minecraft:inventory_changed",

@@ -2,7 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "key": {
     "P": {
-      "item": "radioisotopes:plutonium_ingot"
+      "item": "radioisotopes:weapons_grade_plutonium_ingot"
     },
     "N": {
       "item": "radioisotopes:neutron_initiator"

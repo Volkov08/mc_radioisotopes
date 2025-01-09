@@ -61,7 +61,7 @@ public class DeuteriumGeneratorEmiRecipe implements EmiRecipe {
         widgets.addFillingArrow(26, 1, 5000);
         widgets.addSlot(input.get(0), 0, 0);
         widgets.addSlot(EmiStack.of(Items.POTATO), 0, 20);
-        widgets.addSlot(EmiStack.of(ModItems.FULL_LEAD_BATTERY), 0, 40);
+        widgets.addSlot(EmiStack.of(ModItems.FULL_LEAD_BATTERY).setRemainder(EmiStack.of(ModItems.LEAD_BATTERY)), 0, 40);
         widgets.addTexture(d_gui, 19, 32, 14, 14, 58, 37);
         widgets.addAnimatedTexture(d_gui, 19, 32, 14, 14, 176, 0, 15000, false, true, true);
         widgets.addSlot(output.get(0), 58, 0).recipeContext(this);

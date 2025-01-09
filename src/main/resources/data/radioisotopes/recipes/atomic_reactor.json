@@ -4,8 +4,8 @@
     "C": {
       "item": "radioisotopes:industrial_casing"
     },
-    "W": {
-      "item": "minecraft:water_bucket"
+    "G": {
+      "item": "minecraft:coal_block"
     },
     "E": {
       "item": "radioisotopes:electric_engine"
@@ -13,7 +13,7 @@
   },
   "pattern": [
     "CEC",
-    "CWC",
+    "CGC",
     "CCC"
   ],
   "result": {

@@ -9,6 +9,7 @@ import net.minecraft.screen.ArrayPropertyDelegate;
 import net.minecraft.screen.PropertyDelegate;
 import net.minecraft.screen.ScreenHandler;
 import net.minecraft.screen.slot.Slot;
+import net.volkov.radioisotopes.item.ModItems;
 import net.volkov.radioisotopes.screen.slot.ModARFuelSlot;
 import net.volkov.radioisotopes.screen.slot.ModFuelSlot;
 import net.volkov.radioisotopes.screen.slot.ModResultSlot;
@@ -44,7 +45,7 @@ public class AtomicReactorControllerScreenHandler extends ScreenHandler {
     }
 
     public boolean hasFuel() {
-        return propertyDelegate.get(2) > 0;
+        return isCrafting() && inventory.getStack(0).getItem() == ModItems.NUCLEAR_FUEL_STACK && (!inventory.getStack(0).hasNbt() || inventory.getStack(0).getNbt().getInt("radioisotopes.depletion") < 80000);
     }
 
     public int getScaledProgress() {
@@ -53,14 +54,6 @@ public class AtomicReactorControllerScreenHandler extends ScreenHandler {
         int progressArrowSize = 24; // This is the width in pixels of your arrow
 
         return maxProgress != 0 && progress != 0 ? progress * progressArrowSize / maxProgress : 0;
-    }
-
-    public int getScaledFuelProgress() {
-        int fuelProgress = this.propertyDelegate.get(2);
-        int maxFuelProgress = this.propertyDelegate.get(3);
-        int fuelProgressSize = 14;
-
-        return maxFuelProgress != 0 ? (int)(((float)fuelProgress / (float)maxFuelProgress) * fuelProgressSize) : 0;
     }
 
     @Override

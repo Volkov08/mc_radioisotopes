@@ -1,0 +1,14 @@
+{
+  "type": "radioisotopes:plutonium_reprocessing_plant",
+  "ingredients": [
+    {
+      "item": "radioisotopes:nuclear_fuel_stack"
+    },{
+      "item": "radioisotopes:bismuth_ingot"
+    }
+  ],
+  "output": {
+    "item": "radioisotopes:fuel_grade_plutonium_ingot",
+    "count": 3
+  }
+}

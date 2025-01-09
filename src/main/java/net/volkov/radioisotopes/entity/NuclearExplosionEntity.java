@@ -80,29 +80,38 @@ public class NuclearExplosionEntity extends Entity {
             }
 
             int i = 0;
-            while (i < 1400) {
+            while (i < 200) {
                 if (y_range >= -radius) {
                     if (x_range <= radius) {
                         if (z_range <= radius) {
                             BlockPos dpos = pos.add(x_range, y_range, z_range);
                             BlockState block = world.getBlockState(dpos);
-                            if (pos.isWithinDistance(dpos, radius * 0.64d)) {
-                                world.setBlockState(dpos, Blocks.AIR.getDefaultState());
-                            } else if (pos.isWithinDistance(dpos, radius * 0.76d)) {
-                                if (isWeakBlock(block)) {
+                            if (pos.isWithinDistance(dpos, radius) && !block.isAir()) {
+                                if (pos.isWithinDistance(dpos, radius * 0.64d)) {
                                     world.setBlockState(dpos, Blocks.AIR.getDefaultState());
-                                } else if (block.isIn(BlockTags.ICE)) {
-                                    world.setBlockState(dpos, Blocks.WATER.getDefaultState());
-                                } else if (random.nextInt(3) > 0) {
-                                    world.setBlockState(dpos, Blocks.AIR.getDefaultState());
-                                } else if (block.isOf(Blocks.GRASS_BLOCK)) {
-                                    world.setBlockState(dpos, Blocks.DIRT.getDefaultState());
-                                }
-                            } else if (pos.isWithinDistance(dpos, radius)) {
-                                if (block.isIn(BlockTags.ICE)) {
-                                    world.setBlockState(dpos, Blocks.WATER.getDefaultState());
-                                } else if (isWeakBlock(block) && random.nextInt(5) > 0 || block.isIn(BlockTags.SNOW)) {
-                                    world.setBlockState(dpos, Blocks.AIR.getDefaultState());
+                                    i++;
+                                } else if (pos.isWithinDistance(dpos, radius * 0.76d)) {
+                                    if (isWeakBlock(block)) {
+                                        world.setBlockState(dpos, Blocks.AIR.getDefaultState());
+                                        i++;
+                                    } else if (block.isIn(BlockTags.ICE)) {
+                                        world.setBlockState(dpos, Blocks.WATER.getDefaultState());
+                                        i++;
+                                    } else if (random.nextInt(3) > 0) {
+                                        world.setBlockState(dpos, Blocks.AIR.getDefaultState());
+                                        i++;
+                                    } else if (block.isOf(Blocks.GRASS_BLOCK)) {
+                                        world.setBlockState(dpos, Blocks.DIRT.getDefaultState());
+                                        i++;
+                                    }
+                                } else {
+                                    if (block.isIn(BlockTags.ICE)) {
+                                        world.setBlockState(dpos, Blocks.WATER.getDefaultState());
+                                        i++;
+                                    } else if (isWeakBlock(block) && random.nextInt(5) > 0 || block.isIn(BlockTags.SNOW)) {
+                                        world.setBlockState(dpos, Blocks.AIR.getDefaultState());
+                                        i++;
+                                    }
                                 }
                             }
                             z_range++;
@@ -123,8 +132,8 @@ public class NuclearExplosionEntity extends Entity {
                         }
                     }
                     remove(RemovalReason.DISCARDED);
+                    break;
                 }
-                i++;
             }
         }
     }

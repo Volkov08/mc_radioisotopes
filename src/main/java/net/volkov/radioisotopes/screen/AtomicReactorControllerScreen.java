@@ -32,13 +32,11 @@ public class AtomicReactorControllerScreen extends HandledScreen<AtomicReactorCo
         int y = (height - backgroundHeight) / 2;
         drawTexture(matrices, x, y, 0, 0, backgroundWidth, backgroundHeight);
 
-        if(handler.isCrafting()) {
-            drawTexture(matrices, x + 80, y + 34, 177, 14, handler.getScaledProgress(), 17);
+        if (handler.isCrafting()) {
+            drawTexture(matrices, x + 80, y + 34, 177, 15, handler.getScaledProgress(), 17);
         }
-
-        if(handler.hasFuel()) {
-            drawTexture(matrices, x + 56, y + 36 + 14 - handler.getScaledFuelProgress(), 176,
-                    14 - handler.getScaledFuelProgress(), 14, handler.getScaledFuelProgress());
+        if (handler.hasFuel()) {
+            drawTexture(matrices, x + 55, y + 36, 176, 0, 18, 15);
         }
     }
 
