@@ -109,28 +109,28 @@ public class PlutoniumReprocessingPlantBlockEntity extends BlockEntity implement
     @Override
     public boolean canInsert(int slot, ItemStack stack, @Nullable Direction side) {
         Direction localDir = this.getWorld().getBlockState(this.pos).get(ModPlutoniumReprocessingPlantBlock.FACING);
-            if (side == Direction.UP || side == Direction.DOWN) {
-                return false;
-            }
+        if (side == Direction.UP || side == Direction.DOWN) {
+            return false;
+        }
 
-            // Top insert 0 (fuel)
-            // Right insert 1
-            // Left insert 2
+        // Top insert 0 (fuel)
+        // Right insert 1
+        // Left insert 2
 
-            return switch (localDir) {
-                default -> side.getOpposite() == Direction.NORTH && slot == 2 ||
-                        side.getOpposite() == Direction.EAST && slot == 0 && (stack.isOf(ModItems.LEAD_BATTERY) || stack.isOf(ModItems.FULL_LEAD_BATTERY) || stack.isOf(Items.POTATO)) ||
-                        side.getOpposite() == Direction.SOUTH && slot == 1;
-                case EAST -> side.rotateYClockwise() == Direction.NORTH && slot == 2 ||
-                        side.rotateYClockwise() == Direction.EAST && slot == 0 && (stack.isOf(ModItems.LEAD_BATTERY) || stack.isOf(ModItems.FULL_LEAD_BATTERY) || stack.isOf(Items.POTATO)) ||
-                        side.rotateYClockwise() == Direction.SOUTH && slot == 1;
-                case SOUTH -> side == Direction.NORTH && slot == 2 ||
-                        side == Direction.EAST && slot == 0 ||
-                        side == Direction.SOUTH && slot == 1;
-                case WEST -> side.rotateYCounterclockwise() == Direction.NORTH && slot == 2 ||
-                        side.rotateYCounterclockwise() == Direction.EAST && slot == 0 && (stack.isOf(ModItems.LEAD_BATTERY) || stack.isOf(ModItems.FULL_LEAD_BATTERY) || stack.isOf(Items.POTATO)) ||
-                        side.rotateYCounterclockwise() == Direction.SOUTH && slot == 1;
-            };
+        return switch (localDir) {
+            default -> side.getOpposite() == Direction.NORTH && slot == 2 ||
+                    side.getOpposite() == Direction.EAST && slot == 0 && (stack.isOf(ModItems.LEAD_BATTERY) || stack.isOf(ModItems.FULL_LEAD_BATTERY) || stack.isOf(Items.POTATO)) ||
+                    side.getOpposite() == Direction.SOUTH && slot == 1;
+            case EAST -> side.rotateYClockwise() == Direction.NORTH && slot == 2 ||
+                    side.rotateYClockwise() == Direction.EAST && slot == 0 && (stack.isOf(ModItems.LEAD_BATTERY) || stack.isOf(ModItems.FULL_LEAD_BATTERY) || stack.isOf(Items.POTATO)) ||
+                    side.rotateYClockwise() == Direction.SOUTH && slot == 1;
+            case SOUTH -> side == Direction.NORTH && slot == 2 ||
+                    side == Direction.EAST && slot == 0 ||
+                    side == Direction.SOUTH && slot == 1;
+            case WEST -> side.rotateYCounterclockwise() == Direction.NORTH && slot == 2 ||
+                    side.rotateYCounterclockwise() == Direction.EAST && slot == 0 && (stack.isOf(ModItems.LEAD_BATTERY) || stack.isOf(ModItems.FULL_LEAD_BATTERY) || stack.isOf(Items.POTATO)) ||
+                    side.rotateYCounterclockwise() == Direction.SOUTH && slot == 1;
+        };
     }
 
     @Override
@@ -163,22 +163,28 @@ public class PlutoniumReprocessingPlantBlockEntity extends BlockEntity implement
     }
 
     public static void tick(World world, BlockPos pos, BlockState state, PlutoniumReprocessingPlantBlockEntity entity) {
-        if(isConsumingFuel(entity)) {
-            entity.fuelTime--;
-        }
+        if (!world.isClient()) {
+            if (isConsumingFuel(entity)) {
+                entity.fuelTime--;
+                markDirty(world, pos, state);
+            }
 
-        if(hasRecipe(entity)) {
-            if(hasFuelInFuelSlot(entity) && !isConsumingFuel(entity)) {
-                entity.consumeFuel();
-            }
-            if(isConsumingFuel(entity)) {
-                entity.progress++;
-                if(entity.progress > entity.maxProgress) {
-                    craftItem(entity);
+            if (hasRecipe(entity)) {
+                if (hasFuelInFuelSlot(entity) && !isConsumingFuel(entity)) {
+                    entity.consumeFuel();
+                    markDirty(world, pos, state);
                 }
+                if (isConsumingFuel(entity)) {
+                    entity.progress++;
+                    if (entity.progress > entity.maxProgress) {
+                        craftItem(entity);
+                    }
+                    markDirty(world, pos, state);
+                }
+            } else {
+                entity.resetProgress();
+                markDirty(world, pos, state);
             }
-        } else {
-            entity.resetProgress();
         }
     }
 

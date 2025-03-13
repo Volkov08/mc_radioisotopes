@@ -113,22 +113,28 @@ public class DeuteriumGeneratorBlockEntity extends BlockEntity implements NamedS
     }
 
     public static void tick(World world, BlockPos pos, BlockState state, DeuteriumGeneratorBlockEntity entity) {
-        if(isConsumingFuel(entity)) {
-            entity.fuelTime--;
-        }
+        if (!world.isClient()) {
+            if (isConsumingFuel(entity)) {
+                entity.fuelTime--;
+                markDirty(world, pos, state);
+            }
 
-        if(hasRecipe(entity)) {
-            if(hasFuelInFuelSlot(entity) && !isConsumingFuel(entity)) {
-                entity.consumeFuel();
-            }
-            if(isConsumingFuel(entity)) {
-                entity.progress++;
-                if(entity.progress > entity.maxProgress) {
-                    craftItem(entity);
+            if (hasRecipe(entity)) {
+                if (hasFuelInFuelSlot(entity) && !isConsumingFuel(entity)) {
+                    entity.consumeFuel();
+                    markDirty(world, pos, state);
                 }
+                if (isConsumingFuel(entity)) {
+                    entity.progress++;
+                    if (entity.progress > entity.maxProgress) {
+                        craftItem(entity);
+                    }
+                    markDirty(world, pos, state);
+                }
+            } else {
+                entity.resetProgress();
+                markDirty(world, pos, state);
             }
-        } else {
-            entity.resetProgress();
         }
     }
 

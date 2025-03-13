@@ -53,7 +53,7 @@ public class NuclearExplosionEntity extends Entity {
         if (!world.isClient()) {
             BlockPos pos = this.getBlockPos();
             if (!has_rad) {
-                RadEntity rad = new RadEntity(ModEntities.RAD_ENTITY, world, 90000, radius * 1.5d, radiation, false);
+                RadEntity rad = new RadEntity(ModEntities.RAD_ENTITY, world, radius * 1.5d, radiation, false);
                 rad.refreshPositionAndAngles(pos.getX(), pos.getY(), pos.getZ(), 0, 0);
                 world.spawnEntity(rad);
                 has_rad = true;
@@ -80,7 +80,7 @@ public class NuclearExplosionEntity extends Entity {
             }
 
             int i = 0;
-            while (i < 200) {
+            while (i < 150) {
                 if (y_range >= -radius) {
                     if (x_range <= radius) {
                         if (z_range <= radius) {

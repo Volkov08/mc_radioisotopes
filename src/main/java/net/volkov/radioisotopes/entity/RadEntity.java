@@ -25,16 +25,14 @@ import net.volkov.radioisotopes.item.ModArmorMaterials;
 public class RadEntity extends Entity {
 
     private int tickCounter = 0;
-    private int lifetime;
-    private double full_lifetime;
+    private int lifetime = 0;
+    private final int halfLife = 18000;
     public double distance;
     private double strength;
     private boolean canShield;
 
-    public RadEntity(EntityType<? extends Entity> entityType, World world, int lifetime, double distance, double strength, boolean canShield) {
+    public RadEntity(EntityType<? extends Entity> entityType, World world, double distance, double strength, boolean canShield) {
         super(entityType, world);
-        this.lifetime = lifetime;
-        this.full_lifetime = lifetime;
         this.distance = distance;
         this.strength = strength;
         this.canShield = canShield;
@@ -53,17 +51,17 @@ public class RadEntity extends Entity {
     public void tick() {
         super.tick();
         if (!world.isClient()) {
-            if (lifetime > 0) {
-                lifetime--;
+            if (strength * Math.pow(Math.E, -lifetime*(Math.log(2)/halfLife)) > 350) {
+                lifetime++;
             } else {
-                remove(RemovalReason.DISCARDED); // Despawn entity when lifetime reaches 0
+                remove(RemovalReason.DISCARDED);
             }
 
             tickCounter++;
             if (tickCounter < 100) {
-                return; // skip tick checks until tickCounter reaches 100
+                return;
             } else {
-                tickCounter = 0; // reset tickCounter to 0
+                tickCounter = 0;
             }
             for (LivingEntity entity : world.getEntitiesByClass(LivingEntity.class, new Box(this.getBlockPos()).expand(distance), entity -> true)) {
                 if (entity instanceof PlayerEntity || entity instanceof MobEntity) {
@@ -90,7 +88,7 @@ public class RadEntity extends Entity {
     }
 
     private void applyEffect(LivingEntity entity, double max_distance, double div) {
-        double r_dur = ((double) lifetime) / full_lifetime * strength;
+        double r_dur = strength * Math.pow(Math.E, -(double)lifetime*(Math.log(2)/(double)halfLife));
         double f_dur = r_dur - (max_distance * r_dur / distance);
         if (f_dur >= 200.0d) {
             if (!entity.hasStatusEffect(ModEffects.RAD_POISON)) {
@@ -151,7 +149,7 @@ public class RadEntity extends Entity {
     @Override
     public NbtCompound writeNbt(NbtCompound nbt) {
         nbt.putInt("rad.lifetime", lifetime);
-        nbt.putDouble("rad.full_lifetime", full_lifetime);
+        nbt.putInt("rad.tickCounter", tickCounter);
         nbt.putDouble("rad.distance", distance);
         nbt.putDouble("rad.strength", strength);
         nbt.putBoolean("rad.canShield", canShield);
@@ -162,7 +160,7 @@ public class RadEntity extends Entity {
     public void readNbt(NbtCompound nbt) {
         super.readNbt(nbt);
         lifetime = nbt.getInt("rad.lifetime");
-        full_lifetime = nbt.getDouble("rad.full_lifetime");
+        tickCounter = nbt.getInt("rad.tickCounter");
         distance = nbt.getDouble("rad.distance");
         strength = nbt.getDouble("rad.strength");
         canShield = nbt.getBoolean("rad.canShield");

@@ -92,26 +92,28 @@ public class AtomicReactorControllerBlockEntity extends BlockEntity implements N
     }
 
     public static void tick(World world, BlockPos pos, BlockState state, AtomicReactorControllerBlockEntity entity) {
-        if (hasRecipe(entity)) {
-            if (hasFuelInFuelSlot(entity) && consumeFuel(entity)) {
-                if (!world.isClient()) {
+        if (!world.isClient()) {
+            if (hasRecipe(entity)) {
+                if (hasFuelInFuelSlot(entity) && consumeFuel(entity)) {
                     double x = Math.random();
                     if (x < 0.2573867 && x > 0.2573866) {
                         world.removeBlock(pos, false);
                         world.createExplosion(null, pos.getX(), pos.getY(), pos.getZ(), 4.0f, true, Explosion.DestructionType.BREAK);
                         world.setBlockState(pos, Blocks.LAVA.getDefaultState());
-                        RadEntity rad = new RadEntity(ModEntities.RAD_ENTITY, world, 125000, 125d, 9400d, true);
+                        RadEntity rad = new RadEntity(ModEntities.RAD_ENTITY, world, 125d, 12000d, true);
                         rad.refreshPositionAndAngles(pos.getX() + 0.5, pos.getY() + 0.5, pos.getZ() + 0.5, 0, 0);
                         world.spawnEntity(rad);
                     }
+                    entity.progress++;
+                    if (entity.progress > entity.maxProgress) {
+                        craftItem(entity);
+                    }
+                    markDirty(world, pos, state);
                 }
-                entity.progress++;
-                if (entity.progress > entity.maxProgress) {
-                    craftItem(entity);
-                }
+            } else {
+                entity.resetProgress();
+                markDirty(world, pos, state);
             }
-        } else {
-            entity.resetProgress();
         }
     }
 
