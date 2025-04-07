@@ -1,13 +1,13 @@
 {
   "display": {
     "icon": {
-      "item": "radioisotopes:implosion_atomic_bomb"
+      "item": "radioisotopes:plutonium_reprocessing_plant"
     },
     "title": {
-      "translate": "advancements.radioisotopes.implosion_atomic_bomb.title"
+      "translate": "advancements.radioisotopes.plutonium_reprocessing_plant.title"
     },
     "description": {
-      "translate": "advancements.radioisotopes.implosion_atomic_bomb.description"
+      "translate": "advancements.radioisotopes.plutonium_reprocessing_plant.description"
     },
     "frame": "task",
     "show_toast": true,
@@ -15,9 +15,9 @@
     "hidden": false
   },
   "rewards": {
-    "experience": 20
+    "experience": 30
   },
-  "parent": "radioisotopes:plutonium_reprocessing_plant",
+  "parent": "radioisotopes:atomic_reactor_controller",
   "criteria": {
     "requirement": {
       "trigger": "minecraft:inventory_changed",
@@ -25,7 +25,7 @@
         "items": [
           {
             "items": [
-              "radioisotopes:implosion_atomic_bomb"
+              "radioisotopes:plutonium_reprocessing_plant"
             ]
           }
         ]

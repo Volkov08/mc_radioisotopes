@@ -9,12 +9,15 @@
     },
     "C": {
       "item": "radioisotopes:tungsten_carbide_ingot"
+    },
+    "I": {
+      "item": "radioisotopes:neutron_initiator"
     }
   },
   "pattern": [
-    " C ",
-    "PTC",
-    " C "
+    " CC",
+    "PTI",
+    " CC"
   ],
   "result": {
     "item": "radioisotopes:gun_fission_stage"

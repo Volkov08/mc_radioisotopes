@@ -176,7 +176,7 @@ public class PlutoniumReprocessingPlantBlockEntity extends BlockEntity implement
                 }
                 if (isConsumingFuel(entity)) {
                     entity.progress++;
-                    if (entity.progress > entity.maxProgress) {
+                    if (entity.progress >= entity.maxProgress) {
                         craftItem(entity);
                     }
                     markDirty(world, pos, state);

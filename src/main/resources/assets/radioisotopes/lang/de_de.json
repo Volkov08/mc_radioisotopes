@@ -97,12 +97,12 @@
   "item.radioisotopes.implosion_fission_stage": "Implosionstyp-Spaltungsstufe",
   "item.radioisotopes.low_yield_implosion_fission_stage": "Ineffiziente Implosionstyp-Spaltungsstufe",
   "item.radioisotopes.boosted_implosion_fission_stage": "Geboostete Implosionstyp-Spaltungsstufe",
-  "item.radioisotopes.fusion_stage": "Fusionsstufe",
+  "item.radioisotopes.fusion_stage": "Thermonukleare Stufe",
 
   "block.radioisotopes.gun_atomic_bomb": "Kanonentyp-Atombombe",
   "block.radioisotopes.implosion_atomic_bomb": "Implosionstyp-Atombombe",
   "block.radioisotopes.boosted_implosion_atomic_bomb": "Geboostete Implosionstyp-Atombombe",
-  "block.radioisotopes.fusion_bomb": "Fusionsbombe",
+  "block.radioisotopes.fusion_bomb": "Wasserstoffbombe",
 
   "item.radioisotopes.davy_chrockett": "Davy Chrockett Geschütz",
   "item.radioisotopes.m388_nuclear_round": "Nuklearer Sprengkopf M388",
@@ -143,7 +143,7 @@
   "advancements.radioisotopes.atomic_reactor_controller.description": "Er läuft!",
   "advancements.radioisotopes.uranium.title": "Uran!",
   "advancements.radioisotopes.uranium.description": "Erhalte ein Stück dieses ... außergewöhnlichen Minerals. Gab es da nicht diese Physiker, die sich in ihren geheimen Laboren in einer einsamen Dimension damit beschäftigt haben?",
-  "advancements.radioisotopes.uranium_centrifuge.title": "Uran Zentrifuge",
+  "advancements.radioisotopes.uranium_centrifuge.title": "Uranzentrifuge",
   "advancements.radioisotopes.uranium_centrifuge.description": "§oWollen Sie diese wirklich außergewöhnlichen und sehr seltenen Waren kaufen?§r (Physiker)",
   "advancements.radioisotopes.gun_atomic_bomb.title": "Little Boy",
   "advancements.radioisotopes.gun_atomic_bomb.description": "Ineffizient, aber funktionell...",
@@ -151,6 +151,8 @@
   "advancements.radioisotopes.implosion_atomic_bomb.description": "§6§oE = mc²!",
   "advancements.radioisotopes.fusion_bomb.title": "Wasserstoffbombe",
   "advancements.radioisotopes.fusion_bomb.description": "Die erste Gerätschaft zur Kernfusion im großen Maßstab!",
+  "advancements.radioisotopes.plutonium_reprocessing_plant.title": "Wiederaufbereitungsanlage",
+  "advancements.radioisotopes.plutonium_reprocessing_plant.description": "Ob der Müll nicht doch noch etwas Nützliches enthält?",
 
   "radioisotopes.nuke_explosion": "Nukleare Explosion",
 

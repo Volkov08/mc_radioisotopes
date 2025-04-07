@@ -98,12 +98,12 @@
   "item.radioisotopes.implosion_fission_stage": "Implosion-Type Fission Stage",
   "item.radioisotopes.low_yield_implosion_fission_stage": "Inefficient Implosion-Type Fission Stage",
   "item.radioisotopes.boosted_implosion_fission_stage": "Boosted Implosion-Type Fission Stage",
-  "item.radioisotopes.fusion_stage": "Fusion Stage",
+  "item.radioisotopes.fusion_stage": "Thermonuclear Stage",
 
   "block.radioisotopes.gun_atomic_bomb": "Gun-Type Atomic Bomb",
   "block.radioisotopes.implosion_atomic_bomb": "Implosion-Type Atomic Bomb",
   "block.radioisotopes.boosted_implosion_atomic_bomb": "Boosted Implosion-Type Atomic Bomb",
-  "block.radioisotopes.fusion_bomb": "Fusion Bomb",
+  "block.radioisotopes.fusion_bomb": "Hydrogen Bomb",
 
   "item.radioisotopes.davy_chrockett": "Davy Chrockett Rifle",
   "item.radioisotopes.m388_nuclear_round": "M388 Nuclear Round",
@@ -150,8 +150,10 @@
   "advancements.radioisotopes.gun_atomic_bomb.description": "Inefficent, but functional...",
   "advancements.radioisotopes.implosion_atomic_bomb.title": "The Gadget",
   "advancements.radioisotopes.implosion_atomic_bomb.description": "§6§oE = mc²!",
-  "advancements.radioisotopes.fusion_bomb.title": "Fusion Bomb",
+  "advancements.radioisotopes.fusion_bomb.title": "Hydrogen Bomb",
   "advancements.radioisotopes.fusion_bomb.description": "The first large-scale nuclear fusion device!",
+  "advancements.radioisotopes.plutonium_reprocessing_plant.title": "Reprocessing Plant",
+  "advancements.radioisotopes.plutonium_reprocessing_plant.description": "Isn't there still something useful in that waste?",
 
   "radioisotopes.nuke_explosion": "Nuclear Explosion",
 

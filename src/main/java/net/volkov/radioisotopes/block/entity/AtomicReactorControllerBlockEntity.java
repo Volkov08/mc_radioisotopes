@@ -105,7 +105,7 @@ public class AtomicReactorControllerBlockEntity extends BlockEntity implements N
                         world.spawnEntity(rad);
                     }
                     entity.progress++;
-                    if (entity.progress > entity.maxProgress) {
+                    if (entity.progress >= entity.maxProgress) {
                         craftItem(entity);
                     }
                     markDirty(world, pos, state);

@@ -126,7 +126,7 @@ public class DeuteriumGeneratorBlockEntity extends BlockEntity implements NamedS
                 }
                 if (isConsumingFuel(entity)) {
                     entity.progress++;
-                    if (entity.progress > entity.maxProgress) {
+                    if (entity.progress >= entity.maxProgress) {
                         craftItem(entity);
                     }
                     markDirty(world, pos, state);
